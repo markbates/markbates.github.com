@@ -1,0 +1,9 @@
+[rss]
+    Name = "RSS"
+    URL = "http://feeds.feedburner.com/MetaBates"
+[twitter]
+    Name = "Twitter"
+    URL = "http://twitter.com/markbates/"
+[github]
+    Name = "GitHub"
+    URL = "http://github.com/markbates/"

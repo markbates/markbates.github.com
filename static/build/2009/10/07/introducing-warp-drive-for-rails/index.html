@@ -1,0 +1,324 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Introducing Warp Drive for Rails</title>
+    
+    
+    <meta name="author" content="Mark Bates">
+    <link href="http://feeds.feedburner.com/MetaBates" rel="alternate" title="Introducing Warp Drive for Rails" type="application/atom+xml">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/metabates/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/themes/metabates/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+  </head>
+
+  <body>
+  <style>#forkongithub a{background:#000;color:#fff;text-decoration:none;font-family:arial, sans-serif;text-align:center;font-weight:bold;padding:5px 40px;font-size:1rem;line-height:2rem;position:relative;transition:0.5s;}#forkongithub a:hover{background:#3F9FD9;color:#fff;}#forkongithub a::before,#forkongithub a::after{content:"";width:100%;display:block;position:absolute;top:1px;left:0;height:1px;background:#fff;}#forkongithub a::after{bottom:1px;top:auto;}@media screen and (min-width:800px){#forkongithub{position:absolute;display:block;top:0;right:0;width:200px;overflow:hidden;height:200px;}#forkongithub a{width:200px;position:absolute;top:60px;right:-60px;transform:rotate(45deg);-webkit-transform:rotate(45deg);box-shadow:4px 4px 10px rgba(0,0,0,0.8);}}</style><span id="forkongithub" style='z-index: 9999;'><a href="https://github.com/markbates">Fork me on GitHub</a></span>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/">Mark Bates</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              
+              
+              
+
+
+  
+    
+      
+      	
+      	<li><a href="/about.html">About</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/archive.html">Archives</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/books.html">Books</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags.html">Tags</a></li>
+      	
+      
+    
+  
+
+
+
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="span8">
+          
+<div class="page-header">
+  <h1>Introducing Warp Drive for Rails</h1>
+  
+    <h6>07 October 2009</h6>
+  
+</div>
+
+<div class="row">
+  <div class="span">
+    <p>At work recently we had a need to build a large Rails application that we then wanted to, for lack of a better word, subclass. Unfortunately there is no real good way of doing that. Rails Engines and templates have way too may limitations. We wanted to bundle up the entire Rails app (models, controllers, views, routes, migrations, configurations, libs, assets, etc&#8230; everything!), but there was no good way of doing that. Well, now there is, it&#8217;s called the Warp Drive.</p>
+
+<p>I&#8217;ve decided to just include my README file below to explain what it is, since it&#8217;s a bit lengthy, and I don&#8217;t feel like retyping.</p>
+
+<p>This is still in it&#8217;s early stages, so use with care, but it does seem to be working for us on a daily basis. Let me know what you think!</p>
+
+<h2 id='what_is_warp_drive'>What is Warp Drive?</h2>
+
+<p>Warp Drive is what Rails Engines wish they could be, and more! They kick Rails templates in the ass, and they beat keeping an ever evolving base Rails app up to date.</p>
+
+<h3 id='what_are_rails_engines'>What are Rails Engines?</h3>
+
+<p>Rails Engines allow you to package up some of a Rails app (controllers, models, views, routes, libs) and put them in a plugin that can be included into a new Rails app, thereby giving it the functionality you had in the engine. That sounds good, but what about the downsides of using an engine? Well, you can&#8217;t override or extend any of the functionality from the engine in your main application. You can hack at the plugin, but now you&#8217;ve made it difficult to update. So what do you do if you want to add or alter a method to a controller or model? What do you do if you want to change the look and feel of a view? You have to copy everything into your main application. Boo!</p>
+
+<p>Rails Engines also don&#8217;t allow you to package up migrations, assets, plugins, initializers, etc&#8230; All the fun stuff that you&#8217;ve come to know and love about a Rails application.</p>
+
+<h3 id='enter_the_warp_drive'>Enter the Warp Drive!</h3>
+
+<p>So what is a Warp Drive? Great question. To put it simply a Warp Drive is a standard, full featured, Rails application that you can easily bundle up into a Ruby Gem, and include into another Rails app. That second Rails app now has all the power of the first Rails. That is all there is to it.</p>
+
+<h2 id='creating_a_warp_drive'>Creating a Warp Drive.</h2>
+
+<p>Let&#8217;s assume we have an application that implements AuthLogic for handling user registration/authentication. We have controllers, views, models, plugins, initializers, configurations, migrations, tasks, etc&#8230; it&#8217;s a full featured fully functional Rails application, we call it authenticator.</p>
+
+<p>We want to turn our authenticator application into a Warp Drive. We can do it in three simple steps, the first two steps you only need to do the first time, to set everything up.</p>
+
+<ul>
+<li><code>$ gem install warp_drive</code></li>
+
+<li><code>$ warpify</code> That will add a little bit of code to your <code>Rakefile</code>. That code simply requires the Warp Drive gem, and gives you hooks to configure the gem of your Warp Drive application.</li>
+
+<li><code>$ rake warp_drive:compile</code> (<code>$ rake warp_drive:install</code>) This will either compile your gem for your (<code>warp_drive:compile</code>) or compile and install your gem (<code>warp_drive:install</code>)</li>
+</ul>
+
+<p>That&#8217;s it! You should now have your Rails application bundled up and/or installed as a RubyGem!</p>
+
+<h2 id='using_a_warp_drive'>Using a Warp Drive.</h2>
+
+<p>With your fancy new Warp Drive, authenticator, built and installed how do you use it in that new application your building? Again, it&#8217;s stupid easy, and it only takes one step, that only needs to be run once:</p>
+
+<ul>
+<li><code>$ install_warp_drive authenticator</code></li>
+</ul>
+
+<p>That will put a few lines of code in your <code>Rakefile</code>, so you have access to all the <code>Rakefile</code> tasks in your Warp Drive, and a line in your <code>config/environment.rb</code> so that it will load your Warp Drive when you launch your application.</p>
+
+<p>That&#8217;s it! You&#8217;re done. Now you can run <code>rake db:migrate</code> to run the migrations from both your Warp Drive and your new application. Enjoy!</p>
+
+<h2 id='overriding_extending_and_other_such_fun_things'>Overriding, Extending, and Other Such Fun Things</h2>
+
+<h3 id='overriding_and_extending'>Overriding and Extending</h3>
+
+<p>You&#8217;ve been enjoying your new Warp Drive back application for a little while now, but you decide you really need to change an action in your controller, how do you go about that? Simple, just like you would any normal alteration to a Ruby class.</p>
+
+<p>Example: Here is what the action looks like in our Warp Drive UsersController:</p>
+
+<p>Liquid error: No such file or directory - posix_spawnp</p>
+
+<p>In our new application we can just open up the UsersController like this:</p>
+
+<p>Liquid error: No such file or directory - posix_spawnp</p>
+
+<p>Viola! The same works for any thing else in the system, models, libs, etc&#8230; In our example we used <code>alias_method_chain</code> to retain the original method, but we could have completely rewritten the method as well.</p>
+
+<p>You can also plop in a new view and it will override the view that was in your Warp Drive. The sky is really the limit.</p>
+
+<h3 id='assets'>Assets</h3>
+
+<p>You can easily bundle assets from your public directory in your Warp Drive. Just make sure they are in folders called <code>warp_drive</code>. Those folders will then be symlinked to your new project&#8217;s public directory when the application starts up.</p>
+
+<h3 id='keep_those_rake_tasks_private'>Keep Those Rake Tasks Private!</h3>
+
+<p>We all them, Rake tasks we have created to help us do all sorts of things, and we usually don&#8217;t want them to ship. Well, Warp Drive has you covered there. Just place your tasks in folders called <code>private</code> and Bob&#8217;s your uncle they won&#8217;t be available in the compiled gem.</p>
+
+<p>Liquid error: No such file or directory - posix_spawnp</p>
+
+<p>In this example <code>foo.rake</code> will be available to clients of your Warp Drive, but <code>bar.rake</code> will not be.</p>
+    <hr>
+    
+      <div class='tag_box'>
+        <h5>Tags</h5>
+        
+        
+           
+            <a href="/tags.html#engines-ref" class="tag">engines</a>
+           
+            <a href="/tags.html#gem-ref" class="tag">gem</a>
+           
+            <a href="/tags.html#General-ref" class="tag">General</a>
+           
+            <a href="/tags.html#News-ref" class="tag">News</a>
+           
+            <a href="/tags.html#rails-ref" class="tag">rails</a>
+           
+            <a href="/tags.html#release-ref" class="tag">release</a>
+           
+            <a href="/tags.html#Releases-ref" class="tag">Releases</a>
+           
+            <a href="/tags.html#warp drive-ref" class="tag">warp drive</a>
+          
+        
+        <hr />
+      </div>
+    
+    
+    <!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style ">
+<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+<a class="addthis_button_tweet"></a>
+<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+<a class="addthis_counter addthis_pill_style"></a>
+</div>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4f7cef9a0d4f7bd5"></script>
+<!-- AddThis Button END -->
+    <hr>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2009/09/07/a-few-rails-nuggets" title="A Few Rails Nuggets">&larr; Previous</a></li>
+      
+        <li><a href="/archive.html">Archive</a></li>
+      
+        <li class="next"><a href="/2009/11/12/distributed-programming-with-ruby-now-available" title="Distributed Programming with Ruby - Now Available">Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+    <hr>
+    
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+    var disqus_shortname = 'metabates'; // required: replace example with your forum shortname
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+  </div>
+
+</div>
+
+
+        </div><!--/span-->
+        <div class="span4">
+          <a href="/books.html" class="thumbnail">
+            <img src="/assets/images/2012/02/cover_300.png" />
+          </a>
+          <hr />
+
+          <a class="twitter-timeline" href="https://twitter.com/markbates" data-widget-id="274503565609934848">Tweets by @markbates</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+          <hr />
+
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Latest Posts</li>
+              
+                <li><a href="/2013/06/02/introducting-linelyticscom">Introducting LineLytics.com</a></li>
+              
+                <li><a href="/2013/01/01/announcing-metacaststv-screen-casts">Announcing MetaCasts.tv Screen Casts</a></li>
+              
+                <li><a href="/2012/12/15/javascript-prototypes-video">JavaScript Prototypes (Video)</a></li>
+              
+                <li><a href="/2012/12/08/getting-started-with-sinatra-video">Getting Started with Sinatra (Video)</a></li>
+              
+                <li><a href="/2012/12/02/getting-started-with-rack-video">Getting Started with Rack (Video)</a></li>
+              
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <p>
+          &copy; Mark Bates 2012 |
+          <a href="http://feeds.feedburner.com/MetaBates">RSS</a> |
+          <a href="http://twitter.com/markbates/" rel="me">Twitter</a> |
+          <a href="http://github.com/markbates/" rel="me">GitHub</a> |
+          <a href="mailto:mark+blog@markbates.com">Email</a>
+        </p>
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-9756583-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+  </body>
+</html>
+

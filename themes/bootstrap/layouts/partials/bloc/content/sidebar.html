@@ -1,0 +1,43 @@
+          <a class="twitter-timeline" href="https://twitter.com/markbates" data-widget-id="274503565609934848">Tweets by @markbates</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+<hr>
+
+<div>
+  {{ if and .IsPage (eq .Params.toc true) }}
+    <div class="section">
+      <header><div class="title">TableOfContents</div></header>
+      <div class="list-default">{{ .TableOfContents }}</div>
+    </div>
+    {{ end }}
+
+    <div class="section">
+      <header><div class="title"><b>Latest Posts</b></div></header>
+      <div class="content">
+        <ul>
+        {{ range first 10 (where .Site.Pages "Type" "post") }}
+          <li>
+          <a href="{{ .Permalink }}">{{ .Title }}</a>
+          </li>
+        {{ end }}
+        </ul>
+      </div>
+    </div>
+
+    {{ range $key, $value := .Site.Taxonomies }}
+      {{ $len := len $value }}
+      {{ if (not ( eq $len 0 ) ) }}
+      <div class="section taxonomies">
+        <header><div class="title"><b>{{ $key | singularize }}</b></div></header>
+
+        <div class="content">
+          <ul>
+            {{ range first 10 $value.ByCount }}<li><a href="{{ $.Site.BaseURL}}{{ $key }}/{{ .Name | urlize }}">{{ .Name }}</a></li>{{ end }}
+          </ul>
+        </div>
+      </div>
+      {{ end }}
+    {{ end }}
+
+</div>

@@ -1,0 +1,16 @@
+[about]
+Name = "About"
+URL = "/about"
+
+[books]
+Name = "Books"
+URL = "/books"
+
+[archives]
+Name = "Archives"
+Title = "Archives"
+URL = "/post"
+
+[tags]
+Name = "Tags"
+URL = "/tags"
