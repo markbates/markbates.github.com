@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Api on MetaBates.com</title>
+    <link>/tags/api/</link>
+    <description>Recent content in Api on MetaBates.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
+    <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
+    <copyright>(c) 2016 Mark Bates.</copyright>
+    <lastBuildDate>Thu, 05 Apr 2012 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/api/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>How To Write An API Without Even Trying</title>
+      <link>/2012/04/05/how-to-write-an-api-without-even-trying/</link>
+      <pubDate>Thu, 05 Apr 2012 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2012/04/05/how-to-write-an-api-without-even-trying/</guid>
+      <description>
+
+&lt;p&gt;Recently I fell upon a way of working that I think is just fantastic. So far I have no complaints about it, and neither do my clients.&lt;/p&gt;
+
+&lt;h3 id=&#34;how-i-used-to-work&#34;&gt;How I used to work&lt;/h3&gt;
+
+&lt;p&gt;In the past I would write my Rails applications just like everyone else did. I had all my business logic in my models and my controllers were very lightweight. Just enough to have the data I need to render the page.&lt;/p&gt;
+
+&lt;p&gt;My views on the other hand were big. They contained all of the view logic. There were loops to print things to the screen, helpers to make things easier to do in the view layer, forms, etc&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;Somewhere near the end of the project my client would inevitably tell me they want me to build an API for them. Of course, this usually happens with only minutes left on the clock. So quickly, and hastily, I throw together a quick API for them. Sure I test the API with my test suite, but the API has never really been &amp;ldquo;tested&amp;rdquo;, in a real world sense.&lt;/p&gt;
+
+&lt;p&gt;This writing an API in a vacuum seems to be quite a common practice. Everyone knows they need an API, but people don&amp;rsquo;t put much thought into it because they&amp;rsquo;re too busy trying to crank out their great idea as fast as possible. This leads to less than stellar APIs, which can both hurt the business and make it difficult when the time comes to do things like build clients for mobile devices and desktops.&lt;/p&gt;
+
+&lt;p&gt;So how can we solve this problem without putting too much extra strain on us poor developers? The answer is incredibly simple, eat your own dog food.&lt;/p&gt;
+
+&lt;h3 id=&#34;eating-the-dog-food-and-loving-it&#34;&gt;Eating the Dog Food (and loving it!)&lt;/h3&gt;
+
+&lt;p&gt;I, like a lot of my colleagues, have been turning to JavaScript frameworks, such as Backbone.js, to help create a richer, and more responsive, front-end user experience for the applications we write. A lot of what makes these types of frameworks so responsive is that they can make remote AJAX calls to your server to fetch, update, or destroy objects.&lt;/p&gt;
+
+&lt;p&gt;Since I&amp;rsquo;m doing all of my front-end work using Backbone, my Rails view layer has become almost not existent. I use views simply to launch my Backbone application. A typical view my look something like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;c&#34;&gt;&amp;lt;!-- index.html.erb --&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;nt&#34;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;id=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#39;products&amp;#39;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;nt&#34;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;MyApp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Views&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ProductApp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;})&lt;/span&gt;
+&lt;span class=&#34;nt&#34;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;All my views are responsible for now is launching the Backbone application to serve up the appropriate views and handle all of the user interaction. My controllers are also now even smaller. They are essentially just there to serve up that basic template page.&lt;/p&gt;
+
+&lt;p&gt;So what does all of this have to do with writing an API without trying?&lt;/p&gt;
+
+&lt;p&gt;Well, the Backbone application needs to communicate back to the server if the user wants to update, create, or destroy a resource, so why not simply write a very nice API to do that? You were going to spend all this time writing controllers and view logic anyway, why not move those controllers to the API and that view logic to Backbone.&lt;/p&gt;
+
+&lt;p&gt;The win is outstanding! Because you&amp;rsquo;ve written a full client, your actual application, for your API you know that your API is more than capable of letting others do the same. Your API works, it&amp;rsquo;s battle tested, it&amp;rsquo;s proven, and it exists! The best part is it didn&amp;rsquo;t take you any longer to write it either.&lt;/p&gt;
+
+&lt;p&gt;This pays off down the line in spades. For example, I&amp;rsquo;ve just finished up a project for a client and I took this exact approach. The client then asked me if I could write them a mobile application. I said sure, I created a new PhoneGap application and within a few minutes I copied in the Backbone models from my webapp I had written and was well on the way to writing a second full client for the API, and I didn&amp;rsquo;t even break a sweat.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Adding Pagination to an API</title>
+      <link>/2012/02/22/adding-pagination-to-an-api/</link>
+      <pubDate>Wed, 22 Feb 2012 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2012/02/22/adding-pagination-to-an-api/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;http://www.robertsabuda.com/store/images/sharks_shark.jpg&#34; title=&#34;popup book&#34; style=&#34;float: left; padding-right: 10px&#34; width=&#34;250&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Before I start this article, let me apologize for the lack of writing over the last six months. My only excuse is that I&amp;rsquo;ve been working on a new book and that is where all my writing energy has gone. So with apologies out of the way, let&amp;rsquo;s talk pagination.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Dealing with pagination in any application is never easy. There are a lot of great libraries out there that help you better handle this awkward, but unavoidable part of application programming. Things get even more complicated when you are trying to define an API.&lt;/p&gt;
+
+&lt;p&gt;APIs are fickle beasts. They have to be both clean and functional. Two things that are often at odds with one another. No sooner does clean and functional have a go at each than when trying to add pagination to an API. Pagination requires all sorts of meta-data; how many total results there are, how pages there are, etc&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;There are two approaches to handling pagination in your API, let&amp;rsquo;s look at those two approaches in this article.&lt;/p&gt;
+
+&lt;p&gt;The first approach is the easiest one to code, but I find it to be the most intrusive and less clean approach. A typical response would look something like this:&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/1889261.js&#34;&gt; &lt;/script&gt;
+
+&lt;p&gt;Here the API returns the pagination meta-data right inside of the JSON response. The advantage here is that everything is very visible to the end developer. They can easily see the details of the pagination, as well as the &lt;code&gt;widgets&lt;/code&gt; element which contains the array of data the end user was most likely looking for when they requested the API.&lt;/p&gt;
+
+&lt;p&gt;The downside of this approach is that the pagination meta-data is right there in the body of the response. The client trying to use the API has to dig into the response to extract the data it was originally looking for, potentially ignoring the pagination meta-data, if it doesn&amp;rsquo;t need it.&lt;/p&gt;
+
+&lt;p&gt;The other way to send the pagination meta-data along with our response is in the headers of the response. This is my preferred way of handling this situation.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s look at how we can do this in a Rails application using WillPaginate. Of course if you&amp;rsquo;re not using WillPaginate you can easily substitute your pagination library of choice.&lt;/p&gt;
+
+&lt;p&gt;I start by creating a class method in &lt;code&gt;ApplicationController&lt;/code&gt; that will create an &lt;code&gt;after_filter&lt;/code&gt; that will set the pagination meta-data in the response headers:&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/1889206.js&#34;&gt; &lt;/script&gt;
+
+&lt;p&gt;Then in the controller we want to add pagination headers we can call it like such:&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/1889221.js&#34;&gt; &lt;/script&gt;
+
+&lt;p&gt;Now when someone calls the &lt;code&gt;index&lt;/code&gt; action on the &lt;code&gt;API::V1::WidgetsController&lt;/code&gt; it will respond with JSON that looks like this:&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/1889259.js&#34;&gt; &lt;/script&gt;
+
+&lt;p&gt;And with response headers that look like this:&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/1889226.js&#34;&gt; &lt;/script&gt;
+
+&lt;p&gt;Now the client can easily gain access to the array of widgets they originally wanted, and should they need the pagination meta-data the client can just easily pull that information right out of the headers.&lt;/p&gt;
+
+&lt;p&gt;The API is once again nice and clean and yet it can now easily be paginated.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

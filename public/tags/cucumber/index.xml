@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cucumber on MetaBates.com</title>
+    <link>/tags/cucumber/</link>
+    <description>Recent content in Cucumber on MetaBates.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
+    <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
+    <copyright>(c) 2016 Mark Bates.</copyright>
+    <lastBuildDate>Fri, 04 Mar 2011 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/cucumber/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Testing Tools Aren&#39;t All the Same, Choose Wisely</title>
+      <link>/2011/03/04/407-testing-tools-arent-all-the-same-choose-wisely/</link>
+      <pubDate>Fri, 04 Mar 2011 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2011/03/04/407-testing-tools-arent-all-the-same-choose-wisely/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Testing is painful.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;Testing is hard.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;Testing is complicated.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;Testing is not fun.&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I hear those sorts of things all the time when I talk to people about testing. I agree that sometimes testing can be all of those things, but if you choose the right tools, the tools that best suite you, testing doesn&amp;rsquo;t have to be. Let me give you an example of what I&amp;rsquo;m talking about, how choosing the right tools can make a huge impact on how you feel about testing.&lt;/p&gt;
+
+&lt;p&gt;When working for a client recently I came across the need for end to end integration testing. I needed to test, amongst other things, the flow of a user registering through the application in a few different ways. Because registration behaves differently based on where you come from and where you want to go, I needed a good way to test that entire flow, so simple unit and functional tests just were not going to cut it.&lt;/p&gt;
+
+&lt;p&gt;In the Ruby community there is a big push to use a testing framework called, &lt;a href=&#34;http://cukes.info/&#34;&gt;Cucumber&lt;/a&gt;. Cucumber is a behavior driven development (BDD) tool that let&amp;rsquo;s you write user stories in plain English. Those stories then get translated into Ruby code that tests those stories against your application. Because of it&amp;rsquo;s popularity, and some of it&amp;rsquo;s quite amazing features, this was my first stop on the path to integration testing bliss.&lt;/p&gt;
+
+&lt;p&gt;Let me give you an example of a Cucumber script:&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/854764.js&#34;&gt; &lt;/script&gt;
+
+&lt;p&gt;That script tests the user registration flow through an application in a couple of different ways, first through &amp;lsquo;standard&amp;rsquo; registration, and then through being invited to join. Now, the beauty of Cucumber is that these scripts are &amp;lsquo;human&amp;rsquo; readable. Your product manager, or other stake holders, should be able to write these scripts themselves, and you, the developer, should be able to just plug them in and code until those scripts pass.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, while that sounds like a little slice of Heaven, the reality is far from it in practice. First, getting stake holders to actually write these &amp;lsquo;stories&amp;rsquo;, as their typically called, is a tough chore to begin with. If they do write them, they&amp;rsquo;re typically not going to be &amp;lsquo;plug and play&amp;rsquo;. Why? Well, when Cucumber reads these scripts it goes line by line and tries to find some code that matches the regular expression of that line and then execute it. If it doesn&amp;rsquo;t find matching code, then it fails. That means that your stake holders need to write these scripts in a very particular way or developers need to sit down and massage those stories to fit the correct regular expression.&lt;/p&gt;
+
+&lt;p&gt;Now, let me just take this opportunity to say that this is not a post about how much I hate Cucumber, in fact I think Cucumber is a pretty amazing piece of software, and does in fact have a lot of great uses. Instead, what I&amp;rsquo;m talking about it is how Cucumber turned out not to be the right tool for the job for me on a recent project.&lt;/p&gt;
+
+&lt;p&gt;So why wasn&amp;rsquo;t Cucumber the right tool for the job? Great question, glad you asked. Cucumber turned out not to be the right tool for a few reasons. The biggest of which was that I was the one who was writing the user stories. The stake holders had no desire to write these stories, which meant I had to write them. The I had to write the &amp;lsquo;steps&amp;rsquo; that back each line of the script. In all fairness, Cucumber does give you some great steps right out of the box. After some fiddling I finally got the Cucumber scripts up and running and testing my work flow. But I definitely ran into some issues.&lt;/p&gt;
+
+&lt;p&gt;Because Cucumber isn&amp;rsquo;t pure Ruby I had a hard time doing something as simple as just printing out the request&amp;rsquo;s body and headers without having to write a step that did just that, then add that step to my story, etc&amp;hellip; It&amp;rsquo;s overall fiddlyness and non-intuitive way of doing things caused me a lot of grief and time. And, most importantly, I wasn&amp;rsquo;t really getting the big benefit of Cucumber, stake holder&amp;rsquo;s writing the stories. So I was doing all this work and not getting the benefits of Cucumber.&lt;/p&gt;
+
+&lt;p&gt;So what did I do? I turned to a library called &lt;a href=&#34;https://github.com/cavalle/steak&#34;&gt;Steak&lt;/a&gt;. Steak allows you to write integration tests using pure Ruby and integrates directly in with &lt;a href=&#34;http://relishapp.com/rspec&#34;&gt;RSpec&lt;/a&gt;, my preferred testing framework. With Steak I was able to write my integration tests in just a few minutes.&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/854844.js&#34;&gt; &lt;/script&gt;
+
+&lt;p&gt;While my Steak scripts a bit more wordy and are definitely not &amp;lsquo;human&amp;rsquo; readable and editable by stakeholders, they did achieve my goal of allowing me to write integration tests quickly.&lt;/p&gt;
+
+&lt;p&gt;So here you see I picked a very powerful tool, that has a lot of great benefits, Cucumber, but I picked it for the wrong reasons. I picked it because it was popular, and not because it would help me achieve my goals. If my goals where to have stakeholders write the stories and hand them off to development, than it would&amp;rsquo;ve been a better choice. But in the end my goal was to write integration tests and write them quickly, which is why Steak ended up being the right tool for that job.&lt;/p&gt;
+
+&lt;p&gt;This has all been a really long winded way of saying doing some research before choosing your testing frameworks, or any framework for that matter. Play with it, research it, make sure it meets your goals, not somebody else&amp;rsquo;s. If you choose the right tools then testing doesn&amp;rsquo;t need to be scary, complicated, frustrating, etc&amp;hellip; Testing is a &lt;a href=&#34;/2010/07/01/testing-is-not-an-option/&#34;&gt;requirement&lt;/a&gt; and a must have, so why not make it fun?&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Testing is NOT an Option</title>
+      <link>/2010/07/01/testing-is-not-an-option/</link>
+      <pubDate>Thu, 01 Jul 2010 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2010/07/01/testing-is-not-an-option/</guid>
+      <description>&lt;p&gt;Five years ago I left the world of contracting and reentered the world of the full time employee, and I enjoyed every minute of it (well, almost). Now fast forward five years and I find myself once again at a crossroads. Do I continue on as an FTE or do I become a contractor, and play the field, so to speak? Looks like I&amp;rsquo;m going to go with the hired gun route for a little while, but that&amp;rsquo;s not really the point of this post.&lt;/p&gt;
+
+&lt;p&gt;During the past week or so I&amp;rsquo;ve spoken with many great companies and people. I&amp;rsquo;ve been fortunate enough to have a high degree of interest in what I can bring to the table. During those discussions I talked with a really nice guy at a what seems to be a really cool company, I won&amp;rsquo;t name names, because this isn&amp;rsquo;t about either the person or the company, but rather something the engineer said during our phone conversation that got me to thinking.&lt;/p&gt;
+
+&lt;p&gt;&lt;img style=&#34;float: left; padding-right: 10px&#34; title=&#34;Failure Testing&#34; src=&#34;http://www.commercialventvac.com/finao/failure_testing.jpg&#34; alt=&#34;&#34; width=&#34;400&#34; height=&#34;240&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;We don&amp;rsquo;t have any tests because I couldn&amp;rsquo;t convince the company to allocate the time for them.&amp;rdquo; That statement really hung with me. After I got off the phone I started thinking really hard about that statement, and all I could think of was how testing is not an option and people shouldn&amp;rsquo;t need to be convinced to have time allocated to them.&lt;/p&gt;
+
+&lt;p&gt;As developers it is our responsibility to insist on testing. Always include testing in your time estimates. Never give the client (or your company) an option that includes a time estimate without testing. If a feature takes 2 days to code and a day to write tests, then your estimate is 3 days, never 2. You should never say, &amp;ldquo;Well, I can get it done in two days if I don&amp;rsquo;t write any tests.&amp;rdquo; That&amp;rsquo;s just an unacceptable thing to say. What you should be saying is, &amp;ldquo;That feature will take three days to code&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;I don&amp;rsquo;t feel I should sit here and tell you all the reasons why you should test, you should know them already, and frankly, they&amp;rsquo;re all very obvious! But, if you need a few bullet points to &amp;lsquo;convince&amp;rsquo; your client, here are a few:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Less bugs - The more tests you have the less bugs you will have. It&amp;rsquo;s just a fact. You won&amp;rsquo;t have 100% bug free code, that&amp;rsquo;s a nearly impossible goal, but you highly reduce the likely hood that as soon as you get your code into production your users will find all the breaking points of your code.&lt;/li&gt;
+&lt;li&gt;Better maintainability, means faster feature turn around - When you have a large test suite it means adding, updating, or even removing features because a whole lot easier, which means it SAVES time! Why? Simple, you don&amp;rsquo;t have to go through and manually test every aspect of your code to make sure you didn&amp;rsquo;t break something elsewhere by adding that validation, or by refactoring that bit of code, etc&amp;hellip; That translates into real $ savings.&lt;/li&gt;
+&lt;li&gt;Test driven development saves time - this isn&amp;rsquo;t quite the same as my last bullet point. Imagine, if you will, you are writing a four step wizard in your application. If you write a few test scripts using something like Cucumber first before you write your code you can simply keep re-running those to make sure your code is working. If you don&amp;rsquo;t have those test scripts written then you continually have to keep going to a browser and entering all the information in each of the steps so you can test something in step four. Which one do you think takes longer, having a few test scripts you can run, or manually going through the four page wizard each time you make a change?&lt;/li&gt;
+&lt;li&gt;It&amp;rsquo;s an investment - thinking of having test scripts like owning a house. When you don&amp;rsquo;t have tests and you just keep testing in the browser or the command line what you are doing is a kin to &amp;ldquo;renting&amp;rdquo;. There is money being spent, but at the end of the day you have nothing to show for it. You&amp;rsquo;ve spent hours &amp;ldquo;testing&amp;rdquo;, but tomorrow when you come in you have to do it all over again. When you spend those hours writing tests you are actually &amp;ldquo;buying&amp;rdquo; something. You have something to show for that time and money you&amp;rsquo;ve spent. Tomorrow, next week, next month, next year, those scripts will still be there, they&amp;rsquo;ll still be working for you, giving  you a return on your investment.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Well, I hope I have hopefully made a case to you the engineer as to why you should insist on testing. It&amp;rsquo;s the right thing to do, for you, for your application and for you client. If if anyone tries to give you grief about it, send them my way, I&amp;rsquo;ll sort em out!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A Few Rails Nuggets</title>
+      <link>/2009/09/07/a-few-rails-nuggets/</link>
+      <pubDate>Mon, 07 Sep 2009 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2009/09/07/a-few-rails-nuggets/</guid>
+      <description>&lt;p&gt;So with my book, &lt;a href=&#34;http://my.safaribooksonline.com:80/9780321669919&#34;&gt;Distributed Programming with Ruby&lt;/a&gt;, finally finished, and a nice long weekend I was able to sit down and work on a little pet project of mine. I decided to work on a little site that I could use to track my rather large Pez collection. (Yes, I know, I collect Pez - so what!)&lt;/p&gt;
+
+&lt;p&gt;While working on it I got to use some new technologies that I really haven&amp;rsquo;t had a chance to play, so I thought I would talk a bit about some of the ones I liked the most.
+&lt;h3&gt;Authlogic&lt;/h3&gt;
+Love it! Finally a decent authentication system! The thing I love most about it? It doesn&amp;rsquo;t generate a lot of crap in your project. If I were to say one bad thing about it, it would be that it doesn&amp;rsquo;t generate enough in your project. :) I know that sounds silly, but it&amp;rsquo;s the truth. It gives you so much power, without having to generate a ton of lib code and crazy controller code, which is awesome. However, it would be nice if it had a generator that generated a &amp;lsquo;basic&amp;rsquo; application for you. Just a little thing, apart from that, love it!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://github.com/binarylogic/authlogic/tree/master&#34;&gt;http://github.com/binarylogic/authlogic/tree/master&lt;/a&gt;
+&lt;h3&gt;Cucumber/Webrat&lt;/h3&gt;
+I&amp;rsquo;m sure by now everyone has heard of Cucumber. I&amp;rsquo;m not going to pretend that I&amp;rsquo;m the first to that party! Over the last month or so I&amp;rsquo;ve really started to use it and it has completely changed my life. That&amp;rsquo;s not an overstatement.&lt;/p&gt;
+
+&lt;p&gt;Cucumber lets you write features and scenario in human readable format. Combine that with Webrat, which lets you do things like click buttons and follow links, you can write some amazing tests that look like something a project manager would write! Brilliant!&lt;/p&gt;
+
+&lt;p&gt;These tests beat the hell out of Rails integration tests. Trust me! I love watching Cucumber and Webrat click around my site while I just watch.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://cukes.info/&#34;&gt;http://cukes.info/&lt;/a&gt;
+&lt;a href=&#34;http://github.com/brynary/webrat/tree/master&#34;&gt;http://github.com/brynary/webrat/tree/master&lt;/a&gt;
+&lt;h3&gt;Web App Theme Generator&lt;/h3&gt;
+This cool little plugin helps you to quickly generate a very useful, and laid out, theme for your application. The themes would be familiar to anyone who has used sites like Lighthouse. They&amp;rsquo;re basic, but they are very well coded and get you on your quickly so you can have something that looks fairly decent.&lt;/p&gt;
+
+&lt;p&gt;My only gripe with this plugin is that it is a bit clumsy to use, but thankfully you don&amp;rsquo;t have to run it very often, only when you create a new controller/resource.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://gravityblast.com/2009/07/30/2-minutes-admin-layout-with-rails-and-the-web-app-theme-generator/&#34;&gt;http://gravityblast.com/2009/07/30/2-minutes-admin-layout-with-rails-and-the-web-app-theme-generator/&lt;/a&gt;
+&lt;h3&gt;Delayed Job&lt;/h3&gt;
+The last piece of tech is Delayed Job. I first discovered Delayed Job when I wrote about it in my &lt;a href=&#34;http://my.safaribooksonline.com:80/9780321669919&#34;&gt;book&lt;/a&gt;. It is a great way to handle and process background tasks. It&amp;rsquo;s easy, reliable, and scales really well. I&amp;rsquo;ve been using the Collective Idea fork of the project. It has a generator to create the migration you need. It also has a nice binary to run in the background on your server.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve also been using a little gem I wrote that gives me hooks into Hoptoad, the is_paranoid gem, and a nice subclass for writing workers.&lt;/p&gt;
+
+&lt;p&gt;I have been completely enamored with Delayed Job from the first moment I used it, and I&amp;rsquo;m sure if you haven&amp;rsquo;t checked it out yet, and you do, you&amp;rsquo;ll feel the same!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://github.com/collectiveidea/delayed_job/tree/master&#34;&gt;http://github.com/collectiveidea/delayed_job/tree/master&lt;/a&gt;
+&lt;a href=&#34;http://github.com/markbates/delayed_job_extras/tree/master&#34;&gt;http://github.com/markbates/delayed_job_extras/tree/master&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;There you go, that&amp;rsquo;s just a few things I&amp;rsquo;ve been playing with lately, that I think are going to become mainstays in any Rails project I work on. Hopefully this has given you a little for for thought on things you can use in your next project.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

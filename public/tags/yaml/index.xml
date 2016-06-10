@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Yaml on MetaBates.com</title>
+    <link>/tags/yaml/</link>
+    <description>Recent content in Yaml on MetaBates.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
+    <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
+    <copyright>(c) 2016 Mark Bates.</copyright>
+    <lastBuildDate>Tue, 28 Jun 2011 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/yaml/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Let&#39;s say goodbye to YAML for configuration, shall we?</title>
+      <link>/2011/06/28/lets-say-goodbye-to-yaml-for-configuration-shall-we/</link>
+      <pubDate>Tue, 28 Jun 2011 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2011/06/28/lets-say-goodbye-to-yaml-for-configuration-shall-we/</guid>
+      <description>&lt;p&gt;&lt;img style=&#34;float: left; padding-right: 10px&#34; class=&#34;size-medium wp-image-489&#34; title=&#34;yml&#34; src=&#34;/assets/images/2011/06/yml-300x300.png&#34; alt=&#34;&#34; width=&#34;180&#34; height=&#34;180&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I have to ask a question to my fellow Rubyists out there? Why are you still using YAML? I know why you &lt;em&gt;think&lt;/em&gt; you like YAML. You think it&amp;rsquo;s a great way to write configuration files, but it&amp;rsquo;s really not. You know what&amp;rsquo;s a great way of writing configuration files for Ruby apps? RUBY!&lt;/p&gt;
+
+&lt;p&gt;I know it&amp;rsquo;s crazy, isn&amp;rsquo;t it? But why not? Why would you not want to use Ruby for configuring your applications instead of YAML?&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m the maintainer of a pretty popular configuration tool for Ruby apps, &lt;a href=&#34;http://github.com/markbates/configatron&#34;&gt;Configatron&lt;/a&gt;, so I think I have a little experience in this field. I also write and maintain a lot of libraries that require configuration and I have never thought that YAML is the best way to do this.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s look at an example of what a library developer has to do to load a YAML file to get configurations:&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/1051635.js&#34;&gt; &lt;/script&gt;
+
+&lt;p&gt;I don&amp;rsquo;t know about you, but I think that&amp;rsquo;s kind of lame. Most everybody runs their YAML files through ERB so that they can make their YAML files more &amp;lsquo;Ruby-ish&amp;rsquo;. Why not just use Ruby?? Here&amp;rsquo;s the same example in Ruby:&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/1051638.js&#34;&gt; &lt;/script&gt;
+
+&lt;p&gt;In addition to not having to deal with all the whitespace, tabs, crazy nesting, etc&amp;hellip; that YAML brings we get to use the full power of Ruby for our configurations! Try storing a Proc in YAML. Yeah, that&amp;rsquo;s what I thought. You can drive configurations from the database, environment variables, crazy equations, etc&amp;hellip; the world is your oyster. All you need to do now is stop using YAML!&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve decided to drop YAML support in Configatron 2.9 (coming sometime this Summer) and I encourage all other library developers to do the same. It&amp;rsquo;s just not needed, or very nice for that matter. Now, if we can only get Rails to drop the database.yml file, I think we&amp;rsquo;ll be all set.&lt;/p&gt;
+
+&lt;address&gt;Ps. Make sure to check out my app [FluxTracker.com](http://www.fluxtracker.com?ref=yaml) for all your issue, project, and error tracking needs. Also check out [TweetKO.com](http://tweetko.com?ref=yaml) for backing up and bookmarking your favorite tweets.&lt;/address&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

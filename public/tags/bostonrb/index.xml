@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bostonrb on MetaBates.com</title>
+    <link>/tags/bostonrb/</link>
+    <description>Recent content in Bostonrb on MetaBates.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
+    <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
+    <copyright>(c) 2016 Mark Bates.</copyright>
+    <lastBuildDate>Wed, 10 Aug 2011 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/bostonrb/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>CoffeeScript - A Rubyist&#39;s Love Affair</title>
+      <link>/2011/08/10/coffeescript-a-rubyists-love-affair/</link>
+      <pubDate>Wed, 10 Aug 2011 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2011/08/10/coffeescript-a-rubyists-love-affair/</guid>
+      <description>&lt;p&gt;Last night I had the pleasure of presenting to the &lt;a href=&#34;http://www.bostonrb.org&#34;&gt;Boston Ruby User&amp;rsquo;s Group&lt;/a&gt; on CoffeeScript. My talk was geared to helping Rubyists understand, and hopefully love, CoffeeScript. Along the way I tried to debunk a few myths and preconceptions as to what CoffeeScript is and isn&amp;rsquo;t. The reaction was really positive, so hopefully I did my job. Anyway, here are the slides:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.slideshare.net/markykang/coffeescript-bostonrb-892011&#34;&gt;http://www.slideshare.net/markykang/coffeescript-bostonrb-892011&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;Enjoy!&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

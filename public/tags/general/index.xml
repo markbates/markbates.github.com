@@ -1,0 +1,702 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>General on MetaBates.com</title>
+    <link>/tags/general/</link>
+    <description>Recent content in General on MetaBates.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
+    <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
+    <copyright>(c) 2016 Mark Bates.</copyright>
+    <lastBuildDate>Wed, 22 Feb 2012 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/general/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Adding Pagination to an API</title>
+      <link>/2012/02/22/adding-pagination-to-an-api/</link>
+      <pubDate>Wed, 22 Feb 2012 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2012/02/22/adding-pagination-to-an-api/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;http://www.robertsabuda.com/store/images/sharks_shark.jpg&#34; title=&#34;popup book&#34; style=&#34;float: left; padding-right: 10px&#34; width=&#34;250&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Before I start this article, let me apologize for the lack of writing over the last six months. My only excuse is that I&amp;rsquo;ve been working on a new book and that is where all my writing energy has gone. So with apologies out of the way, let&amp;rsquo;s talk pagination.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Dealing with pagination in any application is never easy. There are a lot of great libraries out there that help you better handle this awkward, but unavoidable part of application programming. Things get even more complicated when you are trying to define an API.&lt;/p&gt;
+
+&lt;p&gt;APIs are fickle beasts. They have to be both clean and functional. Two things that are often at odds with one another. No sooner does clean and functional have a go at each than when trying to add pagination to an API. Pagination requires all sorts of meta-data; how many total results there are, how pages there are, etc&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;There are two approaches to handling pagination in your API, let&amp;rsquo;s look at those two approaches in this article.&lt;/p&gt;
+
+&lt;p&gt;The first approach is the easiest one to code, but I find it to be the most intrusive and less clean approach. A typical response would look something like this:&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/1889261.js&#34;&gt; &lt;/script&gt;
+
+&lt;p&gt;Here the API returns the pagination meta-data right inside of the JSON response. The advantage here is that everything is very visible to the end developer. They can easily see the details of the pagination, as well as the &lt;code&gt;widgets&lt;/code&gt; element which contains the array of data the end user was most likely looking for when they requested the API.&lt;/p&gt;
+
+&lt;p&gt;The downside of this approach is that the pagination meta-data is right there in the body of the response. The client trying to use the API has to dig into the response to extract the data it was originally looking for, potentially ignoring the pagination meta-data, if it doesn&amp;rsquo;t need it.&lt;/p&gt;
+
+&lt;p&gt;The other way to send the pagination meta-data along with our response is in the headers of the response. This is my preferred way of handling this situation.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s look at how we can do this in a Rails application using WillPaginate. Of course if you&amp;rsquo;re not using WillPaginate you can easily substitute your pagination library of choice.&lt;/p&gt;
+
+&lt;p&gt;I start by creating a class method in &lt;code&gt;ApplicationController&lt;/code&gt; that will create an &lt;code&gt;after_filter&lt;/code&gt; that will set the pagination meta-data in the response headers:&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/1889206.js&#34;&gt; &lt;/script&gt;
+
+&lt;p&gt;Then in the controller we want to add pagination headers we can call it like such:&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/1889221.js&#34;&gt; &lt;/script&gt;
+
+&lt;p&gt;Now when someone calls the &lt;code&gt;index&lt;/code&gt; action on the &lt;code&gt;API::V1::WidgetsController&lt;/code&gt; it will respond with JSON that looks like this:&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/1889259.js&#34;&gt; &lt;/script&gt;
+
+&lt;p&gt;And with response headers that look like this:&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/1889226.js&#34;&gt; &lt;/script&gt;
+
+&lt;p&gt;Now the client can easily gain access to the array of widgets they originally wanted, and should they need the pagination meta-data the client can just easily pull that information right out of the headers.&lt;/p&gt;
+
+&lt;p&gt;The API is once again nice and clean and yet it can now easily be paginated.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Using Sprockets without Rails</title>
+      <link>/2011/08/31/using-sprockets-without-rails/</link>
+      <pubDate>Wed, 31 Aug 2011 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2011/08/31/using-sprockets-without-rails/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve started working this week on an example application for the next book I&amp;rsquo;m about to write and I wanted a simple way for my readers to easily run the app (it&amp;rsquo;s going to be a single HTML file with a ton of cool JavaScript going on in it). My first choice for running this app was to use the popular Ruby library, &lt;a href=&#34;http://rack.rubyforge.org/&#34;&gt;Rack&lt;/a&gt;. If you are unfamiliar with Rack, please check it out. It provides a simple interface for writing web applications. By writing a simple Ruby file readers can use their favorite Rack compatible web server to launch the application. Sounds simple, eh? That&amp;rsquo;s because it is.&lt;/p&gt;
+
+&lt;p&gt;With a simple Rack application written in a few lines of code I was able to start developing my example application. That&amp;rsquo;s when I realized I needed a good way to serve up all my &lt;a href=&#34;http://jashkenas.github.com/coffee-script/&#34;&gt;CoffeeScript&lt;/a&gt; and &lt;a href=&#34;http://sass-lang.com/&#34;&gt;Sass&lt;/a&gt; files. I was going to write a watchr script that did this, but I thought that was a bit heavy handed, and not very flexible, so I turned to &lt;a href=&#34;https://github.com/sstephenson/sprockets&#34;&gt;Sprockets&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Sprockets recently gained a lot of attention because it is bundled in with &lt;a href=&#34;http://guides.rubyonrails.org/3_1_release_notes.html&#34;&gt;Rails 3.1&lt;/a&gt; to serve up an application&amp;rsquo;s assets. It&amp;rsquo;s a clever little library that will process your files using CoffeeScript, Sass, etc&amp;hellip; and let you bundle them up in to a single asset by using a manifest. That was exactly what I wanted. After I spent the better part of an afternoon doing a bit of research and debugging here is the Rack configuration file I came up with:&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/1184400.js&#34;&gt; &lt;/script&gt;
+
+&lt;p&gt;That will serve
+&lt;pre&gt;/assets/application.css&lt;/pre&gt;
+via Sprockets. The file itself will live in
+&lt;pre&gt;&amp;lt;pwd&amp;gt;/app/assets/stylesheets/application.scss&lt;/pre&gt;
+The same goes for JavaScript files.&lt;/p&gt;
+
+&lt;p&gt;Hopefully this will save someone else a little of time when they&amp;rsquo;re trying to do the same thing. Enjoy!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>CoffeeScript - A Rubyist&#39;s Love Affair</title>
+      <link>/2011/08/10/coffeescript-a-rubyists-love-affair/</link>
+      <pubDate>Wed, 10 Aug 2011 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2011/08/10/coffeescript-a-rubyists-love-affair/</guid>
+      <description>&lt;p&gt;Last night I had the pleasure of presenting to the &lt;a href=&#34;http://www.bostonrb.org&#34;&gt;Boston Ruby User&amp;rsquo;s Group&lt;/a&gt; on CoffeeScript. My talk was geared to helping Rubyists understand, and hopefully love, CoffeeScript. Along the way I tried to debunk a few myths and preconceptions as to what CoffeeScript is and isn&amp;rsquo;t. The reaction was really positive, so hopefully I did my job. Anyway, here are the slides:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.slideshare.net/markykang/coffeescript-bostonrb-892011&#34;&gt;http://www.slideshare.net/markykang/coffeescript-bostonrb-892011&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;Enjoy!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Let&#39;s say goodbye to YAML for configuration, shall we?</title>
+      <link>/2011/06/28/lets-say-goodbye-to-yaml-for-configuration-shall-we/</link>
+      <pubDate>Tue, 28 Jun 2011 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2011/06/28/lets-say-goodbye-to-yaml-for-configuration-shall-we/</guid>
+      <description>&lt;p&gt;&lt;img style=&#34;float: left; padding-right: 10px&#34; class=&#34;size-medium wp-image-489&#34; title=&#34;yml&#34; src=&#34;/assets/images/2011/06/yml-300x300.png&#34; alt=&#34;&#34; width=&#34;180&#34; height=&#34;180&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I have to ask a question to my fellow Rubyists out there? Why are you still using YAML? I know why you &lt;em&gt;think&lt;/em&gt; you like YAML. You think it&amp;rsquo;s a great way to write configuration files, but it&amp;rsquo;s really not. You know what&amp;rsquo;s a great way of writing configuration files for Ruby apps? RUBY!&lt;/p&gt;
+
+&lt;p&gt;I know it&amp;rsquo;s crazy, isn&amp;rsquo;t it? But why not? Why would you not want to use Ruby for configuring your applications instead of YAML?&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m the maintainer of a pretty popular configuration tool for Ruby apps, &lt;a href=&#34;http://github.com/markbates/configatron&#34;&gt;Configatron&lt;/a&gt;, so I think I have a little experience in this field. I also write and maintain a lot of libraries that require configuration and I have never thought that YAML is the best way to do this.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s look at an example of what a library developer has to do to load a YAML file to get configurations:&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/1051635.js&#34;&gt; &lt;/script&gt;
+
+&lt;p&gt;I don&amp;rsquo;t know about you, but I think that&amp;rsquo;s kind of lame. Most everybody runs their YAML files through ERB so that they can make their YAML files more &amp;lsquo;Ruby-ish&amp;rsquo;. Why not just use Ruby?? Here&amp;rsquo;s the same example in Ruby:&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/1051638.js&#34;&gt; &lt;/script&gt;
+
+&lt;p&gt;In addition to not having to deal with all the whitespace, tabs, crazy nesting, etc&amp;hellip; that YAML brings we get to use the full power of Ruby for our configurations! Try storing a Proc in YAML. Yeah, that&amp;rsquo;s what I thought. You can drive configurations from the database, environment variables, crazy equations, etc&amp;hellip; the world is your oyster. All you need to do now is stop using YAML!&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve decided to drop YAML support in Configatron 2.9 (coming sometime this Summer) and I encourage all other library developers to do the same. It&amp;rsquo;s just not needed, or very nice for that matter. Now, if we can only get Rails to drop the database.yml file, I think we&amp;rsquo;ll be all set.&lt;/p&gt;
+
+&lt;address&gt;Ps. Make sure to check out my app [FluxTracker.com](http://www.fluxtracker.com?ref=yaml) for all your issue, project, and error tracking needs. Also check out [TweetKO.com](http://tweetko.com?ref=yaml) for backing up and bookmarking your favorite tweets.&lt;/address&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Backup and Bookmark your Tweets with TweetKO.com</title>
+      <link>/2011/06/19/backup-and-bookmark-your-tweets-with-tweetko-com/</link>
+      <pubDate>Sun, 19 Jun 2011 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2011/06/19/backup-and-bookmark-your-tweets-with-tweetko-com/</guid>
+      <description>&lt;p&gt;&lt;img style=&#34;float: left; padding-right: 10px&#34; class=&#34;size-medium wp-image-469&#34; title=&#34;bigbird_sq&#34; src=&#34;/assets/images/2011/06/bigbird_sq-300x300.png&#34; alt=&#34;&#34; width=&#34;300&#34; height=&#34;300&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;UPDATE: Unfortunately TweetKO is no longer available. Sorry about that.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Twitter is an incredibly rich source of information. I find out about new libraries, applications, plugins, screen casts, etc&amp;hellip; But, there&amp;rsquo;s a problem with is overwhelming amount of information&amp;hellip; keeping track of it all. A lot of time I read Twitter when I&amp;rsquo;m on my phone. I&amp;rsquo;ll see a link to an article or website, etc&amp;hellip; but I don&amp;rsquo;t have time to read it then, what do I do? How do I find that tweet later? Or what about that announcement or news link for a new service or application that I saw six months ago? How do I find that again?&lt;/p&gt;
+
+&lt;p&gt;Twitter is great but it&amp;rsquo;s ability to help you find specific tweets that are important to you is almost important. That&amp;rsquo;s why today I&amp;rsquo;m happy to announce TweetKO.com. TweetKO solves this problem by using the built &amp;lsquo;favorite&amp;rsquo; functionality that Twitter offers. From _ANY _Twitter client you can simply mark a tweet as a favorite and TweetKO will pull it in and save it for you so you can find it later.&lt;/p&gt;
+
+&lt;p&gt;That&amp;rsquo;s it! It really is that simple. TweetKO is &lt;em&gt;FREE&lt;/em&gt; and easy to use. In addition to pulling in your favorite tweets you can tell TweetKO to also pull in any tweets you wrote or retweeted, effectively backing up your Twitter history. A powerful search makes finding those tweets simple and easy. Plus you can save those search queries for later use.&lt;/p&gt;
+
+&lt;p&gt;Well, I hope you check out TweetKO.com and find it as useful as I do. Enjoy!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Collect user feedback through FluxTracker.com</title>
+      <link>/2011/06/13/collect-user-feedback-through-fluxtracker-com/</link>
+      <pubDate>Mon, 13 Jun 2011 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2011/06/13/collect-user-feedback-through-fluxtracker-com/</guid>
+      <description>&lt;p&gt;About six weeks ago I announced &lt;a href=&#34;http://www.fluxtracker.com?ref=metabates2&#34;&gt;FluxTracker.com&lt;/a&gt; a unified issue, document, and error management service. The response has been amazing. People love that you can now manage all of those things in one place, without any configuration. Well, today I&amp;rsquo;m happy to announce that FluxTracker has taken the next step forward to make managing all aspects of your project easier. Introducing FluxTracker &lt;a href=&#34;http://bit.ly/juVpLJ&#34;&gt;Feedback&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;FluxTracker Feedback allows you to put a little feedback widget on your site that can be used to collect information from your users, such as feature requests, support requests, and general comments. This feedback is automatically added to your FluxTracker project and from there it&amp;rsquo;s up to you to decide what you want to do with it. Of course it supports FluxTracker&amp;rsquo;s Issue Connect system so you can turn that customer feedback into an actionable issue with just one click?&lt;/p&gt;
+
+&lt;p&gt;Now you&amp;rsquo;re probably saying to yourself, I bet it&amp;rsquo;s really difficult to implement on my site. Well, you&amp;rsquo;d be wrong! It&amp;rsquo;s as simple as just adding one line to your site:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.fluxtracker.com/pages/api/feedback&#34;&gt;http://www.fluxtracker.com/pages/api/feedback&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The widget can be customized too. CSS, text, and even the questions can be customized (well, depending on the plan you&amp;rsquo;re on). Just check out the Feedback tab on the right side of the page to see the Feedback widget in action.&lt;/p&gt;
+
+&lt;p&gt;Well, as you can tell I&amp;rsquo;m very excited about this. I think it really makes FluxTracker the true center for managing your application, and I think  you&amp;rsquo;ll find that too. Enjoy!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Stop Complaining. Start Contributing!</title>
+      <link>/2011/05/24/stop-complaining-start-contributing/</link>
+      <pubDate>Tue, 24 May 2011 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2011/05/24/stop-complaining-start-contributing/</guid>
+      <description>&lt;p&gt;&lt;img style=&#34;float: left; padding-right: 10px&#34; title=&#34;stop complaining&#34; src=&#34;http://tanamatales.com/wp-content/uploads/2011/05/stop_complaining1.jpg&#34; alt=&#34;&#34; width=&#34;300&#34; height=&#34;225&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Because I maintain several open source projects on &lt;a href=&#34;http://github.com/markbates&#34;&gt;Github&lt;/a&gt; I&amp;rsquo;m constantly getting emailed questions or issues, or people are always opening up tickets with bugs, issues, complaints, etc&amp;hellip; And I really appreciate the feedback on these projects, I really do. What I would appreciate more is if instead of just opening a ticket, or sending an email, why not fork the project, fix it, and then contact me?&lt;/p&gt;
+
+&lt;p&gt;Now, I know that sounds like a lot of work, but honestly it&amp;rsquo;s really not. Github has made contributing to open source projects so trivial that everyone should be doing it. Take for example a recent ticket I got for one of my projects. The gist of ticket was that if there was a space in the project name the library would throw an error. That&amp;rsquo;s a great bug! It&amp;rsquo;s also an incredibly easy one to fix. If the person who opened the ticket has actually just submitted a pull request with the fix instead the fix would already have been deployed. Granted it would&amp;rsquo;ve taken a bit more than the few minutes to open the ticket, but not that much more. &lt;strong&gt;UPDATE: He actually did fork the project and is trying to fix it! Awesome!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;So why should you do this? Why should you take the time to fix your own issues instead of having the library owner/maintainer do it? Well, the reasons are plentiful, but here are a few of my favorites:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;You can have it now! That&amp;rsquo;s right, if you fork the project and fix the bug or add that new feature you can start using today! Even before the project owner has a chance to merge in the pull request. That&amp;rsquo;s a total win right there!&lt;/li&gt;
+&lt;li&gt;Quicker to be released to the general public. Maintainers of open source projects are busy people and, usually, don&amp;rsquo;t spend all day working on their open source libraries. If someone submits a good patch or feature then it&amp;rsquo;s easier for them to pull it in and get it out as a proper release sooner.&lt;/li&gt;
+&lt;li&gt;It feels good! It feels really good to contribute back to a project that you use often. After awhile you might even get commit rights to the project and won&amp;rsquo;t have to maintain a fork. That feels really good!&lt;/li&gt;
+&lt;li&gt;Build a name for yourself. That&amp;rsquo;s one of the ways you land better jobs or contracts. People start seeing your name floating around commit messages. You get to know the people maintaining the projects, they like your work, then when they&amp;rsquo;re looking to fill a position, guess who they think of?&lt;/li&gt;
+&lt;li&gt;It makes you a better developer. By contributing to different projects you learn different techniques. You get to understand the code of the library you&amp;rsquo;re using and learn little tricks that you might not have known about otherwise.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Those are just a few of the reasons why giving back to the open source community is great. So the question I&amp;rsquo;m going to leave you with now is are you going to be a player or a hater? Someone who just complains all day, or someone who helps to make the world a better place? I&amp;rsquo;m hoping you become the latter.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Project, Issue, and Error Tracking United!</title>
+      <link>/2011/04/25/project-issue-and-error-tracking-united/</link>
+      <pubDate>Mon, 25 Apr 2011 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2011/04/25/project-issue-and-error-tracking-united/</guid>
+      <description>&lt;p&gt;&lt;img style=&#34;float: left; padding-right: 10px&#34; class=&#34;size-medium wp-image-437&#34; title=&#34;issue_list_big&#34; src=&#34;/assets/images/2011/04/issue_list_big-300x225.png&#34; alt=&#34;&#34; width=&#34;300&#34; height=&#34;225&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;UPDATE: Unfortunately FluxTracker is no longer available. Sorry about that.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;For the last few years every project or company I&amp;rsquo;ve worked for has started the same way, by setting up Basecamp, Lighthouse and Hoptoad (or similar ones anyway). Why? Basecamp  - so we could share documents and todos. Lighthouse - so we could track our issues and bugs. Hoptoad - so we could track the errors our application was generating.&lt;/p&gt;
+
+&lt;p&gt;These are all very good applications and have served myself and my clients well, but they&amp;rsquo;ve suffered from several very big flaws. The first big flaw was the cost. You can easily drop $100 or more a month across these different services. But that wasn&amp;rsquo;t the biggest flaw or problem I&amp;rsquo;ve had with these services. The biggest problem was lack of integration.&lt;/p&gt;
+
+&lt;p&gt;So what do I mean by lack of integration? Well, when an error comes in I want to easily be able to create a new issue from it. When the issue gets resolved, so should the error. If the error reoccurs it should re-open automatically, and so should the issue. I want to be able to create an issue right from a document or be able to attach issues to a document. I should be able to follow the flow from document to issue to error and back again very easily. Unfortunately, these applications don&amp;rsquo;t give you that level of integration. They offer some level, but just not enough.&lt;/p&gt;
+
+&lt;p&gt;Well, my friends, welcome to the future. Welcome to FluxTracker.com. FluxTracker combines a great issue tracker, a project management system, and an error tracker all in one application. Now you can full integration without any configuration, oh, and you can do it at a fraction of the cost!&lt;/p&gt;
+
+&lt;p&gt;We know it isn&amp;rsquo;t easy to switch to a different application, that&amp;rsquo;s why we&amp;rsquo;ve made it easy for you. You can easily import your Lighthouse account. FluxTracker also allows you to easily use the Hoptoad Notifier plugin for your project by just setting a few configuration parameters.&lt;/p&gt;
+
+&lt;p&gt;So know you know, you&amp;rsquo;re life can be easier. And you now know how easy it is to get started! So what are you waiting for? Go and sign up for our Free plan and start living the dream.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Because everybody has an opinion...</title>
+      <link>/2011/04/15/because-everybody-has-an-opinion/</link>
+      <pubDate>Fri, 15 Apr 2011 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2011/04/15/because-everybody-has-an-opinion/</guid>
+      <description>&lt;p&gt;In case you&amp;rsquo;ve been living in a cave this week you&amp;rsquo;ve probably heard that &lt;a href=&#34;http://www.rubyinside.com/rails-3-1-adopts-coffeescript-jquery-sass-and-controversy-4669.html&#34;&gt;Ruby on Rails&lt;/a&gt; is going to be including both the &lt;a href=&#34;http://coffeescript.org/&#34;&gt;CoffeeScript&lt;/a&gt; and &lt;a href=&#34;http://sass-lang.com/&#34;&gt;SASS&lt;/a&gt; libraries, it will also make &lt;a href=&#34;http://jquery.com/&#34;&gt;jQuery&lt;/a&gt; the default JavaScript framework, replacing the &lt;a href=&#34;http://www.prototypejs.org/&#34;&gt;Prototype&lt;/a&gt; framework.&lt;/p&gt;
+
+&lt;p&gt;I would like to start by addressing my experiences with CoffeeScript. My opinion of it is of ambivalence. I&amp;rsquo;ve used it on a project, I&amp;rsquo;ve played with and in the end I&amp;rsquo;ve come out with the opinion of &amp;ldquo;it&amp;rsquo;s ok&amp;rdquo;. It didn&amp;rsquo;t blow me away, but at the same time I can see why so many people like. It offers some really cool features that I really wish JavaScript had and you can cut down on the amount of code you have to write. On the other hand the apps I tend to write don&amp;rsquo;t tend to be that JavaScript heavy that I really needed to reach out for something like CoffeeScript.&lt;/p&gt;
+
+&lt;p&gt;&lt;img style=&#34;float: left; padding-right: 10px&#34; src=&#34;http://blogs.worldbank.org/files/publicsphere/public%20opinion_JGRNLY.jpeg&#34; alt=&#34;&#34; width=&#34;326&#34; height=&#34;246&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So, how do I feel about CoffeeScript being included with Rails? Well, I&amp;rsquo;ll get to that. Let&amp;rsquo;s go over some of the most common arguments I&amp;rsquo;ve heard from people this week about why they&amp;rsquo;re anti-CoffeeScript in Rails.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;It&amp;rsquo;s an abstraction layer of JavaScript! JavaScript isn&amp;rsquo;t that bad, why can&amp;rsquo;t you just write JavaScript?&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;It&amp;rsquo;s going to be a hinderance to newbies. It&amp;rsquo;ll be too much of a learning curve!&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Let&amp;rsquo;s start with that second point first, shall we? I agree, it does represent a new element that needs to be learned when coming to Rails. But here&amp;rsquo;s the pretty nifty thing about how it&amp;rsquo;s all implemented in Rails. In order to actually use CoffeeScript in Rails you have to create your files named foo.js.coffee if, however, you just name your file foo.js then, guess what? You will have to write plain old JavaScript! Seems like newbies, and those who don&amp;rsquo;t like CoffeeScript, can just keep writing plain old JavaScript without anything stopping them at all.&lt;/p&gt;
+
+&lt;p&gt;Now, let&amp;rsquo;s talk about the abstraction layer argument. Yes, CoffeeScript is an abstraction on top of JavaScript, but let&amp;rsquo;s take a look at a few other parts of the Rails stack and see how they hold up against this argument.&lt;/p&gt;
+
+&lt;p&gt;Here&amp;rsquo;s a fairly common Rails stack:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ActiveRecord&lt;/li&gt;
+&lt;li&gt;Haml&lt;/li&gt;
+&lt;li&gt;jQuery&lt;/li&gt;
+&lt;li&gt;RSpec&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;What do all those things have in common? Well, they&amp;rsquo;re all abstraction layers that sit on top of something else, don&amp;rsquo;t they? Let&amp;rsquo;s look at that list again?&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ActiveRecord - SQL (Structured Query Language)&lt;/li&gt;
+&lt;li&gt;Haml - HTML&lt;/li&gt;
+&lt;li&gt;jQuery - JavaScript, you could just as easily hand roll those AJAX calls in pure JavaScript.&lt;/li&gt;
+&lt;li&gt;RSpec - Test/Unit&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;What I&amp;rsquo;ve found funny about the particular argument is that I&amp;rsquo;ve heard it MOST from those who use things like HAML, which is a DEFINITELY an abstraction layer that sits on top of HTML. See where I&amp;rsquo;m going with this one? Good, I don&amp;rsquo;t want to belabor the point. :)&lt;/p&gt;
+
+&lt;p&gt;So, finally, where do I stand on this whole thing? Well, I view like it Test/Unit and Prototype. Those are both the current standard (although jQuery will replace Prototype in 3.1) and I don&amp;rsquo;t like or use either of them. Instead I configure Rails to use jQuery and RSpec. I don&amp;rsquo;t like Haml, but those that do simply replace ERB with Haml and they move on with their day. So my take is this, it&amp;rsquo;s there, it&amp;rsquo;s included. Use it if you like, or don&amp;rsquo;t. Is it really that big a deal? No, it really isn&amp;rsquo;t. If Rails dropped ERB and went with Haml as the default, would I bitch and moan, probably a bit, but then I&amp;rsquo;d just install the Rails-ERB gem and move on with my day, just like I do with jQuery and RSpec today.&lt;/p&gt;
+
+&lt;p&gt;So sit back, relax, use the libraries that you want to use, Rails let&amp;rsquo;s you do that. Oh, while you&amp;rsquo;re relaxing why not try out CoffeeScript, who knows, you might just enjoy it. Or not.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Testing Tools Aren&#39;t All the Same, Choose Wisely</title>
+      <link>/2011/03/04/407-testing-tools-arent-all-the-same-choose-wisely/</link>
+      <pubDate>Fri, 04 Mar 2011 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2011/03/04/407-testing-tools-arent-all-the-same-choose-wisely/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Testing is painful.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;Testing is hard.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;Testing is complicated.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;Testing is not fun.&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I hear those sorts of things all the time when I talk to people about testing. I agree that sometimes testing can be all of those things, but if you choose the right tools, the tools that best suite you, testing doesn&amp;rsquo;t have to be. Let me give you an example of what I&amp;rsquo;m talking about, how choosing the right tools can make a huge impact on how you feel about testing.&lt;/p&gt;
+
+&lt;p&gt;When working for a client recently I came across the need for end to end integration testing. I needed to test, amongst other things, the flow of a user registering through the application in a few different ways. Because registration behaves differently based on where you come from and where you want to go, I needed a good way to test that entire flow, so simple unit and functional tests just were not going to cut it.&lt;/p&gt;
+
+&lt;p&gt;In the Ruby community there is a big push to use a testing framework called, &lt;a href=&#34;http://cukes.info/&#34;&gt;Cucumber&lt;/a&gt;. Cucumber is a behavior driven development (BDD) tool that let&amp;rsquo;s you write user stories in plain English. Those stories then get translated into Ruby code that tests those stories against your application. Because of it&amp;rsquo;s popularity, and some of it&amp;rsquo;s quite amazing features, this was my first stop on the path to integration testing bliss.&lt;/p&gt;
+
+&lt;p&gt;Let me give you an example of a Cucumber script:&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/854764.js&#34;&gt; &lt;/script&gt;
+
+&lt;p&gt;That script tests the user registration flow through an application in a couple of different ways, first through &amp;lsquo;standard&amp;rsquo; registration, and then through being invited to join. Now, the beauty of Cucumber is that these scripts are &amp;lsquo;human&amp;rsquo; readable. Your product manager, or other stake holders, should be able to write these scripts themselves, and you, the developer, should be able to just plug them in and code until those scripts pass.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, while that sounds like a little slice of Heaven, the reality is far from it in practice. First, getting stake holders to actually write these &amp;lsquo;stories&amp;rsquo;, as their typically called, is a tough chore to begin with. If they do write them, they&amp;rsquo;re typically not going to be &amp;lsquo;plug and play&amp;rsquo;. Why? Well, when Cucumber reads these scripts it goes line by line and tries to find some code that matches the regular expression of that line and then execute it. If it doesn&amp;rsquo;t find matching code, then it fails. That means that your stake holders need to write these scripts in a very particular way or developers need to sit down and massage those stories to fit the correct regular expression.&lt;/p&gt;
+
+&lt;p&gt;Now, let me just take this opportunity to say that this is not a post about how much I hate Cucumber, in fact I think Cucumber is a pretty amazing piece of software, and does in fact have a lot of great uses. Instead, what I&amp;rsquo;m talking about it is how Cucumber turned out not to be the right tool for the job for me on a recent project.&lt;/p&gt;
+
+&lt;p&gt;So why wasn&amp;rsquo;t Cucumber the right tool for the job? Great question, glad you asked. Cucumber turned out not to be the right tool for a few reasons. The biggest of which was that I was the one who was writing the user stories. The stake holders had no desire to write these stories, which meant I had to write them. The I had to write the &amp;lsquo;steps&amp;rsquo; that back each line of the script. In all fairness, Cucumber does give you some great steps right out of the box. After some fiddling I finally got the Cucumber scripts up and running and testing my work flow. But I definitely ran into some issues.&lt;/p&gt;
+
+&lt;p&gt;Because Cucumber isn&amp;rsquo;t pure Ruby I had a hard time doing something as simple as just printing out the request&amp;rsquo;s body and headers without having to write a step that did just that, then add that step to my story, etc&amp;hellip; It&amp;rsquo;s overall fiddlyness and non-intuitive way of doing things caused me a lot of grief and time. And, most importantly, I wasn&amp;rsquo;t really getting the big benefit of Cucumber, stake holder&amp;rsquo;s writing the stories. So I was doing all this work and not getting the benefits of Cucumber.&lt;/p&gt;
+
+&lt;p&gt;So what did I do? I turned to a library called &lt;a href=&#34;https://github.com/cavalle/steak&#34;&gt;Steak&lt;/a&gt;. Steak allows you to write integration tests using pure Ruby and integrates directly in with &lt;a href=&#34;http://relishapp.com/rspec&#34;&gt;RSpec&lt;/a&gt;, my preferred testing framework. With Steak I was able to write my integration tests in just a few minutes.&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/854844.js&#34;&gt; &lt;/script&gt;
+
+&lt;p&gt;While my Steak scripts a bit more wordy and are definitely not &amp;lsquo;human&amp;rsquo; readable and editable by stakeholders, they did achieve my goal of allowing me to write integration tests quickly.&lt;/p&gt;
+
+&lt;p&gt;So here you see I picked a very powerful tool, that has a lot of great benefits, Cucumber, but I picked it for the wrong reasons. I picked it because it was popular, and not because it would help me achieve my goals. If my goals where to have stakeholders write the stories and hand them off to development, than it would&amp;rsquo;ve been a better choice. But in the end my goal was to write integration tests and write them quickly, which is why Steak ended up being the right tool for that job.&lt;/p&gt;
+
+&lt;p&gt;This has all been a really long winded way of saying doing some research before choosing your testing frameworks, or any framework for that matter. Play with it, research it, make sure it meets your goals, not somebody else&amp;rsquo;s. If you choose the right tools then testing doesn&amp;rsquo;t need to be scary, complicated, frustrating, etc&amp;hellip; Testing is a &lt;a href=&#34;/2010/07/01/testing-is-not-an-option/&#34;&gt;requirement&lt;/a&gt; and a must have, so why not make it fun?&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Building Interfaces and Abstract Classes in Ruby</title>
+      <link>/2011/02/07/building-interfaces-and-abstract-classes-in-ruby/</link>
+      <pubDate>Mon, 07 Feb 2011 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2011/02/07/building-interfaces-and-abstract-classes-in-ruby/</guid>
+      <description>&lt;p&gt;So back in the dark ages of my career, pre-2006, I spent a long time coding Java. Yeah, I know, please don&amp;rsquo;t judge. Anyway, In Java, for those of you who are unaware were two constructs that I occasionally wish I had in Ruby, those are &lt;a href=&#34;http://download.oracle.com/javase/tutorial/java/concepts/interface.html&#34;&gt;Interfaces&lt;/a&gt; and &lt;a href=&#34;http://download.oracle.com/javase/tutorial/java/IandI/abstract.html&#34;&gt;Abstract Classes&lt;/a&gt;. The difference between these two constructs is subtle, but important.&lt;/p&gt;
+
+&lt;p&gt;In Java an Interface is a basically a blueprint of methods that the class who implements the Interface needs to implement. For example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;kd&#34;&gt;interface&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;Bicycle&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+
+  &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;changeGear&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;newValue&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+
+  &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;speedUp&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;increment&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+
+  &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;applyBrakes&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;decrement&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;ACMEBicycle&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;implements&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Bicycle&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+
+   &lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;changeGear&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;newValue&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+     &lt;span class=&#34;c1&#34;&gt;// do some work here&lt;/span&gt;
+   &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+
+   &lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;speedUp&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;increment&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+     &lt;span class=&#34;c1&#34;&gt;// do some work here&lt;/span&gt;
+   &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+
+   &lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;applyBrakes&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;decrement&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+     &lt;span class=&#34;c1&#34;&gt;// do some work here&lt;/span&gt;
+   &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Here we have a &lt;code&gt;Bicycle&lt;/code&gt; Interface that says there are three methods that need to be implemented. It is then the responsibility of the &lt;code&gt;ACMEBicycle&lt;/code&gt; class to implement those methods. Now, an Abstract Class in Java is similar to an Interface in that it too is a blueprint of methods that the extending class may or may not need to implement. There in lies one of the differences between the two. Let&amp;rsquo;s take a look at the same example, but this time we want to implement the same behavior of all of our extending classes for the &lt;code&gt;applyBrakes&lt;/code&gt; method:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;kd&#34;&gt;abstract&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;Bicycle&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+
+  &lt;span class=&#34;kd&#34;&gt;abstract&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;changeGear&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;newValue&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+
+  &lt;span class=&#34;kd&#34;&gt;abstract&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;speedUp&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;increment&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+
+  &lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;applyBrakes&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;decrement&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;c1&#34;&gt;// do some work here&lt;/span&gt;
+  &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;ACMEBicycle&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;extends&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Bicycle&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+
+   &lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;applyBrakes&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;decrement&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+     &lt;span class=&#34;c1&#34;&gt;// do some work here&lt;/span&gt;
+   &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;An Abstract Class is a great way to provide a mix of fully implemented methods as well as providing subclasses with a mixture of methods that need to be implemented by the extending class.&lt;/p&gt;
+
+&lt;p&gt;The really powerful part of all of this is two fold. First, the Java compiler will happily yell at you and fail if it finds that you haven&amp;rsquo;t implemented some of the methods that you were told you had to. Second, you can easily see the methods that you need to document right there, you can even copy/paste their definitions right into your class so you can start to fill them out.&lt;/p&gt;
+
+&lt;p&gt;So, how does this bring us over to Ruby? Great question. I&amp;rsquo;d like to take a few moments and explore a few ways we can get some of this power in Ruby.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, or fortunately depending on how you look at it (I see it as a mixed blessing), there is no compiler in Ruby, so we don&amp;rsquo;t really have a good way of having the system yell at us if we don&amp;rsquo;t implement the methods we were supposed to. But, there is still plenty we can do to help those who are implementing our classes both know what they need to implement and to find out what they haven&amp;rsquo;t implemented when their program is executing.&lt;/p&gt;
+
+&lt;p&gt;Here is one implementation on we can gain a bit of that functionality back in Ruby:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span class=&#34;k&#34;&gt;module&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;AbstractInterface&lt;/span&gt;
+
+  &lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;InterfaceNotImplementedError&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;NoMethodError&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+
+  &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;included&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;klass&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;klass&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;send&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;ss&#34;&gt;:include&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;AbstractInterface&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;ss&#34;&gt;:Methods&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;klass&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;send&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;ss&#34;&gt;:extend&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;AbstractInterface&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;ss&#34;&gt;:Methods&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+
+  &lt;span class=&#34;k&#34;&gt;module&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;Methods&lt;/span&gt;
+
+    &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;api_not_implemented&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;klass&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+      &lt;span class=&#34;nb&#34;&gt;caller&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;first&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;match&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;sr&#34;&gt;/in \`(.+)\&amp;#39;/&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+      &lt;span class=&#34;n&#34;&gt;method_name&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;vg&#34;&gt;$1&lt;/span&gt;
+      &lt;span class=&#34;k&#34;&gt;raise&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;AbstractInterface&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;ss&#34;&gt;:InterfaceNotImplementedError&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;new&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;#{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;klass&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt; needs to implement &amp;#39;&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;#{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;method_name&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#39; for interface &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;#{&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;!&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+
+  &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+
+&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+
+&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;Bicycle&lt;/span&gt;
+  &lt;span class=&#34;kp&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;AbstractInterface&lt;/span&gt;
+
+  &lt;span class=&#34;c1&#34;&gt;# Some documentation on the change_gear method&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;change_gear&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;new_value&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;no&#34;&gt;Bicycle&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;api_not_implemented&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+
+  &lt;span class=&#34;c1&#34;&gt;# Some documentation on the speed_up method&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;speed_up&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;increment&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;no&#34;&gt;Bicycle&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;api_not_implemented&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+
+  &lt;span class=&#34;c1&#34;&gt;# Some documentation on the apply_brakes method&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;apply_brakes&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;decrement&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;c1&#34;&gt;# do some work here&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+
+&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+
+&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;AcmeBicycle&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;Bicycle&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;bike&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;AcmeBicycle&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;new&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;bike&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;change_gear&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;# AbstractInterface::InterfaceNotImplementedError: AcmeBicycle needs to implement &amp;#39;change_gear&amp;#39; for interface Bicycle!&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;What we&amp;rsquo;ve done here is to inject a Module into our &lt;code&gt;Bicycle&lt;/code&gt; class to give it a nice error it can raise and a little bit of help building a nice error message for the user. Then in our &lt;code&gt;Bicycle&lt;/code&gt; class we define all the methods we want and in the ones we need the end user to define we can call the &lt;code&gt;api_not_implemented&lt;/code&gt; method and it will raise the &lt;code&gt;AbstractInterface::InterfaceNotImplementedError&lt;/code&gt; error for us.&lt;/p&gt;
+
+&lt;p&gt;We could simplify this a bit by having a nice little helper macro that we can use to build these methods, like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span class=&#34;k&#34;&gt;module&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;AbstractInterface&lt;/span&gt;
+
+  &lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;InterfaceNotImplementedError&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;NoMethodError&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+
+  &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;included&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;klass&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;klass&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;send&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;ss&#34;&gt;:include&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;AbstractInterface&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;ss&#34;&gt;:Methods&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;klass&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;send&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;ss&#34;&gt;:extend&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;AbstractInterface&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;ss&#34;&gt;:Methods&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;klass&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;send&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;ss&#34;&gt;:extend&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;AbstractInterface&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;ss&#34;&gt;:ClassMethods&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+
+  &lt;span class=&#34;k&#34;&gt;module&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;Methods&lt;/span&gt;
+
+    &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;api_not_implemented&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;klass&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;method_name&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kp&#34;&gt;nil&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+      &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;method_name&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;nil?&lt;/span&gt;
+        &lt;span class=&#34;nb&#34;&gt;caller&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;first&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;match&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;sr&#34;&gt;/in \`(.+)\&amp;#39;/&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;method_name&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;vg&#34;&gt;$1&lt;/span&gt;
+      &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+      &lt;span class=&#34;k&#34;&gt;raise&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;AbstractInterface&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;ss&#34;&gt;:InterfaceNotImplementedError&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;new&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;#{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;klass&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt; needs to implement &amp;#39;&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;#{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;method_name&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#39; for interface &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;#{&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;!&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+
+  &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+
+  &lt;span class=&#34;k&#34;&gt;module&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;ClassMethods&lt;/span&gt;
+
+    &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;needs_implementation&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;args&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+      &lt;span class=&#34;nb&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;class_eval&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;define_method&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;|*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;args&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;
+          &lt;span class=&#34;no&#34;&gt;Bicycle&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;api_not_implemented&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+      &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+
+  &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+
+&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+
+&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;Bicycle&lt;/span&gt;
+  &lt;span class=&#34;kp&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;AbstractInterface&lt;/span&gt;
+
+  &lt;span class=&#34;n&#34;&gt;needs_implementation&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;:change_gear&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;:new_value&lt;/span&gt;
+  &lt;span class=&#34;n&#34;&gt;needs_implementation&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;:speed_up&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;:increment&lt;/span&gt;
+
+  &lt;span class=&#34;c1&#34;&gt;# Some documentation on the apply_brakes method&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;apply_brakes&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;decrement&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;c1&#34;&gt;# do some work here&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+
+&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+
+&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;AcmeBicycle&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;Bicycle&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;bike&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;AcmeBicycle&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;new&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;bike&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;change_gear&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;# AbstractInterface::InterfaceNotImplementedError: AcmeBicycle needs to implement &amp;#39;change_gear&amp;#39; for interface Bicycle!&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;That approach certainly makes our code look a bit cleaner, I&amp;rsquo;m not denying that, however it has one really big flaw, at least for me anyway, it doesn&amp;rsquo;t give us a good to place to hang our documentation hat. In the previous approach we had actual methods that we could then document and that documentation would then show up in RDoc when it&amp;rsquo;s outputted. With the latter approach, however, we can document the hell out of the &lt;code&gt;needs_implementation&lt;/code&gt; calls we have in the &lt;code&gt;Bicycle&lt;/code&gt; class, but they won&amp;rsquo;t ever show up in the documentation. That means that users of our library have to crack open the actual code itself to see what it they are expected to implement.&lt;/p&gt;
+
+&lt;p&gt;Another approach we could&amp;rsquo;ve taken, which I bother to demonstrate here as I don&amp;rsquo;t think it offers a better approach is to have the &lt;code&gt;needs_implementation&lt;/code&gt; method collect up the names of those methods and use &lt;code&gt;method_missing&lt;/code&gt; to report that the method needs to be implemented. I mention it here only for completeness, but it definitely is not the best solution to this problem.&lt;/p&gt;
+
+&lt;p&gt;Finally, I would like to note that, as far as I can see, there is no way in Ruby to create a callback hook for when a class has been defined. If there was in fact such a hook we could use to it immediately notify the end user that they have forgotten to implement certain methods. Perhaps in Ruby 2.0??? That&amp;rsquo;s just pure hope on my part.&lt;/p&gt;
+
+&lt;p&gt;That&amp;rsquo;s it. I hope you enjoyed our brief (&lt;em&gt;cough&lt;/em&gt;) look through implementing Interface and Abstract Classes in Ruby. I hope you&amp;rsquo;ve enjoyed it.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;PS, yes, I&amp;rsquo;m aware I didn&amp;rsquo;t talk about multiple vs. single inheritance in either Java or Ruby, nor did I talk about the fact that in Ruby you can&amp;rsquo;t really have Abstract Classes. I thought that was all a bit much for an already rather lengthy post as it was. Perhaps another day. :)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Becoming an &#39;Expert&#39; Developer</title>
+      <link>/2010/11/17/becoming-an-expert-developer/</link>
+      <pubDate>Wed, 17 Nov 2010 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2010/11/17/becoming-an-expert-developer/</guid>
+      <description>&lt;p&gt;Last week I received an email from someone who used to work at a company that I used to work with. I didn&amp;rsquo;t know him, but he knew me through my work at the company, and my other exploits. He sent me an email to say that after a short time with the company he had been laid off, along with half of the development team. He wasn&amp;rsquo;t looking for pity, but rather advice.&lt;/p&gt;
+
+&lt;p&gt;What kind of advice was he asking for, well, he quite simply needed to know how could he become an &amp;lsquo;expert&amp;rsquo; Ruby on Rails developer. First, let me say that this post won&amp;rsquo;t have anything to do with Ruby, Rails, or any other specific programming language. Everything I&amp;rsquo;ll talk about is valid in ANY language on ANY platform. With that disclaimer, let&amp;rsquo;s move on, shall we?&lt;/p&gt;
+
+&lt;p&gt;&lt;img style=&#34;float: left; padding-right: 10px&#34; title=&#34;Monkey&#34; src=&#34;http://herd.typepad.com/.a/6a00d83451e1dc69e2010536ad3deb970b-800wi&#34; alt=&#34;&#34; width=&#34;250&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;While at this company he got introduced to Ruby on Rails and really loved it, coming from a non-Rails background. Since being laid off he&amp;rsquo;s been trying to land another Rails gig, but everyone is looking for &amp;lsquo;expert&amp;rsquo; Rails developers. So the question was, how to become an &amp;lsquo;expert&amp;rsquo; developer?&lt;/p&gt;
+
+&lt;p&gt;I keep putting &amp;lsquo;expert&amp;rsquo; in quotes because, let&amp;rsquo;s be honest here, that&amp;rsquo;s a VERY subjective term. As someone who has hired many developers in his day, I can tell you that I&amp;rsquo;v&lt;/p&gt;
+
+&lt;p&gt;e hired newbies to &amp;lsquo;experts&amp;rsquo; and everywhere in between. Everyone has their merits and possibilities. I&amp;rsquo;ve met &amp;lsquo;experts&amp;rsquo; that I wouldn&amp;rsquo;t hire to take out my trash, let alone build my business. I&amp;rsquo;ve also met people right out of college that I would hire again and again. So your mileage my vary.&lt;/p&gt;
+
+&lt;p&gt;So&amp;hellip; how do you build up that &amp;lsquo;expert&amp;rsquo; reputation? Let&amp;rsquo;s look at it. Below are some of things I&amp;rsquo;ve done, as well as some of the things that I look for as a hiring manager. Some are incredibly easy to do, others require work, but in the end they WILL pay off, and you&amp;rsquo;ll easily be at the head of the pack when going for that job.
+&lt;h3&gt;Build Something&lt;/h3&gt;
+When you are looking for a job people want to see what it is you&amp;rsquo;ve actually built. If you haven&amp;rsquo;t built anything, then how are you an expert? Build a lot of different things and put them up on the web for perspective employers to find and play around with. Use these are a playground for trying out all those cool new technologies you keep hearing about. Want to give NoSQL a try? Great, build an app that uses it. Need to improve your testing chops? Write an application and write all the tests you can possibly think of!
+&lt;h3&gt;Get a GitHub Account&lt;/h3&gt;
+I can&amp;rsquo;t tell you how important GitHub has become when trying to make a name for yourself. It seems like unless you&amp;rsquo;re on GitHub, you&amp;rsquo;re nobody. While that might not be true, it certainly hurts more than it helps to not have an account. You know those apps you&amp;rsquo;ve just been building and playing around with? Post them on GitHub! Then put your profile page link on your resume. Yep, you read that right. Give those looking at your resume a link to your code. Let them see how good a developer you actually are. Show them you know how to code all the things you&amp;rsquo;ve got on your resume. Listing a language, platform, or tool on resume is one thing, but actually showing your perspective employer is another! They&amp;rsquo;ll love it.&lt;/p&gt;
+
+&lt;p&gt;While you&amp;rsquo;re on GitHub, why not contribute to an open source project that&amp;rsquo;s up there. There are plenty of them, and they&amp;rsquo;re ALL looking for people to help out with their projects. Simply fork the projects, make some improvements, and then give those changes back to the projects owner. This looks great on a resume and really helps to show that you are interested and active in the community. Again, employers love this! Plus, you&amp;rsquo;ll be starting to build a name for yourself, and building a network, and a network is INCREDIBLY important when looking for work.
+&lt;h3&gt;Blog and Write&lt;/h3&gt;
+I should probably heed my own advice here and blog more often, but do as I say, not as I do. :) With that said I wrote a book, which looks AMAZING on a resume, but might be a bit out of reach for most people, so I recommend blogging instead. Why should you blog? Well, it shows that you have good communications skills, again very important to most employers. It can also show that you have a deep understanding of whatever it is you blog about.&lt;/p&gt;
+
+&lt;p&gt;What should you write about? If you&amp;rsquo;re stuck on a topic, might I make a recommendation or two. First, when you&amp;rsquo;re building those applications I mentioned early if you run into a bug or something else that got you a bit stuck, blog about it! Others could really benefit from your experience. Explain the problem and how you went about solving it. Another great thing to write about is your favorite libraries or plugins. Pick a different one each week and dissect it. Write about how it works, what it does, etc&amp;hellip; This is a great exercise in both writing and learning about how things work. Very valuable.
+&lt;h3&gt;Network&lt;/h3&gt;
+I mentioned earlier that a good network is INCREDIBLY important when looking for work, and I wasn&amp;rsquo;t lying. It&amp;rsquo;s the most important thing. A good network will constantly be feeding you new opportunities, or putting you in touch with those who can. So how do you develop that network? A few ways, I mentioned contributing to open source earlier, that&amp;rsquo;s a great way. Another great way is through conferences, hackfests, rumbles, and whatever other local (and non-local) events are being held in your development community of choice. Attend these events, participate, introduce yourself, speak, buy drinks, whatever! Just get out there and NETWORK!!
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+The gentleman who emailed me said that he was reading a lot of books in hopes of becoming an &amp;lsquo;expert&amp;rsquo;. While I&amp;rsquo;m not going to tell you not to read books (you should!!), I will tell you that there is no substitute for doing. All of things I&amp;rsquo;ve talked about above are ALL about doing. Reading is not doing, it&amp;rsquo;s reading. It&amp;rsquo;s passive and will not get you further in your career. There&amp;rsquo;s no place on a resume for the books you&amp;rsquo;ve read. Take what you&amp;rsquo;ve read and put it into action, then you&amp;rsquo;ll be on your way to becoming an &amp;lsquo;expert&amp;rsquo; developer.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to Become a Test-driven Developer</title>
+      <link>/2010/10/12/how-to-become-a-test-driven-developer/</link>
+      <pubDate>Tue, 12 Oct 2010 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2010/10/12/how-to-become-a-test-driven-developer/</guid>
+      <description>
+
+&lt;p&gt;In a previous post, &lt;a href=&#34;http://www.metabates.com/2010/07/01/testing-is-not-an-option/&#34;&gt;Testing Is Not An Option&lt;/a&gt;, I talked a lot about why you should write tests, and the arguments you can put forth to your client, manager, or whoever it may be as to why you should write tests. What I didn&amp;rsquo;t talk about was how to start writing tests. So let&amp;rsquo;s talk about that for a bit, shall we?&lt;/p&gt;
+
+&lt;p&gt;When I&amp;rsquo;m talking with a potential client, well at least a client that has an existing code base, I always ask what their code coverage stats are. Now, I know at code coverage stats aren&amp;rsquo;t the be all end all of measuring how good your tests are, but they&amp;rsquo;re a basic enough metric to use as a guide. If they say they&amp;rsquo;re high, then I usually dig in more about how they&amp;rsquo;re testing; what frameworks, BDD, TDD, that sort of thing. Usually though I get a few minutes where they apologize and sheepishly give me their reasons for having little or no tests.&lt;/p&gt;
+
+&lt;p&gt;Here are few of those reasons:
+  * We don&amp;rsquo;t/didn&amp;rsquo;t have the time.
+  * We don&amp;rsquo;t know how.
+  * It was/is too complicated.
+  * It was/is too overwhelming.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s talk about each of this points for a minute.&lt;/p&gt;
+
+&lt;h3 id=&#34;we-don-t-didn-t-have-the-time&#34;&gt;&amp;ldquo;We don&amp;rsquo;t/didn&amp;rsquo;t have the time.&amp;rdquo;&lt;/h3&gt;
+
+&lt;p&gt;I never accept time as an argument against testing. Testing ends up repaying it&amp;rsquo;s time investment, and will ultimately give you more time than if you didn&amp;rsquo;t write code. It&amp;rsquo;s a win-win. Again see my previous post in how to get the time signed off on as part of t he project timeline.&lt;/p&gt;
+
+&lt;h3 id=&#34;we-don-t-know-how&#34;&gt;&amp;ldquo;We don&amp;rsquo;t know how.&amp;rdquo;&lt;/h3&gt;
+
+&lt;p&gt;Learn. There&amp;rsquo;s no better time than the present and no better way to learn than being thrown into the deep end. The web is crawling with documentation, screen casts, how to articles and tutorials, and there are plenty of books to get you going. In short the k knowledge is literally at your finger tips, and to be honest it&amp;rsquo;s easier than you think.&lt;/p&gt;
+
+&lt;h3 id=&#34;it-was-is-too-complicated&#34;&gt;&amp;ldquo;It was/is too complicated.&amp;rdquo;&lt;/h3&gt;
+
+&lt;p&gt;That usually means you&amp;rsquo;re doing i
+t wrong. Take a step back and assess what it is you&amp;rsquo;re trying to do. You&amp;rsquo;re tests should be simple and concise. Don&amp;rsquo;t write tests that are hundreds of lines long. They&amp;rsquo;re tests, not entrance exams to MIT.&lt;/p&gt;
+
+&lt;h3 id=&#34;it-was-is-too-overwhelming&#34;&gt;&amp;ldquo;It was/is too overwhelming.&amp;rdquo;&lt;/h3&gt;
+
+&lt;p&gt;Certainly if you didn&amp;rsquo;t write tests as you went along it can get quite overwhelming thinking about all the tests you now need to write for your monolithic app. I&amp;rsquo;ll talk about how you can solve that problem in a minute.&lt;/p&gt;
+
+&lt;h2 id=&#34;making-it-happen&#34;&gt;Making It Happen&lt;/h2&gt;
+
+&lt;p&gt;Ok, so now that we&amp;rsquo;ve identified a few of the excuses let&amp;rsquo;s talk about how you can starting writing tests today for your application. So, take a deep breath and let&amp;rsquo;s begin.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;rsquo;re staring at an existing application, don&amp;rsquo;t try to tackle it all at once, you&amp;rsquo;ll just get overwhelmed, scared, and confused. Instead take it one file/class at a time. First start with your models, as this is where the majority of your application business logic should be. Alphabetically each day pick the next class (or a couple of them) in the list and start to fill our your test files.&lt;/p&gt;
+
+&lt;p&gt;What do I mean by fill out your tests files, I mean creating pending tests for each of the methods of your model. Here&amp;rsquo;s an example of a basic Ruby* class and what the pending RSpec spec file would look like:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Class:&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;Entity&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;tax_id&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;person?&lt;/span&gt;
+      &lt;span class=&#34;c1&#34;&gt;# code here&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;
+      &lt;span class=&#34;c1&#34;&gt;# code here&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+
+  &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;person?&lt;/span&gt;
+    &lt;span class=&#34;c1&#34;&gt;# code here&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;# Spec:&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;describe&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;Entity&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt;
+  &lt;span class=&#34;n&#34;&gt;describe&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;tax_id&amp;quot;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;it&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;should return a Social Security number if the entity is a Person&amp;quot;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt;
+      &lt;span class=&#34;n&#34;&gt;pending&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;it&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;should return a Tax ID number if the entity is a Corporation&amp;quot;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt;
+      &lt;span class=&#34;n&#34;&gt;pending&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+  &lt;span class=&#34;n&#34;&gt;describe&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;person?&amp;quot;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;it&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;should return true if the entity is a person&amp;quot;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt;
+      &lt;span class=&#34;n&#34;&gt;pending&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;it&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;should return false if the entity is not a person&amp;quot;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt;
+      &lt;span class=&#34;n&#34;&gt;pending&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Notice how the method that has the if/else statement in it has two pending tests for it. We need to test each variation of the method.&lt;/p&gt;
+
+&lt;p&gt;Now when you run your tests you&amp;rsquo;ll see that you have a bunch of pending tests. Great! Now you just need to fill them in, but at least you know what should be filled in.&lt;/p&gt;
+
+&lt;p&gt;I also recommend that you do this every time you create a new method. As soon as you give your method a name go to your corresponding test and create a pending test for that method. This way you know that you have to test that method later. (In a perfect world I would love to see you write your test before returning to your class to fill in the method itself, but baby steps for now.)&lt;/p&gt;
+
+&lt;p&gt;Once you have all your pending tests setup each day try to fill in the details of each pending test for a whole class. If that&amp;rsquo;s too much, then try to set aside an hour a day and fill in as many pending tests as you can. Alternatively you can also fill in the tests during the course of the day as you use one of the methods without tests.&lt;/p&gt;
+
+&lt;p&gt;Another great way to start filling in your test suite is each time you get a new bug, write a test to reproduce it. This is a great habit to get into as you&amp;rsquo;ll eventually have a great suite of regression tests in place to help prevent those nasty bugs from returning. Write the test, see that it fails, then fix your bug. When your teat passes then you know you&amp;rsquo;ve fixed the bug!&lt;/p&gt;
+
+&lt;p&gt;Finally, start small. Start by writing unit tests. These are the types of tests I just described. They test a very particular part of your code base to ensure that it does what it should do. These tests are typically easy to write and act as a great corner stone to your test suite as a whole. Don&amp;rsquo;t try to jump right in with full integration tests. The frameworks typically have a steep learning curve, and are more complicated to get up and running. This will lead to frustration and the old feeling of being overwhelmed. You can add these tests in later as you gain experience.&lt;/p&gt;
+
+&lt;p&gt;Well, there you have it, a few simple tricks to help you get started testing today. I know this post was a bit on the lengthy side, but I&amp;rsquo;m glad you stuck with me. Your life will be better for it. When you have a large and expansive test suite life is just better. Food tastes better. The sky is bluer. There will be a skip in your step. And you can use your incredibly high code coverage stats as a pick up line in a bar. On second thought, scratch that last thought. I wrote a test to see if that would work and it failed. It failed miserably.
+&lt;h6&gt;* Please not that while I use Ruby as the example language here, the concept applies to whatever language you use.&lt;/h6&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>CoverMe – Code Coverage for Ruby 1.9 Reaches RC1</title>
+      <link>/2010/09/30/coverme-%E2%80%93-code-coverage-for-ruby-1-9-reaches-rc1/</link>
+      <pubDate>Thu, 30 Sep 2010 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2010/09/30/coverme-%E2%80%93-code-coverage-for-ruby-1-9-reaches-rc1/</guid>
+      <description>&lt;p&gt;In &lt;a href=&#34;http://www.metabates.com/2010/08/13/coverme-code-coverage-for-ruby-1-9/&#34;&gt;August&lt;/a&gt; I announced &lt;a href=&#34;http://github.com/markbates/cover_me&#34;&gt;CoverMe&lt;/a&gt; a code coverage tool for Ruby 1.9. Well, today I announce that it has hit it&amp;rsquo;s first release candidate! I&amp;rsquo;ve very excited by the fact it&amp;rsquo;s getting close to an &amp;lsquo;official&amp;rsquo; release.&lt;/p&gt;
+
+&lt;p&gt;The response to CoverMe has been great and through feedback from the community I&amp;rsquo;ve made a lot of improvements and fixed a lot of issues.&lt;/p&gt;
+
+&lt;p&gt;While quite a few things have changed under the hood, not much has changed in how you use CoverMe.
+&lt;h2&gt;Installation&lt;/h2&gt;
+The following are instructions for how you would configure CoverMe for a Rails 3 project, adjust to your local environment accordingly.&lt;/p&gt;
+
+&lt;p&gt;In  your Gemfile add the following:
+&lt;pre&gt;gem &amp;lsquo;cover_me&amp;rsquo;, &amp;lsquo;&amp;gt;= 1.0.0.rc1&amp;rsquo;, :group =&amp;gt; :test&lt;/pre&gt;
+Then run:
+&lt;pre&gt;$ bundle install&lt;/pre&gt;
+After CoverMe is installed place the following line at the &lt;strong&gt;&lt;em&gt;VERY TOP&lt;/em&gt;&lt;/strong&gt; of your &amp;lsquo;test_helper.rb&amp;rsquo; or &amp;lsquo;spec_helper.rb&amp;rsquo; file (for Cucumber put it at the top of the &amp;lsquo;env.rb&amp;rsquo; file):
+&lt;pre&gt;require &amp;lsquo;cover_me&amp;rsquo;&lt;/pre&gt;
+I can&amp;rsquo;t emphasize enough how important it is that the require statement is at the &lt;strong&gt;&lt;em&gt;VERY&lt;/em&gt;&lt;/strong&gt; top of that file!&lt;/p&gt;
+
+&lt;p&gt;Finally (and optionally) run:
+&lt;pre&gt;$ rails g cover_me:install&lt;/pre&gt;
+This will simply install a Rake task that will wrap both Test::Unit and RSpec tasks with CoverMe and will launch the results at the end of the test suites. I would recommend it. It&amp;rsquo;s kinda the whole point. :)
+&lt;h2&gt;That&amp;rsquo;s it!&lt;/h2&gt;
+Enjoy the release candidate, and of course, please let me know if you find any issues with it. Issues can be reported on &lt;a href=&#34;http://github.com/markbates/cover_me/issues&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Fixtures v. Factories - Can&#39;t We All Just Get Along?</title>
+      <link>/2010/08/15/fixtures-v-factories-cant-we-all-just-get-along/</link>
+      <pubDate>Sun, 15 Aug 2010 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2010/08/15/fixtures-v-factories-cant-we-all-just-get-along/</guid>
+      <description>&lt;p&gt;Testing in Ruby on Rails is incredibly easy. I mean stupidly easily. So easy that if you&amp;rsquo;re not doing it, you are a very, very bad developer and should re-evaluate your career choices. (Yes, I believe in testing that much!) One thing that is not all that easy, however, is object creation and populating your test database. Five years ago when I first started working with Rails the only options we had to get data into the database were fixtures, or hastily written &amp;lsquo;factory&amp;rsquo;-esque methods custom to each application.&lt;/p&gt;
+
+&lt;p&gt;Fixtures, for those who don&amp;rsquo;t know, are YAML files that contain YAML-ized versions of objects that then get loaded into the test database when you run your test suite. These objects can then be pulled back from the database during your tests. Sounds great, doesn&amp;rsquo;t it? Well, not everybody thinks so. One of the biggest problems with fixtures is they can very quickly get out of control. Keeping track of all the different scenarios your tests needs can get very confusing and frustrating to deal with.&lt;/p&gt;
+
+&lt;p&gt;&lt;img style=&#34;float: left; padding-right: 10px&#34; title=&#34;Factory Workers&#34; src=&#34;http://www.uni.edu/schneidj/webquests/adayinthelife/lotsofworkers.jpg&#34; alt=&#34;&#34; width=&#34;360&#34; height=&#34;283&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So how do we fix this problem? Well, most developers have turned to using factories. Factories allow us to quickly build the data we need for each test, now the building of the data you need for your test is right there in a setup or before method. Easy to manage and keep track of. Now there are a plethora of different factory libraries meant to make this task nicer, a few of the popular ones are &lt;a href=&#34;http://github.com/thoughtbot/factory_girl&#34;&gt;Factory Girl&lt;/a&gt;, &lt;a href=&#34;http://github.com/notahat/machinist&#34;&gt;Machinist&lt;/a&gt;, and &lt;a href=&#34;http://github.com/flogic/object_daddy&#34;&gt;Object Daddy&lt;/a&gt;. The problem with this approach, however, is that it can slow down your tests as you are building database objects for nearly every test, and as we all know, object creation and database inserting can be expensive.&lt;/p&gt;
+
+&lt;p&gt;So, what can we do to help solve both of these problems? Well, we can use both of these technologies. Together. Yeah, that&amp;rsquo;s right I&amp;rsquo;m saying you should use fixtures as well as factories. Sound crazy? Not really. Let me explain.&lt;/p&gt;
+
+&lt;p&gt;Most Rails applications have most, if not all, of their functionality behind a login. So whenever we&amp;rsquo;re testing some controller action that sites behind a login we need a user to login with. If we were using factories we would have a setup or before method that would create a new User object and save it to the database, and it would do that for every variant of the test, as well as every other test in our suite that needs a user object.&lt;/p&gt;
+
+&lt;p&gt;Why not, create one user object and use that repeatedly through our tests? What I like to do is stick one or two users in my fixtures, so that they&amp;rsquo;re there whenever I need one. I like to do this with most of my major models. Then, when I need to have some custom scenarios, I can break out the factories and build those custom scenarios.&lt;/p&gt;
+
+&lt;p&gt;So what does this achieve? Well, I&amp;rsquo;ve sped up my tests by already having a few objects in the database, and not having to create them (and roll them back) with each single test. I&amp;rsquo;ve also cleaned up my tests significantly by eliminating a lot of setup and/or before methods where these objects were being created. I&amp;rsquo;ve also eliminated the biggest problems with fixtures, that they can get overwhelming, because we are only keeping one or two objects in them and using factories for the rest.&lt;/p&gt;
+
+&lt;p&gt;I hoped this helped you to understand that we don&amp;rsquo;t have to throw the baby out with the bath water when it comes to fixtures and factories, we can use both. Not go forth and test! Test like your life depends on it (because it does!!).&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>News on MetaBates.com</title>
+    <link>/tags/news/</link>
+    <description>Recent content in News on MetaBates.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
+    <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
+    <copyright>(c) 2016 Mark Bates.</copyright>
+    <lastBuildDate>Sun, 19 Jun 2011 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/news/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Backup and Bookmark your Tweets with TweetKO.com</title>
+      <link>/2011/06/19/backup-and-bookmark-your-tweets-with-tweetko-com/</link>
+      <pubDate>Sun, 19 Jun 2011 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2011/06/19/backup-and-bookmark-your-tweets-with-tweetko-com/</guid>
+      <description>&lt;p&gt;&lt;img style=&#34;float: left; padding-right: 10px&#34; class=&#34;size-medium wp-image-469&#34; title=&#34;bigbird_sq&#34; src=&#34;/assets/images/2011/06/bigbird_sq-300x300.png&#34; alt=&#34;&#34; width=&#34;300&#34; height=&#34;300&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;UPDATE: Unfortunately TweetKO is no longer available. Sorry about that.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Twitter is an incredibly rich source of information. I find out about new libraries, applications, plugins, screen casts, etc&amp;hellip; But, there&amp;rsquo;s a problem with is overwhelming amount of information&amp;hellip; keeping track of it all. A lot of time I read Twitter when I&amp;rsquo;m on my phone. I&amp;rsquo;ll see a link to an article or website, etc&amp;hellip; but I don&amp;rsquo;t have time to read it then, what do I do? How do I find that tweet later? Or what about that announcement or news link for a new service or application that I saw six months ago? How do I find that again?&lt;/p&gt;
+
+&lt;p&gt;Twitter is great but it&amp;rsquo;s ability to help you find specific tweets that are important to you is almost important. That&amp;rsquo;s why today I&amp;rsquo;m happy to announce TweetKO.com. TweetKO solves this problem by using the built &amp;lsquo;favorite&amp;rsquo; functionality that Twitter offers. From _ANY _Twitter client you can simply mark a tweet as a favorite and TweetKO will pull it in and save it for you so you can find it later.&lt;/p&gt;
+
+&lt;p&gt;That&amp;rsquo;s it! It really is that simple. TweetKO is &lt;em&gt;FREE&lt;/em&gt; and easy to use. In addition to pulling in your favorite tweets you can tell TweetKO to also pull in any tweets you wrote or retweeted, effectively backing up your Twitter history. A powerful search makes finding those tweets simple and easy. Plus you can save those search queries for later use.&lt;/p&gt;
+
+&lt;p&gt;Well, I hope you check out TweetKO.com and find it as useful as I do. Enjoy!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Project, Issue, and Error Tracking United!</title>
+      <link>/2011/04/25/project-issue-and-error-tracking-united/</link>
+      <pubDate>Mon, 25 Apr 2011 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2011/04/25/project-issue-and-error-tracking-united/</guid>
+      <description>&lt;p&gt;&lt;img style=&#34;float: left; padding-right: 10px&#34; class=&#34;size-medium wp-image-437&#34; title=&#34;issue_list_big&#34; src=&#34;/assets/images/2011/04/issue_list_big-300x225.png&#34; alt=&#34;&#34; width=&#34;300&#34; height=&#34;225&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;UPDATE: Unfortunately FluxTracker is no longer available. Sorry about that.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;For the last few years every project or company I&amp;rsquo;ve worked for has started the same way, by setting up Basecamp, Lighthouse and Hoptoad (or similar ones anyway). Why? Basecamp  - so we could share documents and todos. Lighthouse - so we could track our issues and bugs. Hoptoad - so we could track the errors our application was generating.&lt;/p&gt;
+
+&lt;p&gt;These are all very good applications and have served myself and my clients well, but they&amp;rsquo;ve suffered from several very big flaws. The first big flaw was the cost. You can easily drop $100 or more a month across these different services. But that wasn&amp;rsquo;t the biggest flaw or problem I&amp;rsquo;ve had with these services. The biggest problem was lack of integration.&lt;/p&gt;
+
+&lt;p&gt;So what do I mean by lack of integration? Well, when an error comes in I want to easily be able to create a new issue from it. When the issue gets resolved, so should the error. If the error reoccurs it should re-open automatically, and so should the issue. I want to be able to create an issue right from a document or be able to attach issues to a document. I should be able to follow the flow from document to issue to error and back again very easily. Unfortunately, these applications don&amp;rsquo;t give you that level of integration. They offer some level, but just not enough.&lt;/p&gt;
+
+&lt;p&gt;Well, my friends, welcome to the future. Welcome to FluxTracker.com. FluxTracker combines a great issue tracker, a project management system, and an error tracker all in one application. Now you can full integration without any configuration, oh, and you can do it at a fraction of the cost!&lt;/p&gt;
+
+&lt;p&gt;We know it isn&amp;rsquo;t easy to switch to a different application, that&amp;rsquo;s why we&amp;rsquo;ve made it easy for you. You can easily import your Lighthouse account. FluxTracker also allows you to easily use the Hoptoad Notifier plugin for your project by just setting a few configuration parameters.&lt;/p&gt;
+
+&lt;p&gt;So know you know, you&amp;rsquo;re life can be easier. And you now know how easy it is to get started! So what are you waiting for? Go and sign up for our Free plan and start living the dream.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>CoverMe - Code Coverage for Ruby 1.9</title>
+      <link>/2010/08/13/coverme-code-coverage-for-ruby-1-9/</link>
+      <pubDate>Fri, 13 Aug 2010 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2010/08/13/coverme-code-coverage-for-ruby-1-9/</guid>
+      <description>&lt;p&gt;Ruby 1.9(.2) is an amazing language to develop applications in. It&amp;rsquo;s faster, more powerful, cleaner, and a huge improvement over Ruby 1.8.x. Because of those reasons every Ruby developer should move to this exciting new version of our language.&lt;/p&gt;
+
+&lt;p&gt;When making a move of this size it&amp;rsquo;s important to have the right tools to help us along. Unfortunately, one of the most useful tools as a Ruby developer, &lt;a href=&#34;http://github.com/relevance/rcov&#34;&gt;RCov&lt;/a&gt;, does not work with Ruby 1.9.&lt;/p&gt;
+
+&lt;p&gt;RCov, for those unfamiliar analyzes your code and tells you which part of your code was not executed. This is INCREDIBLY useful when hooked up to your test suite. While, it&amp;rsquo;s not the only metric you should use when determining how good your test coverage it, it certainly is a great first step to point out exactly which parts of your code haven&amp;rsquo;t been touched at all!&lt;/p&gt;
+
+&lt;p&gt;Enter &lt;a href=&#34;http://github.com/markbates/cover_me&#34;&gt;CoverMe&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;##History&lt;/p&gt;
+
+&lt;p&gt;While working on a Ruby 1.9/Rails 3 project, and loving everything about it (except for the lack of RCov), I came across a &lt;a href=&#34;http://engineering.attinteractive.com/2010/08/code-coverage-in-ruby-1-9/&#34;&gt;post&lt;/a&gt; by Aaron Patterson (of &lt;a href=&#34;http://github.com/tenderlove/nokogiri&#34;&gt;Nokogiri&lt;/a&gt; fame). In this post he quickly outlined a very basic coverage tool using the new built-in Coverage module in Ruby 1.9.&lt;/p&gt;
+
+&lt;p&gt;After spending a morning playing with it, I was quickly able to grow the idea into something useful for the project. Later that day the company I was consulting for &lt;a href=&#34;http://www.biddingforgood.com&#34;&gt;BiddingForGood.com&lt;/a&gt;, and in particular their chief architect, &lt;a href=&#34;http://twitter.com/stuartmg&#34;&gt;Stuart Garner&lt;/a&gt;, told me to take a day or two and clean it up and release it for the world to use, and so &lt;a href=&#34;http://github.com/markbates/cover_me&#34;&gt;here&lt;/a&gt; it is.
+##Features&lt;/p&gt;
+
+&lt;p&gt;Here is a brief overview of the features of CoverMe:&lt;/p&gt;
+
+&lt;p&gt;###Index Page&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Sortable column headers (File, Lines, Lines of Code, Tested %).&lt;/li&gt;
+&lt;li&gt;Searching/filtering by file name.&lt;/li&gt;
+&lt;li&gt;Filtering by coverage percent.&lt;/li&gt;
+&lt;li&gt;Color coded list of files to quickly see which ones are 100% covered, &amp;gt; 90% covered, or less than 90% covered.&lt;/li&gt;
+&lt;li&gt;Large color coded average coverage percent, for quick reference.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;###Detail Page&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Line by line coverage report&lt;/li&gt;
+&lt;li&gt;Color coded lines to quickly see which lines where executed and which ones were not.&lt;/li&gt;
+&lt;li&gt;Side by side viewing with the corresponding test/spec file (if one exists).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;See the &lt;a href=&#34;http://github.com/markbates/cover_me&#34;&gt;README&lt;/a&gt; file for more information on installation and usage.&lt;/p&gt;
+
+&lt;p&gt;##Thanks&lt;/p&gt;
+
+&lt;p&gt;I would just quickly like to give another quick thanks to Aaron Patterson for pointing out the Coverage module in Ruby 1.9 and inspiring this, hopefully, helpful little gem. Also another big thanks to Stuart Garner for pushing me to package this up and release it to the world.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>APN on Rails has a new Home.</title>
+      <link>/2010/03/10/apn-on-rails-has-a-new-home/</link>
+      <pubDate>Wed, 10 Mar 2010 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2010/03/10/apn-on-rails-has-a-new-home/</guid>
+      <description>&lt;p&gt;Quite often I get asked why don&amp;rsquo;t I blog more? Why don&amp;rsquo;t I tweet more? Why don&amp;rsquo;t I &lt;em&gt;fill in the blank&lt;/em&gt; more. The answer is I&amp;rsquo;m a busy man. I&amp;rsquo;m the CTO for a pre-funding startup, &lt;a href=&#34;http://www.shortbord.com/invites/ZAZLBQH5FA&#34;&gt;www.shortbord.com&lt;/a&gt;, the father of two adorable little boys, the lead singer of a Boston-based band, &lt;a href=&#34;http://www.myspace.com/colawarvets&#34;&gt;www.myspace.com/colawarvets&lt;/a&gt;, and that&amp;rsquo;s just the big stuff! I have to prioritize what I can spend my time on, and unfortunately some of my open source projects are the first to get the ax.&lt;/p&gt;
+
+&lt;p&gt;Why do the open source projects always seem to get the ax? Well, let me start by saying that they don&amp;rsquo;t &lt;em&gt;always&lt;/em&gt; get the ax, but they certainly jump to the top of the list. There are certain libraries I&amp;rsquo;ve written, &lt;a href=&#34;http://github.com/markbates/cachetastic&#34;&gt;cachetastic&lt;/a&gt; and &lt;a href=&#34;http://github.com/markbates/configatron&#34;&gt;configatron&lt;/a&gt;, are the two most prominent that I use day in and day out. They will always get the love the deserve. Then there are projects like APN on Rails. I wrote it because I had an iPhone app (no longer available) that I wanted notifications for, and there was nothing else available for Ruby to do the job. The plugin took off like crazy and I was overwhelmed with patches, questions, bugs, etc&amp;hellip; That was great, and I was happy to help, for a time, but alas, I haven&amp;rsquo;t written an iPhone app for ages, and I just don&amp;rsquo;t have time to maintain a plugin that I wasn&amp;rsquo;t even using.&lt;/p&gt;
+
+&lt;p&gt;A while ago I realized that the best thing for APN on Rails, myself, and for the community was to find someone to take over the project so that it got the love it deserved. I put out the call and the good folks over at &lt;a href=&#34;http://www.prx.org/&#34;&gt;PRX&lt;/a&gt; (Public Radio Exchange) answered the call. The folks at PRX have written some great iPhone apps, including the very popular &amp;ldquo;This American Life&amp;rdquo; app.&lt;/p&gt;
+
+&lt;p&gt;So I&amp;rsquo;m happy to announce that the new official home for APN on Rails is now at: &lt;a href=&#34;http://github.com/PRX/apn_on_rails&#34;&gt;http://github.com/PRX/apn_on_rails&lt;/a&gt;. I ask that you continue to show the same support to PRX that you have shown to me over the life of this plugin.&lt;/p&gt;
+
+&lt;p&gt;Again, thank you to everyone, and thank you to Rebecca Nesson and the folks over at PRX for picking up the project and giving it renewed life.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>First Book Review is a 5-Star One!</title>
+      <link>/2009/11/19/first-book-review-is-a-5-star-one/</link>
+      <pubDate>Thu, 19 Nov 2009 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2009/11/19/first-book-review-is-a-5-star-one/</guid>
+      <description>&lt;p&gt;About.com became the first, that I know about, to review my book, &amp;ldquo;Distributed Programming with Ruby&amp;rdquo;. What a great first review to have as well. They rated the book 5 out of 5 stars! The review can be found &lt;a href=&#34;http://ruby.about.com/od/bookreviews/gr/distributedprogramming.htm&#34;&gt;here&lt;/a&gt;.
+&lt;blockquote&gt;&amp;ldquo;Anyone working with distributed programming in Ruby will want this book.&amp;rdquo;&lt;/blockquote&gt;
+The only downside they saw in the book, was that they wanted it to be longer! I have to save something for the 2nd edition, don&amp;rsquo;t I? :)&lt;/p&gt;
+
+&lt;p&gt;If you haven&amp;rsquo;t purchased yours yet, I encourage you to do so. It&amp;rsquo;s on sale at &lt;a href=&#34;http://book.markbates.com&#34;&gt;Amazon.com&lt;/a&gt; right now.&lt;/p&gt;
+
+&lt;p&gt;If you have reviewed the book, or know of a review of the book, please pass it along.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Introducing Warp Drive for Rails</title>
+      <link>/2009/10/07/introducing-warp-drive-for-rails/</link>
+      <pubDate>Wed, 07 Oct 2009 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2009/10/07/introducing-warp-drive-for-rails/</guid>
+      <description>
+
+&lt;p&gt;At work recently we had a need to build a large Rails application that we then wanted to, for lack of a better word, subclass. Unfortunately there is no real good way of doing that. Rails Engines and templates have way too may limitations. We wanted to bundle up the entire Rails app (models, controllers, views, routes, migrations, configurations, libs, assets, etc&amp;hellip; everything!), but there was no good way of doing that. Well, now there is, it&amp;rsquo;s called the Warp Drive.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve decided to just include my README file below to explain what it is, since it&amp;rsquo;s a bit lengthy, and I don&amp;rsquo;t feel like retyping.&lt;/p&gt;
+
+&lt;p&gt;This is still in it&amp;rsquo;s early stages, so use with care, but it does seem to be working for us on a daily basis. Let me know what you think!&lt;/p&gt;
+
+&lt;h2 id=&#34;what-is-warp-drive&#34;&gt;What is Warp Drive?&lt;/h2&gt;
+
+&lt;p&gt;Warp Drive is what Rails Engines wish they could be, and more! They kick Rails templates in the ass, and they beat keeping an ever evolving base Rails app up to date.&lt;/p&gt;
+
+&lt;h3 id=&#34;what-are-rails-engines&#34;&gt;What are Rails Engines?&lt;/h3&gt;
+
+&lt;p&gt;Rails Engines allow you to package up some of a Rails app (controllers, models, views, routes, libs) and put them in a plugin that can be included into a new Rails app, thereby giving it the functionality you had in the engine. That sounds good, but what about the downsides of using an engine? Well, you can&amp;rsquo;t override or extend any of the functionality from the engine in your main application. You can hack at the plugin, but now you&amp;rsquo;ve made it difficult to update. So what do you do if you want to add or alter a method to a controller or model? What do you do if you want to change the look and feel of a view? You have to copy everything into your main application. Boo!&lt;/p&gt;
+
+&lt;p&gt;Rails Engines also don&amp;rsquo;t allow you to package up migrations, assets, plugins, initializers, etc&amp;hellip; All the fun stuff that you&amp;rsquo;ve come to know and love about a Rails application.&lt;/p&gt;
+
+&lt;h3 id=&#34;enter-the-warp-drive&#34;&gt;Enter the Warp Drive!&lt;/h3&gt;
+
+&lt;p&gt;So what is a Warp Drive? Great question. To put it simply a Warp Drive is a standard, full featured, Rails application that you can easily bundle up into a Ruby Gem, and include into another Rails app. That second Rails app now has all the power of the first Rails. That is all there is to it.&lt;/p&gt;
+
+&lt;h2 id=&#34;creating-a-warp-drive&#34;&gt;Creating a Warp Drive.&lt;/h2&gt;
+
+&lt;p&gt;Let&amp;rsquo;s assume we have an application that implements AuthLogic for handling user registration/authentication. We have controllers, views, models, plugins, initializers, configurations, migrations, tasks, etc&amp;hellip; it&amp;rsquo;s a full featured fully functional Rails application, we call it authenticator.&lt;/p&gt;
+
+&lt;p&gt;We want to turn our authenticator application into a Warp Drive. We can do it in three simple steps, the first two steps you only need to do the first time, to set everything up.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;$ gem install warp_drive&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ warpify&lt;/code&gt; That will add a little bit of code to your &lt;code&gt;Rakefile&lt;/code&gt;. That code simply requires the Warp Drive gem, and gives you hooks to configure the gem of your Warp Drive application.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ rake warp_drive:compile&lt;/code&gt; (&lt;code&gt;$ rake warp_drive:install&lt;/code&gt;) This will either compile your gem for your (&lt;code&gt;warp_drive:compile&lt;/code&gt;) or compile and install your gem (&lt;code&gt;warp_drive:install&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;That&amp;rsquo;s it! You should now have your Rails application bundled up and/or installed as a RubyGem!&lt;/p&gt;
+
+&lt;h2 id=&#34;using-a-warp-drive&#34;&gt;Using a Warp Drive.&lt;/h2&gt;
+
+&lt;p&gt;With your fancy new Warp Drive, authenticator, built and installed how do you use it in that new application your building? Again, it&amp;rsquo;s stupid easy, and it only takes one step, that only needs to be run once:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;$ install_warp_drive authenticator&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;That will put a few lines of code in your &lt;code&gt;Rakefile&lt;/code&gt;, so you have access to all the &lt;code&gt;Rakefile&lt;/code&gt; tasks in your Warp Drive, and a line in your &lt;code&gt;config/environment.rb&lt;/code&gt; so that it will load your Warp Drive when you launch your application.&lt;/p&gt;
+
+&lt;p&gt;That&amp;rsquo;s it! You&amp;rsquo;re done. Now you can run &lt;code&gt;rake db:migrate&lt;/code&gt; to run the migrations from both your Warp Drive and your new application. Enjoy!&lt;/p&gt;
+
+&lt;h2 id=&#34;overriding-extending-and-other-such-fun-things&#34;&gt;Overriding, Extending, and Other Such Fun Things&lt;/h2&gt;
+
+&lt;h3 id=&#34;overriding-and-extending&#34;&gt;Overriding and Extending&lt;/h3&gt;
+
+&lt;p&gt;You&amp;rsquo;ve been enjoying your new Warp Drive back application for a little while now, but you decide you really need to change an action in your controller, how do you go about that? Simple, just like you would any normal alteration to a Ruby class.&lt;/p&gt;
+
+&lt;p&gt;Example:
+Here is what the action looks like in our Warp Drive UsersController:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;new&lt;/span&gt;
+  &lt;span class=&#34;vi&#34;&gt;@user&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;User&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;new&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;In our new application we can just open up the UsersController like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;UsersController&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;ApplicationController&lt;/span&gt;
+
+  &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;new_with_default_name&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;new_without_default_name&lt;/span&gt;
+    &lt;span class=&#34;vi&#34;&gt;@user&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;login&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;default_name&amp;#39;&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+
+  &lt;span class=&#34;n&#34;&gt;alias_method_chain&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;:new&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;:default_name&lt;/span&gt;
+
+&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Viola! The same works for any thing else in the system, models, libs, etc&amp;hellip; In our example we used &lt;code&gt;alias_method_chain&lt;/code&gt; to retain the original method, but we could have completely rewritten the method as well.&lt;/p&gt;
+
+&lt;p&gt;You can also plop in a new view and it will override the view that was in your Warp Drive. The sky is really the limit.&lt;/p&gt;
+
+&lt;h3 id=&#34;assets&#34;&gt;Assets&lt;/h3&gt;
+
+&lt;p&gt;You can easily bundle assets from your public directory in your Warp Drive. Just make sure they are in folders called &lt;code&gt;warp_drive&lt;/code&gt;. Those folders will then be symlinked to your new project&amp;rsquo;s public directory when the application starts up.&lt;/p&gt;
+
+&lt;h3 id=&#34;keep-those-rake-tasks-private&#34;&gt;Keep Those Rake Tasks Private!&lt;/h3&gt;
+
+&lt;p&gt;We all them, Rake tasks we have created to help us do all sorts of things, and we usually don&amp;rsquo;t want them to ship. Well, Warp Drive has you covered there. Just place your tasks in folders called &lt;code&gt;private&lt;/code&gt; and Bob&amp;rsquo;s your uncle they won&amp;rsquo;t be available in the compiled gem.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span class=&#34;n&#34;&gt;lib&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;
+  &lt;span class=&#34;n&#34;&gt;tasks&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;foo&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;rake&lt;/span&gt;
+    &lt;span class=&#34;kp&#34;&gt;private&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;
+      &lt;span class=&#34;n&#34;&gt;bar&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;rake&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;In this example &lt;code&gt;foo.rake&lt;/code&gt; will be available to clients of your Warp Drive, but &lt;code&gt;bar.rake&lt;/code&gt; will not be.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>APN on Rails 0.3.0 Released</title>
+      <link>/2009/07/31/apn-on-rails-0-3-0-released/</link>
+      <pubDate>Fri, 31 Jul 2009 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2009/07/31/apn-on-rails-0-3-0-released/</guid>
+      <description>&lt;p&gt;The latest version of Apple Push Notifications on Rails (APN on Rails) has been released. This release brings a few bug fixes, a new migration, and Feedback processing.&lt;/p&gt;
+
+&lt;p&gt;Installing/upgrading is easy:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ sudo gem install apn_on_rails
+$ ruby script/generate apn_migrations
+$ rake db:migrate
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s important to always run the migrations generator after each update to get the latest database schema needed for the the gem.&lt;/p&gt;
+
+&lt;p&gt;To use the new Feedback integration you have to first make sure that you update the new &lt;code&gt;last_registered_at&lt;/code&gt; column when your iPhone application calls home. This column is checked against the timestamp Apple returns with the device token. If the &lt;code&gt;last_registered_at&lt;/code&gt; is older than Apple&amp;rsquo;s date then the device is deleted, otherwise the Feedback is ignored.&lt;/p&gt;
+
+&lt;p&gt;To get and process the list of devices from Apple&amp;rsquo;s Feedback service just run the following Rake task:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ rake apn:feedback:process&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Enjoy!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Almost There... Book Wise.</title>
+      <link>/2009/07/27/almost-there-book-wise/</link>
+      <pubDate>Mon, 27 Jul 2009 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2009/07/27/almost-there-book-wise/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m now entering the home stretch of writing the Distributed Programming with Ruby book. I&amp;rsquo;m just a few weeks away, well, technically I&amp;rsquo;m hours away from finishing the last chapter (Delayed Job) in the official table of contents, however, I&amp;rsquo;m going to add another chapter and a half. Why? Mostly because I&amp;rsquo;m a glutton for punishment. That and I want to deliver the best book possible. The extra chapter and a half, not featured in the table of contents below, will be on MapReduce technologies. It&amp;rsquo;s a really hot topic, and I think it will fit well in the book. What do you think?&lt;/p&gt;
+
+&lt;p&gt;&lt;del datetime=&#34;2009-07-29T03:01:37+00:00&#34;&gt;Unfortunately, the &amp;ldquo;Rough Cuts&amp;rdquo; book on O&amp;rsquo;Reilly&amp;rsquo;s Safari site hasn&amp;rsquo;t been updated in nearly 3 months! I&amp;rsquo;m not sure why. I keep asking my editor to update it, but it hasn&amp;rsquo;t happened yet. I&amp;rsquo;m sure it will soon, especially since the first draft of the entire manuscript will be done in just a few weeks!&lt;/del&gt;&lt;/p&gt;
+
+&lt;p&gt;UPDATE: Today they updated the &amp;ldquo;Rough Cuts&amp;rdquo; with nearly the latest revisions. It&amp;rsquo;s still missing the chapters on Delayed Job and BackgrounDRb, but it&amp;rsquo;s closer than it was yesterday.&lt;/p&gt;
+
+&lt;p&gt;Anyway, as a public service announcement to you, the readers, I thought I would the table of contents as it stands right now, so you have a better idea of what the book is going to be about. So here it goes:&lt;/p&gt;
+
+&lt;script src=&#34;http://gist.github.com/156861.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;What do you think? Does it look good? Is this something you&amp;rsquo;d buy? Let me know. This is your chance to have an influence on a book. If you think something is missing or should be laid out differently, please let me know, it might just make it into the final product.&lt;/p&gt;
+
+&lt;p&gt;Ok, enough delaying here, let me get back to writing so I can finish up the Delayed Job chapter.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Apple Push Notifications on Rails</title>
+      <link>/2009/07/24/apple-push-notifications-on-rails/</link>
+      <pubDate>Fri, 24 Jul 2009 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2009/07/24/apple-push-notifications-on-rails/</guid>
+      <description>&lt;p&gt;The other night I submitted a new iPhone application to the Apple Store. The app, which I&amp;rsquo;ll speak about when, and if it gets approved, uses the new Apple Push Notification service available in iPhone OS 3.0. On the server side I have a Rails application that I am using to send the notifications to Apple. The problem I ran into was how.&lt;/p&gt;
+
+&lt;p&gt;Enter the APN on Rails gem. While searching I found one plugin for Rails that mostly worked for me, Sam Soffes&amp;rsquo; apple_push_notification plugin. It was a great place to start, but I found that there were things that didn&amp;rsquo;t suite me. For starters, not having any tests is always a big turn off for me when it comes to any code. I also didn&amp;rsquo;t like that you didn&amp;rsquo;t need to save a notification in order to send it. That means you don&amp;rsquo;t have a record of what was sent and when. I also wanted to have devices stored separately from the notification. Finally, I wanted to be able to easily configure the plugin. Sam&amp;rsquo;s was using constants that would need to be changed when it hit production.&lt;/p&gt;
+
+&lt;p&gt;So, with all that said and done I took Sam&amp;rsquo;s great work, ripped it apart, and put it back together again, this time in gem form instead of a plugin, and here it is.&lt;/p&gt;
+
+&lt;p&gt;There are a few migrations, a few models, and a few Rake tasks, but here is the basic idea of how it works:&lt;/p&gt;
+
+&lt;script src=&#34;http://gist.github.com/154516.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;To get a better understanding of exactly how it works, and what it does, I highly recommend reading the &lt;a href=&#34;http://apnonrails.metabates.com/&#34;&gt;RDOC&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;There are a few things I still would like to add, for example, a controller to do CRUD for devices so iPhones can register with the Rails app. I&amp;rsquo;d also like to add a task that talks to Apple and finds out which devices are no longer accepting messages so they can be removed.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;rsquo;d like to contribute, please feel free and for the project on GitHub:
+&lt;a href=&#34;http://github.com/markbates/apn_on_rails/tree&#34;&gt;http://github.com/markbates/apn_on_rails/tree&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Again, a special thanks to Fabien Penso and Sam Soffes for their initial work on this project.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Evolving Table of Contents</title>
+      <link>/2009/06/20/the-evolving-table-of-contents/</link>
+      <pubDate>Sat, 20 Jun 2009 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2009/06/20/the-evolving-table-of-contents/</guid>
+      <description>&lt;p&gt;For those of you who have checked out the Rough Cuts version of my book, &amp;ldquo;Distributed Programming with Ruby&amp;rdquo;, I thought you would like to get a peek into how the Table of Contents is going to change shortly. For those of you who haven&amp;rsquo;t seen the old Table of Contents, or are just plain old interested to see what&amp;rsquo;s going to be in the book, or to see how far along with the book I am, here is the current Table of Contents as of tonight:&lt;/p&gt;
+
+&lt;script src=&#34;http://gist.github.com/133394.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;As you can see it has evolved quite a bit from what was posted on Rough Cuts just about a month ago. Chances are that it will probably change again, and as it does, I&amp;rsquo;ll try and keep you all posted. There is talk of adding a large chapter at the end that takes a handful of the technologies I discuss in the book and use them to build a &amp;ldquo;real world&amp;rdquo; example application, like a Twitter clone, or something like that. If anyone has any good ideas on what they would like to see for this example, please them my way, I&amp;rsquo;d love to hear them.&lt;/p&gt;
+
+&lt;p&gt;If there are no sections listed below a particular chapter that means that I have either not written it yet, or I&amp;rsquo;m still too early in that chapter&amp;rsquo;s development to have properly assigned it actual sections.&lt;/p&gt;
+
+&lt;p&gt;The first draft of the book is slated for the end of July. So there is still a lot of work to be done, but it&amp;rsquo;s still rather exciting. Well, it&amp;rsquo;s exciting for me at least. Talk to you all soon.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Cachetastic 3.0.0 Released</title>
+      <link>/2009/06/18/cachetastic-3-0-0-released/</link>
+      <pubDate>Thu, 18 Jun 2009 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2009/06/18/cachetastic-3-0-0-released/</guid>
+      <description>&lt;p&gt;After more than two years powering production level applications I found that Cachetastic was starting to get a bit long in the tooth. I felt that there was a lot I could to make Cachetastic an even better library than it already was. I thought that I had added a bunch of cruft to the framework that people were just not using and maintaining it all seemed like a bit of a pointless chore.&lt;/p&gt;
+
+&lt;p&gt;So what was I unhappy about?
+&lt;h3&gt;Configuration:&lt;/h3&gt;
+I was pretty unhappy with the way configuration was being done. I liked using Configatron to power the configuration, but I didn&amp;rsquo;t like the way I implemented the way I was using Configatron. For example, to set up one of the default settings, like the expiry time, you would configure it like such:
+&lt;pre&gt;configatron.cachetastic_default_options.expiry_time = 30.minutes&lt;/pre&gt;
+Now you would configure that same option like this:
+&lt;pre&gt;configatron.cachetastic.defaults.expiry_time = 30.minutes&lt;/pre&gt;
+That&amp;rsquo;s a little savings, but it really hits when you want to configure a particular cache. Let&amp;rsquo;s say we a cache called My::Super::AwesomeCache, to configure it in past versions of Cachetastic we would do this:
+&lt;pre&gt;configatron.my_super_awesome_cache_options.expiry_time = 15.minutes&lt;/pre&gt;
+Now in Cachetastic 3.0.0 we configure like this:
+&lt;pre&gt;configatron.cachetastic.my.super.awesome_cache.expire_time = 15.minutes.&lt;/pre&gt;
+As you can see all configuration now happens under the cachetastic namespace in Configatron. Then it&amp;rsquo;s a matter of using a Configatron namespace for each of your modules. I find it a lot easier to manage.&lt;/p&gt;
+
+&lt;p&gt;Another change in configuration is that in previous versions if you wanted to override one default configuration value for a particular cache,  you had to override them all. Now, you can just override the one value  you want, and the rest will be nicely inherited from the defaults.
+&lt;h3&gt;Speed&lt;/h3&gt;
+Cachetastic has always been a very fast library, but I knew that more could be squeezed from that stone. With Cachetastic 3.0.0 you now get a hefty 25% improvement in the Memcached adapter and a whopping 99% in the LocalMemory adapter! Those are pretty awesome numbers. These numbers were easy to achieve when I stepped back and examined what it was I really wanted to do, and picked the most straightforward path to that goal.
+&lt;h3&gt;Bloat&lt;/h3&gt;
+After more than two years Cachetastic was starting to suffer from a severe case of bloat. For example, I&amp;rsquo;ve never used the DRb adapter, have you? So why is it there? The same goes for the HtmlFile adapter. I wrote that because at my last job the operations team weren&amp;rsquo;t savvy  enough to be able to get Apache to talk to Memcached, so they wanted to serve HTML files, hence the rather awful adapter. Both of those adapters are now history.&lt;/p&gt;
+
+&lt;p&gt;There also used to be support for Rails Session Caching. Considering that most people are now using the Cookie store for sessions, there really is no need for this cache. It could also be argued that it should not have been bundled with Cachetastic at all. I would agree with those arguments. Cachetastic is, and should always be, a standalone caching framework, that can be plugged into Rails or any plain old Ruby project that needs caching support.&lt;/p&gt;
+
+&lt;p&gt;Also purged is automatic support for mixing in the Cachetastic::Cacheable module into ActiveRecord. If you want this functionality, it is very easy to include in your application. I don&amp;rsquo;t want to force it on anyone, so that is gone now.&lt;/p&gt;
+
+&lt;p&gt;Finally there are a handful of smaller features that I&amp;rsquo;m sure no one will miss that I&amp;rsquo;ve yanked out in the name of performance, reliability, and ease of maintenance.
+&lt;h3&gt;Nice and Clean&lt;/h3&gt;
+When I realized what I really wanted, and what I didn&amp;rsquo;t want, it became clear that what was needed was a fresh code base. With that said, I hit delete (well, not really) and started over again. The code is now smooth, so much easier to read, and fast. In previous versions even my eyes went a bit crossed when I tried to figure out exactly what was going on. There where quite a few levels of indirection, and things just weren&amp;rsquo;t place where they probably should&amp;rsquo;ve been. That has all been fixed.&lt;/p&gt;
+
+&lt;p&gt;With a nice, clean code base comes a brand new set of tests. The tests are now extremely comprehensive, and while 2.x was very well tested, I know that 3.0.0, is tested to the hilt.&lt;/p&gt;
+
+&lt;p&gt;Because 3.0.0 is a brand new code base, I should probably stress the fact that is &lt;strong&gt;NOT&lt;/strong&gt; backward compatible. So please be advised.
+&lt;h3&gt;Installation:&lt;/h3&gt;
+&lt;pre&gt;$ sudo gem install cachetastic&lt;/pre&gt;
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+I really hope everyone likes this brand new version of Cachetastic. I&amp;rsquo;m very happy with it, and I think if you give it a chance, you will be too.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;rsquo;d like to have a peek at the RDoc, it can be found at:
+&lt;a href=&#34;http://cachetastic-api.mackframework.com/&#34;&gt;http://cachetastic-api.mackframework.com/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Distributed Programming with Ruby Book Update</title>
+      <link>/2009/05/22/distributed-programming-with-ruby-book-update/</link>
+      <pubDate>Fri, 22 May 2009 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2009/05/22/distributed-programming-with-ruby-book-update/</guid>
+      <description>&lt;p&gt;Hey there folks, I know it&amp;rsquo;s been awhile, so I thought I would give you all a very quick update as to how the book is going. It&amp;rsquo;s going really well. I&amp;rsquo;m about 100 pages into it, and it&amp;rsquo;s shaping up very nicely. Addison-Wesley is preparing to put it into their &amp;ldquo;Rough Cuts&amp;rdquo; program so you can all get your dirty little hands on what I&amp;rsquo;ve written so far as early as a few weeks from now, or so I&amp;rsquo;m told.&lt;/p&gt;
+
+&lt;p&gt;While I don&amp;rsquo;t want to give too much away about the contents, everybody loves a good surprise, let me say that part one of the book will be the most comprehensive guide to DRb and Rinda that you&amp;rsquo;ll find anywhere. Including the source code!!&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m working hard on part two of the book which focuses on third party tools, frameworks, and libraries. It&amp;rsquo;s quite a fun part of the book to write as there are a great deal of choices out there, including my own Distribunaut. (PS. I released a new version of it on GitHub a week or so ago.) Writing about different libraries is quite fun as I get to really delve into the source code and see the good and bad ways people like to write code. Plus some of the libraries have really great features, or really turn things on their head.&lt;/p&gt;
+
+&lt;p&gt;When the book is available as a &amp;ldquo;Rough Cut&amp;rdquo;, I&amp;rsquo;ll certainly keep you all informed. In the mean time keep watching this space and have a great weekend!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Thank you.</title>
+      <link>/2009/03/04/thank-you/</link>
+      <pubDate>Wed, 04 Mar 2009 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2009/03/04/thank-you/</guid>
+      <description>&lt;p&gt;It is with a sad and heavy heart that this evening I announce that I will no longer be developing the Mack Framework. The project, started a year ago, and has been source of great pride, joy, and at times frustation. Of all the projects I have ever worked on, this one was definitely closest to my heart.&lt;/p&gt;
+
+&lt;p&gt;The decision to stop working on Mack was something I did not take lightly. If I had my druthers, and plenty of free time and a source of funding, I most certainly would continue on working on it. However, reality has a different way of plenty out.&lt;/p&gt;
+
+&lt;p&gt;When I first started developing Mack the company I was working for at the time was frustrated with the pains and shortcomings of Rails. It was the right platform for the company when we started, however, two years in a start up is a life time and the company took many twists and turns, that lead us to the path of seeking an alternative platform to Rails. At the time Merb was not a serious contender, and there was little else out there that was looking to satisfy the needs we had. Enter Mack. I spent nearly 10 months developing Mack for that company. We rolled out several Mack applications. It worked really well for what we wanted it to do.&lt;/p&gt;
+
+&lt;p&gt;Again, however, reality came into play. The company was forced to lay off nearly 50% of its staff, and I was one of them. I quickly took a position as the Director of Engineering for another startup in Boston. This shop, too, is a Rails shop. The difference between the two companies is that for the company I work for now Rails is the right solution. This means that I am spending my days working with Rails, and not developing Mack.&lt;/p&gt;
+
+&lt;p&gt;At night and on the weekends I like to spend time with my wife and my son. I play in a band, &lt;a href=&#34;http://www.thebluewires.com&#34;&gt;www.thebluewires.com&lt;/a&gt;, and I am working on a book for Addison-Wesley entitled, &amp;ldquo;Distributed Programming with Ruby&amp;rdquo;. I&amp;rsquo;m a busy man, and Mack is a big project. You can&amp;rsquo;t successfully write a web framework part time. Especially when that part time is really more like part-part time. You need to be able to put dedicated full time resources onto a project of that scale, and I just don&amp;rsquo;t have the time to do it.&lt;/p&gt;
+
+&lt;p&gt;Would I love to see the project continue? Certainly. If there is someone out there who wants to take it on, please let me know. I would love to see it grow. There is so much I wanted to do with it. So many great ideas.&lt;/p&gt;
+
+&lt;p&gt;Now, for the good news, I am planning to port a bunch of the Mack functionality over to the Rails 3 platform. The obvious one being the mack-distributed package which is a key differentiator between Mack and the other Ruby frameworks. Another package I think worthy of migration is mack-notifier, which provides, in my opinion, a really nice clean API for doing notifications, whether they be email, Jabber, SMS, etc&amp;hellip; I also really like the mack-data_factory package. It provides an ORM agnostic way to do great data factories for testing. Finally there are some routing improvements that I think Rails could really benefit from, as well as a few other bits and bobs here and there.&lt;/p&gt;
+
+&lt;p&gt;I wish to thank everyone who has supported this project over the year. A few key people I think that deserve a special call out are: Darsono Sutedja (the second biggest contributed to Mack), Gerardo Pis-Lopez (the third biggest contributor), and Greg Arsenault (my previous boss who fought for me to develop Mack). If there was such a thing as the Mack Core Team, those guys would be it. I would also like to thank people like Peter Cooper, Gregg Pollack, Adam French, Dan Kubb, and everyone else who either opened a Lighthouse ticket, submitted a patch, wrote a blog entry about Mack, or who was just there for support and guidance over the past year.&lt;/p&gt;
+
+&lt;p&gt;I am going to keep www.mackframework.com around as a forum for my other projects, such as Cachetastic and Configatron, and the other projects I have brewing. Expect some cool new projects out of me in 2009, include some iPhone projects that I&amp;rsquo;m excited about undertaking. I will be releasing the last version of Mack by the end of the month. It will essentially be a few bug fixes, an upgrade of DataMapper, and Sass support.&lt;/p&gt;
+
+&lt;p&gt;To summarize, thank you everyone. I appreciate your support and I look forward to contributing to the community in new and exciting ways.&lt;/p&gt;
+
+&lt;p&gt;Thank you.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Configatron 2.2.0 Released, now with Ruby 1.9 and JRuby support!</title>
+      <link>/2009/01/01/configatron-220-released-now-with-ruby-19-and-jruby-support/</link>
+      <pubDate>Thu, 01 Jan 2009 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2009/01/01/configatron-220-released-now-with-ruby-19-and-jruby-support/</guid>
+      <description>&lt;p&gt;Happy New Year everyone!&lt;/p&gt;
+
+&lt;p&gt;With the help of the absolutely amazing &lt;a href=&#34;http://blog.robseaman.com/2008/12/20/switching-between-ruby-1-8-1-9-with-multiruby&#34;&gt;multiruby&lt;/a&gt; library and an edge version of rspec from GitHub, the latest version of Configatron now supports JRuby 1.1.6 and Ruby 1.9.1rc1. There are no other functional changes to the library, so it&amp;rsquo;s a full drop in replacement for vesion 2.1.6.&lt;/p&gt;
+
+&lt;p&gt;I highly encourage everyone to checkout multiruby and start upgrading their libraries so we can all move to 1.9 quicker, which means more speed and more power. Once we&amp;rsquo;re all in 1.9 land we can really make use of some of the amazing features it provides.&lt;/p&gt;
+
+&lt;p&gt;Anyway, I&amp;rsquo;ll be working on upgrading all my libraries and applications to work on 1.8 and 1.9, and hopefully JRuby, over the next couple of months. So be on the look out for a new versions of Cachetastic, Genosaurus update: &lt;em&gt;Genosaurus already works with 1.9 and JRuby. Hoorah!&lt;/em&gt;, and, of course, Mack.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

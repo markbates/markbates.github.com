@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Delayed Job on MetaBates.com</title>
+    <link>/tags/delayed-job/</link>
+    <description>Recent content in Delayed Job on MetaBates.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
+    <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
+    <copyright>(c) 2016 Mark Bates.</copyright>
+    <lastBuildDate>Mon, 07 Sep 2009 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/delayed-job/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>A Few Rails Nuggets</title>
+      <link>/2009/09/07/a-few-rails-nuggets/</link>
+      <pubDate>Mon, 07 Sep 2009 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2009/09/07/a-few-rails-nuggets/</guid>
+      <description>&lt;p&gt;So with my book, &lt;a href=&#34;http://my.safaribooksonline.com:80/9780321669919&#34;&gt;Distributed Programming with Ruby&lt;/a&gt;, finally finished, and a nice long weekend I was able to sit down and work on a little pet project of mine. I decided to work on a little site that I could use to track my rather large Pez collection. (Yes, I know, I collect Pez - so what!)&lt;/p&gt;
+
+&lt;p&gt;While working on it I got to use some new technologies that I really haven&amp;rsquo;t had a chance to play, so I thought I would talk a bit about some of the ones I liked the most.
+&lt;h3&gt;Authlogic&lt;/h3&gt;
+Love it! Finally a decent authentication system! The thing I love most about it? It doesn&amp;rsquo;t generate a lot of crap in your project. If I were to say one bad thing about it, it would be that it doesn&amp;rsquo;t generate enough in your project. :) I know that sounds silly, but it&amp;rsquo;s the truth. It gives you so much power, without having to generate a ton of lib code and crazy controller code, which is awesome. However, it would be nice if it had a generator that generated a &amp;lsquo;basic&amp;rsquo; application for you. Just a little thing, apart from that, love it!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://github.com/binarylogic/authlogic/tree/master&#34;&gt;http://github.com/binarylogic/authlogic/tree/master&lt;/a&gt;
+&lt;h3&gt;Cucumber/Webrat&lt;/h3&gt;
+I&amp;rsquo;m sure by now everyone has heard of Cucumber. I&amp;rsquo;m not going to pretend that I&amp;rsquo;m the first to that party! Over the last month or so I&amp;rsquo;ve really started to use it and it has completely changed my life. That&amp;rsquo;s not an overstatement.&lt;/p&gt;
+
+&lt;p&gt;Cucumber lets you write features and scenario in human readable format. Combine that with Webrat, which lets you do things like click buttons and follow links, you can write some amazing tests that look like something a project manager would write! Brilliant!&lt;/p&gt;
+
+&lt;p&gt;These tests beat the hell out of Rails integration tests. Trust me! I love watching Cucumber and Webrat click around my site while I just watch.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://cukes.info/&#34;&gt;http://cukes.info/&lt;/a&gt;
+&lt;a href=&#34;http://github.com/brynary/webrat/tree/master&#34;&gt;http://github.com/brynary/webrat/tree/master&lt;/a&gt;
+&lt;h3&gt;Web App Theme Generator&lt;/h3&gt;
+This cool little plugin helps you to quickly generate a very useful, and laid out, theme for your application. The themes would be familiar to anyone who has used sites like Lighthouse. They&amp;rsquo;re basic, but they are very well coded and get you on your quickly so you can have something that looks fairly decent.&lt;/p&gt;
+
+&lt;p&gt;My only gripe with this plugin is that it is a bit clumsy to use, but thankfully you don&amp;rsquo;t have to run it very often, only when you create a new controller/resource.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://gravityblast.com/2009/07/30/2-minutes-admin-layout-with-rails-and-the-web-app-theme-generator/&#34;&gt;http://gravityblast.com/2009/07/30/2-minutes-admin-layout-with-rails-and-the-web-app-theme-generator/&lt;/a&gt;
+&lt;h3&gt;Delayed Job&lt;/h3&gt;
+The last piece of tech is Delayed Job. I first discovered Delayed Job when I wrote about it in my &lt;a href=&#34;http://my.safaribooksonline.com:80/9780321669919&#34;&gt;book&lt;/a&gt;. It is a great way to handle and process background tasks. It&amp;rsquo;s easy, reliable, and scales really well. I&amp;rsquo;ve been using the Collective Idea fork of the project. It has a generator to create the migration you need. It also has a nice binary to run in the background on your server.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve also been using a little gem I wrote that gives me hooks into Hoptoad, the is_paranoid gem, and a nice subclass for writing workers.&lt;/p&gt;
+
+&lt;p&gt;I have been completely enamored with Delayed Job from the first moment I used it, and I&amp;rsquo;m sure if you haven&amp;rsquo;t checked it out yet, and you do, you&amp;rsquo;ll feel the same!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://github.com/collectiveidea/delayed_job/tree/master&#34;&gt;http://github.com/collectiveidea/delayed_job/tree/master&lt;/a&gt;
+&lt;a href=&#34;http://github.com/markbates/delayed_job_extras/tree/master&#34;&gt;http://github.com/markbates/delayed_job_extras/tree/master&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;There you go, that&amp;rsquo;s just a few things I&amp;rsquo;ve been playing with lately, that I think are going to become mainstays in any Rails project I work on. Hopefully this has given you a little for for thought on things you can use in your next project.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Almost There... Book Wise.</title>
+      <link>/2009/07/27/almost-there-book-wise/</link>
+      <pubDate>Mon, 27 Jul 2009 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2009/07/27/almost-there-book-wise/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m now entering the home stretch of writing the Distributed Programming with Ruby book. I&amp;rsquo;m just a few weeks away, well, technically I&amp;rsquo;m hours away from finishing the last chapter (Delayed Job) in the official table of contents, however, I&amp;rsquo;m going to add another chapter and a half. Why? Mostly because I&amp;rsquo;m a glutton for punishment. That and I want to deliver the best book possible. The extra chapter and a half, not featured in the table of contents below, will be on MapReduce technologies. It&amp;rsquo;s a really hot topic, and I think it will fit well in the book. What do you think?&lt;/p&gt;
+
+&lt;p&gt;&lt;del datetime=&#34;2009-07-29T03:01:37+00:00&#34;&gt;Unfortunately, the &amp;ldquo;Rough Cuts&amp;rdquo; book on O&amp;rsquo;Reilly&amp;rsquo;s Safari site hasn&amp;rsquo;t been updated in nearly 3 months! I&amp;rsquo;m not sure why. I keep asking my editor to update it, but it hasn&amp;rsquo;t happened yet. I&amp;rsquo;m sure it will soon, especially since the first draft of the entire manuscript will be done in just a few weeks!&lt;/del&gt;&lt;/p&gt;
+
+&lt;p&gt;UPDATE: Today they updated the &amp;ldquo;Rough Cuts&amp;rdquo; with nearly the latest revisions. It&amp;rsquo;s still missing the chapters on Delayed Job and BackgrounDRb, but it&amp;rsquo;s closer than it was yesterday.&lt;/p&gt;
+
+&lt;p&gt;Anyway, as a public service announcement to you, the readers, I thought I would the table of contents as it stands right now, so you have a better idea of what the book is going to be about. So here it goes:&lt;/p&gt;
+
+&lt;script src=&#34;http://gist.github.com/156861.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;What do you think? Does it look good? Is this something you&amp;rsquo;d buy? Let me know. This is your chance to have an influence on a book. If you think something is missing or should be laid out differently, please let me know, it might just make it into the final product.&lt;/p&gt;
+
+&lt;p&gt;Ok, enough delaying here, let me get back to writing so I can finish up the Delayed Job chapter.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

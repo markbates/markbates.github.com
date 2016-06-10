@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Minitest on MetaBates.com</title>
+    <link>/tags/minitest/</link>
+    <description>Recent content in Minitest on MetaBates.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
+    <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
+    <copyright>(c) 2016 Mark Bates.</copyright>
+    <lastBuildDate>Wed, 28 May 2014 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/minitest/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>The War on Testing</title>
+      <link>/2014/05/28/the-war-on-testing/</link>
+      <pubDate>Wed, 28 May 2014 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2014/05/28/the-war-on-testing/</guid>
+      <description>&lt;p&gt;Apologies for the slightly inflammatory title, but I&amp;rsquo;m beginning to get worried about the Ruby community, and sadly my worries are stemming from an area that first made me fall in love with Ruby, testing.&lt;/p&gt;
+
+&lt;p&gt;By now you are probably familiar with the whole &amp;ldquo;&lt;a href=&#34;https://www.google.com/#q=ruby+tdd+is+dead&#34;&gt;TDD is Dead&lt;/a&gt;&amp;rdquo; saga that stemmed from a keynote that DHH recently gave at RailsConf. I&amp;rsquo;m not going to bother recapping that, do a Google search and you&amp;rsquo;ll find out all about it. I&amp;rsquo;m not even here to weigh in on the matter.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m here to discuss an even more trouble matter, the removal of a testing framework from the Ruby standard library in 2.2. The ticket that removed test-unit and MiniTest from Ruby 2.2 can be found at &lt;a href=&#34;https://bugs.ruby-lang.org/issues/9711#note-12&#34;&gt;https://bugs.ruby-lang.org/issues/9711#note-12&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The reasons behind removing these tools from the standard library is that it is difficult to maintain them inside the standard library, and that if people want to use them they can just install them as gems. This sounds fine, in theory, but is deeply troubling for a few reasons.&lt;/p&gt;
+
+&lt;p&gt;When I tweeted about this the other day I got several responses. Here are a couple that caught my eye:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#39;/assets/images/2014/05/tweet2.png&#39;&gt;
+&lt;img src=&#39;/assets/images/2014/05/tweet3.png&#39;&gt;&lt;/p&gt;
+
+&lt;p&gt;In regards to the later tweet I would encourage the author of the tweet to consult the Rails documentation on how to turn off automatic test generation. These tweets are concerning because they share the same shortsightedness. These tweets are analogous to saying, &amp;ldquo;Well, I use HashWithIndifferenceAccess so I don&amp;rsquo;t care if they remove Hash from the standard library&amp;rdquo;. This idea that because you use Rspec and not test-unit or MiniTest that this change does not somehow affect you is wrong. This affects the entire Ruby community.&lt;/p&gt;
+
+&lt;p&gt;When I first got introduced to Ruby back in 2005 I was blown away by how testing was a first class citizen in Ruby, and of course Rails. Testing was, and I hope still is, a core tenant of the Ruby community. By removing a testing framework from the standard library we are telling newcomers, as well as though who wish Ruby ill that we don&amp;rsquo;t value testing.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#39;/assets/images/2014/05/tweet1.png&#39;&gt;&lt;/p&gt;
+
+&lt;p&gt;Imagine for a second that you are checking out a new language. You scan through their standard library and find no testing framework. What would you think? I would be taken back. I would assume that there some tool I can probably download somewhere that would allow me to write tests in the language, but I honestly wouldn&amp;rsquo;t get that far. I might just turn the page on that language because they clearly don&amp;rsquo;t value testing.&lt;/p&gt;
+
+&lt;p&gt;Previously when a newcomer came to Ruby they could install the standard library and start learning the language right away, that included the ability to write tests for the applications they were writing. Now when a newbie comes to Ruby they have to know to also install RubyGems, then to also install a testing library, of course they&amp;rsquo;ll then have to do some research on what RubyGems are and what testing frameworks there are out there, but once they get through all of that then they&amp;rsquo;ll be able to start learning the language, well&amp;hellip; at least until they run into some sort of weird bundler issue, or RubyGems.org is down, but newcomers will just be able to figure all of that out, right?&lt;/p&gt;
+
+&lt;p&gt;Now I know I&amp;rsquo;ve got a reputation as being a big MiniTest supporter, and I am, for lots of very good reasons, but this goes beyond that. This gets to the core of who we are as a community and how we want to be perceived by others, and how we want to welcome those who are interested in Ruby.&lt;/p&gt;
+
+&lt;p&gt;Do we really want to be the language that doesn&amp;rsquo;t ship with a testing framework as part of our standard library? Do we really want to be like Java???&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

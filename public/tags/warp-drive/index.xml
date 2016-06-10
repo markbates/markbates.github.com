@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Warp Drive on MetaBates.com</title>
+    <link>/tags/warp-drive/</link>
+    <description>Recent content in Warp Drive on MetaBates.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
+    <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
+    <copyright>(c) 2016 Mark Bates.</copyright>
+    <lastBuildDate>Wed, 07 Oct 2009 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/warp-drive/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Introducing Warp Drive for Rails</title>
+      <link>/2009/10/07/introducing-warp-drive-for-rails/</link>
+      <pubDate>Wed, 07 Oct 2009 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2009/10/07/introducing-warp-drive-for-rails/</guid>
+      <description>
+
+&lt;p&gt;At work recently we had a need to build a large Rails application that we then wanted to, for lack of a better word, subclass. Unfortunately there is no real good way of doing that. Rails Engines and templates have way too may limitations. We wanted to bundle up the entire Rails app (models, controllers, views, routes, migrations, configurations, libs, assets, etc&amp;hellip; everything!), but there was no good way of doing that. Well, now there is, it&amp;rsquo;s called the Warp Drive.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve decided to just include my README file below to explain what it is, since it&amp;rsquo;s a bit lengthy, and I don&amp;rsquo;t feel like retyping.&lt;/p&gt;
+
+&lt;p&gt;This is still in it&amp;rsquo;s early stages, so use with care, but it does seem to be working for us on a daily basis. Let me know what you think!&lt;/p&gt;
+
+&lt;h2 id=&#34;what-is-warp-drive&#34;&gt;What is Warp Drive?&lt;/h2&gt;
+
+&lt;p&gt;Warp Drive is what Rails Engines wish they could be, and more! They kick Rails templates in the ass, and they beat keeping an ever evolving base Rails app up to date.&lt;/p&gt;
+
+&lt;h3 id=&#34;what-are-rails-engines&#34;&gt;What are Rails Engines?&lt;/h3&gt;
+
+&lt;p&gt;Rails Engines allow you to package up some of a Rails app (controllers, models, views, routes, libs) and put them in a plugin that can be included into a new Rails app, thereby giving it the functionality you had in the engine. That sounds good, but what about the downsides of using an engine? Well, you can&amp;rsquo;t override or extend any of the functionality from the engine in your main application. You can hack at the plugin, but now you&amp;rsquo;ve made it difficult to update. So what do you do if you want to add or alter a method to a controller or model? What do you do if you want to change the look and feel of a view? You have to copy everything into your main application. Boo!&lt;/p&gt;
+
+&lt;p&gt;Rails Engines also don&amp;rsquo;t allow you to package up migrations, assets, plugins, initializers, etc&amp;hellip; All the fun stuff that you&amp;rsquo;ve come to know and love about a Rails application.&lt;/p&gt;
+
+&lt;h3 id=&#34;enter-the-warp-drive&#34;&gt;Enter the Warp Drive!&lt;/h3&gt;
+
+&lt;p&gt;So what is a Warp Drive? Great question. To put it simply a Warp Drive is a standard, full featured, Rails application that you can easily bundle up into a Ruby Gem, and include into another Rails app. That second Rails app now has all the power of the first Rails. That is all there is to it.&lt;/p&gt;
+
+&lt;h2 id=&#34;creating-a-warp-drive&#34;&gt;Creating a Warp Drive.&lt;/h2&gt;
+
+&lt;p&gt;Let&amp;rsquo;s assume we have an application that implements AuthLogic for handling user registration/authentication. We have controllers, views, models, plugins, initializers, configurations, migrations, tasks, etc&amp;hellip; it&amp;rsquo;s a full featured fully functional Rails application, we call it authenticator.&lt;/p&gt;
+
+&lt;p&gt;We want to turn our authenticator application into a Warp Drive. We can do it in three simple steps, the first two steps you only need to do the first time, to set everything up.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;$ gem install warp_drive&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ warpify&lt;/code&gt; That will add a little bit of code to your &lt;code&gt;Rakefile&lt;/code&gt;. That code simply requires the Warp Drive gem, and gives you hooks to configure the gem of your Warp Drive application.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ rake warp_drive:compile&lt;/code&gt; (&lt;code&gt;$ rake warp_drive:install&lt;/code&gt;) This will either compile your gem for your (&lt;code&gt;warp_drive:compile&lt;/code&gt;) or compile and install your gem (&lt;code&gt;warp_drive:install&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;That&amp;rsquo;s it! You should now have your Rails application bundled up and/or installed as a RubyGem!&lt;/p&gt;
+
+&lt;h2 id=&#34;using-a-warp-drive&#34;&gt;Using a Warp Drive.&lt;/h2&gt;
+
+&lt;p&gt;With your fancy new Warp Drive, authenticator, built and installed how do you use it in that new application your building? Again, it&amp;rsquo;s stupid easy, and it only takes one step, that only needs to be run once:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;$ install_warp_drive authenticator&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;That will put a few lines of code in your &lt;code&gt;Rakefile&lt;/code&gt;, so you have access to all the &lt;code&gt;Rakefile&lt;/code&gt; tasks in your Warp Drive, and a line in your &lt;code&gt;config/environment.rb&lt;/code&gt; so that it will load your Warp Drive when you launch your application.&lt;/p&gt;
+
+&lt;p&gt;That&amp;rsquo;s it! You&amp;rsquo;re done. Now you can run &lt;code&gt;rake db:migrate&lt;/code&gt; to run the migrations from both your Warp Drive and your new application. Enjoy!&lt;/p&gt;
+
+&lt;h2 id=&#34;overriding-extending-and-other-such-fun-things&#34;&gt;Overriding, Extending, and Other Such Fun Things&lt;/h2&gt;
+
+&lt;h3 id=&#34;overriding-and-extending&#34;&gt;Overriding and Extending&lt;/h3&gt;
+
+&lt;p&gt;You&amp;rsquo;ve been enjoying your new Warp Drive back application for a little while now, but you decide you really need to change an action in your controller, how do you go about that? Simple, just like you would any normal alteration to a Ruby class.&lt;/p&gt;
+
+&lt;p&gt;Example:
+Here is what the action looks like in our Warp Drive UsersController:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;new&lt;/span&gt;
+  &lt;span class=&#34;vi&#34;&gt;@user&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;User&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;new&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;In our new application we can just open up the UsersController like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;UsersController&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;ApplicationController&lt;/span&gt;
+
+  &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;new_with_default_name&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;new_without_default_name&lt;/span&gt;
+    &lt;span class=&#34;vi&#34;&gt;@user&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;login&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;default_name&amp;#39;&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+
+  &lt;span class=&#34;n&#34;&gt;alias_method_chain&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;:new&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;:default_name&lt;/span&gt;
+
+&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Viola! The same works for any thing else in the system, models, libs, etc&amp;hellip; In our example we used &lt;code&gt;alias_method_chain&lt;/code&gt; to retain the original method, but we could have completely rewritten the method as well.&lt;/p&gt;
+
+&lt;p&gt;You can also plop in a new view and it will override the view that was in your Warp Drive. The sky is really the limit.&lt;/p&gt;
+
+&lt;h3 id=&#34;assets&#34;&gt;Assets&lt;/h3&gt;
+
+&lt;p&gt;You can easily bundle assets from your public directory in your Warp Drive. Just make sure they are in folders called &lt;code&gt;warp_drive&lt;/code&gt;. Those folders will then be symlinked to your new project&amp;rsquo;s public directory when the application starts up.&lt;/p&gt;
+
+&lt;h3 id=&#34;keep-those-rake-tasks-private&#34;&gt;Keep Those Rake Tasks Private!&lt;/h3&gt;
+
+&lt;p&gt;We all them, Rake tasks we have created to help us do all sorts of things, and we usually don&amp;rsquo;t want them to ship. Well, Warp Drive has you covered there. Just place your tasks in folders called &lt;code&gt;private&lt;/code&gt; and Bob&amp;rsquo;s your uncle they won&amp;rsquo;t be available in the compiled gem.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span class=&#34;n&#34;&gt;lib&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;
+  &lt;span class=&#34;n&#34;&gt;tasks&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;foo&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;rake&lt;/span&gt;
+    &lt;span class=&#34;kp&#34;&gt;private&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;
+      &lt;span class=&#34;n&#34;&gt;bar&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;rake&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;In this example &lt;code&gt;foo.rake&lt;/code&gt; will be available to clients of your Warp Drive, but &lt;code&gt;bar.rake&lt;/code&gt; will not be.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

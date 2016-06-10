@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mack on MetaBates.com</title>
+    <link>/tags/mack/</link>
+    <description>Recent content in Mack on MetaBates.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
+    <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
+    <copyright>(c) 2016 Mark Bates.</copyright>
+    <lastBuildDate>Sun, 05 Apr 2009 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/mack/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Distribunaut</title>
+      <link>/2009/04/05/distribunaut/</link>
+      <pubDate>Sun, 05 Apr 2009 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2009/04/05/distribunaut/</guid>
+      <description>&lt;p&gt;Hey there everyone, it certainly has been awhile, a month by my count. I have been diligently working on a book for Addison-Wesley called, &amp;ldquo;Distributed Programming with Ruby&amp;rdquo;, so having the time to blog went from a luxury to almost non-existent. But here&amp;rsquo;s another little post to keep your RSS feeds happy.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve started working on porting the mack-distributed package to the non-Mack world. This new project, and I use the term new loosely for the time being, is tentatively called Distribunaut. The project on GitHub can be found here: &lt;a href=&#34;http://github.com/markbates/distribunaut/tree/master&#34;&gt;http://github.com/markbates/distribunaut/tree/master&lt;/a&gt;. It&amp;rsquo;s pretty rough right now. I&amp;rsquo;ve ported over the distributed objects section of mack-distributed, but not the views and routes.&lt;/p&gt;
+
+&lt;p&gt;You can install the gem like such:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ gem sources -a &lt;a href=&#34;http://gems.github.com&#34;&gt;http://gems.github.com&lt;/a&gt;
+$ sudo gem install markbates-distribunaut&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;To use Distribunaut we first need to start a Rinda::RingServer. Distribunaut comes with a binary to help make this easier:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ distribunaut_ring_server start&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Once we&amp;rsquo;ve done that we can create an object we would like to share:&lt;/p&gt;
+
+&lt;script src=&#34;http://gist.github.com/90620.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;When we run that we can access it like such:&lt;/p&gt;
+
+&lt;script src=&#34;http://gist.github.com/90621.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;That would result in the following being printed out by our &amp;lsquo;client&amp;rsquo; code:&lt;/p&gt;
+
+&lt;script src=&#34;http://gist.github.com/90622.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;On our &amp;lsquo;server&amp;rsquo; side we would see something like this:&lt;/p&gt;
+
+&lt;script src=&#34;http://gist.github.com/90623.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;This is, clearly, a very simple example, but it shows you how easy it is to use Distribunaut. We haven&amp;rsquo;t done any real configuration, and things just magically work!&lt;/p&gt;
+
+&lt;p&gt;Over the next couple of months I&amp;rsquo;ll be extending and rebuilding this library to make it even more powerful and easy to use. I&amp;rsquo;m going to add fault tolerance, selection algorithms, and whole lot more. The API you see in these examples will most likely remain unchanged, but I&amp;rsquo;m planning on pretty big under the cover changes.There will be a very in-depth look into all of this in the book, obviously. (Shameless plug, I know.)&lt;/p&gt;
+
+&lt;p&gt;If anybody out there wants to contribute to this project, I&amp;rsquo;d love the help. Any sort of feedback is welcome.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Thank you.</title>
+      <link>/2009/03/04/thank-you/</link>
+      <pubDate>Wed, 04 Mar 2009 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2009/03/04/thank-you/</guid>
+      <description>&lt;p&gt;It is with a sad and heavy heart that this evening I announce that I will no longer be developing the Mack Framework. The project, started a year ago, and has been source of great pride, joy, and at times frustation. Of all the projects I have ever worked on, this one was definitely closest to my heart.&lt;/p&gt;
+
+&lt;p&gt;The decision to stop working on Mack was something I did not take lightly. If I had my druthers, and plenty of free time and a source of funding, I most certainly would continue on working on it. However, reality has a different way of plenty out.&lt;/p&gt;
+
+&lt;p&gt;When I first started developing Mack the company I was working for at the time was frustrated with the pains and shortcomings of Rails. It was the right platform for the company when we started, however, two years in a start up is a life time and the company took many twists and turns, that lead us to the path of seeking an alternative platform to Rails. At the time Merb was not a serious contender, and there was little else out there that was looking to satisfy the needs we had. Enter Mack. I spent nearly 10 months developing Mack for that company. We rolled out several Mack applications. It worked really well for what we wanted it to do.&lt;/p&gt;
+
+&lt;p&gt;Again, however, reality came into play. The company was forced to lay off nearly 50% of its staff, and I was one of them. I quickly took a position as the Director of Engineering for another startup in Boston. This shop, too, is a Rails shop. The difference between the two companies is that for the company I work for now Rails is the right solution. This means that I am spending my days working with Rails, and not developing Mack.&lt;/p&gt;
+
+&lt;p&gt;At night and on the weekends I like to spend time with my wife and my son. I play in a band, &lt;a href=&#34;http://www.thebluewires.com&#34;&gt;www.thebluewires.com&lt;/a&gt;, and I am working on a book for Addison-Wesley entitled, &amp;ldquo;Distributed Programming with Ruby&amp;rdquo;. I&amp;rsquo;m a busy man, and Mack is a big project. You can&amp;rsquo;t successfully write a web framework part time. Especially when that part time is really more like part-part time. You need to be able to put dedicated full time resources onto a project of that scale, and I just don&amp;rsquo;t have the time to do it.&lt;/p&gt;
+
+&lt;p&gt;Would I love to see the project continue? Certainly. If there is someone out there who wants to take it on, please let me know. I would love to see it grow. There is so much I wanted to do with it. So many great ideas.&lt;/p&gt;
+
+&lt;p&gt;Now, for the good news, I am planning to port a bunch of the Mack functionality over to the Rails 3 platform. The obvious one being the mack-distributed package which is a key differentiator between Mack and the other Ruby frameworks. Another package I think worthy of migration is mack-notifier, which provides, in my opinion, a really nice clean API for doing notifications, whether they be email, Jabber, SMS, etc&amp;hellip; I also really like the mack-data_factory package. It provides an ORM agnostic way to do great data factories for testing. Finally there are some routing improvements that I think Rails could really benefit from, as well as a few other bits and bobs here and there.&lt;/p&gt;
+
+&lt;p&gt;I wish to thank everyone who has supported this project over the year. A few key people I think that deserve a special call out are: Darsono Sutedja (the second biggest contributed to Mack), Gerardo Pis-Lopez (the third biggest contributor), and Greg Arsenault (my previous boss who fought for me to develop Mack). If there was such a thing as the Mack Core Team, those guys would be it. I would also like to thank people like Peter Cooper, Gregg Pollack, Adam French, Dan Kubb, and everyone else who either opened a Lighthouse ticket, submitted a patch, wrote a blog entry about Mack, or who was just there for support and guidance over the past year.&lt;/p&gt;
+
+&lt;p&gt;I am going to keep www.mackframework.com around as a forum for my other projects, such as Cachetastic and Configatron, and the other projects I have brewing. Expect some cool new projects out of me in 2009, include some iPhone projects that I&amp;rsquo;m excited about undertaking. I will be releasing the last version of Mack by the end of the month. It will essentially be a few bug fixes, an upgrade of DataMapper, and Sass support.&lt;/p&gt;
+
+&lt;p&gt;To summarize, thank you everyone. I appreciate your support and I look forward to contributing to the community in new and exciting ways.&lt;/p&gt;
+
+&lt;p&gt;Thank you.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Release 0.8.3</title>
+      <link>/2009/01/18/release-083/</link>
+      <pubDate>Sun, 18 Jan 2009 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2009/01/18/release-083/</guid>
+      <description>&lt;p&gt;Thanks to the cold and snowy New England winter this year, I&amp;rsquo;ve been able to devote quite a bit of time to getting Mack to run on Ruby 1.9, so with that said, here&amp;rsquo;s the 0.8.3 release of Mack, featuring&amp;hellip; TADA&amp;hellip; Ruby 1.9!! Of course there are a few other features and improvements in this release. Here&amp;rsquo;s a quick run down:
+&lt;h3&gt;Ruby 1.9&lt;/h3&gt;
+The big one. Mack runs very well on Ruby 1.9, unfortunately I can&amp;rsquo;t say the same thing about some other frameworks. I&amp;rsquo;ve had some run ins with DataMapper on 1.9, but I&amp;rsquo;m sure those will be ironed out shortly.&lt;/p&gt;
+
+&lt;p&gt;A few weeks ago I announced I was working on getting Ruby 1.9 support for all my gems and libraries. I started out with Configatron, then upgraded Cachetastic and Genosaurus. Now Mack is 1.9 compatible. When I made the announcement the guys at RailsEnvy picked up on it and said that I made a call to arms to the community to pick up 1.9 support. Now granted, I didn&amp;rsquo;t actually say those words, but I think the intent was there, so I&amp;rsquo;m going to now officially say those words. This is a &amp;lsquo;call to arms&amp;rsquo; to the Ruby community to upgrade their gems, plugins, libraries, frameworks, etc&amp;hellip; to work on Ruby 1.9. I&amp;rsquo;ve done it, and I can tell you, it&amp;rsquo;s not that tough. Just use multiruby, and you&amp;rsquo;re off and running.
+&lt;h3&gt;ActiveSupport In, Facets Out&lt;/h3&gt;
+What with the world getting smaller these days, well, at least the world of Ruby web frameworks. A lot of great work is going into refactoring ActiveSupport and making it faster, better, and smaller. Because of that and the fact that every time a new release of Facets comes out it breaks a whole lot of stuff, I&amp;rsquo;ve decided to use ActiveSupport as the basis of the mack-facets gem. So basically mack-facets is just ActiveSupport with a few more enhancements.
+&lt;h3&gt;JavaScript Effects&lt;/h3&gt;
+Thanks to the tireless efforts of Gerardo Pis-Lopez, mack-javascript, has been upgraded to add helpers methods for effects for both Prototype/Scriptaculous and jQuery. Thank you to Gerardo for the much needed upgraded to mack-javascript.
+&lt;h3&gt;Upgrades&lt;/h3&gt;
+Mack has been upgraded to use Rack 0.9.1, DataMapper 0.9.9, and a few other smaller gems.&lt;/p&gt;
+
+&lt;p&gt;Changelog:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;#243 - Upgraded to Rack 0.9.1&lt;/li&gt;
+&lt;li&gt;#242 - Upgraded to DataMapper 0.9.9&lt;/li&gt;
+&lt;li&gt;#241 - Removed dependency on Facets&lt;/li&gt;
+&lt;li&gt;#239 - Add do_sqlite3 to gems.rb&lt;/li&gt;
+&lt;li&gt;#166 - Effects for mack-javascript&lt;/li&gt;
+&lt;li&gt;#133 - Added Form Builders&lt;/li&gt;
+&lt;li&gt;#22 - Ruby 1.9 Support&lt;/li&gt;
+&lt;li&gt;gem: rack 0.9.1&lt;/li&gt;
+&lt;li&gt;gem: rspec 1.1.12&lt;/li&gt;
+&lt;li&gt;gem: configatron 2.2.2&lt;/li&gt;
+&lt;li&gt;gem: cachetastic 2.1.2&lt;/li&gt;
+&lt;li&gt;gem: data_mapper 0.9.9&lt;/li&gt;
+&lt;li&gt;gem: addressable 2.0.1&lt;/li&gt;
+&lt;li&gt;gem: extlib 0.9.9&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Configatron 2.2.0 Released, now with Ruby 1.9 and JRuby support!</title>
+      <link>/2009/01/01/configatron-220-released-now-with-ruby-19-and-jruby-support/</link>
+      <pubDate>Thu, 01 Jan 2009 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2009/01/01/configatron-220-released-now-with-ruby-19-and-jruby-support/</guid>
+      <description>&lt;p&gt;Happy New Year everyone!&lt;/p&gt;
+
+&lt;p&gt;With the help of the absolutely amazing &lt;a href=&#34;http://blog.robseaman.com/2008/12/20/switching-between-ruby-1-8-1-9-with-multiruby&#34;&gt;multiruby&lt;/a&gt; library and an edge version of rspec from GitHub, the latest version of Configatron now supports JRuby 1.1.6 and Ruby 1.9.1rc1. There are no other functional changes to the library, so it&amp;rsquo;s a full drop in replacement for vesion 2.1.6.&lt;/p&gt;
+
+&lt;p&gt;I highly encourage everyone to checkout multiruby and start upgrading their libraries so we can all move to 1.9 quicker, which means more speed and more power. Once we&amp;rsquo;re all in 1.9 land we can really make use of some of the amazing features it provides.&lt;/p&gt;
+
+&lt;p&gt;Anyway, I&amp;rsquo;ll be working on upgrading all my libraries and applications to work on 1.8 and 1.9, and hopefully JRuby, over the next couple of months. So be on the look out for a new versions of Cachetastic, Genosaurus update: &lt;em&gt;Genosaurus already works with 1.9 and JRuby. Hoorah!&lt;/em&gt;, and, of course, Mack.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

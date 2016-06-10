@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Genosaurus on MetaBates.com</title>
+    <link>/tags/genosaurus/</link>
+    <description>Recent content in Genosaurus on MetaBates.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
+    <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
+    <copyright>(c) 2016 Mark Bates.</copyright>
+    <lastBuildDate>Thu, 01 Jan 2009 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/genosaurus/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Configatron 2.2.0 Released, now with Ruby 1.9 and JRuby support!</title>
+      <link>/2009/01/01/configatron-220-released-now-with-ruby-19-and-jruby-support/</link>
+      <pubDate>Thu, 01 Jan 2009 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2009/01/01/configatron-220-released-now-with-ruby-19-and-jruby-support/</guid>
+      <description>&lt;p&gt;Happy New Year everyone!&lt;/p&gt;
+
+&lt;p&gt;With the help of the absolutely amazing &lt;a href=&#34;http://blog.robseaman.com/2008/12/20/switching-between-ruby-1-8-1-9-with-multiruby&#34;&gt;multiruby&lt;/a&gt; library and an edge version of rspec from GitHub, the latest version of Configatron now supports JRuby 1.1.6 and Ruby 1.9.1rc1. There are no other functional changes to the library, so it&amp;rsquo;s a full drop in replacement for vesion 2.1.6.&lt;/p&gt;
+
+&lt;p&gt;I highly encourage everyone to checkout multiruby and start upgrading their libraries so we can all move to 1.9 quicker, which means more speed and more power. Once we&amp;rsquo;re all in 1.9 land we can really make use of some of the amazing features it provides.&lt;/p&gt;
+
+&lt;p&gt;Anyway, I&amp;rsquo;ll be working on upgrading all my libraries and applications to work on 1.8 and 1.9, and hopefully JRuby, over the next couple of months. So be on the look out for a new versions of Cachetastic, Genosaurus update: &lt;em&gt;Genosaurus already works with 1.9 and JRuby. Hoorah!&lt;/em&gt;, and, of course, Mack.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

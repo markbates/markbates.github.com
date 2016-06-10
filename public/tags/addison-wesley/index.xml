@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Addison Wesley on MetaBates.com</title>
+    <link>/tags/addison-wesley/</link>
+    <description>Recent content in Addison Wesley on MetaBates.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
+    <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
+    <copyright>(c) 2016 Mark Bates.</copyright>
+    <lastBuildDate>Fri, 22 May 2009 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/addison-wesley/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Distributed Programming with Ruby Book Update</title>
+      <link>/2009/05/22/distributed-programming-with-ruby-book-update/</link>
+      <pubDate>Fri, 22 May 2009 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2009/05/22/distributed-programming-with-ruby-book-update/</guid>
+      <description>&lt;p&gt;Hey there folks, I know it&amp;rsquo;s been awhile, so I thought I would give you all a very quick update as to how the book is going. It&amp;rsquo;s going really well. I&amp;rsquo;m about 100 pages into it, and it&amp;rsquo;s shaping up very nicely. Addison-Wesley is preparing to put it into their &amp;ldquo;Rough Cuts&amp;rdquo; program so you can all get your dirty little hands on what I&amp;rsquo;ve written so far as early as a few weeks from now, or so I&amp;rsquo;m told.&lt;/p&gt;
+
+&lt;p&gt;While I don&amp;rsquo;t want to give too much away about the contents, everybody loves a good surprise, let me say that part one of the book will be the most comprehensive guide to DRb and Rinda that you&amp;rsquo;ll find anywhere. Including the source code!!&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m working hard on part two of the book which focuses on third party tools, frameworks, and libraries. It&amp;rsquo;s quite a fun part of the book to write as there are a great deal of choices out there, including my own Distribunaut. (PS. I released a new version of it on GitHub a week or so ago.) Writing about different libraries is quite fun as I get to really delve into the source code and see the good and bad ways people like to write code. Plus some of the libraries have really great features, or really turn things on their head.&lt;/p&gt;
+
+&lt;p&gt;When the book is available as a &amp;ldquo;Rough Cut&amp;rdquo;, I&amp;rsquo;ll certainly keep you all informed. In the mean time keep watching this space and have a great weekend!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Thank you.</title>
+      <link>/2009/03/04/thank-you/</link>
+      <pubDate>Wed, 04 Mar 2009 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2009/03/04/thank-you/</guid>
+      <description>&lt;p&gt;It is with a sad and heavy heart that this evening I announce that I will no longer be developing the Mack Framework. The project, started a year ago, and has been source of great pride, joy, and at times frustation. Of all the projects I have ever worked on, this one was definitely closest to my heart.&lt;/p&gt;
+
+&lt;p&gt;The decision to stop working on Mack was something I did not take lightly. If I had my druthers, and plenty of free time and a source of funding, I most certainly would continue on working on it. However, reality has a different way of plenty out.&lt;/p&gt;
+
+&lt;p&gt;When I first started developing Mack the company I was working for at the time was frustrated with the pains and shortcomings of Rails. It was the right platform for the company when we started, however, two years in a start up is a life time and the company took many twists and turns, that lead us to the path of seeking an alternative platform to Rails. At the time Merb was not a serious contender, and there was little else out there that was looking to satisfy the needs we had. Enter Mack. I spent nearly 10 months developing Mack for that company. We rolled out several Mack applications. It worked really well for what we wanted it to do.&lt;/p&gt;
+
+&lt;p&gt;Again, however, reality came into play. The company was forced to lay off nearly 50% of its staff, and I was one of them. I quickly took a position as the Director of Engineering for another startup in Boston. This shop, too, is a Rails shop. The difference between the two companies is that for the company I work for now Rails is the right solution. This means that I am spending my days working with Rails, and not developing Mack.&lt;/p&gt;
+
+&lt;p&gt;At night and on the weekends I like to spend time with my wife and my son. I play in a band, &lt;a href=&#34;http://www.thebluewires.com&#34;&gt;www.thebluewires.com&lt;/a&gt;, and I am working on a book for Addison-Wesley entitled, &amp;ldquo;Distributed Programming with Ruby&amp;rdquo;. I&amp;rsquo;m a busy man, and Mack is a big project. You can&amp;rsquo;t successfully write a web framework part time. Especially when that part time is really more like part-part time. You need to be able to put dedicated full time resources onto a project of that scale, and I just don&amp;rsquo;t have the time to do it.&lt;/p&gt;
+
+&lt;p&gt;Would I love to see the project continue? Certainly. If there is someone out there who wants to take it on, please let me know. I would love to see it grow. There is so much I wanted to do with it. So many great ideas.&lt;/p&gt;
+
+&lt;p&gt;Now, for the good news, I am planning to port a bunch of the Mack functionality over to the Rails 3 platform. The obvious one being the mack-distributed package which is a key differentiator between Mack and the other Ruby frameworks. Another package I think worthy of migration is mack-notifier, which provides, in my opinion, a really nice clean API for doing notifications, whether they be email, Jabber, SMS, etc&amp;hellip; I also really like the mack-data_factory package. It provides an ORM agnostic way to do great data factories for testing. Finally there are some routing improvements that I think Rails could really benefit from, as well as a few other bits and bobs here and there.&lt;/p&gt;
+
+&lt;p&gt;I wish to thank everyone who has supported this project over the year. A few key people I think that deserve a special call out are: Darsono Sutedja (the second biggest contributed to Mack), Gerardo Pis-Lopez (the third biggest contributor), and Greg Arsenault (my previous boss who fought for me to develop Mack). If there was such a thing as the Mack Core Team, those guys would be it. I would also like to thank people like Peter Cooper, Gregg Pollack, Adam French, Dan Kubb, and everyone else who either opened a Lighthouse ticket, submitted a patch, wrote a blog entry about Mack, or who was just there for support and guidance over the past year.&lt;/p&gt;
+
+&lt;p&gt;I am going to keep www.mackframework.com around as a forum for my other projects, such as Cachetastic and Configatron, and the other projects I have brewing. Expect some cool new projects out of me in 2009, include some iPhone projects that I&amp;rsquo;m excited about undertaking. I will be releasing the last version of Mack by the end of the month. It will essentially be a few bug fixes, an upgrade of DataMapper, and Sass support.&lt;/p&gt;
+
+&lt;p&gt;To summarize, thank you everyone. I appreciate your support and I look forward to contributing to the community in new and exciting ways.&lt;/p&gt;
+
+&lt;p&gt;Thank you.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

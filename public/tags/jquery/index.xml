@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jquery on MetaBates.com</title>
+    <link>/tags/jquery/</link>
+    <description>Recent content in Jquery on MetaBates.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
+    <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
+    <copyright>(c) 2016 Mark Bates.</copyright>
+    <lastBuildDate>Fri, 15 Apr 2011 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/jquery/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Because everybody has an opinion...</title>
+      <link>/2011/04/15/because-everybody-has-an-opinion/</link>
+      <pubDate>Fri, 15 Apr 2011 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2011/04/15/because-everybody-has-an-opinion/</guid>
+      <description>&lt;p&gt;In case you&amp;rsquo;ve been living in a cave this week you&amp;rsquo;ve probably heard that &lt;a href=&#34;http://www.rubyinside.com/rails-3-1-adopts-coffeescript-jquery-sass-and-controversy-4669.html&#34;&gt;Ruby on Rails&lt;/a&gt; is going to be including both the &lt;a href=&#34;http://coffeescript.org/&#34;&gt;CoffeeScript&lt;/a&gt; and &lt;a href=&#34;http://sass-lang.com/&#34;&gt;SASS&lt;/a&gt; libraries, it will also make &lt;a href=&#34;http://jquery.com/&#34;&gt;jQuery&lt;/a&gt; the default JavaScript framework, replacing the &lt;a href=&#34;http://www.prototypejs.org/&#34;&gt;Prototype&lt;/a&gt; framework.&lt;/p&gt;
+
+&lt;p&gt;I would like to start by addressing my experiences with CoffeeScript. My opinion of it is of ambivalence. I&amp;rsquo;ve used it on a project, I&amp;rsquo;ve played with and in the end I&amp;rsquo;ve come out with the opinion of &amp;ldquo;it&amp;rsquo;s ok&amp;rdquo;. It didn&amp;rsquo;t blow me away, but at the same time I can see why so many people like. It offers some really cool features that I really wish JavaScript had and you can cut down on the amount of code you have to write. On the other hand the apps I tend to write don&amp;rsquo;t tend to be that JavaScript heavy that I really needed to reach out for something like CoffeeScript.&lt;/p&gt;
+
+&lt;p&gt;&lt;img style=&#34;float: left; padding-right: 10px&#34; src=&#34;http://blogs.worldbank.org/files/publicsphere/public%20opinion_JGRNLY.jpeg&#34; alt=&#34;&#34; width=&#34;326&#34; height=&#34;246&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So, how do I feel about CoffeeScript being included with Rails? Well, I&amp;rsquo;ll get to that. Let&amp;rsquo;s go over some of the most common arguments I&amp;rsquo;ve heard from people this week about why they&amp;rsquo;re anti-CoffeeScript in Rails.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;It&amp;rsquo;s an abstraction layer of JavaScript! JavaScript isn&amp;rsquo;t that bad, why can&amp;rsquo;t you just write JavaScript?&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;It&amp;rsquo;s going to be a hinderance to newbies. It&amp;rsquo;ll be too much of a learning curve!&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Let&amp;rsquo;s start with that second point first, shall we? I agree, it does represent a new element that needs to be learned when coming to Rails. But here&amp;rsquo;s the pretty nifty thing about how it&amp;rsquo;s all implemented in Rails. In order to actually use CoffeeScript in Rails you have to create your files named foo.js.coffee if, however, you just name your file foo.js then, guess what? You will have to write plain old JavaScript! Seems like newbies, and those who don&amp;rsquo;t like CoffeeScript, can just keep writing plain old JavaScript without anything stopping them at all.&lt;/p&gt;
+
+&lt;p&gt;Now, let&amp;rsquo;s talk about the abstraction layer argument. Yes, CoffeeScript is an abstraction on top of JavaScript, but let&amp;rsquo;s take a look at a few other parts of the Rails stack and see how they hold up against this argument.&lt;/p&gt;
+
+&lt;p&gt;Here&amp;rsquo;s a fairly common Rails stack:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ActiveRecord&lt;/li&gt;
+&lt;li&gt;Haml&lt;/li&gt;
+&lt;li&gt;jQuery&lt;/li&gt;
+&lt;li&gt;RSpec&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;What do all those things have in common? Well, they&amp;rsquo;re all abstraction layers that sit on top of something else, don&amp;rsquo;t they? Let&amp;rsquo;s look at that list again?&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ActiveRecord - SQL (Structured Query Language)&lt;/li&gt;
+&lt;li&gt;Haml - HTML&lt;/li&gt;
+&lt;li&gt;jQuery - JavaScript, you could just as easily hand roll those AJAX calls in pure JavaScript.&lt;/li&gt;
+&lt;li&gt;RSpec - Test/Unit&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;What I&amp;rsquo;ve found funny about the particular argument is that I&amp;rsquo;ve heard it MOST from those who use things like HAML, which is a DEFINITELY an abstraction layer that sits on top of HTML. See where I&amp;rsquo;m going with this one? Good, I don&amp;rsquo;t want to belabor the point. :)&lt;/p&gt;
+
+&lt;p&gt;So, finally, where do I stand on this whole thing? Well, I view like it Test/Unit and Prototype. Those are both the current standard (although jQuery will replace Prototype in 3.1) and I don&amp;rsquo;t like or use either of them. Instead I configure Rails to use jQuery and RSpec. I don&amp;rsquo;t like Haml, but those that do simply replace ERB with Haml and they move on with their day. So my take is this, it&amp;rsquo;s there, it&amp;rsquo;s included. Use it if you like, or don&amp;rsquo;t. Is it really that big a deal? No, it really isn&amp;rsquo;t. If Rails dropped ERB and went with Haml as the default, would I bitch and moan, probably a bit, but then I&amp;rsquo;d just install the Rails-ERB gem and move on with my day, just like I do with jQuery and RSpec today.&lt;/p&gt;
+
+&lt;p&gt;So sit back, relax, use the libraries that you want to use, Rails let&amp;rsquo;s you do that. Oh, while you&amp;rsquo;re relaxing why not try out CoffeeScript, who knows, you might just enjoy it. Or not.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Release 0.8.3</title>
+      <link>/2009/01/18/release-083/</link>
+      <pubDate>Sun, 18 Jan 2009 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2009/01/18/release-083/</guid>
+      <description>&lt;p&gt;Thanks to the cold and snowy New England winter this year, I&amp;rsquo;ve been able to devote quite a bit of time to getting Mack to run on Ruby 1.9, so with that said, here&amp;rsquo;s the 0.8.3 release of Mack, featuring&amp;hellip; TADA&amp;hellip; Ruby 1.9!! Of course there are a few other features and improvements in this release. Here&amp;rsquo;s a quick run down:
+&lt;h3&gt;Ruby 1.9&lt;/h3&gt;
+The big one. Mack runs very well on Ruby 1.9, unfortunately I can&amp;rsquo;t say the same thing about some other frameworks. I&amp;rsquo;ve had some run ins with DataMapper on 1.9, but I&amp;rsquo;m sure those will be ironed out shortly.&lt;/p&gt;
+
+&lt;p&gt;A few weeks ago I announced I was working on getting Ruby 1.9 support for all my gems and libraries. I started out with Configatron, then upgraded Cachetastic and Genosaurus. Now Mack is 1.9 compatible. When I made the announcement the guys at RailsEnvy picked up on it and said that I made a call to arms to the community to pick up 1.9 support. Now granted, I didn&amp;rsquo;t actually say those words, but I think the intent was there, so I&amp;rsquo;m going to now officially say those words. This is a &amp;lsquo;call to arms&amp;rsquo; to the Ruby community to upgrade their gems, plugins, libraries, frameworks, etc&amp;hellip; to work on Ruby 1.9. I&amp;rsquo;ve done it, and I can tell you, it&amp;rsquo;s not that tough. Just use multiruby, and you&amp;rsquo;re off and running.
+&lt;h3&gt;ActiveSupport In, Facets Out&lt;/h3&gt;
+What with the world getting smaller these days, well, at least the world of Ruby web frameworks. A lot of great work is going into refactoring ActiveSupport and making it faster, better, and smaller. Because of that and the fact that every time a new release of Facets comes out it breaks a whole lot of stuff, I&amp;rsquo;ve decided to use ActiveSupport as the basis of the mack-facets gem. So basically mack-facets is just ActiveSupport with a few more enhancements.
+&lt;h3&gt;JavaScript Effects&lt;/h3&gt;
+Thanks to the tireless efforts of Gerardo Pis-Lopez, mack-javascript, has been upgraded to add helpers methods for effects for both Prototype/Scriptaculous and jQuery. Thank you to Gerardo for the much needed upgraded to mack-javascript.
+&lt;h3&gt;Upgrades&lt;/h3&gt;
+Mack has been upgraded to use Rack 0.9.1, DataMapper 0.9.9, and a few other smaller gems.&lt;/p&gt;
+
+&lt;p&gt;Changelog:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;#243 - Upgraded to Rack 0.9.1&lt;/li&gt;
+&lt;li&gt;#242 - Upgraded to DataMapper 0.9.9&lt;/li&gt;
+&lt;li&gt;#241 - Removed dependency on Facets&lt;/li&gt;
+&lt;li&gt;#239 - Add do_sqlite3 to gems.rb&lt;/li&gt;
+&lt;li&gt;#166 - Effects for mack-javascript&lt;/li&gt;
+&lt;li&gt;#133 - Added Form Builders&lt;/li&gt;
+&lt;li&gt;#22 - Ruby 1.9 Support&lt;/li&gt;
+&lt;li&gt;gem: rack 0.9.1&lt;/li&gt;
+&lt;li&gt;gem: rspec 1.1.12&lt;/li&gt;
+&lt;li&gt;gem: configatron 2.2.2&lt;/li&gt;
+&lt;li&gt;gem: cachetastic 2.1.2&lt;/li&gt;
+&lt;li&gt;gem: data_mapper 0.9.9&lt;/li&gt;
+&lt;li&gt;gem: addressable 2.0.1&lt;/li&gt;
+&lt;li&gt;gem: extlib 0.9.9&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

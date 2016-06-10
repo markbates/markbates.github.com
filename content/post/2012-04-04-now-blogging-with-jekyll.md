@@ -1,7 +1,7 @@
 ---
 date: 2012-04-04T00:00:00Z
 description: ""
-tags: []
+tags: ["blog", "jekyll"]
 title: Now Blogging with Jekyll
 url: /2012/04/04/now-blogging-with-jekyll/
 ---

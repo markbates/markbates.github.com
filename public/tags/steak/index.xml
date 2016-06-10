@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Steak on MetaBates.com</title>
+    <link>/tags/steak/</link>
+    <description>Recent content in Steak on MetaBates.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
+    <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
+    <copyright>(c) 2016 Mark Bates.</copyright>
+    <lastBuildDate>Fri, 04 Mar 2011 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/steak/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Testing Tools Aren&#39;t All the Same, Choose Wisely</title>
+      <link>/2011/03/04/407-testing-tools-arent-all-the-same-choose-wisely/</link>
+      <pubDate>Fri, 04 Mar 2011 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2011/03/04/407-testing-tools-arent-all-the-same-choose-wisely/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Testing is painful.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;Testing is hard.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;Testing is complicated.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;Testing is not fun.&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I hear those sorts of things all the time when I talk to people about testing. I agree that sometimes testing can be all of those things, but if you choose the right tools, the tools that best suite you, testing doesn&amp;rsquo;t have to be. Let me give you an example of what I&amp;rsquo;m talking about, how choosing the right tools can make a huge impact on how you feel about testing.&lt;/p&gt;
+
+&lt;p&gt;When working for a client recently I came across the need for end to end integration testing. I needed to test, amongst other things, the flow of a user registering through the application in a few different ways. Because registration behaves differently based on where you come from and where you want to go, I needed a good way to test that entire flow, so simple unit and functional tests just were not going to cut it.&lt;/p&gt;
+
+&lt;p&gt;In the Ruby community there is a big push to use a testing framework called, &lt;a href=&#34;http://cukes.info/&#34;&gt;Cucumber&lt;/a&gt;. Cucumber is a behavior driven development (BDD) tool that let&amp;rsquo;s you write user stories in plain English. Those stories then get translated into Ruby code that tests those stories against your application. Because of it&amp;rsquo;s popularity, and some of it&amp;rsquo;s quite amazing features, this was my first stop on the path to integration testing bliss.&lt;/p&gt;
+
+&lt;p&gt;Let me give you an example of a Cucumber script:&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/854764.js&#34;&gt; &lt;/script&gt;
+
+&lt;p&gt;That script tests the user registration flow through an application in a couple of different ways, first through &amp;lsquo;standard&amp;rsquo; registration, and then through being invited to join. Now, the beauty of Cucumber is that these scripts are &amp;lsquo;human&amp;rsquo; readable. Your product manager, or other stake holders, should be able to write these scripts themselves, and you, the developer, should be able to just plug them in and code until those scripts pass.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, while that sounds like a little slice of Heaven, the reality is far from it in practice. First, getting stake holders to actually write these &amp;lsquo;stories&amp;rsquo;, as their typically called, is a tough chore to begin with. If they do write them, they&amp;rsquo;re typically not going to be &amp;lsquo;plug and play&amp;rsquo;. Why? Well, when Cucumber reads these scripts it goes line by line and tries to find some code that matches the regular expression of that line and then execute it. If it doesn&amp;rsquo;t find matching code, then it fails. That means that your stake holders need to write these scripts in a very particular way or developers need to sit down and massage those stories to fit the correct regular expression.&lt;/p&gt;
+
+&lt;p&gt;Now, let me just take this opportunity to say that this is not a post about how much I hate Cucumber, in fact I think Cucumber is a pretty amazing piece of software, and does in fact have a lot of great uses. Instead, what I&amp;rsquo;m talking about it is how Cucumber turned out not to be the right tool for the job for me on a recent project.&lt;/p&gt;
+
+&lt;p&gt;So why wasn&amp;rsquo;t Cucumber the right tool for the job? Great question, glad you asked. Cucumber turned out not to be the right tool for a few reasons. The biggest of which was that I was the one who was writing the user stories. The stake holders had no desire to write these stories, which meant I had to write them. The I had to write the &amp;lsquo;steps&amp;rsquo; that back each line of the script. In all fairness, Cucumber does give you some great steps right out of the box. After some fiddling I finally got the Cucumber scripts up and running and testing my work flow. But I definitely ran into some issues.&lt;/p&gt;
+
+&lt;p&gt;Because Cucumber isn&amp;rsquo;t pure Ruby I had a hard time doing something as simple as just printing out the request&amp;rsquo;s body and headers without having to write a step that did just that, then add that step to my story, etc&amp;hellip; It&amp;rsquo;s overall fiddlyness and non-intuitive way of doing things caused me a lot of grief and time. And, most importantly, I wasn&amp;rsquo;t really getting the big benefit of Cucumber, stake holder&amp;rsquo;s writing the stories. So I was doing all this work and not getting the benefits of Cucumber.&lt;/p&gt;
+
+&lt;p&gt;So what did I do? I turned to a library called &lt;a href=&#34;https://github.com/cavalle/steak&#34;&gt;Steak&lt;/a&gt;. Steak allows you to write integration tests using pure Ruby and integrates directly in with &lt;a href=&#34;http://relishapp.com/rspec&#34;&gt;RSpec&lt;/a&gt;, my preferred testing framework. With Steak I was able to write my integration tests in just a few minutes.&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/854844.js&#34;&gt; &lt;/script&gt;
+
+&lt;p&gt;While my Steak scripts a bit more wordy and are definitely not &amp;lsquo;human&amp;rsquo; readable and editable by stakeholders, they did achieve my goal of allowing me to write integration tests quickly.&lt;/p&gt;
+
+&lt;p&gt;So here you see I picked a very powerful tool, that has a lot of great benefits, Cucumber, but I picked it for the wrong reasons. I picked it because it was popular, and not because it would help me achieve my goals. If my goals where to have stakeholders write the stories and hand them off to development, than it would&amp;rsquo;ve been a better choice. But in the end my goal was to write integration tests and write them quickly, which is why Steak ended up being the right tool for that job.&lt;/p&gt;
+
+&lt;p&gt;This has all been a really long winded way of saying doing some research before choosing your testing frameworks, or any framework for that matter. Play with it, research it, make sure it meets your goals, not somebody else&amp;rsquo;s. If you choose the right tools then testing doesn&amp;rsquo;t need to be scary, complicated, frustrating, etc&amp;hellip; Testing is a &lt;a href=&#34;/2010/07/01/testing-is-not-an-option/&#34;&gt;requirement&lt;/a&gt; and a must have, so why not make it fun?&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

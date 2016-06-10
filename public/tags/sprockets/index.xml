@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sprockets on MetaBates.com</title>
+    <link>/tags/sprockets/</link>
+    <description>Recent content in Sprockets on MetaBates.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
+    <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
+    <copyright>(c) 2016 Mark Bates.</copyright>
+    <lastBuildDate>Wed, 31 Aug 2011 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/sprockets/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Using Sprockets without Rails</title>
+      <link>/2011/08/31/using-sprockets-without-rails/</link>
+      <pubDate>Wed, 31 Aug 2011 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2011/08/31/using-sprockets-without-rails/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve started working this week on an example application for the next book I&amp;rsquo;m about to write and I wanted a simple way for my readers to easily run the app (it&amp;rsquo;s going to be a single HTML file with a ton of cool JavaScript going on in it). My first choice for running this app was to use the popular Ruby library, &lt;a href=&#34;http://rack.rubyforge.org/&#34;&gt;Rack&lt;/a&gt;. If you are unfamiliar with Rack, please check it out. It provides a simple interface for writing web applications. By writing a simple Ruby file readers can use their favorite Rack compatible web server to launch the application. Sounds simple, eh? That&amp;rsquo;s because it is.&lt;/p&gt;
+
+&lt;p&gt;With a simple Rack application written in a few lines of code I was able to start developing my example application. That&amp;rsquo;s when I realized I needed a good way to serve up all my &lt;a href=&#34;http://jashkenas.github.com/coffee-script/&#34;&gt;CoffeeScript&lt;/a&gt; and &lt;a href=&#34;http://sass-lang.com/&#34;&gt;Sass&lt;/a&gt; files. I was going to write a watchr script that did this, but I thought that was a bit heavy handed, and not very flexible, so I turned to &lt;a href=&#34;https://github.com/sstephenson/sprockets&#34;&gt;Sprockets&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Sprockets recently gained a lot of attention because it is bundled in with &lt;a href=&#34;http://guides.rubyonrails.org/3_1_release_notes.html&#34;&gt;Rails 3.1&lt;/a&gt; to serve up an application&amp;rsquo;s assets. It&amp;rsquo;s a clever little library that will process your files using CoffeeScript, Sass, etc&amp;hellip; and let you bundle them up in to a single asset by using a manifest. That was exactly what I wanted. After I spent the better part of an afternoon doing a bit of research and debugging here is the Rack configuration file I came up with:&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/1184400.js&#34;&gt; &lt;/script&gt;
+
+&lt;p&gt;That will serve
+&lt;pre&gt;/assets/application.css&lt;/pre&gt;
+via Sprockets. The file itself will live in
+&lt;pre&gt;&amp;lt;pwd&amp;gt;/app/assets/stylesheets/application.scss&lt;/pre&gt;
+The same goes for JavaScript files.&lt;/p&gt;
+
+&lt;p&gt;Hopefully this will save someone else a little of time when they&amp;rsquo;re trying to do the same thing. Enjoy!&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

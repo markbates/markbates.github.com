@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Prototypes on MetaBates.com</title>
+    <link>/tags/prototypes/</link>
+    <description>Recent content in Prototypes on MetaBates.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
+    <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
+    <copyright>(c) 2016 Mark Bates.</copyright>
+    <lastBuildDate>Sat, 15 Dec 2012 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/prototypes/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>JavaScript Prototypes (Video)</title>
+      <link>/2012/12/15/javascript-prototypes-video/</link>
+      <pubDate>Sat, 15 Dec 2012 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2012/12/15/javascript-prototypes-video/</guid>
+      <description>
+
+&lt;p&gt;In this short video we&amp;rsquo;ll take a look at the basics of how JavaScript prototypes work. We&amp;rsquo;ll also look at a few of the fun things you can do with JavaScript prototypes, as well as how they can be dangerous if mis-used.&lt;/p&gt;
+
+&lt;h3 id=&#34;update&#34;&gt;UPDATE:&lt;/h3&gt;
+
+&lt;p&gt;This video is now available on &lt;a href=&#34;http://www.metacasts.tv/casts/javascript-prototypes&#34;&gt;MetaCasts.tv&lt;/a&gt;. A new screen cast subscription site that focuses on Ruby and related technologies, such as Rails, JavaScript, CoffeeScript and more.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

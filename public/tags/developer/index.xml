@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Developer on MetaBates.com</title>
+    <link>/tags/developer/</link>
+    <description>Recent content in Developer on MetaBates.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
+    <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
+    <copyright>(c) 2016 Mark Bates.</copyright>
+    <lastBuildDate>Wed, 17 Nov 2010 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/developer/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Becoming an &#39;Expert&#39; Developer</title>
+      <link>/2010/11/17/becoming-an-expert-developer/</link>
+      <pubDate>Wed, 17 Nov 2010 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2010/11/17/becoming-an-expert-developer/</guid>
+      <description>&lt;p&gt;Last week I received an email from someone who used to work at a company that I used to work with. I didn&amp;rsquo;t know him, but he knew me through my work at the company, and my other exploits. He sent me an email to say that after a short time with the company he had been laid off, along with half of the development team. He wasn&amp;rsquo;t looking for pity, but rather advice.&lt;/p&gt;
+
+&lt;p&gt;What kind of advice was he asking for, well, he quite simply needed to know how could he become an &amp;lsquo;expert&amp;rsquo; Ruby on Rails developer. First, let me say that this post won&amp;rsquo;t have anything to do with Ruby, Rails, or any other specific programming language. Everything I&amp;rsquo;ll talk about is valid in ANY language on ANY platform. With that disclaimer, let&amp;rsquo;s move on, shall we?&lt;/p&gt;
+
+&lt;p&gt;&lt;img style=&#34;float: left; padding-right: 10px&#34; title=&#34;Monkey&#34; src=&#34;http://herd.typepad.com/.a/6a00d83451e1dc69e2010536ad3deb970b-800wi&#34; alt=&#34;&#34; width=&#34;250&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;While at this company he got introduced to Ruby on Rails and really loved it, coming from a non-Rails background. Since being laid off he&amp;rsquo;s been trying to land another Rails gig, but everyone is looking for &amp;lsquo;expert&amp;rsquo; Rails developers. So the question was, how to become an &amp;lsquo;expert&amp;rsquo; developer?&lt;/p&gt;
+
+&lt;p&gt;I keep putting &amp;lsquo;expert&amp;rsquo; in quotes because, let&amp;rsquo;s be honest here, that&amp;rsquo;s a VERY subjective term. As someone who has hired many developers in his day, I can tell you that I&amp;rsquo;v&lt;/p&gt;
+
+&lt;p&gt;e hired newbies to &amp;lsquo;experts&amp;rsquo; and everywhere in between. Everyone has their merits and possibilities. I&amp;rsquo;ve met &amp;lsquo;experts&amp;rsquo; that I wouldn&amp;rsquo;t hire to take out my trash, let alone build my business. I&amp;rsquo;ve also met people right out of college that I would hire again and again. So your mileage my vary.&lt;/p&gt;
+
+&lt;p&gt;So&amp;hellip; how do you build up that &amp;lsquo;expert&amp;rsquo; reputation? Let&amp;rsquo;s look at it. Below are some of things I&amp;rsquo;ve done, as well as some of the things that I look for as a hiring manager. Some are incredibly easy to do, others require work, but in the end they WILL pay off, and you&amp;rsquo;ll easily be at the head of the pack when going for that job.
+&lt;h3&gt;Build Something&lt;/h3&gt;
+When you are looking for a job people want to see what it is you&amp;rsquo;ve actually built. If you haven&amp;rsquo;t built anything, then how are you an expert? Build a lot of different things and put them up on the web for perspective employers to find and play around with. Use these are a playground for trying out all those cool new technologies you keep hearing about. Want to give NoSQL a try? Great, build an app that uses it. Need to improve your testing chops? Write an application and write all the tests you can possibly think of!
+&lt;h3&gt;Get a GitHub Account&lt;/h3&gt;
+I can&amp;rsquo;t tell you how important GitHub has become when trying to make a name for yourself. It seems like unless you&amp;rsquo;re on GitHub, you&amp;rsquo;re nobody. While that might not be true, it certainly hurts more than it helps to not have an account. You know those apps you&amp;rsquo;ve just been building and playing around with? Post them on GitHub! Then put your profile page link on your resume. Yep, you read that right. Give those looking at your resume a link to your code. Let them see how good a developer you actually are. Show them you know how to code all the things you&amp;rsquo;ve got on your resume. Listing a language, platform, or tool on resume is one thing, but actually showing your perspective employer is another! They&amp;rsquo;ll love it.&lt;/p&gt;
+
+&lt;p&gt;While you&amp;rsquo;re on GitHub, why not contribute to an open source project that&amp;rsquo;s up there. There are plenty of them, and they&amp;rsquo;re ALL looking for people to help out with their projects. Simply fork the projects, make some improvements, and then give those changes back to the projects owner. This looks great on a resume and really helps to show that you are interested and active in the community. Again, employers love this! Plus, you&amp;rsquo;ll be starting to build a name for yourself, and building a network, and a network is INCREDIBLY important when looking for work.
+&lt;h3&gt;Blog and Write&lt;/h3&gt;
+I should probably heed my own advice here and blog more often, but do as I say, not as I do. :) With that said I wrote a book, which looks AMAZING on a resume, but might be a bit out of reach for most people, so I recommend blogging instead. Why should you blog? Well, it shows that you have good communications skills, again very important to most employers. It can also show that you have a deep understanding of whatever it is you blog about.&lt;/p&gt;
+
+&lt;p&gt;What should you write about? If you&amp;rsquo;re stuck on a topic, might I make a recommendation or two. First, when you&amp;rsquo;re building those applications I mentioned early if you run into a bug or something else that got you a bit stuck, blog about it! Others could really benefit from your experience. Explain the problem and how you went about solving it. Another great thing to write about is your favorite libraries or plugins. Pick a different one each week and dissect it. Write about how it works, what it does, etc&amp;hellip; This is a great exercise in both writing and learning about how things work. Very valuable.
+&lt;h3&gt;Network&lt;/h3&gt;
+I mentioned earlier that a good network is INCREDIBLY important when looking for work, and I wasn&amp;rsquo;t lying. It&amp;rsquo;s the most important thing. A good network will constantly be feeding you new opportunities, or putting you in touch with those who can. So how do you develop that network? A few ways, I mentioned contributing to open source earlier, that&amp;rsquo;s a great way. Another great way is through conferences, hackfests, rumbles, and whatever other local (and non-local) events are being held in your development community of choice. Attend these events, participate, introduce yourself, speak, buy drinks, whatever! Just get out there and NETWORK!!
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+The gentleman who emailed me said that he was reading a lot of books in hopes of becoming an &amp;lsquo;expert&amp;rsquo;. While I&amp;rsquo;m not going to tell you not to read books (you should!!), I will tell you that there is no substitute for doing. All of things I&amp;rsquo;ve talked about above are ALL about doing. Reading is not doing, it&amp;rsquo;s reading. It&amp;rsquo;s passive and will not get you further in your career. There&amp;rsquo;s no place on a resume for the books you&amp;rsquo;ve read. Take what you&amp;rsquo;ve read and put it into action, then you&amp;rsquo;ll be on your way to becoming an &amp;lsquo;expert&amp;rsquo; developer.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

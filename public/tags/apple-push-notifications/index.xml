@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Apple Push Notifications on MetaBates.com</title>
+    <link>/tags/apple-push-notifications/</link>
+    <description>Recent content in Apple Push Notifications on MetaBates.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
+    <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
+    <copyright>(c) 2016 Mark Bates.</copyright>
+    <lastBuildDate>Mon, 21 Dec 2009 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/apple-push-notifications/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>APN on Rails Needs a Home</title>
+      <link>/2009/12/21/apn-on-rails-needs-a-home/</link>
+      <pubDate>Mon, 21 Dec 2009 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2009/12/21/apn-on-rails-needs-a-home/</guid>
+      <description>&lt;p&gt;Hey there everyone, recently I have been getting a lot of requests for bug fixes and new features for the APN on Rails gem that I wrote. While I appreciate that the gem is getting a lot of use and helping a lot of people out, I, unfortunately, no longer have the time to maintain the gem.&lt;/p&gt;
+
+&lt;p&gt;Recent changes in my career have meant that I have moved away from doing a lot o iPhone development, and because of that I no longer have the time, nor the desire, to keep maintaining a gem I&amp;rsquo;m no longer using.&lt;/p&gt;
+
+&lt;p&gt;So, because of that, I would to find a new home for the APN on Rails gem so that it gets the love and attention it so desires. Are there any takers out there? Is someone willing to take on the ownership of this, apparently, very useful gem? If you are willing to take it on, please let me know and we can workout the details.&lt;/p&gt;
+
+&lt;p&gt;Thanks to everyone who has said good things about the gem, and I&amp;rsquo;m glad that it has helped people get to using push notifications quicker, hopefully, one of you can take this project and run with it. Thanks again.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Backbone on MetaBates.com</title>
+    <link>/tags/backbone/</link>
+    <description>Recent content in Backbone on MetaBates.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
+    <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
+    <copyright>(c) 2016 Mark Bates.</copyright>
+    <lastBuildDate>Tue, 17 Apr 2012 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/backbone/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>There is No Escape! (Actually There is and You Should Always Use It.)</title>
+      <link>/2012/04/17/there-is-no-escape-actually-there-is-and-you-should-always-use-it/</link>
+      <pubDate>Tue, 17 Apr 2012 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2012/04/17/there-is-no-escape-actually-there-is-and-you-should-always-use-it/</guid>
+      <description>
+
+&lt;h3 id=&#34;beware-your-users&#34;&gt;Beware Your Users:&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;/assets/images/2012/04/17/escape_pod.jpg&#34; class=&#34;img-right&#34; style=&#34;width: 300px&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Every developer should already know about, and work to prevent, &lt;a href=&#34;http://en.wikipedia.org/wiki/Cross-site_scripting&#34;&gt;scripting attacks&lt;/a&gt; on their site. Scripting attacks are one of the easiest ways for a hacker to attack your site, they are also one of the easiest attacks to prevent.&lt;/p&gt;
+
+&lt;p&gt;Whenever you let an end user enter text into a form on your site, and then display that text to other users on your site, you&amp;rsquo;ve opened yourself up to this sort of attack.&lt;/p&gt;
+
+&lt;p&gt;What can a hacker do in these sorts of attacks? Well, they can run malicious JavaScript that appears to the world to have come from your site. That means they can read cookies? Alter the page and ask for things such as passwords, credit card numbers, etc&amp;hellip; All the while the end user believes these requests are coming from your site. That&amp;rsquo;s not good.&lt;/p&gt;
+
+&lt;p&gt;So how do you prevent against this? Well, you should always escape any text that orginally came from an end user to get rid of any &lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt; tags for a start. I would say go all out and get rid of, or escape, anything inside of &lt;code&gt;&amp;lt;&lt;/code&gt; or &lt;code&gt;&amp;gt;&lt;/code&gt; brackets.&lt;/p&gt;
+
+&lt;p&gt;A lot of web frameworks are trying to build this in now, to make it easier for developers to protect against such attacks. For example, in &lt;a href=&#34;http://rubyonrails.org/&#34;&gt;Rails&lt;/a&gt; all data that comes from the database is considered tainted and will be automatically escaped when displayed to the screen. The developer has to go out of their way to tell Rails that a particular string is safe. I, personally, really like this approach.&lt;/p&gt;
+
+&lt;p&gt;Lately I&amp;rsquo;ve been doing a lot of work with &lt;a href=&#34;http://documentcloud.github.com/backbone/&#34;&gt;Backbone.js&lt;/a&gt;, it has replaced the view layer in Rails for me. When working with a Backbone model if you want to get an attribute you would normally call the &lt;code&gt;get&lt;/code&gt; function. Let me demonstrate:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;model&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Backbone&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Model&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;({&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;foo&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;Bar&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;});&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;h1&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;html&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;model&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;foo&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;));&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;That code will set the &lt;code&gt;h1&lt;/code&gt; tag on the page to whatever the value of the attribute &lt;code&gt;foo&lt;/code&gt; is, in this case the value &lt;code&gt;&amp;ldquo;Bar&amp;rdquo;&lt;/code&gt;. That&amp;rsquo;s all fine and dandy, but what if we set the value of the &lt;code&gt;foo&lt;/code&gt; attribute to something a bit more malicious:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;model&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Backbone&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Model&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;({&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;foo&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;lt;script&amp;gt;alert(&amp;#39;xss&amp;#39;)&amp;lt;/script&amp;gt;&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;});&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;h1&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;html&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;model&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;foo&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;));&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;If we were to run that code this time we would get an alert window that said &lt;code&gt;xss&lt;/code&gt;. Not the worse thing that can happen, but it&amp;rsquo;s still pretty darn bad!&lt;/p&gt;
+
+&lt;p&gt;How can you prevent this from happening when using Backbone? Stop using the &lt;code&gt;get&lt;/code&gt; function! There are only two places where I can see ever using the &lt;code&gt;get&lt;/code&gt;function, and I&amp;rsquo;ll get to those in a second.&lt;/p&gt;
+
+&lt;h3 id=&#34;code-escape-code-is-your-only-option&#34;&gt;&lt;code&gt;escape&lt;/code&gt; is Your Only Option:&lt;/h3&gt;
+
+&lt;p&gt;To prevent these sorts of scripting attacks when using Backbone, you should be using the &lt;code&gt;escape&lt;/code&gt; function. It essentially behaves just like the &lt;code&gt;get&lt;/code&gt; function, but it will return an escaped version of the attribute.&lt;/p&gt;
+
+&lt;p&gt;If we were to update the malicious code example to look something like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;model&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Backbone&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Model&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;({&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;foo&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;lt;script&amp;gt;alert(&amp;#39;xss&amp;#39;)&amp;lt;/script&amp;gt;&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;});&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;h1&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;html&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;model&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;escape&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;foo&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;));&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;when it is run we would end up with an &lt;code&gt;h1&lt;/code&gt; tag that had a value of &lt;code&gt;&amp;amp;lt;script&amp;amp;gt;alert(&amp;amp;#x27;xss&amp;amp;#x27;)&amp;amp;lt;&amp;amp;#x2F;script&amp;amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Now, I&amp;rsquo;ll be the first to admit that doesn&amp;rsquo;t look very pretty, but at least the scripting attack has failed.&lt;/p&gt;
+
+&lt;h3 id=&#34;when-you-should-use-code-get-code&#34;&gt;When You Should Use &lt;code&gt;get&lt;/code&gt;:&lt;/h3&gt;
+
+&lt;p&gt;Earlier I mentioned there are two places where I could see using the &lt;code&gt;get&lt;/code&gt; function.&lt;/p&gt;
+
+&lt;p&gt;Because the &lt;code&gt;escape&lt;/code&gt; function is santizing the value of the attribute for you there is a slight performance overhead, therefore, if you are definitely not going to executing the value of that attribute, then using the &lt;code&gt;get&lt;/code&gt; function is acceptable. For example if you were doing something like the following:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;model&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Backbone&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Model&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;({&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;foo&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;Bar&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;});&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;model&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;foo&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;null&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;nx&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;h1&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;html&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;model&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;escape&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;foo&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;));&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Notice how there I used the &lt;code&gt;get&lt;/code&gt; function to check whether the attribute&amp;rsquo;s value was &lt;code&gt;null&lt;/code&gt; and then I used the &lt;code&gt;escape&lt;/code&gt; function to actually print out that value. That is a perfectly acceptable use of the &lt;code&gt;get&lt;/code&gt; function. It also, happens to the exact reason for use case number two.&lt;/p&gt;
+
+&lt;p&gt;The second reason you would want to use the &lt;code&gt;get&lt;/code&gt; function has already been highlighted in the previous code example. The &lt;code&gt;get&lt;/code&gt; function returns the original attribute value, unaltered. The &lt;code&gt;escape&lt;/code&gt; function, however, will always return a &lt;code&gt;string&lt;/code&gt; value, even if the original value was &lt;code&gt;null&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;model&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Backbone&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Model&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;({});&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;console&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;model&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;foo&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;));&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// null&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;console&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;model&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;escape&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;foo&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;));&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// &amp;quot;&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;See the difference there? I believe this to be a bug. I&amp;rsquo;ve submitted a &lt;a href=&#34;https://github.com/documentcloud/backbone/pull/1227&#34;&gt;pull request&lt;/a&gt; to fix this issue, so hopefully it&amp;rsquo;ll be resolved shortly. Because of this if you are doing any sort of comparisons, boolean checks, etc&amp;hellip; always do it with the &lt;code&gt;get&lt;/code&gt; function. If you are executing the value, such as printing it to the screen, always use the &lt;code&gt;escape&lt;/code&gt; function.&lt;/p&gt;
+
+&lt;p&gt;Your users will be happier, and you&amp;rsquo;ll sleep better, if you always use the &lt;code&gt;escape&lt;/code&gt; route!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How To Write An API Without Even Trying</title>
+      <link>/2012/04/05/how-to-write-an-api-without-even-trying/</link>
+      <pubDate>Thu, 05 Apr 2012 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2012/04/05/how-to-write-an-api-without-even-trying/</guid>
+      <description>
+
+&lt;p&gt;Recently I fell upon a way of working that I think is just fantastic. So far I have no complaints about it, and neither do my clients.&lt;/p&gt;
+
+&lt;h3 id=&#34;how-i-used-to-work&#34;&gt;How I used to work&lt;/h3&gt;
+
+&lt;p&gt;In the past I would write my Rails applications just like everyone else did. I had all my business logic in my models and my controllers were very lightweight. Just enough to have the data I need to render the page.&lt;/p&gt;
+
+&lt;p&gt;My views on the other hand were big. They contained all of the view logic. There were loops to print things to the screen, helpers to make things easier to do in the view layer, forms, etc&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;Somewhere near the end of the project my client would inevitably tell me they want me to build an API for them. Of course, this usually happens with only minutes left on the clock. So quickly, and hastily, I throw together a quick API for them. Sure I test the API with my test suite, but the API has never really been &amp;ldquo;tested&amp;rdquo;, in a real world sense.&lt;/p&gt;
+
+&lt;p&gt;This writing an API in a vacuum seems to be quite a common practice. Everyone knows they need an API, but people don&amp;rsquo;t put much thought into it because they&amp;rsquo;re too busy trying to crank out their great idea as fast as possible. This leads to less than stellar APIs, which can both hurt the business and make it difficult when the time comes to do things like build clients for mobile devices and desktops.&lt;/p&gt;
+
+&lt;p&gt;So how can we solve this problem without putting too much extra strain on us poor developers? The answer is incredibly simple, eat your own dog food.&lt;/p&gt;
+
+&lt;h3 id=&#34;eating-the-dog-food-and-loving-it&#34;&gt;Eating the Dog Food (and loving it!)&lt;/h3&gt;
+
+&lt;p&gt;I, like a lot of my colleagues, have been turning to JavaScript frameworks, such as Backbone.js, to help create a richer, and more responsive, front-end user experience for the applications we write. A lot of what makes these types of frameworks so responsive is that they can make remote AJAX calls to your server to fetch, update, or destroy objects.&lt;/p&gt;
+
+&lt;p&gt;Since I&amp;rsquo;m doing all of my front-end work using Backbone, my Rails view layer has become almost not existent. I use views simply to launch my Backbone application. A typical view my look something like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;c&#34;&gt;&amp;lt;!-- index.html.erb --&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;nt&#34;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;id=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#39;products&amp;#39;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;nt&#34;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;MyApp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Views&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ProductApp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;})&lt;/span&gt;
+&lt;span class=&#34;nt&#34;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;All my views are responsible for now is launching the Backbone application to serve up the appropriate views and handle all of the user interaction. My controllers are also now even smaller. They are essentially just there to serve up that basic template page.&lt;/p&gt;
+
+&lt;p&gt;So what does all of this have to do with writing an API without trying?&lt;/p&gt;
+
+&lt;p&gt;Well, the Backbone application needs to communicate back to the server if the user wants to update, create, or destroy a resource, so why not simply write a very nice API to do that? You were going to spend all this time writing controllers and view logic anyway, why not move those controllers to the API and that view logic to Backbone.&lt;/p&gt;
+
+&lt;p&gt;The win is outstanding! Because you&amp;rsquo;ve written a full client, your actual application, for your API you know that your API is more than capable of letting others do the same. Your API works, it&amp;rsquo;s battle tested, it&amp;rsquo;s proven, and it exists! The best part is it didn&amp;rsquo;t take you any longer to write it either.&lt;/p&gt;
+
+&lt;p&gt;This pays off down the line in spades. For example, I&amp;rsquo;ve just finished up a project for a client and I took this exact approach. The client then asked me if I could write them a mobile application. I said sure, I created a new PhoneGap application and within a few minutes I copied in the Backbone models from my webapp I had written and was well on the way to writing a second full client for the API, and I didn&amp;rsquo;t even break a sweat.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

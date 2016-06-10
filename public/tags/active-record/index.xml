@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Active Record on MetaBates.com</title>
+    <link>/tags/active-record/</link>
+    <description>Recent content in Active Record on MetaBates.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
+    <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
+    <copyright>(c) 2016 Mark Bates.</copyright>
+    <lastBuildDate>Fri, 15 Apr 2011 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/active-record/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Because everybody has an opinion...</title>
+      <link>/2011/04/15/because-everybody-has-an-opinion/</link>
+      <pubDate>Fri, 15 Apr 2011 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2011/04/15/because-everybody-has-an-opinion/</guid>
+      <description>&lt;p&gt;In case you&amp;rsquo;ve been living in a cave this week you&amp;rsquo;ve probably heard that &lt;a href=&#34;http://www.rubyinside.com/rails-3-1-adopts-coffeescript-jquery-sass-and-controversy-4669.html&#34;&gt;Ruby on Rails&lt;/a&gt; is going to be including both the &lt;a href=&#34;http://coffeescript.org/&#34;&gt;CoffeeScript&lt;/a&gt; and &lt;a href=&#34;http://sass-lang.com/&#34;&gt;SASS&lt;/a&gt; libraries, it will also make &lt;a href=&#34;http://jquery.com/&#34;&gt;jQuery&lt;/a&gt; the default JavaScript framework, replacing the &lt;a href=&#34;http://www.prototypejs.org/&#34;&gt;Prototype&lt;/a&gt; framework.&lt;/p&gt;
+
+&lt;p&gt;I would like to start by addressing my experiences with CoffeeScript. My opinion of it is of ambivalence. I&amp;rsquo;ve used it on a project, I&amp;rsquo;ve played with and in the end I&amp;rsquo;ve come out with the opinion of &amp;ldquo;it&amp;rsquo;s ok&amp;rdquo;. It didn&amp;rsquo;t blow me away, but at the same time I can see why so many people like. It offers some really cool features that I really wish JavaScript had and you can cut down on the amount of code you have to write. On the other hand the apps I tend to write don&amp;rsquo;t tend to be that JavaScript heavy that I really needed to reach out for something like CoffeeScript.&lt;/p&gt;
+
+&lt;p&gt;&lt;img style=&#34;float: left; padding-right: 10px&#34; src=&#34;http://blogs.worldbank.org/files/publicsphere/public%20opinion_JGRNLY.jpeg&#34; alt=&#34;&#34; width=&#34;326&#34; height=&#34;246&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So, how do I feel about CoffeeScript being included with Rails? Well, I&amp;rsquo;ll get to that. Let&amp;rsquo;s go over some of the most common arguments I&amp;rsquo;ve heard from people this week about why they&amp;rsquo;re anti-CoffeeScript in Rails.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;It&amp;rsquo;s an abstraction layer of JavaScript! JavaScript isn&amp;rsquo;t that bad, why can&amp;rsquo;t you just write JavaScript?&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;It&amp;rsquo;s going to be a hinderance to newbies. It&amp;rsquo;ll be too much of a learning curve!&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Let&amp;rsquo;s start with that second point first, shall we? I agree, it does represent a new element that needs to be learned when coming to Rails. But here&amp;rsquo;s the pretty nifty thing about how it&amp;rsquo;s all implemented in Rails. In order to actually use CoffeeScript in Rails you have to create your files named foo.js.coffee if, however, you just name your file foo.js then, guess what? You will have to write plain old JavaScript! Seems like newbies, and those who don&amp;rsquo;t like CoffeeScript, can just keep writing plain old JavaScript without anything stopping them at all.&lt;/p&gt;
+
+&lt;p&gt;Now, let&amp;rsquo;s talk about the abstraction layer argument. Yes, CoffeeScript is an abstraction on top of JavaScript, but let&amp;rsquo;s take a look at a few other parts of the Rails stack and see how they hold up against this argument.&lt;/p&gt;
+
+&lt;p&gt;Here&amp;rsquo;s a fairly common Rails stack:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ActiveRecord&lt;/li&gt;
+&lt;li&gt;Haml&lt;/li&gt;
+&lt;li&gt;jQuery&lt;/li&gt;
+&lt;li&gt;RSpec&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;What do all those things have in common? Well, they&amp;rsquo;re all abstraction layers that sit on top of something else, don&amp;rsquo;t they? Let&amp;rsquo;s look at that list again?&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ActiveRecord - SQL (Structured Query Language)&lt;/li&gt;
+&lt;li&gt;Haml - HTML&lt;/li&gt;
+&lt;li&gt;jQuery - JavaScript, you could just as easily hand roll those AJAX calls in pure JavaScript.&lt;/li&gt;
+&lt;li&gt;RSpec - Test/Unit&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;What I&amp;rsquo;ve found funny about the particular argument is that I&amp;rsquo;ve heard it MOST from those who use things like HAML, which is a DEFINITELY an abstraction layer that sits on top of HTML. See where I&amp;rsquo;m going with this one? Good, I don&amp;rsquo;t want to belabor the point. :)&lt;/p&gt;
+
+&lt;p&gt;So, finally, where do I stand on this whole thing? Well, I view like it Test/Unit and Prototype. Those are both the current standard (although jQuery will replace Prototype in 3.1) and I don&amp;rsquo;t like or use either of them. Instead I configure Rails to use jQuery and RSpec. I don&amp;rsquo;t like Haml, but those that do simply replace ERB with Haml and they move on with their day. So my take is this, it&amp;rsquo;s there, it&amp;rsquo;s included. Use it if you like, or don&amp;rsquo;t. Is it really that big a deal? No, it really isn&amp;rsquo;t. If Rails dropped ERB and went with Haml as the default, would I bitch and moan, probably a bit, but then I&amp;rsquo;d just install the Rails-ERB gem and move on with my day, just like I do with jQuery and RSpec today.&lt;/p&gt;
+
+&lt;p&gt;So sit back, relax, use the libraries that you want to use, Rails let&amp;rsquo;s you do that. Oh, while you&amp;rsquo;re relaxing why not try out CoffeeScript, who knows, you might just enjoy it. Or not.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ruby 1.9 and Rails 3.0</title>
+      <link>/2010/02/08/ruby-1-9-rails-3-0/</link>
+      <pubDate>Mon, 08 Feb 2010 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2010/02/08/ruby-1-9-rails-3-0/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve always been a big proponent of Ruby 1.9, I make no bones about it. My question is why wouldn&amp;rsquo;t you be? It&amp;rsquo;s faster, more powerful, easier to use, and makes things a lot clearer and cleaner than 1.8. So why then are pretty much all of us still running our applications on 1.8.x? Great question, and as far as I can tell there is really only 1 answer.&lt;/p&gt;
+
+&lt;p&gt;That answer? Because no one else is. It&amp;rsquo;s stupid really, but it&amp;rsquo;s the truth. We&amp;rsquo;re all afraid to run our applications in 1.9 because we don&amp;rsquo;t know many other people that are. Because of that it makes it hard for you to make your application work with 1.9 because all those gems and libraries  you use aren&amp;rsquo;t 1.9 compatible, so you&amp;rsquo;re forced to keep running your app on 1.8. And so the cycle continues.&lt;/p&gt;
+
+&lt;p&gt;Enter Rails 3.0. Here is a major upgrade to the most prominent web framework in the Ruby community, and I would argue the reason that most of us got into Ruby in the first place. This upgrade will force us all to make some pretty severe changes to our applications to make them fully compatible.  The changes in ActiveRecord alone are so sweeping and massive that we, as a community, are going to have to put some serious time into upgrade our applications. Yet, despite this, we are all going to do it.&lt;/p&gt;
+
+&lt;p&gt;Why are we all going to upgrade to Rails 3.0? Because it  looks cool and sexy, and we want those great new features and all those performance enhancements to make our applications run faster. Which leads me back to Ruby 1.9.&lt;/p&gt;
+
+&lt;p&gt;In Rails 3.0 they are dropping support for Ruby 1.8.6 and below in favor of Ruby &amp;gt;1.8.7 and &amp;gt;1.9.1. I propose that Rails 3.0 becomes Ruby 1.9 compatible only. Think about it. What a perfect opportunity for us all. We are all going to have to upgrade the libraries and gems we maintain to support Rails 3.0 and we are going to be upgrading our applications to Rails 3.0, so why not go full steam into Ruby 1.9?&lt;/p&gt;
+
+&lt;p&gt;There is no better time than now to push forward into the future as a whole community. Let&amp;rsquo;s put Ruby 1.8 behind and reap the benefits of what Ruby 1.9 has to offer. What do you say? Can we do it? I think we can.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Cachetastic 3.0.0 Released</title>
+      <link>/2009/06/18/cachetastic-3-0-0-released/</link>
+      <pubDate>Thu, 18 Jun 2009 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2009/06/18/cachetastic-3-0-0-released/</guid>
+      <description>&lt;p&gt;After more than two years powering production level applications I found that Cachetastic was starting to get a bit long in the tooth. I felt that there was a lot I could to make Cachetastic an even better library than it already was. I thought that I had added a bunch of cruft to the framework that people were just not using and maintaining it all seemed like a bit of a pointless chore.&lt;/p&gt;
+
+&lt;p&gt;So what was I unhappy about?
+&lt;h3&gt;Configuration:&lt;/h3&gt;
+I was pretty unhappy with the way configuration was being done. I liked using Configatron to power the configuration, but I didn&amp;rsquo;t like the way I implemented the way I was using Configatron. For example, to set up one of the default settings, like the expiry time, you would configure it like such:
+&lt;pre&gt;configatron.cachetastic_default_options.expiry_time = 30.minutes&lt;/pre&gt;
+Now you would configure that same option like this:
+&lt;pre&gt;configatron.cachetastic.defaults.expiry_time = 30.minutes&lt;/pre&gt;
+That&amp;rsquo;s a little savings, but it really hits when you want to configure a particular cache. Let&amp;rsquo;s say we a cache called My::Super::AwesomeCache, to configure it in past versions of Cachetastic we would do this:
+&lt;pre&gt;configatron.my_super_awesome_cache_options.expiry_time = 15.minutes&lt;/pre&gt;
+Now in Cachetastic 3.0.0 we configure like this:
+&lt;pre&gt;configatron.cachetastic.my.super.awesome_cache.expire_time = 15.minutes.&lt;/pre&gt;
+As you can see all configuration now happens under the cachetastic namespace in Configatron. Then it&amp;rsquo;s a matter of using a Configatron namespace for each of your modules. I find it a lot easier to manage.&lt;/p&gt;
+
+&lt;p&gt;Another change in configuration is that in previous versions if you wanted to override one default configuration value for a particular cache,  you had to override them all. Now, you can just override the one value  you want, and the rest will be nicely inherited from the defaults.
+&lt;h3&gt;Speed&lt;/h3&gt;
+Cachetastic has always been a very fast library, but I knew that more could be squeezed from that stone. With Cachetastic 3.0.0 you now get a hefty 25% improvement in the Memcached adapter and a whopping 99% in the LocalMemory adapter! Those are pretty awesome numbers. These numbers were easy to achieve when I stepped back and examined what it was I really wanted to do, and picked the most straightforward path to that goal.
+&lt;h3&gt;Bloat&lt;/h3&gt;
+After more than two years Cachetastic was starting to suffer from a severe case of bloat. For example, I&amp;rsquo;ve never used the DRb adapter, have you? So why is it there? The same goes for the HtmlFile adapter. I wrote that because at my last job the operations team weren&amp;rsquo;t savvy  enough to be able to get Apache to talk to Memcached, so they wanted to serve HTML files, hence the rather awful adapter. Both of those adapters are now history.&lt;/p&gt;
+
+&lt;p&gt;There also used to be support for Rails Session Caching. Considering that most people are now using the Cookie store for sessions, there really is no need for this cache. It could also be argued that it should not have been bundled with Cachetastic at all. I would agree with those arguments. Cachetastic is, and should always be, a standalone caching framework, that can be plugged into Rails or any plain old Ruby project that needs caching support.&lt;/p&gt;
+
+&lt;p&gt;Also purged is automatic support for mixing in the Cachetastic::Cacheable module into ActiveRecord. If you want this functionality, it is very easy to include in your application. I don&amp;rsquo;t want to force it on anyone, so that is gone now.&lt;/p&gt;
+
+&lt;p&gt;Finally there are a handful of smaller features that I&amp;rsquo;m sure no one will miss that I&amp;rsquo;ve yanked out in the name of performance, reliability, and ease of maintenance.
+&lt;h3&gt;Nice and Clean&lt;/h3&gt;
+When I realized what I really wanted, and what I didn&amp;rsquo;t want, it became clear that what was needed was a fresh code base. With that said, I hit delete (well, not really) and started over again. The code is now smooth, so much easier to read, and fast. In previous versions even my eyes went a bit crossed when I tried to figure out exactly what was going on. There where quite a few levels of indirection, and things just weren&amp;rsquo;t place where they probably should&amp;rsquo;ve been. That has all been fixed.&lt;/p&gt;
+
+&lt;p&gt;With a nice, clean code base comes a brand new set of tests. The tests are now extremely comprehensive, and while 2.x was very well tested, I know that 3.0.0, is tested to the hilt.&lt;/p&gt;
+
+&lt;p&gt;Because 3.0.0 is a brand new code base, I should probably stress the fact that is &lt;strong&gt;NOT&lt;/strong&gt; backward compatible. So please be advised.
+&lt;h3&gt;Installation:&lt;/h3&gt;
+&lt;pre&gt;$ sudo gem install cachetastic&lt;/pre&gt;
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+I really hope everyone likes this brand new version of Cachetastic. I&amp;rsquo;m very happy with it, and I think if you give it a chance, you will be too.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;rsquo;d like to have a peek at the RDoc, it can be found at:
+&lt;a href=&#34;http://cachetastic-api.mackframework.com/&#34;&gt;http://cachetastic-api.mackframework.com/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

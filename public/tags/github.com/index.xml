@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Github.Com on MetaBates.com</title>
+    <link>/tags/github/index.com/</link>
+    <description>Recent content in Github.Com on MetaBates.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
+    <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
+    <copyright>(c) 2016 Mark Bates.</copyright>
+    <lastBuildDate>Tue, 24 May 2011 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/github.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Stop Complaining. Start Contributing!</title>
+      <link>/2011/05/24/stop-complaining-start-contributing/</link>
+      <pubDate>Tue, 24 May 2011 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2011/05/24/stop-complaining-start-contributing/</guid>
+      <description>&lt;p&gt;&lt;img style=&#34;float: left; padding-right: 10px&#34; title=&#34;stop complaining&#34; src=&#34;http://tanamatales.com/wp-content/uploads/2011/05/stop_complaining1.jpg&#34; alt=&#34;&#34; width=&#34;300&#34; height=&#34;225&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Because I maintain several open source projects on &lt;a href=&#34;http://github.com/markbates&#34;&gt;Github&lt;/a&gt; I&amp;rsquo;m constantly getting emailed questions or issues, or people are always opening up tickets with bugs, issues, complaints, etc&amp;hellip; And I really appreciate the feedback on these projects, I really do. What I would appreciate more is if instead of just opening a ticket, or sending an email, why not fork the project, fix it, and then contact me?&lt;/p&gt;
+
+&lt;p&gt;Now, I know that sounds like a lot of work, but honestly it&amp;rsquo;s really not. Github has made contributing to open source projects so trivial that everyone should be doing it. Take for example a recent ticket I got for one of my projects. The gist of ticket was that if there was a space in the project name the library would throw an error. That&amp;rsquo;s a great bug! It&amp;rsquo;s also an incredibly easy one to fix. If the person who opened the ticket has actually just submitted a pull request with the fix instead the fix would already have been deployed. Granted it would&amp;rsquo;ve taken a bit more than the few minutes to open the ticket, but not that much more. &lt;strong&gt;UPDATE: He actually did fork the project and is trying to fix it! Awesome!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;So why should you do this? Why should you take the time to fix your own issues instead of having the library owner/maintainer do it? Well, the reasons are plentiful, but here are a few of my favorites:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;You can have it now! That&amp;rsquo;s right, if you fork the project and fix the bug or add that new feature you can start using today! Even before the project owner has a chance to merge in the pull request. That&amp;rsquo;s a total win right there!&lt;/li&gt;
+&lt;li&gt;Quicker to be released to the general public. Maintainers of open source projects are busy people and, usually, don&amp;rsquo;t spend all day working on their open source libraries. If someone submits a good patch or feature then it&amp;rsquo;s easier for them to pull it in and get it out as a proper release sooner.&lt;/li&gt;
+&lt;li&gt;It feels good! It feels really good to contribute back to a project that you use often. After awhile you might even get commit rights to the project and won&amp;rsquo;t have to maintain a fork. That feels really good!&lt;/li&gt;
+&lt;li&gt;Build a name for yourself. That&amp;rsquo;s one of the ways you land better jobs or contracts. People start seeing your name floating around commit messages. You get to know the people maintaining the projects, they like your work, then when they&amp;rsquo;re looking to fill a position, guess who they think of?&lt;/li&gt;
+&lt;li&gt;It makes you a better developer. By contributing to different projects you learn different techniques. You get to understand the code of the library you&amp;rsquo;re using and learn little tricks that you might not have known about otherwise.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Those are just a few of the reasons why giving back to the open source community is great. So the question I&amp;rsquo;m going to leave you with now is are you going to be a player or a hater? Someone who just complains all day, or someone who helps to make the world a better place? I&amp;rsquo;m hoping you become the latter.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Becoming an &#39;Expert&#39; Developer</title>
+      <link>/2010/11/17/becoming-an-expert-developer/</link>
+      <pubDate>Wed, 17 Nov 2010 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2010/11/17/becoming-an-expert-developer/</guid>
+      <description>&lt;p&gt;Last week I received an email from someone who used to work at a company that I used to work with. I didn&amp;rsquo;t know him, but he knew me through my work at the company, and my other exploits. He sent me an email to say that after a short time with the company he had been laid off, along with half of the development team. He wasn&amp;rsquo;t looking for pity, but rather advice.&lt;/p&gt;
+
+&lt;p&gt;What kind of advice was he asking for, well, he quite simply needed to know how could he become an &amp;lsquo;expert&amp;rsquo; Ruby on Rails developer. First, let me say that this post won&amp;rsquo;t have anything to do with Ruby, Rails, or any other specific programming language. Everything I&amp;rsquo;ll talk about is valid in ANY language on ANY platform. With that disclaimer, let&amp;rsquo;s move on, shall we?&lt;/p&gt;
+
+&lt;p&gt;&lt;img style=&#34;float: left; padding-right: 10px&#34; title=&#34;Monkey&#34; src=&#34;http://herd.typepad.com/.a/6a00d83451e1dc69e2010536ad3deb970b-800wi&#34; alt=&#34;&#34; width=&#34;250&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;While at this company he got introduced to Ruby on Rails and really loved it, coming from a non-Rails background. Since being laid off he&amp;rsquo;s been trying to land another Rails gig, but everyone is looking for &amp;lsquo;expert&amp;rsquo; Rails developers. So the question was, how to become an &amp;lsquo;expert&amp;rsquo; developer?&lt;/p&gt;
+
+&lt;p&gt;I keep putting &amp;lsquo;expert&amp;rsquo; in quotes because, let&amp;rsquo;s be honest here, that&amp;rsquo;s a VERY subjective term. As someone who has hired many developers in his day, I can tell you that I&amp;rsquo;v&lt;/p&gt;
+
+&lt;p&gt;e hired newbies to &amp;lsquo;experts&amp;rsquo; and everywhere in between. Everyone has their merits and possibilities. I&amp;rsquo;ve met &amp;lsquo;experts&amp;rsquo; that I wouldn&amp;rsquo;t hire to take out my trash, let alone build my business. I&amp;rsquo;ve also met people right out of college that I would hire again and again. So your mileage my vary.&lt;/p&gt;
+
+&lt;p&gt;So&amp;hellip; how do you build up that &amp;lsquo;expert&amp;rsquo; reputation? Let&amp;rsquo;s look at it. Below are some of things I&amp;rsquo;ve done, as well as some of the things that I look for as a hiring manager. Some are incredibly easy to do, others require work, but in the end they WILL pay off, and you&amp;rsquo;ll easily be at the head of the pack when going for that job.
+&lt;h3&gt;Build Something&lt;/h3&gt;
+When you are looking for a job people want to see what it is you&amp;rsquo;ve actually built. If you haven&amp;rsquo;t built anything, then how are you an expert? Build a lot of different things and put them up on the web for perspective employers to find and play around with. Use these are a playground for trying out all those cool new technologies you keep hearing about. Want to give NoSQL a try? Great, build an app that uses it. Need to improve your testing chops? Write an application and write all the tests you can possibly think of!
+&lt;h3&gt;Get a GitHub Account&lt;/h3&gt;
+I can&amp;rsquo;t tell you how important GitHub has become when trying to make a name for yourself. It seems like unless you&amp;rsquo;re on GitHub, you&amp;rsquo;re nobody. While that might not be true, it certainly hurts more than it helps to not have an account. You know those apps you&amp;rsquo;ve just been building and playing around with? Post them on GitHub! Then put your profile page link on your resume. Yep, you read that right. Give those looking at your resume a link to your code. Let them see how good a developer you actually are. Show them you know how to code all the things you&amp;rsquo;ve got on your resume. Listing a language, platform, or tool on resume is one thing, but actually showing your perspective employer is another! They&amp;rsquo;ll love it.&lt;/p&gt;
+
+&lt;p&gt;While you&amp;rsquo;re on GitHub, why not contribute to an open source project that&amp;rsquo;s up there. There are plenty of them, and they&amp;rsquo;re ALL looking for people to help out with their projects. Simply fork the projects, make some improvements, and then give those changes back to the projects owner. This looks great on a resume and really helps to show that you are interested and active in the community. Again, employers love this! Plus, you&amp;rsquo;ll be starting to build a name for yourself, and building a network, and a network is INCREDIBLY important when looking for work.
+&lt;h3&gt;Blog and Write&lt;/h3&gt;
+I should probably heed my own advice here and blog more often, but do as I say, not as I do. :) With that said I wrote a book, which looks AMAZING on a resume, but might be a bit out of reach for most people, so I recommend blogging instead. Why should you blog? Well, it shows that you have good communications skills, again very important to most employers. It can also show that you have a deep understanding of whatever it is you blog about.&lt;/p&gt;
+
+&lt;p&gt;What should you write about? If you&amp;rsquo;re stuck on a topic, might I make a recommendation or two. First, when you&amp;rsquo;re building those applications I mentioned early if you run into a bug or something else that got you a bit stuck, blog about it! Others could really benefit from your experience. Explain the problem and how you went about solving it. Another great thing to write about is your favorite libraries or plugins. Pick a different one each week and dissect it. Write about how it works, what it does, etc&amp;hellip; This is a great exercise in both writing and learning about how things work. Very valuable.
+&lt;h3&gt;Network&lt;/h3&gt;
+I mentioned earlier that a good network is INCREDIBLY important when looking for work, and I wasn&amp;rsquo;t lying. It&amp;rsquo;s the most important thing. A good network will constantly be feeding you new opportunities, or putting you in touch with those who can. So how do you develop that network? A few ways, I mentioned contributing to open source earlier, that&amp;rsquo;s a great way. Another great way is through conferences, hackfests, rumbles, and whatever other local (and non-local) events are being held in your development community of choice. Attend these events, participate, introduce yourself, speak, buy drinks, whatever! Just get out there and NETWORK!!
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+The gentleman who emailed me said that he was reading a lot of books in hopes of becoming an &amp;lsquo;expert&amp;rsquo;. While I&amp;rsquo;m not going to tell you not to read books (you should!!), I will tell you that there is no substitute for doing. All of things I&amp;rsquo;ve talked about above are ALL about doing. Reading is not doing, it&amp;rsquo;s reading. It&amp;rsquo;s passive and will not get you further in your career. There&amp;rsquo;s no place on a resume for the books you&amp;rsquo;ve read. Take what you&amp;rsquo;ve read and put it into action, then you&amp;rsquo;ll be on your way to becoming an &amp;lsquo;expert&amp;rsquo; developer.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>APN on Rails has a new Home.</title>
+      <link>/2010/03/10/apn-on-rails-has-a-new-home/</link>
+      <pubDate>Wed, 10 Mar 2010 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2010/03/10/apn-on-rails-has-a-new-home/</guid>
+      <description>&lt;p&gt;Quite often I get asked why don&amp;rsquo;t I blog more? Why don&amp;rsquo;t I tweet more? Why don&amp;rsquo;t I &lt;em&gt;fill in the blank&lt;/em&gt; more. The answer is I&amp;rsquo;m a busy man. I&amp;rsquo;m the CTO for a pre-funding startup, &lt;a href=&#34;http://www.shortbord.com/invites/ZAZLBQH5FA&#34;&gt;www.shortbord.com&lt;/a&gt;, the father of two adorable little boys, the lead singer of a Boston-based band, &lt;a href=&#34;http://www.myspace.com/colawarvets&#34;&gt;www.myspace.com/colawarvets&lt;/a&gt;, and that&amp;rsquo;s just the big stuff! I have to prioritize what I can spend my time on, and unfortunately some of my open source projects are the first to get the ax.&lt;/p&gt;
+
+&lt;p&gt;Why do the open source projects always seem to get the ax? Well, let me start by saying that they don&amp;rsquo;t &lt;em&gt;always&lt;/em&gt; get the ax, but they certainly jump to the top of the list. There are certain libraries I&amp;rsquo;ve written, &lt;a href=&#34;http://github.com/markbates/cachetastic&#34;&gt;cachetastic&lt;/a&gt; and &lt;a href=&#34;http://github.com/markbates/configatron&#34;&gt;configatron&lt;/a&gt;, are the two most prominent that I use day in and day out. They will always get the love the deserve. Then there are projects like APN on Rails. I wrote it because I had an iPhone app (no longer available) that I wanted notifications for, and there was nothing else available for Ruby to do the job. The plugin took off like crazy and I was overwhelmed with patches, questions, bugs, etc&amp;hellip; That was great, and I was happy to help, for a time, but alas, I haven&amp;rsquo;t written an iPhone app for ages, and I just don&amp;rsquo;t have time to maintain a plugin that I wasn&amp;rsquo;t even using.&lt;/p&gt;
+
+&lt;p&gt;A while ago I realized that the best thing for APN on Rails, myself, and for the community was to find someone to take over the project so that it got the love it deserved. I put out the call and the good folks over at &lt;a href=&#34;http://www.prx.org/&#34;&gt;PRX&lt;/a&gt; (Public Radio Exchange) answered the call. The folks at PRX have written some great iPhone apps, including the very popular &amp;ldquo;This American Life&amp;rdquo; app.&lt;/p&gt;
+
+&lt;p&gt;So I&amp;rsquo;m happy to announce that the new official home for APN on Rails is now at: &lt;a href=&#34;http://github.com/PRX/apn_on_rails&#34;&gt;http://github.com/PRX/apn_on_rails&lt;/a&gt;. I ask that you continue to show the same support to PRX that you have shown to me over the life of this plugin.&lt;/p&gt;
+
+&lt;p&gt;Again, thank you to everyone, and thank you to Rebecca Nesson and the folks over at PRX for picking up the project and giving it renewed life.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Distributed Programming with Ruby Book Update</title>
+      <link>/2009/05/22/distributed-programming-with-ruby-book-update/</link>
+      <pubDate>Fri, 22 May 2009 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2009/05/22/distributed-programming-with-ruby-book-update/</guid>
+      <description>&lt;p&gt;Hey there folks, I know it&amp;rsquo;s been awhile, so I thought I would give you all a very quick update as to how the book is going. It&amp;rsquo;s going really well. I&amp;rsquo;m about 100 pages into it, and it&amp;rsquo;s shaping up very nicely. Addison-Wesley is preparing to put it into their &amp;ldquo;Rough Cuts&amp;rdquo; program so you can all get your dirty little hands on what I&amp;rsquo;ve written so far as early as a few weeks from now, or so I&amp;rsquo;m told.&lt;/p&gt;
+
+&lt;p&gt;While I don&amp;rsquo;t want to give too much away about the contents, everybody loves a good surprise, let me say that part one of the book will be the most comprehensive guide to DRb and Rinda that you&amp;rsquo;ll find anywhere. Including the source code!!&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m working hard on part two of the book which focuses on third party tools, frameworks, and libraries. It&amp;rsquo;s quite a fun part of the book to write as there are a great deal of choices out there, including my own Distribunaut. (PS. I released a new version of it on GitHub a week or so ago.) Writing about different libraries is quite fun as I get to really delve into the source code and see the good and bad ways people like to write code. Plus some of the libraries have really great features, or really turn things on their head.&lt;/p&gt;
+
+&lt;p&gt;When the book is available as a &amp;ldquo;Rough Cut&amp;rdquo;, I&amp;rsquo;ll certainly keep you all informed. In the mean time keep watching this space and have a great weekend!&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Will_paginate on MetaBates.com</title>
+    <link>/tags/will_paginate/</link>
+    <description>Recent content in Will_paginate on MetaBates.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
+    <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
+    <copyright>(c) 2016 Mark Bates.</copyright>
+    <lastBuildDate>Wed, 22 Feb 2012 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/will_paginate/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Adding Pagination to an API</title>
+      <link>/2012/02/22/adding-pagination-to-an-api/</link>
+      <pubDate>Wed, 22 Feb 2012 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2012/02/22/adding-pagination-to-an-api/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;http://www.robertsabuda.com/store/images/sharks_shark.jpg&#34; title=&#34;popup book&#34; style=&#34;float: left; padding-right: 10px&#34; width=&#34;250&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Before I start this article, let me apologize for the lack of writing over the last six months. My only excuse is that I&amp;rsquo;ve been working on a new book and that is where all my writing energy has gone. So with apologies out of the way, let&amp;rsquo;s talk pagination.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Dealing with pagination in any application is never easy. There are a lot of great libraries out there that help you better handle this awkward, but unavoidable part of application programming. Things get even more complicated when you are trying to define an API.&lt;/p&gt;
+
+&lt;p&gt;APIs are fickle beasts. They have to be both clean and functional. Two things that are often at odds with one another. No sooner does clean and functional have a go at each than when trying to add pagination to an API. Pagination requires all sorts of meta-data; how many total results there are, how pages there are, etc&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;There are two approaches to handling pagination in your API, let&amp;rsquo;s look at those two approaches in this article.&lt;/p&gt;
+
+&lt;p&gt;The first approach is the easiest one to code, but I find it to be the most intrusive and less clean approach. A typical response would look something like this:&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/1889261.js&#34;&gt; &lt;/script&gt;
+
+&lt;p&gt;Here the API returns the pagination meta-data right inside of the JSON response. The advantage here is that everything is very visible to the end developer. They can easily see the details of the pagination, as well as the &lt;code&gt;widgets&lt;/code&gt; element which contains the array of data the end user was most likely looking for when they requested the API.&lt;/p&gt;
+
+&lt;p&gt;The downside of this approach is that the pagination meta-data is right there in the body of the response. The client trying to use the API has to dig into the response to extract the data it was originally looking for, potentially ignoring the pagination meta-data, if it doesn&amp;rsquo;t need it.&lt;/p&gt;
+
+&lt;p&gt;The other way to send the pagination meta-data along with our response is in the headers of the response. This is my preferred way of handling this situation.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s look at how we can do this in a Rails application using WillPaginate. Of course if you&amp;rsquo;re not using WillPaginate you can easily substitute your pagination library of choice.&lt;/p&gt;
+
+&lt;p&gt;I start by creating a class method in &lt;code&gt;ApplicationController&lt;/code&gt; that will create an &lt;code&gt;after_filter&lt;/code&gt; that will set the pagination meta-data in the response headers:&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/1889206.js&#34;&gt; &lt;/script&gt;
+
+&lt;p&gt;Then in the controller we want to add pagination headers we can call it like such:&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/1889221.js&#34;&gt; &lt;/script&gt;
+
+&lt;p&gt;Now when someone calls the &lt;code&gt;index&lt;/code&gt; action on the &lt;code&gt;API::V1::WidgetsController&lt;/code&gt; it will respond with JSON that looks like this:&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/1889259.js&#34;&gt; &lt;/script&gt;
+
+&lt;p&gt;And with response headers that look like this:&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/1889226.js&#34;&gt; &lt;/script&gt;
+
+&lt;p&gt;Now the client can easily gain access to the array of widgets they originally wanted, and should they need the pagination meta-data the client can just easily pull that information right out of the headers.&lt;/p&gt;
+
+&lt;p&gt;The API is once again nice and clean and yet it can now easily be paginated.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rcov on MetaBates.com</title>
+    <link>/tags/rcov/</link>
+    <description>Recent content in Rcov on MetaBates.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
+    <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
+    <copyright>(c) 2016 Mark Bates.</copyright>
+    <lastBuildDate>Thu, 30 Sep 2010 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/rcov/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>CoverMe – Code Coverage for Ruby 1.9 Reaches RC1</title>
+      <link>/2010/09/30/coverme-%E2%80%93-code-coverage-for-ruby-1-9-reaches-rc1/</link>
+      <pubDate>Thu, 30 Sep 2010 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2010/09/30/coverme-%E2%80%93-code-coverage-for-ruby-1-9-reaches-rc1/</guid>
+      <description>&lt;p&gt;In &lt;a href=&#34;http://www.metabates.com/2010/08/13/coverme-code-coverage-for-ruby-1-9/&#34;&gt;August&lt;/a&gt; I announced &lt;a href=&#34;http://github.com/markbates/cover_me&#34;&gt;CoverMe&lt;/a&gt; a code coverage tool for Ruby 1.9. Well, today I announce that it has hit it&amp;rsquo;s first release candidate! I&amp;rsquo;ve very excited by the fact it&amp;rsquo;s getting close to an &amp;lsquo;official&amp;rsquo; release.&lt;/p&gt;
+
+&lt;p&gt;The response to CoverMe has been great and through feedback from the community I&amp;rsquo;ve made a lot of improvements and fixed a lot of issues.&lt;/p&gt;
+
+&lt;p&gt;While quite a few things have changed under the hood, not much has changed in how you use CoverMe.
+&lt;h2&gt;Installation&lt;/h2&gt;
+The following are instructions for how you would configure CoverMe for a Rails 3 project, adjust to your local environment accordingly.&lt;/p&gt;
+
+&lt;p&gt;In  your Gemfile add the following:
+&lt;pre&gt;gem &amp;lsquo;cover_me&amp;rsquo;, &amp;lsquo;&amp;gt;= 1.0.0.rc1&amp;rsquo;, :group =&amp;gt; :test&lt;/pre&gt;
+Then run:
+&lt;pre&gt;$ bundle install&lt;/pre&gt;
+After CoverMe is installed place the following line at the &lt;strong&gt;&lt;em&gt;VERY TOP&lt;/em&gt;&lt;/strong&gt; of your &amp;lsquo;test_helper.rb&amp;rsquo; or &amp;lsquo;spec_helper.rb&amp;rsquo; file (for Cucumber put it at the top of the &amp;lsquo;env.rb&amp;rsquo; file):
+&lt;pre&gt;require &amp;lsquo;cover_me&amp;rsquo;&lt;/pre&gt;
+I can&amp;rsquo;t emphasize enough how important it is that the require statement is at the &lt;strong&gt;&lt;em&gt;VERY&lt;/em&gt;&lt;/strong&gt; top of that file!&lt;/p&gt;
+
+&lt;p&gt;Finally (and optionally) run:
+&lt;pre&gt;$ rails g cover_me:install&lt;/pre&gt;
+This will simply install a Rake task that will wrap both Test::Unit and RSpec tasks with CoverMe and will launch the results at the end of the test suites. I would recommend it. It&amp;rsquo;s kinda the whole point. :)
+&lt;h2&gt;That&amp;rsquo;s it!&lt;/h2&gt;
+Enjoy the release candidate, and of course, please let me know if you find any issues with it. Issues can be reported on &lt;a href=&#34;http://github.com/markbates/cover_me/issues&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>CoverMe - Code Coverage for Ruby 1.9</title>
+      <link>/2010/08/13/coverme-code-coverage-for-ruby-1-9/</link>
+      <pubDate>Fri, 13 Aug 2010 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2010/08/13/coverme-code-coverage-for-ruby-1-9/</guid>
+      <description>&lt;p&gt;Ruby 1.9(.2) is an amazing language to develop applications in. It&amp;rsquo;s faster, more powerful, cleaner, and a huge improvement over Ruby 1.8.x. Because of those reasons every Ruby developer should move to this exciting new version of our language.&lt;/p&gt;
+
+&lt;p&gt;When making a move of this size it&amp;rsquo;s important to have the right tools to help us along. Unfortunately, one of the most useful tools as a Ruby developer, &lt;a href=&#34;http://github.com/relevance/rcov&#34;&gt;RCov&lt;/a&gt;, does not work with Ruby 1.9.&lt;/p&gt;
+
+&lt;p&gt;RCov, for those unfamiliar analyzes your code and tells you which part of your code was not executed. This is INCREDIBLY useful when hooked up to your test suite. While, it&amp;rsquo;s not the only metric you should use when determining how good your test coverage it, it certainly is a great first step to point out exactly which parts of your code haven&amp;rsquo;t been touched at all!&lt;/p&gt;
+
+&lt;p&gt;Enter &lt;a href=&#34;http://github.com/markbates/cover_me&#34;&gt;CoverMe&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;##History&lt;/p&gt;
+
+&lt;p&gt;While working on a Ruby 1.9/Rails 3 project, and loving everything about it (except for the lack of RCov), I came across a &lt;a href=&#34;http://engineering.attinteractive.com/2010/08/code-coverage-in-ruby-1-9/&#34;&gt;post&lt;/a&gt; by Aaron Patterson (of &lt;a href=&#34;http://github.com/tenderlove/nokogiri&#34;&gt;Nokogiri&lt;/a&gt; fame). In this post he quickly outlined a very basic coverage tool using the new built-in Coverage module in Ruby 1.9.&lt;/p&gt;
+
+&lt;p&gt;After spending a morning playing with it, I was quickly able to grow the idea into something useful for the project. Later that day the company I was consulting for &lt;a href=&#34;http://www.biddingforgood.com&#34;&gt;BiddingForGood.com&lt;/a&gt;, and in particular their chief architect, &lt;a href=&#34;http://twitter.com/stuartmg&#34;&gt;Stuart Garner&lt;/a&gt;, told me to take a day or two and clean it up and release it for the world to use, and so &lt;a href=&#34;http://github.com/markbates/cover_me&#34;&gt;here&lt;/a&gt; it is.
+##Features&lt;/p&gt;
+
+&lt;p&gt;Here is a brief overview of the features of CoverMe:&lt;/p&gt;
+
+&lt;p&gt;###Index Page&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Sortable column headers (File, Lines, Lines of Code, Tested %).&lt;/li&gt;
+&lt;li&gt;Searching/filtering by file name.&lt;/li&gt;
+&lt;li&gt;Filtering by coverage percent.&lt;/li&gt;
+&lt;li&gt;Color coded list of files to quickly see which ones are 100% covered, &amp;gt; 90% covered, or less than 90% covered.&lt;/li&gt;
+&lt;li&gt;Large color coded average coverage percent, for quick reference.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;###Detail Page&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Line by line coverage report&lt;/li&gt;
+&lt;li&gt;Color coded lines to quickly see which lines where executed and which ones were not.&lt;/li&gt;
+&lt;li&gt;Side by side viewing with the corresponding test/spec file (if one exists).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;See the &lt;a href=&#34;http://github.com/markbates/cover_me&#34;&gt;README&lt;/a&gt; file for more information on installation and usage.&lt;/p&gt;
+
+&lt;p&gt;##Thanks&lt;/p&gt;
+
+&lt;p&gt;I would just quickly like to give another quick thanks to Aaron Patterson for pointing out the Coverage module in Ruby 1.9 and inspiring this, hopefully, helpful little gem. Also another big thanks to Stuart Garner for pushing me to package this up and release it to the world.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

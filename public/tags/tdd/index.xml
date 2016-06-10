@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tdd on MetaBates.com</title>
+    <link>/tags/tdd/</link>
+    <description>Recent content in Tdd on MetaBates.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
+    <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
+    <copyright>(c) 2016 Mark Bates.</copyright>
+    <lastBuildDate>Wed, 28 May 2014 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/tdd/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>The War on Testing</title>
+      <link>/2014/05/28/the-war-on-testing/</link>
+      <pubDate>Wed, 28 May 2014 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2014/05/28/the-war-on-testing/</guid>
+      <description>&lt;p&gt;Apologies for the slightly inflammatory title, but I&amp;rsquo;m beginning to get worried about the Ruby community, and sadly my worries are stemming from an area that first made me fall in love with Ruby, testing.&lt;/p&gt;
+
+&lt;p&gt;By now you are probably familiar with the whole &amp;ldquo;&lt;a href=&#34;https://www.google.com/#q=ruby+tdd+is+dead&#34;&gt;TDD is Dead&lt;/a&gt;&amp;rdquo; saga that stemmed from a keynote that DHH recently gave at RailsConf. I&amp;rsquo;m not going to bother recapping that, do a Google search and you&amp;rsquo;ll find out all about it. I&amp;rsquo;m not even here to weigh in on the matter.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m here to discuss an even more trouble matter, the removal of a testing framework from the Ruby standard library in 2.2. The ticket that removed test-unit and MiniTest from Ruby 2.2 can be found at &lt;a href=&#34;https://bugs.ruby-lang.org/issues/9711#note-12&#34;&gt;https://bugs.ruby-lang.org/issues/9711#note-12&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The reasons behind removing these tools from the standard library is that it is difficult to maintain them inside the standard library, and that if people want to use them they can just install them as gems. This sounds fine, in theory, but is deeply troubling for a few reasons.&lt;/p&gt;
+
+&lt;p&gt;When I tweeted about this the other day I got several responses. Here are a couple that caught my eye:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#39;/assets/images/2014/05/tweet2.png&#39;&gt;
+&lt;img src=&#39;/assets/images/2014/05/tweet3.png&#39;&gt;&lt;/p&gt;
+
+&lt;p&gt;In regards to the later tweet I would encourage the author of the tweet to consult the Rails documentation on how to turn off automatic test generation. These tweets are concerning because they share the same shortsightedness. These tweets are analogous to saying, &amp;ldquo;Well, I use HashWithIndifferenceAccess so I don&amp;rsquo;t care if they remove Hash from the standard library&amp;rdquo;. This idea that because you use Rspec and not test-unit or MiniTest that this change does not somehow affect you is wrong. This affects the entire Ruby community.&lt;/p&gt;
+
+&lt;p&gt;When I first got introduced to Ruby back in 2005 I was blown away by how testing was a first class citizen in Ruby, and of course Rails. Testing was, and I hope still is, a core tenant of the Ruby community. By removing a testing framework from the standard library we are telling newcomers, as well as though who wish Ruby ill that we don&amp;rsquo;t value testing.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#39;/assets/images/2014/05/tweet1.png&#39;&gt;&lt;/p&gt;
+
+&lt;p&gt;Imagine for a second that you are checking out a new language. You scan through their standard library and find no testing framework. What would you think? I would be taken back. I would assume that there some tool I can probably download somewhere that would allow me to write tests in the language, but I honestly wouldn&amp;rsquo;t get that far. I might just turn the page on that language because they clearly don&amp;rsquo;t value testing.&lt;/p&gt;
+
+&lt;p&gt;Previously when a newcomer came to Ruby they could install the standard library and start learning the language right away, that included the ability to write tests for the applications they were writing. Now when a newbie comes to Ruby they have to know to also install RubyGems, then to also install a testing library, of course they&amp;rsquo;ll then have to do some research on what RubyGems are and what testing frameworks there are out there, but once they get through all of that then they&amp;rsquo;ll be able to start learning the language, well&amp;hellip; at least until they run into some sort of weird bundler issue, or RubyGems.org is down, but newcomers will just be able to figure all of that out, right?&lt;/p&gt;
+
+&lt;p&gt;Now I know I&amp;rsquo;ve got a reputation as being a big MiniTest supporter, and I am, for lots of very good reasons, but this goes beyond that. This gets to the core of who we are as a community and how we want to be perceived by others, and how we want to welcome those who are interested in Ruby.&lt;/p&gt;
+
+&lt;p&gt;Do we really want to be the language that doesn&amp;rsquo;t ship with a testing framework as part of our standard library? Do we really want to be like Java???&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to Become a Test-driven Developer</title>
+      <link>/2010/10/12/how-to-become-a-test-driven-developer/</link>
+      <pubDate>Tue, 12 Oct 2010 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2010/10/12/how-to-become-a-test-driven-developer/</guid>
+      <description>
+
+&lt;p&gt;In a previous post, &lt;a href=&#34;http://www.metabates.com/2010/07/01/testing-is-not-an-option/&#34;&gt;Testing Is Not An Option&lt;/a&gt;, I talked a lot about why you should write tests, and the arguments you can put forth to your client, manager, or whoever it may be as to why you should write tests. What I didn&amp;rsquo;t talk about was how to start writing tests. So let&amp;rsquo;s talk about that for a bit, shall we?&lt;/p&gt;
+
+&lt;p&gt;When I&amp;rsquo;m talking with a potential client, well at least a client that has an existing code base, I always ask what their code coverage stats are. Now, I know at code coverage stats aren&amp;rsquo;t the be all end all of measuring how good your tests are, but they&amp;rsquo;re a basic enough metric to use as a guide. If they say they&amp;rsquo;re high, then I usually dig in more about how they&amp;rsquo;re testing; what frameworks, BDD, TDD, that sort of thing. Usually though I get a few minutes where they apologize and sheepishly give me their reasons for having little or no tests.&lt;/p&gt;
+
+&lt;p&gt;Here are few of those reasons:
+  * We don&amp;rsquo;t/didn&amp;rsquo;t have the time.
+  * We don&amp;rsquo;t know how.
+  * It was/is too complicated.
+  * It was/is too overwhelming.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s talk about each of this points for a minute.&lt;/p&gt;
+
+&lt;h3 id=&#34;we-don-t-didn-t-have-the-time&#34;&gt;&amp;ldquo;We don&amp;rsquo;t/didn&amp;rsquo;t have the time.&amp;rdquo;&lt;/h3&gt;
+
+&lt;p&gt;I never accept time as an argument against testing. Testing ends up repaying it&amp;rsquo;s time investment, and will ultimately give you more time than if you didn&amp;rsquo;t write code. It&amp;rsquo;s a win-win. Again see my previous post in how to get the time signed off on as part of t he project timeline.&lt;/p&gt;
+
+&lt;h3 id=&#34;we-don-t-know-how&#34;&gt;&amp;ldquo;We don&amp;rsquo;t know how.&amp;rdquo;&lt;/h3&gt;
+
+&lt;p&gt;Learn. There&amp;rsquo;s no better time than the present and no better way to learn than being thrown into the deep end. The web is crawling with documentation, screen casts, how to articles and tutorials, and there are plenty of books to get you going. In short the k knowledge is literally at your finger tips, and to be honest it&amp;rsquo;s easier than you think.&lt;/p&gt;
+
+&lt;h3 id=&#34;it-was-is-too-complicated&#34;&gt;&amp;ldquo;It was/is too complicated.&amp;rdquo;&lt;/h3&gt;
+
+&lt;p&gt;That usually means you&amp;rsquo;re doing i
+t wrong. Take a step back and assess what it is you&amp;rsquo;re trying to do. You&amp;rsquo;re tests should be simple and concise. Don&amp;rsquo;t write tests that are hundreds of lines long. They&amp;rsquo;re tests, not entrance exams to MIT.&lt;/p&gt;
+
+&lt;h3 id=&#34;it-was-is-too-overwhelming&#34;&gt;&amp;ldquo;It was/is too overwhelming.&amp;rdquo;&lt;/h3&gt;
+
+&lt;p&gt;Certainly if you didn&amp;rsquo;t write tests as you went along it can get quite overwhelming thinking about all the tests you now need to write for your monolithic app. I&amp;rsquo;ll talk about how you can solve that problem in a minute.&lt;/p&gt;
+
+&lt;h2 id=&#34;making-it-happen&#34;&gt;Making It Happen&lt;/h2&gt;
+
+&lt;p&gt;Ok, so now that we&amp;rsquo;ve identified a few of the excuses let&amp;rsquo;s talk about how you can starting writing tests today for your application. So, take a deep breath and let&amp;rsquo;s begin.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;rsquo;re staring at an existing application, don&amp;rsquo;t try to tackle it all at once, you&amp;rsquo;ll just get overwhelmed, scared, and confused. Instead take it one file/class at a time. First start with your models, as this is where the majority of your application business logic should be. Alphabetically each day pick the next class (or a couple of them) in the list and start to fill our your test files.&lt;/p&gt;
+
+&lt;p&gt;What do I mean by fill out your tests files, I mean creating pending tests for each of the methods of your model. Here&amp;rsquo;s an example of a basic Ruby* class and what the pending RSpec spec file would look like:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Class:&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;Entity&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;tax_id&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;person?&lt;/span&gt;
+      &lt;span class=&#34;c1&#34;&gt;# code here&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;
+      &lt;span class=&#34;c1&#34;&gt;# code here&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+
+  &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;person?&lt;/span&gt;
+    &lt;span class=&#34;c1&#34;&gt;# code here&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;# Spec:&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;describe&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;Entity&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt;
+  &lt;span class=&#34;n&#34;&gt;describe&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;tax_id&amp;quot;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;it&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;should return a Social Security number if the entity is a Person&amp;quot;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt;
+      &lt;span class=&#34;n&#34;&gt;pending&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;it&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;should return a Tax ID number if the entity is a Corporation&amp;quot;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt;
+      &lt;span class=&#34;n&#34;&gt;pending&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+  &lt;span class=&#34;n&#34;&gt;describe&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;person?&amp;quot;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;it&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;should return true if the entity is a person&amp;quot;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt;
+      &lt;span class=&#34;n&#34;&gt;pending&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;it&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;should return false if the entity is not a person&amp;quot;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt;
+      &lt;span class=&#34;n&#34;&gt;pending&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Notice how the method that has the if/else statement in it has two pending tests for it. We need to test each variation of the method.&lt;/p&gt;
+
+&lt;p&gt;Now when you run your tests you&amp;rsquo;ll see that you have a bunch of pending tests. Great! Now you just need to fill them in, but at least you know what should be filled in.&lt;/p&gt;
+
+&lt;p&gt;I also recommend that you do this every time you create a new method. As soon as you give your method a name go to your corresponding test and create a pending test for that method. This way you know that you have to test that method later. (In a perfect world I would love to see you write your test before returning to your class to fill in the method itself, but baby steps for now.)&lt;/p&gt;
+
+&lt;p&gt;Once you have all your pending tests setup each day try to fill in the details of each pending test for a whole class. If that&amp;rsquo;s too much, then try to set aside an hour a day and fill in as many pending tests as you can. Alternatively you can also fill in the tests during the course of the day as you use one of the methods without tests.&lt;/p&gt;
+
+&lt;p&gt;Another great way to start filling in your test suite is each time you get a new bug, write a test to reproduce it. This is a great habit to get into as you&amp;rsquo;ll eventually have a great suite of regression tests in place to help prevent those nasty bugs from returning. Write the test, see that it fails, then fix your bug. When your teat passes then you know you&amp;rsquo;ve fixed the bug!&lt;/p&gt;
+
+&lt;p&gt;Finally, start small. Start by writing unit tests. These are the types of tests I just described. They test a very particular part of your code base to ensure that it does what it should do. These tests are typically easy to write and act as a great corner stone to your test suite as a whole. Don&amp;rsquo;t try to jump right in with full integration tests. The frameworks typically have a steep learning curve, and are more complicated to get up and running. This will lead to frustration and the old feeling of being overwhelmed. You can add these tests in later as you gain experience.&lt;/p&gt;
+
+&lt;p&gt;Well, there you have it, a few simple tricks to help you get started testing today. I know this post was a bit on the lengthy side, but I&amp;rsquo;m glad you stuck with me. Your life will be better for it. When you have a large and expansive test suite life is just better. Food tastes better. The sky is bluer. There will be a skip in your step. And you can use your incredibly high code coverage stats as a pick up line in a bar. On second thought, scratch that last thought. I wrote a test to see if that would work and it failed. It failed miserably.
+&lt;h6&gt;* Please not that while I use Ruby as the example language here, the concept applies to whatever language you use.&lt;/h6&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

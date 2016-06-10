@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Heroku on MetaBates.com</title>
+    <link>/tags/heroku/</link>
+    <description>Recent content in Heroku on MetaBates.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
+    <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
+    <copyright>(c) 2016 Mark Bates.</copyright>
+    <lastBuildDate>Tue, 23 Oct 2012 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/heroku/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Deploying to Heroku from TravisCI</title>
+      <link>/2012/10/23/deploying-to-heroku-from-travisci/</link>
+      <pubDate>Tue, 23 Oct 2012 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2012/10/23/deploying-to-heroku-from-travisci/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://www.travisci.org&#34;&gt;Travis CI&lt;/a&gt; and &lt;a href=&#34;http://www.heroku.com&#34;&gt;Heroku&lt;/a&gt; are two of my favorite tools. Recently I tried to figure out if there was an easy way to have Travis automatically deploy to Heroku once the tests have passed. Turns out it&amp;rsquo;s incredibly easy!&lt;/p&gt;
+
+&lt;p&gt;All you need to do is add the following as your &lt;code&gt;after_script&lt;/code&gt; in your &lt;code&gt;.travis.yml&lt;/code&gt; file.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;l-Scalar-Plain&#34;&gt;after_script&lt;/span&gt;&lt;span class=&#34;p-Indicator&#34;&gt;:&lt;/span&gt;
+  &lt;span class=&#34;c1&#34;&gt;# Install the Heroku gem (or the Heroku toolbelt)&lt;/span&gt;
+  &lt;span class=&#34;p-Indicator&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;l-Scalar-Plain&#34;&gt;gem install heroku&lt;/span&gt;
+  &lt;span class=&#34;c1&#34;&gt;# Add your Heroku git repo:&lt;/span&gt;
+  &lt;span class=&#34;p-Indicator&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;l-Scalar-Plain&#34;&gt;git remote add heroku git@heroku.com:YOUR_HEROKU_APP.git&lt;/span&gt;
+  &lt;span class=&#34;c1&#34;&gt;# Add your Heroku API key:&lt;/span&gt;
+  &lt;span class=&#34;p-Indicator&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;l-Scalar-Plain&#34;&gt;export HEROKU_API_KEY=YOUR_HEROKU_API_KEY_HERE&lt;/span&gt;
+  &lt;span class=&#34;c1&#34;&gt;# Turn off warnings about SSH keys:&lt;/span&gt;
+  &lt;span class=&#34;p-Indicator&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;l-Scalar-Plain&#34;&gt;echo &amp;quot;Host heroku.com&amp;quot; &amp;gt;&amp;gt; ~/.ssh/config&lt;/span&gt;
+  &lt;span class=&#34;p-Indicator&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;l-Scalar-Plain&#34;&gt;echo &amp;quot;   StrictHostKeyChecking no&amp;quot; &amp;gt;&amp;gt; ~/.ssh/config&lt;/span&gt;
+  &lt;span class=&#34;p-Indicator&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;l-Scalar-Plain&#34;&gt;echo &amp;quot;   CheckHostIP no&amp;quot; &amp;gt;&amp;gt; ~/.ssh/config&lt;/span&gt;
+  &lt;span class=&#34;p-Indicator&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;l-Scalar-Plain&#34;&gt;echo &amp;quot;   UserKnownHostsFile=/dev/null&amp;quot; &amp;gt;&amp;gt; ~/.ssh/config&lt;/span&gt;
+  &lt;span class=&#34;c1&#34;&gt;# Clear your current Heroku SSH keys:&lt;/span&gt;
+  &lt;span class=&#34;p-Indicator&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;l-Scalar-Plain&#34;&gt;heroku keys:clear&lt;/span&gt;
+  &lt;span class=&#34;c1&#34;&gt;# Add a new SSH key to Heroku&lt;/span&gt;
+  &lt;span class=&#34;p-Indicator&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;l-Scalar-Plain&#34;&gt;yes | heroku keys:add&lt;/span&gt;
+  &lt;span class=&#34;c1&#34;&gt;# Push to Heroku!&lt;/span&gt;
+  &lt;span class=&#34;p-Indicator&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;l-Scalar-Plain&#34;&gt;yes | git push heroku master&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Replace with your own Heroku API key and your Heroku git endpoint and Bob&amp;rsquo;s your uncle Travis will do the heavy lifting for you and deploy to Heroku for you if, and only if, your tests pass.&lt;/p&gt;
+
+&lt;p&gt;One quick final note, I would recommend creating a new Heroku account to use as a &amp;ldquo;deployer&amp;rdquo; account because you do have to include your API key in the &lt;code&gt;.travis.yml&lt;/code&gt; file.&lt;/p&gt;
+
+&lt;p&gt;That&amp;rsquo;s it! Enjoy your continuous integration and continuous deployment all mixed up.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

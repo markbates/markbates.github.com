@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ruby on MetaBates.com</title>
+    <link>/tags/ruby/</link>
+    <description>Recent content in Ruby on MetaBates.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
+    <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
+    <copyright>(c) 2016 Mark Bates.</copyright>
+    <lastBuildDate>Tue, 08 Jul 2014 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>MetaCasts Golang Future</title>
+      <link>/2014/07/08/metacasts-golang-future/</link>
+      <pubDate>Tue, 08 Jul 2014 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2014/07/08/metacasts-golang-future/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;/assets/images/2014/07/gopher.png&#34; class=&#39;img-left&#39;&gt;In January of 2013 I launched &lt;a href=&#34;http://www.metacasts.tv&#34;&gt;MetaCasts.tv&lt;/a&gt; with the idea that I would generate a new screencast each week on whatever technology excited me that week. I wanted MetaCasts to be a place where developers could come and learn about topics related to their current needs, as well as technologies they might not have thought to try, or have even heard about.&lt;/p&gt;
+
+&lt;p&gt;During the past year and a half two things happened that have made me question this philosophy, and the overall direction of MetaCasts. The first is feedback from subscribers. The biggest complaint/criticism I&amp;rsquo;ve received is that the topics are too varied. One week it&amp;rsquo;s Ruby, the next week it&amp;rsquo;s JavaScript, the week after that Go, etc&amp;hellip; People are unsure about what they&amp;rsquo;re subscribing to. I can understand this. If you don&amp;rsquo;t care about, say, Backbone, why should you have to sit through five weeks of it to get to the topics you enjoy? I got it. Message received.&lt;/p&gt;
+
+&lt;p&gt;The second change that has happened in the last year has been my discovering and falling in love with &lt;a href=&#34;http://golang.org&#34;&gt;Go&lt;/a&gt;. I think Go is just the bee&amp;rsquo;s knees. Because of this I&amp;rsquo;m finding it very hard to generate screencasts on topics such as Ruby or Ruby on Rails when all I want to do is talk about Go.&lt;/p&gt;
+
+&lt;p&gt;With these two thoughts in my mind, one being the need to focus MetaCasts, and the other being my desire to spend more time with Go I have decided to stop generating Ruby screencasts on MetaCasts.&lt;/p&gt;
+
+&lt;p&gt;This was not an easy decision to make. I know I&amp;rsquo;m going to lose some/a lot of subscribers because of this. I&amp;rsquo;m OK with that. Ruby is great, it&amp;rsquo;s a wonderful language, and I continue to use it every day, but I have to follow my heart, and by following my heart I&amp;rsquo;ll be able to make better and more interesting screencasts, and after all, that is what this is all about.&lt;/p&gt;
+
+&lt;p&gt;I will still be covering JavaScript topics, although they will be more focused as well. For example, I will no longer be making any more videos about frameworks such as Ember.js or Backbone.js, but I will continue to generate videos on Angular.js, as I think it is a great companion for Go (and any other back-end technology).&lt;/p&gt;
+
+&lt;p&gt;I hope that people understand why I&amp;rsquo;ve decided to make these changes. I will continue to keep all previously recorded videos, regardless of topic, available to subscribers, nothing is changing there. The only change is going forward all videos will be about Go or JavaScript (as it relates to Go).&lt;/p&gt;
+
+&lt;p&gt;Thank you to all my current, past, and present subscribers, and I hope everyone will come along for the ride! It&amp;rsquo;s going to be a blast!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The War on Testing</title>
+      <link>/2014/05/28/the-war-on-testing/</link>
+      <pubDate>Wed, 28 May 2014 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2014/05/28/the-war-on-testing/</guid>
+      <description>&lt;p&gt;Apologies for the slightly inflammatory title, but I&amp;rsquo;m beginning to get worried about the Ruby community, and sadly my worries are stemming from an area that first made me fall in love with Ruby, testing.&lt;/p&gt;
+
+&lt;p&gt;By now you are probably familiar with the whole &amp;ldquo;&lt;a href=&#34;https://www.google.com/#q=ruby+tdd+is+dead&#34;&gt;TDD is Dead&lt;/a&gt;&amp;rdquo; saga that stemmed from a keynote that DHH recently gave at RailsConf. I&amp;rsquo;m not going to bother recapping that, do a Google search and you&amp;rsquo;ll find out all about it. I&amp;rsquo;m not even here to weigh in on the matter.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m here to discuss an even more trouble matter, the removal of a testing framework from the Ruby standard library in 2.2. The ticket that removed test-unit and MiniTest from Ruby 2.2 can be found at &lt;a href=&#34;https://bugs.ruby-lang.org/issues/9711#note-12&#34;&gt;https://bugs.ruby-lang.org/issues/9711#note-12&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The reasons behind removing these tools from the standard library is that it is difficult to maintain them inside the standard library, and that if people want to use them they can just install them as gems. This sounds fine, in theory, but is deeply troubling for a few reasons.&lt;/p&gt;
+
+&lt;p&gt;When I tweeted about this the other day I got several responses. Here are a couple that caught my eye:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#39;/assets/images/2014/05/tweet2.png&#39;&gt;
+&lt;img src=&#39;/assets/images/2014/05/tweet3.png&#39;&gt;&lt;/p&gt;
+
+&lt;p&gt;In regards to the later tweet I would encourage the author of the tweet to consult the Rails documentation on how to turn off automatic test generation. These tweets are concerning because they share the same shortsightedness. These tweets are analogous to saying, &amp;ldquo;Well, I use HashWithIndifferenceAccess so I don&amp;rsquo;t care if they remove Hash from the standard library&amp;rdquo;. This idea that because you use Rspec and not test-unit or MiniTest that this change does not somehow affect you is wrong. This affects the entire Ruby community.&lt;/p&gt;
+
+&lt;p&gt;When I first got introduced to Ruby back in 2005 I was blown away by how testing was a first class citizen in Ruby, and of course Rails. Testing was, and I hope still is, a core tenant of the Ruby community. By removing a testing framework from the standard library we are telling newcomers, as well as though who wish Ruby ill that we don&amp;rsquo;t value testing.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#39;/assets/images/2014/05/tweet1.png&#39;&gt;&lt;/p&gt;
+
+&lt;p&gt;Imagine for a second that you are checking out a new language. You scan through their standard library and find no testing framework. What would you think? I would be taken back. I would assume that there some tool I can probably download somewhere that would allow me to write tests in the language, but I honestly wouldn&amp;rsquo;t get that far. I might just turn the page on that language because they clearly don&amp;rsquo;t value testing.&lt;/p&gt;
+
+&lt;p&gt;Previously when a newcomer came to Ruby they could install the standard library and start learning the language right away, that included the ability to write tests for the applications they were writing. Now when a newbie comes to Ruby they have to know to also install RubyGems, then to also install a testing library, of course they&amp;rsquo;ll then have to do some research on what RubyGems are and what testing frameworks there are out there, but once they get through all of that then they&amp;rsquo;ll be able to start learning the language, well&amp;hellip; at least until they run into some sort of weird bundler issue, or RubyGems.org is down, but newcomers will just be able to figure all of that out, right?&lt;/p&gt;
+
+&lt;p&gt;Now I know I&amp;rsquo;ve got a reputation as being a big MiniTest supporter, and I am, for lots of very good reasons, but this goes beyond that. This gets to the core of who we are as a community and how we want to be perceived by others, and how we want to welcome those who are interested in Ruby.&lt;/p&gt;
+
+&lt;p&gt;Do we really want to be the language that doesn&amp;rsquo;t ship with a testing framework as part of our standard library? Do we really want to be like Java???&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>MetaCasts.tv Episode Stats</title>
+      <link>/2014/03/28/metacaststv-episode-stats/</link>
+      <pubDate>Fri, 28 Mar 2014 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2014/03/28/metacaststv-episode-stats/</guid>
+      <description>
+
+&lt;p&gt;When I first started &lt;a href=&#34;http://www.metacasts.tv&#34;&gt;MetaCasts.tv&lt;/a&gt; in January of 2013 I set out to create a unique screen cast series. I wanted a series that didn&amp;rsquo;t focus on just one topic, just Ruby, just JavaScript, etc&amp;hellip; instead I wanted something that would challenge my subscribers, as well as myself. I wanted to talk about all sorts of technologies. I knew that some weeks the topic at hand might be incredibly relevant to viewers, and that other weeks it wouldn&amp;rsquo;t be. My hope was, and still is, that the weeks were the topic isn&amp;rsquo;t &amp;ldquo;relevant&amp;rdquo; that viewers will learn something new that they wouldn&amp;rsquo;t have otherwise.&lt;/p&gt;
+
+&lt;p&gt;I love to grow and learn about topics outside of my daily comfort zone, so I&amp;rsquo;ve made &lt;a href=&#34;http://www.metacasts.tv&#34;&gt;MetaCasts.tv&lt;/a&gt; a venue for that. There are some episodes where I know the topic intimately, and there are others where I sat down, studied the topic, wrote lots of code, and presented my findings. All of it an educational experience as much for me, as my viewers.&lt;/p&gt;
+
+&lt;p&gt;Out of curiosity I thought I would take a quick look some numbers related to &lt;a href=&#34;http://www.metacasts.tv&#34;&gt;MetaCasts.tv&lt;/a&gt; and the topics that I&amp;rsquo;ve been covering there for just over the past year, and I thought I would share them with you. Personally, I found these numbers to be incredibly interesting. I was, for example very surprised to find out what language (programming, not spoken) was most prominently featured in the episodes.&lt;/p&gt;
+
+&lt;h2 id=&#34;total-hours-of-video-22-19-42&#34;&gt;Total Hours of Video: 22:19:42&lt;/h2&gt;
+
+&lt;p&gt;As of this post I have produced over 22 hours of video! I couldn&amp;rsquo;t believe it. I&amp;rsquo;m super happy with that number. That means as a subscriber you could fly from Boston to Sydney and still have episodes left over to watch!&lt;/p&gt;
+
+&lt;h2 id=&#34;average-video-length-00-17-23&#34;&gt;Average Video Length: 00:17:23&lt;/h2&gt;
+
+&lt;p&gt;The average length of a MetaCasts episode is just over 17 minutes. That means over your morning cup of coffee or breakfast you can watch a whole episode and impress your friends at work with your depth of knowledge.&lt;/p&gt;
+
+&lt;h2 id=&#34;it-s-all-about-javascript-coffeescript&#34;&gt;It&amp;rsquo;s All About JavaScript (CoffeeScript)&lt;/h2&gt;
+
+&lt;p&gt;Looking at how much time I&amp;rsquo;ve spent covering different languages it would appear the clear winner is JavaScript/CoffeeScript, with Ruby in second place.&lt;/p&gt;
+
+&lt;table align=&#39;center&#39;&gt;
+  &lt;thead class=&#39;language-table&#39;&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Language&lt;/th&gt;
+      &lt;th&gt;Total # of Hours&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody class=&#39;language-table&#39;&gt;
+    &lt;tr&gt;
+      &lt;td&gt; CoffeeScript &lt;/td&gt;&lt;td&gt; 13:05:26 &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; Ruby &lt;/td&gt;&lt;td&gt; 06:37:19 &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; Go &lt;/td&gt;&lt;td&gt; 01:00:56 &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; Bash &lt;/td&gt;&lt;td&gt; 00:43:07 &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; JavaScript &lt;/td&gt;&lt;td&gt; 00:26:20 &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; SQL &lt;/td&gt;&lt;td&gt; 00:14:30 &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; Other &lt;/td&gt;&lt;td&gt; 00:12:04 &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;These numbers are determined by the &amp;ldquo;primary language&amp;rdquo; of the video. For example a video about Ember.js would be listed as CoffeeScript, or JavaScript, even though the back-end might have been written using Ruby.&lt;/p&gt;
+
+&lt;h2 id=&#34;most-purchased-video&#34;&gt;Most Purchased Video&lt;/h2&gt;
+
+&lt;p&gt;The most purchased video on &lt;a href=&#34;http://www.metacasts.tv&#34;&gt;MetaCasts.tv&lt;/a&gt; is not surprising considering most subscribers are also Ruby on Rails developers; &lt;a href=&#34;http://www.metacasts.tv/casts/ember-js-pts-1-5-updated&#34;&gt;Ember.js Pts 1 - 5 [UPDATED]&lt;/a&gt;. Ember is an incredibly hot topic these days, especially amongst Rails developers, and whole of people have turned to &lt;a href=&#34;http://www.metacasts.tv&#34;&gt;MetaCasts.tv&lt;/a&gt; to help them learn about it, and I&amp;rsquo;m honored to have helped them.&lt;/p&gt;
+
+&lt;p&gt;Just for completeness the second most purchased video on &lt;a href=&#34;http://www.metacasts.tv&#34;&gt;MetaCasts.tv&lt;/a&gt; is &lt;a href=&#34;http://www.metacasts.tv/casts/angular-js-revised-pts-1-4&#34;&gt;Angular.js (revised) Pts 1 - 4&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;People can&amp;rsquo;t get enough of JavaScript frameworks, and neither can I. I love playing with them, and I love presenting my findings, sometimes good, sometimes bad, to subscribers.&lt;/p&gt;
+
+&lt;h2 id=&#34;most-watched-video&#34;&gt;Most Watched Video&lt;/h2&gt;
+
+&lt;p&gt;The most watched video on &lt;a href=&#34;http://www.metacasts.tv&#34;&gt;MetaCasts.tv&lt;/a&gt; was from February of 2013, in which I covered the recently released &lt;a href=&#34;http://www.metacasts.tv/casts/ruby-2-0-0-rc2&#34;&gt;Ruby 2.0.0-rc2&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;final-thoughts&#34;&gt;Final Thoughts&lt;/h2&gt;
+
+&lt;p&gt;Well, those are just a few of the fun numbers from over the past year or so. Looking at those numbers the ideal subscriber is a Ruby developer who wants to level up their JavaScript/CoffeeScript skills, as well as their Ruby, and along the way perhaps learn a bit about Go, SQL, Bash, and other fun stuff.&lt;/p&gt;
+
+&lt;p&gt;I really couldn&amp;rsquo;t be happier with how things are going with &lt;a href=&#34;http://www.metacasts.tv&#34;&gt;MetaCasts.tv&lt;/a&gt;. I&amp;rsquo;ve received amazing support from the community, subscribers, friends, and so many great people. So I guess as long as you&amp;rsquo;re willing to come along for the ride with me, I&amp;rsquo;ll be happy to keep generating new episodes for you.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Team Subscriptions for MetaCasts.tv</title>
+      <link>/2013/12/10/team-subscriptions-for-metacaststv/</link>
+      <pubDate>Tue, 10 Dec 2013 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2013/12/10/team-subscriptions-for-metacaststv/</guid>
+      <description>
+
+&lt;p&gt;On January 1st of this year I &lt;a href=&#34;/2013/01/01/announcing-metacaststv-screen-casts/&#34;&gt;announced&lt;/a&gt; a weekly screencast site called, &lt;a href=&#34;http://www.metacasts.tv?source=blog-team-metacasts&#34;&gt;MetaCasts.tv&lt;/a&gt;, and I have been thrilled with the response it has received over the past year.&lt;/p&gt;
+
+&lt;p&gt;In it&amp;rsquo;s first year I&amp;rsquo;ve released over 60 videos (17+ hours) on Ruby, Rails, Go, JavaScript, Node, Redis, iOS, and so much more, and next year I plan on releasing even more great videos on those topics, as well as new ones.&lt;/p&gt;
+
+&lt;p&gt;The response I&amp;rsquo;ve received for MetaCasts has been overwhelming positive. I get stopped at conferences by subscribers (from around the world) who just want to tell me how much they enjoy my videos. I get emails, tweets, and more thanking me for helping shed some light on an issue someone was having or for introducing them to a new topic.&lt;/p&gt;
+
+&lt;p&gt;Today I&amp;rsquo;m happy to announce that team support has been added to MetaCasts making it easier for companies and organizations to easily help their members level up their development skills.&lt;/p&gt;
+
+&lt;p&gt;Team subscriptions are simple and easy to use. Simply create a new team subscription and enter the GitHub usernames of the users you want to have access to MetaCasts. That&amp;rsquo;s it. When they login, using their GitHub username, they&amp;rsquo;ll have full access to all of the MetaCasts episodes.&lt;/p&gt;
+
+&lt;p&gt;Pricing for team subscriptions depends on the amount of team members on the subscription. Team subscriptions, like single user subscriptions, come in both monthly and yearly plans, with yearly plans offering a significant discount.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m really happy with team subscriptions, as people have been asking for them for a while now. Learning, and growing, as a developer is incredibly important, so I encourage team leaders, managers, etc&amp;hellip; to help their teams out and sign up today!&lt;/p&gt;
+
+&lt;h2 id=&#34;sign-up-metacasts-tv-http-www-metacasts-tv-source-blog-team-metacasts&#34;&gt;&lt;a href=&#34;http://www.metacasts.tv?source=blog-team-metacasts&#34;&gt;Sign up - MetaCasts.tv&lt;/a&gt;&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Announcing MetaCasts.tv Screen Casts</title>
+      <link>/2013/01/01/announcing-metacaststv-screen-casts/</link>
+      <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2013/01/01/announcing-metacaststv-screen-casts/</guid>
+      <description>&lt;p&gt;One of my favorite things to do is learn. I love learning. It&amp;rsquo;s been a central tenet of my life. When I was 11 I taught myself to play guitar and then ended up receiving an honors BA degree in music years later. During college I taught myself how to program and have spent the last 14 years as a professional developer. I&amp;rsquo;ve parlayed my love of learning into a successful career that has included working with some of the brightest minds in the industry, authoring two books, and speaking at conferences all around the world.&lt;/p&gt;
+
+&lt;p&gt;One of my favorite ways to learn is through video. I love watching videos about technology. I love seeing it in action. I love hearing the tips and tricks as they come up. I find it to be an incredibly immersive and engaging experience, as well as a fun way to learn. It&amp;rsquo;s like having a pairing partner right there with you.&lt;/p&gt;
+
+&lt;p&gt;Because of my love of screen casts and learning I have decided to launch &lt;a href=&#34;http://www.metacasts.tv&#34;&gt;MetaCasts.tv&lt;/a&gt;! MetaCasts are weekly screen casts that center around Ruby and related technologies, such as JavaScript, CoffeeScript, Rails, etc&amp;hellip; All of the screen casts are presented in HD and are available to watch on all platforms! You can even subscribe to them in iTunes and new episodes will automatically be downloaded for you.&lt;/p&gt;
+
+&lt;p&gt;As of right now there will be a guaranteed new video each week. Some weeks there will be more, but never less. When I reach a threshold of subscribers to focus on MetaCasts 100% then you can expect 2-3 videos a week, plus longer form videos as well. If you&amp;rsquo;d like that to happen, then I strongly encourage you to sign up now, and spread the word!&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m very excited about this new venture, and I hope you are too! So please head on over to &lt;a href=&#34;http://www.metacasts.tv&#34;&gt;MetaCasts.tv&lt;/a&gt; now and check it out. You won&amp;rsquo;t be disappointed.&lt;/p&gt;
+
+&lt;div style=&#39;text-align: center&#39;&gt;
+  &lt;a href=&#39;http://www.metacasts.tv&#39; target=&#39;_blank&#39; class=&#39;btn btn-large btn-primary&#39;&gt;&lt;b&gt;Check out MetaCasts.tv&lt;/b&gt;&lt;/a&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Getting Started with Sinatra (Video)</title>
+      <link>/2012/12/08/getting-started-with-sinatra-video/</link>
+      <pubDate>Sat, 08 Dec 2012 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2012/12/08/getting-started-with-sinatra-video/</guid>
+      <description>&lt;p&gt;In an earlier video we took a look at Rack to build incredibly lightweight web applications with Ruby. Rack&amp;rsquo;s toolkit allowed us to quickly throw to get a working application, but we did have to put a little effort into it once we wanted to build something a little more complex.&lt;/p&gt;
+
+&lt;p&gt;Sometimes you want a fast and simple framework for building a simple web application. Perhaps you only need to respond to a handful of routes, or you want the response time for a small part of a bigger application to be lighting fast. The &lt;a href=&#34;http://www.sinatrarb.com/&#34;&gt;Sinatra&lt;/a&gt; framework is made for just these moments.&lt;/p&gt;
+
+&lt;p&gt;Today let&amp;rsquo;s take a quick look at this framework and see how quickly we can build lightweight web applications.&lt;/p&gt;
+
+&lt;iframe src=&#34;http://player.vimeo.com/video/55188956&#34; width=&#34;620&#34; height=&#34;350&#34; frameborder=&#34;0&#34; webkitAllowFullScreen=&#34;webkitAllowFullScreen&#34; mozallowfullscreen=&#34;mozallowfullscreen&#34; allowFullScreen=&#34;allowFullScreen&#34;&gt;&lt;!-- fixes a wierd problem with jekyll --&gt;&lt;/iframe&gt;
+
+&lt;p&gt;The full script, including source code, can be found here &lt;a href=&#34;https://gist.github.com/4243330&#34;&gt;https://gist.github.com/4243330&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Getting Started with Rack (Video)</title>
+      <link>/2012/12/02/getting-started-with-rack-video/</link>
+      <pubDate>Sun, 02 Dec 2012 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2012/12/02/getting-started-with-rack-video/</guid>
+      <description>
+
+&lt;p&gt;If you&amp;rsquo;re writing web applications with Ruby there comes a time when you might need something a lot simpler, or even faster, than Ruby on Rails or the Sinatra micro-framework. Enter Rack.&lt;/p&gt;
+
+&lt;p&gt;In this 5:25 minute long video we&amp;rsquo;ll quickly explore the Rack framework, which powers Ruby on Rails, Sinatra, and a whole host of other frameworks. We&amp;rsquo;ll start with a one line Rack application and move on to write a very simple web framework using this powerful tool.&lt;/p&gt;
+
+&lt;h3 id=&#34;update&#34;&gt;UPDATE:&lt;/h3&gt;
+
+&lt;p&gt;A lot of people have asked about a gist of the code, here it is &lt;a href=&#34;https://gist.github.com/4240848&#34;&gt;https://gist.github.com/4240848&lt;/a&gt; it&amp;rsquo;s the full script of the screen cast along with all of the code. Enjoy!&lt;/p&gt;
+
+&lt;h3 id=&#34;update-1&#34;&gt;UPDATE:&lt;/h3&gt;
+
+&lt;p&gt;This video is now available on &lt;a href=&#34;http://www.metacasts.tv/casts/getting-started-with-rack&#34;&gt;MetaCasts.tv&lt;/a&gt;. A new screen cast subscription site that focuses on Ruby and related technologies, such as Rails, JavaScript, CoffeeScript and more.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How To Write An API Without Even Trying</title>
+      <link>/2012/04/05/how-to-write-an-api-without-even-trying/</link>
+      <pubDate>Thu, 05 Apr 2012 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2012/04/05/how-to-write-an-api-without-even-trying/</guid>
+      <description>
+
+&lt;p&gt;Recently I fell upon a way of working that I think is just fantastic. So far I have no complaints about it, and neither do my clients.&lt;/p&gt;
+
+&lt;h3 id=&#34;how-i-used-to-work&#34;&gt;How I used to work&lt;/h3&gt;
+
+&lt;p&gt;In the past I would write my Rails applications just like everyone else did. I had all my business logic in my models and my controllers were very lightweight. Just enough to have the data I need to render the page.&lt;/p&gt;
+
+&lt;p&gt;My views on the other hand were big. They contained all of the view logic. There were loops to print things to the screen, helpers to make things easier to do in the view layer, forms, etc&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;Somewhere near the end of the project my client would inevitably tell me they want me to build an API for them. Of course, this usually happens with only minutes left on the clock. So quickly, and hastily, I throw together a quick API for them. Sure I test the API with my test suite, but the API has never really been &amp;ldquo;tested&amp;rdquo;, in a real world sense.&lt;/p&gt;
+
+&lt;p&gt;This writing an API in a vacuum seems to be quite a common practice. Everyone knows they need an API, but people don&amp;rsquo;t put much thought into it because they&amp;rsquo;re too busy trying to crank out their great idea as fast as possible. This leads to less than stellar APIs, which can both hurt the business and make it difficult when the time comes to do things like build clients for mobile devices and desktops.&lt;/p&gt;
+
+&lt;p&gt;So how can we solve this problem without putting too much extra strain on us poor developers? The answer is incredibly simple, eat your own dog food.&lt;/p&gt;
+
+&lt;h3 id=&#34;eating-the-dog-food-and-loving-it&#34;&gt;Eating the Dog Food (and loving it!)&lt;/h3&gt;
+
+&lt;p&gt;I, like a lot of my colleagues, have been turning to JavaScript frameworks, such as Backbone.js, to help create a richer, and more responsive, front-end user experience for the applications we write. A lot of what makes these types of frameworks so responsive is that they can make remote AJAX calls to your server to fetch, update, or destroy objects.&lt;/p&gt;
+
+&lt;p&gt;Since I&amp;rsquo;m doing all of my front-end work using Backbone, my Rails view layer has become almost not existent. I use views simply to launch my Backbone application. A typical view my look something like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;c&#34;&gt;&amp;lt;!-- index.html.erb --&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;nt&#34;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;id=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#39;products&amp;#39;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;nt&#34;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;MyApp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Views&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ProductApp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;})&lt;/span&gt;
+&lt;span class=&#34;nt&#34;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;All my views are responsible for now is launching the Backbone application to serve up the appropriate views and handle all of the user interaction. My controllers are also now even smaller. They are essentially just there to serve up that basic template page.&lt;/p&gt;
+
+&lt;p&gt;So what does all of this have to do with writing an API without trying?&lt;/p&gt;
+
+&lt;p&gt;Well, the Backbone application needs to communicate back to the server if the user wants to update, create, or destroy a resource, so why not simply write a very nice API to do that? You were going to spend all this time writing controllers and view logic anyway, why not move those controllers to the API and that view logic to Backbone.&lt;/p&gt;
+
+&lt;p&gt;The win is outstanding! Because you&amp;rsquo;ve written a full client, your actual application, for your API you know that your API is more than capable of letting others do the same. Your API works, it&amp;rsquo;s battle tested, it&amp;rsquo;s proven, and it exists! The best part is it didn&amp;rsquo;t take you any longer to write it either.&lt;/p&gt;
+
+&lt;p&gt;This pays off down the line in spades. For example, I&amp;rsquo;ve just finished up a project for a client and I took this exact approach. The client then asked me if I could write them a mobile application. I said sure, I created a new PhoneGap application and within a few minutes I copied in the Backbone models from my webapp I had written and was well on the way to writing a second full client for the API, and I didn&amp;rsquo;t even break a sweat.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Adding Pagination to an API</title>
+      <link>/2012/02/22/adding-pagination-to-an-api/</link>
+      <pubDate>Wed, 22 Feb 2012 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2012/02/22/adding-pagination-to-an-api/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;http://www.robertsabuda.com/store/images/sharks_shark.jpg&#34; title=&#34;popup book&#34; style=&#34;float: left; padding-right: 10px&#34; width=&#34;250&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Before I start this article, let me apologize for the lack of writing over the last six months. My only excuse is that I&amp;rsquo;ve been working on a new book and that is where all my writing energy has gone. So with apologies out of the way, let&amp;rsquo;s talk pagination.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Dealing with pagination in any application is never easy. There are a lot of great libraries out there that help you better handle this awkward, but unavoidable part of application programming. Things get even more complicated when you are trying to define an API.&lt;/p&gt;
+
+&lt;p&gt;APIs are fickle beasts. They have to be both clean and functional. Two things that are often at odds with one another. No sooner does clean and functional have a go at each than when trying to add pagination to an API. Pagination requires all sorts of meta-data; how many total results there are, how pages there are, etc&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;There are two approaches to handling pagination in your API, let&amp;rsquo;s look at those two approaches in this article.&lt;/p&gt;
+
+&lt;p&gt;The first approach is the easiest one to code, but I find it to be the most intrusive and less clean approach. A typical response would look something like this:&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/1889261.js&#34;&gt; &lt;/script&gt;
+
+&lt;p&gt;Here the API returns the pagination meta-data right inside of the JSON response. The advantage here is that everything is very visible to the end developer. They can easily see the details of the pagination, as well as the &lt;code&gt;widgets&lt;/code&gt; element which contains the array of data the end user was most likely looking for when they requested the API.&lt;/p&gt;
+
+&lt;p&gt;The downside of this approach is that the pagination meta-data is right there in the body of the response. The client trying to use the API has to dig into the response to extract the data it was originally looking for, potentially ignoring the pagination meta-data, if it doesn&amp;rsquo;t need it.&lt;/p&gt;
+
+&lt;p&gt;The other way to send the pagination meta-data along with our response is in the headers of the response. This is my preferred way of handling this situation.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s look at how we can do this in a Rails application using WillPaginate. Of course if you&amp;rsquo;re not using WillPaginate you can easily substitute your pagination library of choice.&lt;/p&gt;
+
+&lt;p&gt;I start by creating a class method in &lt;code&gt;ApplicationController&lt;/code&gt; that will create an &lt;code&gt;after_filter&lt;/code&gt; that will set the pagination meta-data in the response headers:&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/1889206.js&#34;&gt; &lt;/script&gt;
+
+&lt;p&gt;Then in the controller we want to add pagination headers we can call it like such:&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/1889221.js&#34;&gt; &lt;/script&gt;
+
+&lt;p&gt;Now when someone calls the &lt;code&gt;index&lt;/code&gt; action on the &lt;code&gt;API::V1::WidgetsController&lt;/code&gt; it will respond with JSON that looks like this:&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/1889259.js&#34;&gt; &lt;/script&gt;
+
+&lt;p&gt;And with response headers that look like this:&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/1889226.js&#34;&gt; &lt;/script&gt;
+
+&lt;p&gt;Now the client can easily gain access to the array of widgets they originally wanted, and should they need the pagination meta-data the client can just easily pull that information right out of the headers.&lt;/p&gt;
+
+&lt;p&gt;The API is once again nice and clean and yet it can now easily be paginated.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Using Sprockets without Rails</title>
+      <link>/2011/08/31/using-sprockets-without-rails/</link>
+      <pubDate>Wed, 31 Aug 2011 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2011/08/31/using-sprockets-without-rails/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve started working this week on an example application for the next book I&amp;rsquo;m about to write and I wanted a simple way for my readers to easily run the app (it&amp;rsquo;s going to be a single HTML file with a ton of cool JavaScript going on in it). My first choice for running this app was to use the popular Ruby library, &lt;a href=&#34;http://rack.rubyforge.org/&#34;&gt;Rack&lt;/a&gt;. If you are unfamiliar with Rack, please check it out. It provides a simple interface for writing web applications. By writing a simple Ruby file readers can use their favorite Rack compatible web server to launch the application. Sounds simple, eh? That&amp;rsquo;s because it is.&lt;/p&gt;
+
+&lt;p&gt;With a simple Rack application written in a few lines of code I was able to start developing my example application. That&amp;rsquo;s when I realized I needed a good way to serve up all my &lt;a href=&#34;http://jashkenas.github.com/coffee-script/&#34;&gt;CoffeeScript&lt;/a&gt; and &lt;a href=&#34;http://sass-lang.com/&#34;&gt;Sass&lt;/a&gt; files. I was going to write a watchr script that did this, but I thought that was a bit heavy handed, and not very flexible, so I turned to &lt;a href=&#34;https://github.com/sstephenson/sprockets&#34;&gt;Sprockets&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Sprockets recently gained a lot of attention because it is bundled in with &lt;a href=&#34;http://guides.rubyonrails.org/3_1_release_notes.html&#34;&gt;Rails 3.1&lt;/a&gt; to serve up an application&amp;rsquo;s assets. It&amp;rsquo;s a clever little library that will process your files using CoffeeScript, Sass, etc&amp;hellip; and let you bundle them up in to a single asset by using a manifest. That was exactly what I wanted. After I spent the better part of an afternoon doing a bit of research and debugging here is the Rack configuration file I came up with:&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/1184400.js&#34;&gt; &lt;/script&gt;
+
+&lt;p&gt;That will serve
+&lt;pre&gt;/assets/application.css&lt;/pre&gt;
+via Sprockets. The file itself will live in
+&lt;pre&gt;&amp;lt;pwd&amp;gt;/app/assets/stylesheets/application.scss&lt;/pre&gt;
+The same goes for JavaScript files.&lt;/p&gt;
+
+&lt;p&gt;Hopefully this will save someone else a little of time when they&amp;rsquo;re trying to do the same thing. Enjoy!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>CoffeeScript - A Rubyist&#39;s Love Affair</title>
+      <link>/2011/08/10/coffeescript-a-rubyists-love-affair/</link>
+      <pubDate>Wed, 10 Aug 2011 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2011/08/10/coffeescript-a-rubyists-love-affair/</guid>
+      <description>&lt;p&gt;Last night I had the pleasure of presenting to the &lt;a href=&#34;http://www.bostonrb.org&#34;&gt;Boston Ruby User&amp;rsquo;s Group&lt;/a&gt; on CoffeeScript. My talk was geared to helping Rubyists understand, and hopefully love, CoffeeScript. Along the way I tried to debunk a few myths and preconceptions as to what CoffeeScript is and isn&amp;rsquo;t. The reaction was really positive, so hopefully I did my job. Anyway, here are the slides:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.slideshare.net/markykang/coffeescript-bostonrb-892011&#34;&gt;http://www.slideshare.net/markykang/coffeescript-bostonrb-892011&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;Enjoy!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Let&#39;s say goodbye to YAML for configuration, shall we?</title>
+      <link>/2011/06/28/lets-say-goodbye-to-yaml-for-configuration-shall-we/</link>
+      <pubDate>Tue, 28 Jun 2011 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2011/06/28/lets-say-goodbye-to-yaml-for-configuration-shall-we/</guid>
+      <description>&lt;p&gt;&lt;img style=&#34;float: left; padding-right: 10px&#34; class=&#34;size-medium wp-image-489&#34; title=&#34;yml&#34; src=&#34;/assets/images/2011/06/yml-300x300.png&#34; alt=&#34;&#34; width=&#34;180&#34; height=&#34;180&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I have to ask a question to my fellow Rubyists out there? Why are you still using YAML? I know why you &lt;em&gt;think&lt;/em&gt; you like YAML. You think it&amp;rsquo;s a great way to write configuration files, but it&amp;rsquo;s really not. You know what&amp;rsquo;s a great way of writing configuration files for Ruby apps? RUBY!&lt;/p&gt;
+
+&lt;p&gt;I know it&amp;rsquo;s crazy, isn&amp;rsquo;t it? But why not? Why would you not want to use Ruby for configuring your applications instead of YAML?&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m the maintainer of a pretty popular configuration tool for Ruby apps, &lt;a href=&#34;http://github.com/markbates/configatron&#34;&gt;Configatron&lt;/a&gt;, so I think I have a little experience in this field. I also write and maintain a lot of libraries that require configuration and I have never thought that YAML is the best way to do this.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s look at an example of what a library developer has to do to load a YAML file to get configurations:&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/1051635.js&#34;&gt; &lt;/script&gt;
+
+&lt;p&gt;I don&amp;rsquo;t know about you, but I think that&amp;rsquo;s kind of lame. Most everybody runs their YAML files through ERB so that they can make their YAML files more &amp;lsquo;Ruby-ish&amp;rsquo;. Why not just use Ruby?? Here&amp;rsquo;s the same example in Ruby:&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/1051638.js&#34;&gt; &lt;/script&gt;
+
+&lt;p&gt;In addition to not having to deal with all the whitespace, tabs, crazy nesting, etc&amp;hellip; that YAML brings we get to use the full power of Ruby for our configurations! Try storing a Proc in YAML. Yeah, that&amp;rsquo;s what I thought. You can drive configurations from the database, environment variables, crazy equations, etc&amp;hellip; the world is your oyster. All you need to do now is stop using YAML!&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve decided to drop YAML support in Configatron 2.9 (coming sometime this Summer) and I encourage all other library developers to do the same. It&amp;rsquo;s just not needed, or very nice for that matter. Now, if we can only get Rails to drop the database.yml file, I think we&amp;rsquo;ll be all set.&lt;/p&gt;
+
+&lt;address&gt;Ps. Make sure to check out my app [FluxTracker.com](http://www.fluxtracker.com?ref=yaml) for all your issue, project, and error tracking needs. Also check out [TweetKO.com](http://tweetko.com?ref=yaml) for backing up and bookmarking your favorite tweets.&lt;/address&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Project, Issue, and Error Tracking United!</title>
+      <link>/2011/04/25/project-issue-and-error-tracking-united/</link>
+      <pubDate>Mon, 25 Apr 2011 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2011/04/25/project-issue-and-error-tracking-united/</guid>
+      <description>&lt;p&gt;&lt;img style=&#34;float: left; padding-right: 10px&#34; class=&#34;size-medium wp-image-437&#34; title=&#34;issue_list_big&#34; src=&#34;/assets/images/2011/04/issue_list_big-300x225.png&#34; alt=&#34;&#34; width=&#34;300&#34; height=&#34;225&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;UPDATE: Unfortunately FluxTracker is no longer available. Sorry about that.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;For the last few years every project or company I&amp;rsquo;ve worked for has started the same way, by setting up Basecamp, Lighthouse and Hoptoad (or similar ones anyway). Why? Basecamp  - so we could share documents and todos. Lighthouse - so we could track our issues and bugs. Hoptoad - so we could track the errors our application was generating.&lt;/p&gt;
+
+&lt;p&gt;These are all very good applications and have served myself and my clients well, but they&amp;rsquo;ve suffered from several very big flaws. The first big flaw was the cost. You can easily drop $100 or more a month across these different services. But that wasn&amp;rsquo;t the biggest flaw or problem I&amp;rsquo;ve had with these services. The biggest problem was lack of integration.&lt;/p&gt;
+
+&lt;p&gt;So what do I mean by lack of integration? Well, when an error comes in I want to easily be able to create a new issue from it. When the issue gets resolved, so should the error. If the error reoccurs it should re-open automatically, and so should the issue. I want to be able to create an issue right from a document or be able to attach issues to a document. I should be able to follow the flow from document to issue to error and back again very easily. Unfortunately, these applications don&amp;rsquo;t give you that level of integration. They offer some level, but just not enough.&lt;/p&gt;
+
+&lt;p&gt;Well, my friends, welcome to the future. Welcome to FluxTracker.com. FluxTracker combines a great issue tracker, a project management system, and an error tracker all in one application. Now you can full integration without any configuration, oh, and you can do it at a fraction of the cost!&lt;/p&gt;
+
+&lt;p&gt;We know it isn&amp;rsquo;t easy to switch to a different application, that&amp;rsquo;s why we&amp;rsquo;ve made it easy for you. You can easily import your Lighthouse account. FluxTracker also allows you to easily use the Hoptoad Notifier plugin for your project by just setting a few configuration parameters.&lt;/p&gt;
+
+&lt;p&gt;So know you know, you&amp;rsquo;re life can be easier. And you now know how easy it is to get started! So what are you waiting for? Go and sign up for our Free plan and start living the dream.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Because everybody has an opinion...</title>
+      <link>/2011/04/15/because-everybody-has-an-opinion/</link>
+      <pubDate>Fri, 15 Apr 2011 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2011/04/15/because-everybody-has-an-opinion/</guid>
+      <description>&lt;p&gt;In case you&amp;rsquo;ve been living in a cave this week you&amp;rsquo;ve probably heard that &lt;a href=&#34;http://www.rubyinside.com/rails-3-1-adopts-coffeescript-jquery-sass-and-controversy-4669.html&#34;&gt;Ruby on Rails&lt;/a&gt; is going to be including both the &lt;a href=&#34;http://coffeescript.org/&#34;&gt;CoffeeScript&lt;/a&gt; and &lt;a href=&#34;http://sass-lang.com/&#34;&gt;SASS&lt;/a&gt; libraries, it will also make &lt;a href=&#34;http://jquery.com/&#34;&gt;jQuery&lt;/a&gt; the default JavaScript framework, replacing the &lt;a href=&#34;http://www.prototypejs.org/&#34;&gt;Prototype&lt;/a&gt; framework.&lt;/p&gt;
+
+&lt;p&gt;I would like to start by addressing my experiences with CoffeeScript. My opinion of it is of ambivalence. I&amp;rsquo;ve used it on a project, I&amp;rsquo;ve played with and in the end I&amp;rsquo;ve come out with the opinion of &amp;ldquo;it&amp;rsquo;s ok&amp;rdquo;. It didn&amp;rsquo;t blow me away, but at the same time I can see why so many people like. It offers some really cool features that I really wish JavaScript had and you can cut down on the amount of code you have to write. On the other hand the apps I tend to write don&amp;rsquo;t tend to be that JavaScript heavy that I really needed to reach out for something like CoffeeScript.&lt;/p&gt;
+
+&lt;p&gt;&lt;img style=&#34;float: left; padding-right: 10px&#34; src=&#34;http://blogs.worldbank.org/files/publicsphere/public%20opinion_JGRNLY.jpeg&#34; alt=&#34;&#34; width=&#34;326&#34; height=&#34;246&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So, how do I feel about CoffeeScript being included with Rails? Well, I&amp;rsquo;ll get to that. Let&amp;rsquo;s go over some of the most common arguments I&amp;rsquo;ve heard from people this week about why they&amp;rsquo;re anti-CoffeeScript in Rails.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;It&amp;rsquo;s an abstraction layer of JavaScript! JavaScript isn&amp;rsquo;t that bad, why can&amp;rsquo;t you just write JavaScript?&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;It&amp;rsquo;s going to be a hinderance to newbies. It&amp;rsquo;ll be too much of a learning curve!&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Let&amp;rsquo;s start with that second point first, shall we? I agree, it does represent a new element that needs to be learned when coming to Rails. But here&amp;rsquo;s the pretty nifty thing about how it&amp;rsquo;s all implemented in Rails. In order to actually use CoffeeScript in Rails you have to create your files named foo.js.coffee if, however, you just name your file foo.js then, guess what? You will have to write plain old JavaScript! Seems like newbies, and those who don&amp;rsquo;t like CoffeeScript, can just keep writing plain old JavaScript without anything stopping them at all.&lt;/p&gt;
+
+&lt;p&gt;Now, let&amp;rsquo;s talk about the abstraction layer argument. Yes, CoffeeScript is an abstraction on top of JavaScript, but let&amp;rsquo;s take a look at a few other parts of the Rails stack and see how they hold up against this argument.&lt;/p&gt;
+
+&lt;p&gt;Here&amp;rsquo;s a fairly common Rails stack:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ActiveRecord&lt;/li&gt;
+&lt;li&gt;Haml&lt;/li&gt;
+&lt;li&gt;jQuery&lt;/li&gt;
+&lt;li&gt;RSpec&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;What do all those things have in common? Well, they&amp;rsquo;re all abstraction layers that sit on top of something else, don&amp;rsquo;t they? Let&amp;rsquo;s look at that list again?&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ActiveRecord - SQL (Structured Query Language)&lt;/li&gt;
+&lt;li&gt;Haml - HTML&lt;/li&gt;
+&lt;li&gt;jQuery - JavaScript, you could just as easily hand roll those AJAX calls in pure JavaScript.&lt;/li&gt;
+&lt;li&gt;RSpec - Test/Unit&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;What I&amp;rsquo;ve found funny about the particular argument is that I&amp;rsquo;ve heard it MOST from those who use things like HAML, which is a DEFINITELY an abstraction layer that sits on top of HTML. See where I&amp;rsquo;m going with this one? Good, I don&amp;rsquo;t want to belabor the point. :)&lt;/p&gt;
+
+&lt;p&gt;So, finally, where do I stand on this whole thing? Well, I view like it Test/Unit and Prototype. Those are both the current standard (although jQuery will replace Prototype in 3.1) and I don&amp;rsquo;t like or use either of them. Instead I configure Rails to use jQuery and RSpec. I don&amp;rsquo;t like Haml, but those that do simply replace ERB with Haml and they move on with their day. So my take is this, it&amp;rsquo;s there, it&amp;rsquo;s included. Use it if you like, or don&amp;rsquo;t. Is it really that big a deal? No, it really isn&amp;rsquo;t. If Rails dropped ERB and went with Haml as the default, would I bitch and moan, probably a bit, but then I&amp;rsquo;d just install the Rails-ERB gem and move on with my day, just like I do with jQuery and RSpec today.&lt;/p&gt;
+
+&lt;p&gt;So sit back, relax, use the libraries that you want to use, Rails let&amp;rsquo;s you do that. Oh, while you&amp;rsquo;re relaxing why not try out CoffeeScript, who knows, you might just enjoy it. Or not.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Testing Tools Aren&#39;t All the Same, Choose Wisely</title>
+      <link>/2011/03/04/407-testing-tools-arent-all-the-same-choose-wisely/</link>
+      <pubDate>Fri, 04 Mar 2011 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2011/03/04/407-testing-tools-arent-all-the-same-choose-wisely/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Testing is painful.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;Testing is hard.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;Testing is complicated.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;Testing is not fun.&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I hear those sorts of things all the time when I talk to people about testing. I agree that sometimes testing can be all of those things, but if you choose the right tools, the tools that best suite you, testing doesn&amp;rsquo;t have to be. Let me give you an example of what I&amp;rsquo;m talking about, how choosing the right tools can make a huge impact on how you feel about testing.&lt;/p&gt;
+
+&lt;p&gt;When working for a client recently I came across the need for end to end integration testing. I needed to test, amongst other things, the flow of a user registering through the application in a few different ways. Because registration behaves differently based on where you come from and where you want to go, I needed a good way to test that entire flow, so simple unit and functional tests just were not going to cut it.&lt;/p&gt;
+
+&lt;p&gt;In the Ruby community there is a big push to use a testing framework called, &lt;a href=&#34;http://cukes.info/&#34;&gt;Cucumber&lt;/a&gt;. Cucumber is a behavior driven development (BDD) tool that let&amp;rsquo;s you write user stories in plain English. Those stories then get translated into Ruby code that tests those stories against your application. Because of it&amp;rsquo;s popularity, and some of it&amp;rsquo;s quite amazing features, this was my first stop on the path to integration testing bliss.&lt;/p&gt;
+
+&lt;p&gt;Let me give you an example of a Cucumber script:&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/854764.js&#34;&gt; &lt;/script&gt;
+
+&lt;p&gt;That script tests the user registration flow through an application in a couple of different ways, first through &amp;lsquo;standard&amp;rsquo; registration, and then through being invited to join. Now, the beauty of Cucumber is that these scripts are &amp;lsquo;human&amp;rsquo; readable. Your product manager, or other stake holders, should be able to write these scripts themselves, and you, the developer, should be able to just plug them in and code until those scripts pass.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, while that sounds like a little slice of Heaven, the reality is far from it in practice. First, getting stake holders to actually write these &amp;lsquo;stories&amp;rsquo;, as their typically called, is a tough chore to begin with. If they do write them, they&amp;rsquo;re typically not going to be &amp;lsquo;plug and play&amp;rsquo;. Why? Well, when Cucumber reads these scripts it goes line by line and tries to find some code that matches the regular expression of that line and then execute it. If it doesn&amp;rsquo;t find matching code, then it fails. That means that your stake holders need to write these scripts in a very particular way or developers need to sit down and massage those stories to fit the correct regular expression.&lt;/p&gt;
+
+&lt;p&gt;Now, let me just take this opportunity to say that this is not a post about how much I hate Cucumber, in fact I think Cucumber is a pretty amazing piece of software, and does in fact have a lot of great uses. Instead, what I&amp;rsquo;m talking about it is how Cucumber turned out not to be the right tool for the job for me on a recent project.&lt;/p&gt;
+
+&lt;p&gt;So why wasn&amp;rsquo;t Cucumber the right tool for the job? Great question, glad you asked. Cucumber turned out not to be the right tool for a few reasons. The biggest of which was that I was the one who was writing the user stories. The stake holders had no desire to write these stories, which meant I had to write them. The I had to write the &amp;lsquo;steps&amp;rsquo; that back each line of the script. In all fairness, Cucumber does give you some great steps right out of the box. After some fiddling I finally got the Cucumber scripts up and running and testing my work flow. But I definitely ran into some issues.&lt;/p&gt;
+
+&lt;p&gt;Because Cucumber isn&amp;rsquo;t pure Ruby I had a hard time doing something as simple as just printing out the request&amp;rsquo;s body and headers without having to write a step that did just that, then add that step to my story, etc&amp;hellip; It&amp;rsquo;s overall fiddlyness and non-intuitive way of doing things caused me a lot of grief and time. And, most importantly, I wasn&amp;rsquo;t really getting the big benefit of Cucumber, stake holder&amp;rsquo;s writing the stories. So I was doing all this work and not getting the benefits of Cucumber.&lt;/p&gt;
+
+&lt;p&gt;So what did I do? I turned to a library called &lt;a href=&#34;https://github.com/cavalle/steak&#34;&gt;Steak&lt;/a&gt;. Steak allows you to write integration tests using pure Ruby and integrates directly in with &lt;a href=&#34;http://relishapp.com/rspec&#34;&gt;RSpec&lt;/a&gt;, my preferred testing framework. With Steak I was able to write my integration tests in just a few minutes.&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/854844.js&#34;&gt; &lt;/script&gt;
+
+&lt;p&gt;While my Steak scripts a bit more wordy and are definitely not &amp;lsquo;human&amp;rsquo; readable and editable by stakeholders, they did achieve my goal of allowing me to write integration tests quickly.&lt;/p&gt;
+
+&lt;p&gt;So here you see I picked a very powerful tool, that has a lot of great benefits, Cucumber, but I picked it for the wrong reasons. I picked it because it was popular, and not because it would help me achieve my goals. If my goals where to have stakeholders write the stories and hand them off to development, than it would&amp;rsquo;ve been a better choice. But in the end my goal was to write integration tests and write them quickly, which is why Steak ended up being the right tool for that job.&lt;/p&gt;
+
+&lt;p&gt;This has all been a really long winded way of saying doing some research before choosing your testing frameworks, or any framework for that matter. Play with it, research it, make sure it meets your goals, not somebody else&amp;rsquo;s. If you choose the right tools then testing doesn&amp;rsquo;t need to be scary, complicated, frustrating, etc&amp;hellip; Testing is a &lt;a href=&#34;/2010/07/01/testing-is-not-an-option/&#34;&gt;requirement&lt;/a&gt; and a must have, so why not make it fun?&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

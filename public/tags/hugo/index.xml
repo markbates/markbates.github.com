@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on MetaBates.com</title>
+    <link>/tags/hugo/</link>
+    <description>Recent content in Hugo on MetaBates.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
+    <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
+    <copyright>(c) 2016 Mark Bates.</copyright>
+    <lastBuildDate>Thu, 09 Jun 2016 16:20:56 -0400</lastBuildDate>
+    <atom:link href="/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Now Building With Hugo</title>
+      <link>/2016/06/09/now-building-with-hugo/</link>
+      <pubDate>Thu, 09 Jun 2016 16:20:56 -0400</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2016/06/09/now-building-with-hugo/</guid>
+      <description>&lt;p&gt;Recently a good friend of mine, &lt;a href=&#34;https://twitter.com/spf13&#34;&gt;Steve Francia&lt;/a&gt;, released a new version of his static site generator, &lt;a href=&#34;http://gohugo.io/meta/release-notes/&#34;&gt;Hugo&lt;/a&gt;. So I thought I would give it a spin to see if it&amp;rsquo;s any better than my old platform, &lt;a href=&#34;/2012/04/04/now-blogging-with-jekyll/&#34;&gt;Jekyll&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The big reason that I was interested in Hugo, wasn&amp;rsquo;t just because I&amp;rsquo;m friends with Steve, but rather speed. Jekyll had always been easy to use, but it was pretty slow. Like really slow. I also had the occasional issue with it not properly building after I would save a file. It wasn&amp;rsquo;t that Jekyll was bad, but there was definitely room for improvement.&lt;/p&gt;
+
+&lt;p&gt;I had tried previously to switch over to Hugo, but there wasn&amp;rsquo;t a good way to import from Jekyll and I had a) no intentions of manually converting all my previous posts and b) losing all of that content and starting over again.&lt;/p&gt;
+
+&lt;p&gt;I spent some time with Steve a few weeks ago, and he told me that the latest version of Hugo had built-in support for importing Jekyll, and that I didn&amp;rsquo;t have to rely on hacking third party scripts to get the job done.&lt;/p&gt;
+
+&lt;p&gt;After running the importer all of my posts were there, and they only needed a wee bit of tweaking to make them look good with Hugo. Then I was off trying to find a good theme for the site, preferably something similar to what I had. That was easy enough, a few tweaks to a &amp;ldquo;bootstrap&amp;rdquo; theme and I was set.&lt;/p&gt;
+
+&lt;p&gt;Overall I&amp;rsquo;ve been happy with Hugo, now that I have it set up. I just hit save and Hugo rebuilt my entire site in &lt;code&gt;234ms&lt;/code&gt;. That&amp;rsquo;s pretty darn fast! Especially compared with the speeds I was getting with Jekyll. Oh, and did I mention that it also reloaded the site in my browser for me so I can see it getting updated everytime I hit save? Yeah, pretty nice.&lt;/p&gt;
+
+&lt;p&gt;For now, I&amp;rsquo;m sold on Hugo. Does that mean I will blog more? Who knows? I do know that it certainly couldn&amp;rsquo;t hurt. :)&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

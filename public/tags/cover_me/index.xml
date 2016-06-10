@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cover_me on MetaBates.com</title>
+    <link>/tags/cover_me/</link>
+    <description>Recent content in Cover_me on MetaBates.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
+    <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
+    <copyright>(c) 2016 Mark Bates.</copyright>
+    <lastBuildDate>Thu, 30 Sep 2010 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/cover_me/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>CoverMe – Code Coverage for Ruby 1.9 Reaches RC1</title>
+      <link>/2010/09/30/coverme-%E2%80%93-code-coverage-for-ruby-1-9-reaches-rc1/</link>
+      <pubDate>Thu, 30 Sep 2010 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2010/09/30/coverme-%E2%80%93-code-coverage-for-ruby-1-9-reaches-rc1/</guid>
+      <description>&lt;p&gt;In &lt;a href=&#34;http://www.metabates.com/2010/08/13/coverme-code-coverage-for-ruby-1-9/&#34;&gt;August&lt;/a&gt; I announced &lt;a href=&#34;http://github.com/markbates/cover_me&#34;&gt;CoverMe&lt;/a&gt; a code coverage tool for Ruby 1.9. Well, today I announce that it has hit it&amp;rsquo;s first release candidate! I&amp;rsquo;ve very excited by the fact it&amp;rsquo;s getting close to an &amp;lsquo;official&amp;rsquo; release.&lt;/p&gt;
+
+&lt;p&gt;The response to CoverMe has been great and through feedback from the community I&amp;rsquo;ve made a lot of improvements and fixed a lot of issues.&lt;/p&gt;
+
+&lt;p&gt;While quite a few things have changed under the hood, not much has changed in how you use CoverMe.
+&lt;h2&gt;Installation&lt;/h2&gt;
+The following are instructions for how you would configure CoverMe for a Rails 3 project, adjust to your local environment accordingly.&lt;/p&gt;
+
+&lt;p&gt;In  your Gemfile add the following:
+&lt;pre&gt;gem &amp;lsquo;cover_me&amp;rsquo;, &amp;lsquo;&amp;gt;= 1.0.0.rc1&amp;rsquo;, :group =&amp;gt; :test&lt;/pre&gt;
+Then run:
+&lt;pre&gt;$ bundle install&lt;/pre&gt;
+After CoverMe is installed place the following line at the &lt;strong&gt;&lt;em&gt;VERY TOP&lt;/em&gt;&lt;/strong&gt; of your &amp;lsquo;test_helper.rb&amp;rsquo; or &amp;lsquo;spec_helper.rb&amp;rsquo; file (for Cucumber put it at the top of the &amp;lsquo;env.rb&amp;rsquo; file):
+&lt;pre&gt;require &amp;lsquo;cover_me&amp;rsquo;&lt;/pre&gt;
+I can&amp;rsquo;t emphasize enough how important it is that the require statement is at the &lt;strong&gt;&lt;em&gt;VERY&lt;/em&gt;&lt;/strong&gt; top of that file!&lt;/p&gt;
+
+&lt;p&gt;Finally (and optionally) run:
+&lt;pre&gt;$ rails g cover_me:install&lt;/pre&gt;
+This will simply install a Rake task that will wrap both Test::Unit and RSpec tasks with CoverMe and will launch the results at the end of the test suites. I would recommend it. It&amp;rsquo;s kinda the whole point. :)
+&lt;h2&gt;That&amp;rsquo;s it!&lt;/h2&gt;
+Enjoy the release candidate, and of course, please let me know if you find any issues with it. Issues can be reported on &lt;a href=&#34;http://github.com/markbates/cover_me/issues&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

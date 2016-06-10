@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ruby 1.9 on MetaBates.com</title>
+    <link>/tags/ruby-1/index.9/</link>
+    <description>Recent content in Ruby 1.9 on MetaBates.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
+    <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
+    <copyright>(c) 2016 Mark Bates.</copyright>
+    <lastBuildDate>Sun, 18 Jan 2009 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/ruby-1.9/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Release 0.8.3</title>
+      <link>/2009/01/18/release-083/</link>
+      <pubDate>Sun, 18 Jan 2009 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2009/01/18/release-083/</guid>
+      <description>&lt;p&gt;Thanks to the cold and snowy New England winter this year, I&amp;rsquo;ve been able to devote quite a bit of time to getting Mack to run on Ruby 1.9, so with that said, here&amp;rsquo;s the 0.8.3 release of Mack, featuring&amp;hellip; TADA&amp;hellip; Ruby 1.9!! Of course there are a few other features and improvements in this release. Here&amp;rsquo;s a quick run down:
+&lt;h3&gt;Ruby 1.9&lt;/h3&gt;
+The big one. Mack runs very well on Ruby 1.9, unfortunately I can&amp;rsquo;t say the same thing about some other frameworks. I&amp;rsquo;ve had some run ins with DataMapper on 1.9, but I&amp;rsquo;m sure those will be ironed out shortly.&lt;/p&gt;
+
+&lt;p&gt;A few weeks ago I announced I was working on getting Ruby 1.9 support for all my gems and libraries. I started out with Configatron, then upgraded Cachetastic and Genosaurus. Now Mack is 1.9 compatible. When I made the announcement the guys at RailsEnvy picked up on it and said that I made a call to arms to the community to pick up 1.9 support. Now granted, I didn&amp;rsquo;t actually say those words, but I think the intent was there, so I&amp;rsquo;m going to now officially say those words. This is a &amp;lsquo;call to arms&amp;rsquo; to the Ruby community to upgrade their gems, plugins, libraries, frameworks, etc&amp;hellip; to work on Ruby 1.9. I&amp;rsquo;ve done it, and I can tell you, it&amp;rsquo;s not that tough. Just use multiruby, and you&amp;rsquo;re off and running.
+&lt;h3&gt;ActiveSupport In, Facets Out&lt;/h3&gt;
+What with the world getting smaller these days, well, at least the world of Ruby web frameworks. A lot of great work is going into refactoring ActiveSupport and making it faster, better, and smaller. Because of that and the fact that every time a new release of Facets comes out it breaks a whole lot of stuff, I&amp;rsquo;ve decided to use ActiveSupport as the basis of the mack-facets gem. So basically mack-facets is just ActiveSupport with a few more enhancements.
+&lt;h3&gt;JavaScript Effects&lt;/h3&gt;
+Thanks to the tireless efforts of Gerardo Pis-Lopez, mack-javascript, has been upgraded to add helpers methods for effects for both Prototype/Scriptaculous and jQuery. Thank you to Gerardo for the much needed upgraded to mack-javascript.
+&lt;h3&gt;Upgrades&lt;/h3&gt;
+Mack has been upgraded to use Rack 0.9.1, DataMapper 0.9.9, and a few other smaller gems.&lt;/p&gt;
+
+&lt;p&gt;Changelog:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;#243 - Upgraded to Rack 0.9.1&lt;/li&gt;
+&lt;li&gt;#242 - Upgraded to DataMapper 0.9.9&lt;/li&gt;
+&lt;li&gt;#241 - Removed dependency on Facets&lt;/li&gt;
+&lt;li&gt;#239 - Add do_sqlite3 to gems.rb&lt;/li&gt;
+&lt;li&gt;#166 - Effects for mack-javascript&lt;/li&gt;
+&lt;li&gt;#133 - Added Form Builders&lt;/li&gt;
+&lt;li&gt;#22 - Ruby 1.9 Support&lt;/li&gt;
+&lt;li&gt;gem: rack 0.9.1&lt;/li&gt;
+&lt;li&gt;gem: rspec 1.1.12&lt;/li&gt;
+&lt;li&gt;gem: configatron 2.2.2&lt;/li&gt;
+&lt;li&gt;gem: cachetastic 2.1.2&lt;/li&gt;
+&lt;li&gt;gem: data_mapper 0.9.9&lt;/li&gt;
+&lt;li&gt;gem: addressable 2.0.1&lt;/li&gt;
+&lt;li&gt;gem: extlib 0.9.9&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Configatron 2.2.0 Released, now with Ruby 1.9 and JRuby support!</title>
+      <link>/2009/01/01/configatron-220-released-now-with-ruby-19-and-jruby-support/</link>
+      <pubDate>Thu, 01 Jan 2009 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2009/01/01/configatron-220-released-now-with-ruby-19-and-jruby-support/</guid>
+      <description>&lt;p&gt;Happy New Year everyone!&lt;/p&gt;
+
+&lt;p&gt;With the help of the absolutely amazing &lt;a href=&#34;http://blog.robseaman.com/2008/12/20/switching-between-ruby-1-8-1-9-with-multiruby&#34;&gt;multiruby&lt;/a&gt; library and an edge version of rspec from GitHub, the latest version of Configatron now supports JRuby 1.1.6 and Ruby 1.9.1rc1. There are no other functional changes to the library, so it&amp;rsquo;s a full drop in replacement for vesion 2.1.6.&lt;/p&gt;
+
+&lt;p&gt;I highly encourage everyone to checkout multiruby and start upgrading their libraries so we can all move to 1.9 quicker, which means more speed and more power. Once we&amp;rsquo;re all in 1.9 land we can really make use of some of the amazing features it provides.&lt;/p&gt;
+
+&lt;p&gt;Anyway, I&amp;rsquo;ll be working on upgrading all my libraries and applications to work on 1.8 and 1.9, and hopefully JRuby, over the next couple of months. So be on the look out for a new versions of Cachetastic, Genosaurus update: &lt;em&gt;Genosaurus already works with 1.9 and JRuby. Hoorah!&lt;/em&gt;, and, of course, Mack.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

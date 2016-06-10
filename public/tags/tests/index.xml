@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tests on MetaBates.com</title>
+    <link>/tags/tests/</link>
+    <description>Recent content in Tests on MetaBates.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
+    <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
+    <copyright>(c) 2016 Mark Bates.</copyright>
+    <lastBuildDate>Fri, 04 Mar 2011 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/tests/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Testing Tools Aren&#39;t All the Same, Choose Wisely</title>
+      <link>/2011/03/04/407-testing-tools-arent-all-the-same-choose-wisely/</link>
+      <pubDate>Fri, 04 Mar 2011 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2011/03/04/407-testing-tools-arent-all-the-same-choose-wisely/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Testing is painful.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;Testing is hard.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;Testing is complicated.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;Testing is not fun.&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I hear those sorts of things all the time when I talk to people about testing. I agree that sometimes testing can be all of those things, but if you choose the right tools, the tools that best suite you, testing doesn&amp;rsquo;t have to be. Let me give you an example of what I&amp;rsquo;m talking about, how choosing the right tools can make a huge impact on how you feel about testing.&lt;/p&gt;
+
+&lt;p&gt;When working for a client recently I came across the need for end to end integration testing. I needed to test, amongst other things, the flow of a user registering through the application in a few different ways. Because registration behaves differently based on where you come from and where you want to go, I needed a good way to test that entire flow, so simple unit and functional tests just were not going to cut it.&lt;/p&gt;
+
+&lt;p&gt;In the Ruby community there is a big push to use a testing framework called, &lt;a href=&#34;http://cukes.info/&#34;&gt;Cucumber&lt;/a&gt;. Cucumber is a behavior driven development (BDD) tool that let&amp;rsquo;s you write user stories in plain English. Those stories then get translated into Ruby code that tests those stories against your application. Because of it&amp;rsquo;s popularity, and some of it&amp;rsquo;s quite amazing features, this was my first stop on the path to integration testing bliss.&lt;/p&gt;
+
+&lt;p&gt;Let me give you an example of a Cucumber script:&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/854764.js&#34;&gt; &lt;/script&gt;
+
+&lt;p&gt;That script tests the user registration flow through an application in a couple of different ways, first through &amp;lsquo;standard&amp;rsquo; registration, and then through being invited to join. Now, the beauty of Cucumber is that these scripts are &amp;lsquo;human&amp;rsquo; readable. Your product manager, or other stake holders, should be able to write these scripts themselves, and you, the developer, should be able to just plug them in and code until those scripts pass.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, while that sounds like a little slice of Heaven, the reality is far from it in practice. First, getting stake holders to actually write these &amp;lsquo;stories&amp;rsquo;, as their typically called, is a tough chore to begin with. If they do write them, they&amp;rsquo;re typically not going to be &amp;lsquo;plug and play&amp;rsquo;. Why? Well, when Cucumber reads these scripts it goes line by line and tries to find some code that matches the regular expression of that line and then execute it. If it doesn&amp;rsquo;t find matching code, then it fails. That means that your stake holders need to write these scripts in a very particular way or developers need to sit down and massage those stories to fit the correct regular expression.&lt;/p&gt;
+
+&lt;p&gt;Now, let me just take this opportunity to say that this is not a post about how much I hate Cucumber, in fact I think Cucumber is a pretty amazing piece of software, and does in fact have a lot of great uses. Instead, what I&amp;rsquo;m talking about it is how Cucumber turned out not to be the right tool for the job for me on a recent project.&lt;/p&gt;
+
+&lt;p&gt;So why wasn&amp;rsquo;t Cucumber the right tool for the job? Great question, glad you asked. Cucumber turned out not to be the right tool for a few reasons. The biggest of which was that I was the one who was writing the user stories. The stake holders had no desire to write these stories, which meant I had to write them. The I had to write the &amp;lsquo;steps&amp;rsquo; that back each line of the script. In all fairness, Cucumber does give you some great steps right out of the box. After some fiddling I finally got the Cucumber scripts up and running and testing my work flow. But I definitely ran into some issues.&lt;/p&gt;
+
+&lt;p&gt;Because Cucumber isn&amp;rsquo;t pure Ruby I had a hard time doing something as simple as just printing out the request&amp;rsquo;s body and headers without having to write a step that did just that, then add that step to my story, etc&amp;hellip; It&amp;rsquo;s overall fiddlyness and non-intuitive way of doing things caused me a lot of grief and time. And, most importantly, I wasn&amp;rsquo;t really getting the big benefit of Cucumber, stake holder&amp;rsquo;s writing the stories. So I was doing all this work and not getting the benefits of Cucumber.&lt;/p&gt;
+
+&lt;p&gt;So what did I do? I turned to a library called &lt;a href=&#34;https://github.com/cavalle/steak&#34;&gt;Steak&lt;/a&gt;. Steak allows you to write integration tests using pure Ruby and integrates directly in with &lt;a href=&#34;http://relishapp.com/rspec&#34;&gt;RSpec&lt;/a&gt;, my preferred testing framework. With Steak I was able to write my integration tests in just a few minutes.&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/854844.js&#34;&gt; &lt;/script&gt;
+
+&lt;p&gt;While my Steak scripts a bit more wordy and are definitely not &amp;lsquo;human&amp;rsquo; readable and editable by stakeholders, they did achieve my goal of allowing me to write integration tests quickly.&lt;/p&gt;
+
+&lt;p&gt;So here you see I picked a very powerful tool, that has a lot of great benefits, Cucumber, but I picked it for the wrong reasons. I picked it because it was popular, and not because it would help me achieve my goals. If my goals where to have stakeholders write the stories and hand them off to development, than it would&amp;rsquo;ve been a better choice. But in the end my goal was to write integration tests and write them quickly, which is why Steak ended up being the right tool for that job.&lt;/p&gt;
+
+&lt;p&gt;This has all been a really long winded way of saying doing some research before choosing your testing frameworks, or any framework for that matter. Play with it, research it, make sure it meets your goals, not somebody else&amp;rsquo;s. If you choose the right tools then testing doesn&amp;rsquo;t need to be scary, complicated, frustrating, etc&amp;hellip; Testing is a &lt;a href=&#34;/2010/07/01/testing-is-not-an-option/&#34;&gt;requirement&lt;/a&gt; and a must have, so why not make it fun?&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to Become a Test-driven Developer</title>
+      <link>/2010/10/12/how-to-become-a-test-driven-developer/</link>
+      <pubDate>Tue, 12 Oct 2010 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2010/10/12/how-to-become-a-test-driven-developer/</guid>
+      <description>
+
+&lt;p&gt;In a previous post, &lt;a href=&#34;http://www.metabates.com/2010/07/01/testing-is-not-an-option/&#34;&gt;Testing Is Not An Option&lt;/a&gt;, I talked a lot about why you should write tests, and the arguments you can put forth to your client, manager, or whoever it may be as to why you should write tests. What I didn&amp;rsquo;t talk about was how to start writing tests. So let&amp;rsquo;s talk about that for a bit, shall we?&lt;/p&gt;
+
+&lt;p&gt;When I&amp;rsquo;m talking with a potential client, well at least a client that has an existing code base, I always ask what their code coverage stats are. Now, I know at code coverage stats aren&amp;rsquo;t the be all end all of measuring how good your tests are, but they&amp;rsquo;re a basic enough metric to use as a guide. If they say they&amp;rsquo;re high, then I usually dig in more about how they&amp;rsquo;re testing; what frameworks, BDD, TDD, that sort of thing. Usually though I get a few minutes where they apologize and sheepishly give me their reasons for having little or no tests.&lt;/p&gt;
+
+&lt;p&gt;Here are few of those reasons:
+  * We don&amp;rsquo;t/didn&amp;rsquo;t have the time.
+  * We don&amp;rsquo;t know how.
+  * It was/is too complicated.
+  * It was/is too overwhelming.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s talk about each of this points for a minute.&lt;/p&gt;
+
+&lt;h3 id=&#34;we-don-t-didn-t-have-the-time&#34;&gt;&amp;ldquo;We don&amp;rsquo;t/didn&amp;rsquo;t have the time.&amp;rdquo;&lt;/h3&gt;
+
+&lt;p&gt;I never accept time as an argument against testing. Testing ends up repaying it&amp;rsquo;s time investment, and will ultimately give you more time than if you didn&amp;rsquo;t write code. It&amp;rsquo;s a win-win. Again see my previous post in how to get the time signed off on as part of t he project timeline.&lt;/p&gt;
+
+&lt;h3 id=&#34;we-don-t-know-how&#34;&gt;&amp;ldquo;We don&amp;rsquo;t know how.&amp;rdquo;&lt;/h3&gt;
+
+&lt;p&gt;Learn. There&amp;rsquo;s no better time than the present and no better way to learn than being thrown into the deep end. The web is crawling with documentation, screen casts, how to articles and tutorials, and there are plenty of books to get you going. In short the k knowledge is literally at your finger tips, and to be honest it&amp;rsquo;s easier than you think.&lt;/p&gt;
+
+&lt;h3 id=&#34;it-was-is-too-complicated&#34;&gt;&amp;ldquo;It was/is too complicated.&amp;rdquo;&lt;/h3&gt;
+
+&lt;p&gt;That usually means you&amp;rsquo;re doing i
+t wrong. Take a step back and assess what it is you&amp;rsquo;re trying to do. You&amp;rsquo;re tests should be simple and concise. Don&amp;rsquo;t write tests that are hundreds of lines long. They&amp;rsquo;re tests, not entrance exams to MIT.&lt;/p&gt;
+
+&lt;h3 id=&#34;it-was-is-too-overwhelming&#34;&gt;&amp;ldquo;It was/is too overwhelming.&amp;rdquo;&lt;/h3&gt;
+
+&lt;p&gt;Certainly if you didn&amp;rsquo;t write tests as you went along it can get quite overwhelming thinking about all the tests you now need to write for your monolithic app. I&amp;rsquo;ll talk about how you can solve that problem in a minute.&lt;/p&gt;
+
+&lt;h2 id=&#34;making-it-happen&#34;&gt;Making It Happen&lt;/h2&gt;
+
+&lt;p&gt;Ok, so now that we&amp;rsquo;ve identified a few of the excuses let&amp;rsquo;s talk about how you can starting writing tests today for your application. So, take a deep breath and let&amp;rsquo;s begin.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;rsquo;re staring at an existing application, don&amp;rsquo;t try to tackle it all at once, you&amp;rsquo;ll just get overwhelmed, scared, and confused. Instead take it one file/class at a time. First start with your models, as this is where the majority of your application business logic should be. Alphabetically each day pick the next class (or a couple of them) in the list and start to fill our your test files.&lt;/p&gt;
+
+&lt;p&gt;What do I mean by fill out your tests files, I mean creating pending tests for each of the methods of your model. Here&amp;rsquo;s an example of a basic Ruby* class and what the pending RSpec spec file would look like:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Class:&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;Entity&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;tax_id&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;person?&lt;/span&gt;
+      &lt;span class=&#34;c1&#34;&gt;# code here&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;
+      &lt;span class=&#34;c1&#34;&gt;# code here&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+
+  &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;person?&lt;/span&gt;
+    &lt;span class=&#34;c1&#34;&gt;# code here&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;# Spec:&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;describe&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;Entity&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt;
+  &lt;span class=&#34;n&#34;&gt;describe&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;tax_id&amp;quot;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;it&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;should return a Social Security number if the entity is a Person&amp;quot;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt;
+      &lt;span class=&#34;n&#34;&gt;pending&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;it&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;should return a Tax ID number if the entity is a Corporation&amp;quot;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt;
+      &lt;span class=&#34;n&#34;&gt;pending&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+  &lt;span class=&#34;n&#34;&gt;describe&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;person?&amp;quot;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;it&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;should return true if the entity is a person&amp;quot;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt;
+      &lt;span class=&#34;n&#34;&gt;pending&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;it&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;should return false if the entity is not a person&amp;quot;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt;
+      &lt;span class=&#34;n&#34;&gt;pending&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Notice how the method that has the if/else statement in it has two pending tests for it. We need to test each variation of the method.&lt;/p&gt;
+
+&lt;p&gt;Now when you run your tests you&amp;rsquo;ll see that you have a bunch of pending tests. Great! Now you just need to fill them in, but at least you know what should be filled in.&lt;/p&gt;
+
+&lt;p&gt;I also recommend that you do this every time you create a new method. As soon as you give your method a name go to your corresponding test and create a pending test for that method. This way you know that you have to test that method later. (In a perfect world I would love to see you write your test before returning to your class to fill in the method itself, but baby steps for now.)&lt;/p&gt;
+
+&lt;p&gt;Once you have all your pending tests setup each day try to fill in the details of each pending test for a whole class. If that&amp;rsquo;s too much, then try to set aside an hour a day and fill in as many pending tests as you can. Alternatively you can also fill in the tests during the course of the day as you use one of the methods without tests.&lt;/p&gt;
+
+&lt;p&gt;Another great way to start filling in your test suite is each time you get a new bug, write a test to reproduce it. This is a great habit to get into as you&amp;rsquo;ll eventually have a great suite of regression tests in place to help prevent those nasty bugs from returning. Write the test, see that it fails, then fix your bug. When your teat passes then you know you&amp;rsquo;ve fixed the bug!&lt;/p&gt;
+
+&lt;p&gt;Finally, start small. Start by writing unit tests. These are the types of tests I just described. They test a very particular part of your code base to ensure that it does what it should do. These tests are typically easy to write and act as a great corner stone to your test suite as a whole. Don&amp;rsquo;t try to jump right in with full integration tests. The frameworks typically have a steep learning curve, and are more complicated to get up and running. This will lead to frustration and the old feeling of being overwhelmed. You can add these tests in later as you gain experience.&lt;/p&gt;
+
+&lt;p&gt;Well, there you have it, a few simple tricks to help you get started testing today. I know this post was a bit on the lengthy side, but I&amp;rsquo;m glad you stuck with me. Your life will be better for it. When you have a large and expansive test suite life is just better. Food tastes better. The sky is bluer. There will be a skip in your step. And you can use your incredibly high code coverage stats as a pick up line in a bar. On second thought, scratch that last thought. I wrote a test to see if that would work and it failed. It failed miserably.
+&lt;h6&gt;* Please not that while I use Ruby as the example language here, the concept applies to whatever language you use.&lt;/h6&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>CoverMe – Code Coverage for Ruby 1.9 Reaches RC1</title>
+      <link>/2010/09/30/coverme-%E2%80%93-code-coverage-for-ruby-1-9-reaches-rc1/</link>
+      <pubDate>Thu, 30 Sep 2010 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2010/09/30/coverme-%E2%80%93-code-coverage-for-ruby-1-9-reaches-rc1/</guid>
+      <description>&lt;p&gt;In &lt;a href=&#34;http://www.metabates.com/2010/08/13/coverme-code-coverage-for-ruby-1-9/&#34;&gt;August&lt;/a&gt; I announced &lt;a href=&#34;http://github.com/markbates/cover_me&#34;&gt;CoverMe&lt;/a&gt; a code coverage tool for Ruby 1.9. Well, today I announce that it has hit it&amp;rsquo;s first release candidate! I&amp;rsquo;ve very excited by the fact it&amp;rsquo;s getting close to an &amp;lsquo;official&amp;rsquo; release.&lt;/p&gt;
+
+&lt;p&gt;The response to CoverMe has been great and through feedback from the community I&amp;rsquo;ve made a lot of improvements and fixed a lot of issues.&lt;/p&gt;
+
+&lt;p&gt;While quite a few things have changed under the hood, not much has changed in how you use CoverMe.
+&lt;h2&gt;Installation&lt;/h2&gt;
+The following are instructions for how you would configure CoverMe for a Rails 3 project, adjust to your local environment accordingly.&lt;/p&gt;
+
+&lt;p&gt;In  your Gemfile add the following:
+&lt;pre&gt;gem &amp;lsquo;cover_me&amp;rsquo;, &amp;lsquo;&amp;gt;= 1.0.0.rc1&amp;rsquo;, :group =&amp;gt; :test&lt;/pre&gt;
+Then run:
+&lt;pre&gt;$ bundle install&lt;/pre&gt;
+After CoverMe is installed place the following line at the &lt;strong&gt;&lt;em&gt;VERY TOP&lt;/em&gt;&lt;/strong&gt; of your &amp;lsquo;test_helper.rb&amp;rsquo; or &amp;lsquo;spec_helper.rb&amp;rsquo; file (for Cucumber put it at the top of the &amp;lsquo;env.rb&amp;rsquo; file):
+&lt;pre&gt;require &amp;lsquo;cover_me&amp;rsquo;&lt;/pre&gt;
+I can&amp;rsquo;t emphasize enough how important it is that the require statement is at the &lt;strong&gt;&lt;em&gt;VERY&lt;/em&gt;&lt;/strong&gt; top of that file!&lt;/p&gt;
+
+&lt;p&gt;Finally (and optionally) run:
+&lt;pre&gt;$ rails g cover_me:install&lt;/pre&gt;
+This will simply install a Rake task that will wrap both Test::Unit and RSpec tasks with CoverMe and will launch the results at the end of the test suites. I would recommend it. It&amp;rsquo;s kinda the whole point. :)
+&lt;h2&gt;That&amp;rsquo;s it!&lt;/h2&gt;
+Enjoy the release candidate, and of course, please let me know if you find any issues with it. Issues can be reported on &lt;a href=&#34;http://github.com/markbates/cover_me/issues&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Fixtures v. Factories - Can&#39;t We All Just Get Along?</title>
+      <link>/2010/08/15/fixtures-v-factories-cant-we-all-just-get-along/</link>
+      <pubDate>Sun, 15 Aug 2010 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2010/08/15/fixtures-v-factories-cant-we-all-just-get-along/</guid>
+      <description>&lt;p&gt;Testing in Ruby on Rails is incredibly easy. I mean stupidly easily. So easy that if you&amp;rsquo;re not doing it, you are a very, very bad developer and should re-evaluate your career choices. (Yes, I believe in testing that much!) One thing that is not all that easy, however, is object creation and populating your test database. Five years ago when I first started working with Rails the only options we had to get data into the database were fixtures, or hastily written &amp;lsquo;factory&amp;rsquo;-esque methods custom to each application.&lt;/p&gt;
+
+&lt;p&gt;Fixtures, for those who don&amp;rsquo;t know, are YAML files that contain YAML-ized versions of objects that then get loaded into the test database when you run your test suite. These objects can then be pulled back from the database during your tests. Sounds great, doesn&amp;rsquo;t it? Well, not everybody thinks so. One of the biggest problems with fixtures is they can very quickly get out of control. Keeping track of all the different scenarios your tests needs can get very confusing and frustrating to deal with.&lt;/p&gt;
+
+&lt;p&gt;&lt;img style=&#34;float: left; padding-right: 10px&#34; title=&#34;Factory Workers&#34; src=&#34;http://www.uni.edu/schneidj/webquests/adayinthelife/lotsofworkers.jpg&#34; alt=&#34;&#34; width=&#34;360&#34; height=&#34;283&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So how do we fix this problem? Well, most developers have turned to using factories. Factories allow us to quickly build the data we need for each test, now the building of the data you need for your test is right there in a setup or before method. Easy to manage and keep track of. Now there are a plethora of different factory libraries meant to make this task nicer, a few of the popular ones are &lt;a href=&#34;http://github.com/thoughtbot/factory_girl&#34;&gt;Factory Girl&lt;/a&gt;, &lt;a href=&#34;http://github.com/notahat/machinist&#34;&gt;Machinist&lt;/a&gt;, and &lt;a href=&#34;http://github.com/flogic/object_daddy&#34;&gt;Object Daddy&lt;/a&gt;. The problem with this approach, however, is that it can slow down your tests as you are building database objects for nearly every test, and as we all know, object creation and database inserting can be expensive.&lt;/p&gt;
+
+&lt;p&gt;So, what can we do to help solve both of these problems? Well, we can use both of these technologies. Together. Yeah, that&amp;rsquo;s right I&amp;rsquo;m saying you should use fixtures as well as factories. Sound crazy? Not really. Let me explain.&lt;/p&gt;
+
+&lt;p&gt;Most Rails applications have most, if not all, of their functionality behind a login. So whenever we&amp;rsquo;re testing some controller action that sites behind a login we need a user to login with. If we were using factories we would have a setup or before method that would create a new User object and save it to the database, and it would do that for every variant of the test, as well as every other test in our suite that needs a user object.&lt;/p&gt;
+
+&lt;p&gt;Why not, create one user object and use that repeatedly through our tests? What I like to do is stick one or two users in my fixtures, so that they&amp;rsquo;re there whenever I need one. I like to do this with most of my major models. Then, when I need to have some custom scenarios, I can break out the factories and build those custom scenarios.&lt;/p&gt;
+
+&lt;p&gt;So what does this achieve? Well, I&amp;rsquo;ve sped up my tests by already having a few objects in the database, and not having to create them (and roll them back) with each single test. I&amp;rsquo;ve also cleaned up my tests significantly by eliminating a lot of setup and/or before methods where these objects were being created. I&amp;rsquo;ve also eliminated the biggest problems with fixtures, that they can get overwhelming, because we are only keeping one or two objects in them and using factories for the rest.&lt;/p&gt;
+
+&lt;p&gt;I hoped this helped you to understand that we don&amp;rsquo;t have to throw the baby out with the bath water when it comes to fixtures and factories, we can use both. Not go forth and test! Test like your life depends on it (because it does!!).&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>CoverMe - Code Coverage for Ruby 1.9</title>
+      <link>/2010/08/13/coverme-code-coverage-for-ruby-1-9/</link>
+      <pubDate>Fri, 13 Aug 2010 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2010/08/13/coverme-code-coverage-for-ruby-1-9/</guid>
+      <description>&lt;p&gt;Ruby 1.9(.2) is an amazing language to develop applications in. It&amp;rsquo;s faster, more powerful, cleaner, and a huge improvement over Ruby 1.8.x. Because of those reasons every Ruby developer should move to this exciting new version of our language.&lt;/p&gt;
+
+&lt;p&gt;When making a move of this size it&amp;rsquo;s important to have the right tools to help us along. Unfortunately, one of the most useful tools as a Ruby developer, &lt;a href=&#34;http://github.com/relevance/rcov&#34;&gt;RCov&lt;/a&gt;, does not work with Ruby 1.9.&lt;/p&gt;
+
+&lt;p&gt;RCov, for those unfamiliar analyzes your code and tells you which part of your code was not executed. This is INCREDIBLY useful when hooked up to your test suite. While, it&amp;rsquo;s not the only metric you should use when determining how good your test coverage it, it certainly is a great first step to point out exactly which parts of your code haven&amp;rsquo;t been touched at all!&lt;/p&gt;
+
+&lt;p&gt;Enter &lt;a href=&#34;http://github.com/markbates/cover_me&#34;&gt;CoverMe&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;##History&lt;/p&gt;
+
+&lt;p&gt;While working on a Ruby 1.9/Rails 3 project, and loving everything about it (except for the lack of RCov), I came across a &lt;a href=&#34;http://engineering.attinteractive.com/2010/08/code-coverage-in-ruby-1-9/&#34;&gt;post&lt;/a&gt; by Aaron Patterson (of &lt;a href=&#34;http://github.com/tenderlove/nokogiri&#34;&gt;Nokogiri&lt;/a&gt; fame). In this post he quickly outlined a very basic coverage tool using the new built-in Coverage module in Ruby 1.9.&lt;/p&gt;
+
+&lt;p&gt;After spending a morning playing with it, I was quickly able to grow the idea into something useful for the project. Later that day the company I was consulting for &lt;a href=&#34;http://www.biddingforgood.com&#34;&gt;BiddingForGood.com&lt;/a&gt;, and in particular their chief architect, &lt;a href=&#34;http://twitter.com/stuartmg&#34;&gt;Stuart Garner&lt;/a&gt;, told me to take a day or two and clean it up and release it for the world to use, and so &lt;a href=&#34;http://github.com/markbates/cover_me&#34;&gt;here&lt;/a&gt; it is.
+##Features&lt;/p&gt;
+
+&lt;p&gt;Here is a brief overview of the features of CoverMe:&lt;/p&gt;
+
+&lt;p&gt;###Index Page&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Sortable column headers (File, Lines, Lines of Code, Tested %).&lt;/li&gt;
+&lt;li&gt;Searching/filtering by file name.&lt;/li&gt;
+&lt;li&gt;Filtering by coverage percent.&lt;/li&gt;
+&lt;li&gt;Color coded list of files to quickly see which ones are 100% covered, &amp;gt; 90% covered, or less than 90% covered.&lt;/li&gt;
+&lt;li&gt;Large color coded average coverage percent, for quick reference.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;###Detail Page&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Line by line coverage report&lt;/li&gt;
+&lt;li&gt;Color coded lines to quickly see which lines where executed and which ones were not.&lt;/li&gt;
+&lt;li&gt;Side by side viewing with the corresponding test/spec file (if one exists).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;See the &lt;a href=&#34;http://github.com/markbates/cover_me&#34;&gt;README&lt;/a&gt; file for more information on installation and usage.&lt;/p&gt;
+
+&lt;p&gt;##Thanks&lt;/p&gt;
+
+&lt;p&gt;I would just quickly like to give another quick thanks to Aaron Patterson for pointing out the Coverage module in Ruby 1.9 and inspiring this, hopefully, helpful little gem. Also another big thanks to Stuart Garner for pushing me to package this up and release it to the world.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Testing is NOT an Option</title>
+      <link>/2010/07/01/testing-is-not-an-option/</link>
+      <pubDate>Thu, 01 Jul 2010 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2010/07/01/testing-is-not-an-option/</guid>
+      <description>&lt;p&gt;Five years ago I left the world of contracting and reentered the world of the full time employee, and I enjoyed every minute of it (well, almost). Now fast forward five years and I find myself once again at a crossroads. Do I continue on as an FTE or do I become a contractor, and play the field, so to speak? Looks like I&amp;rsquo;m going to go with the hired gun route for a little while, but that&amp;rsquo;s not really the point of this post.&lt;/p&gt;
+
+&lt;p&gt;During the past week or so I&amp;rsquo;ve spoken with many great companies and people. I&amp;rsquo;ve been fortunate enough to have a high degree of interest in what I can bring to the table. During those discussions I talked with a really nice guy at a what seems to be a really cool company, I won&amp;rsquo;t name names, because this isn&amp;rsquo;t about either the person or the company, but rather something the engineer said during our phone conversation that got me to thinking.&lt;/p&gt;
+
+&lt;p&gt;&lt;img style=&#34;float: left; padding-right: 10px&#34; title=&#34;Failure Testing&#34; src=&#34;http://www.commercialventvac.com/finao/failure_testing.jpg&#34; alt=&#34;&#34; width=&#34;400&#34; height=&#34;240&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;We don&amp;rsquo;t have any tests because I couldn&amp;rsquo;t convince the company to allocate the time for them.&amp;rdquo; That statement really hung with me. After I got off the phone I started thinking really hard about that statement, and all I could think of was how testing is not an option and people shouldn&amp;rsquo;t need to be convinced to have time allocated to them.&lt;/p&gt;
+
+&lt;p&gt;As developers it is our responsibility to insist on testing. Always include testing in your time estimates. Never give the client (or your company) an option that includes a time estimate without testing. If a feature takes 2 days to code and a day to write tests, then your estimate is 3 days, never 2. You should never say, &amp;ldquo;Well, I can get it done in two days if I don&amp;rsquo;t write any tests.&amp;rdquo; That&amp;rsquo;s just an unacceptable thing to say. What you should be saying is, &amp;ldquo;That feature will take three days to code&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;I don&amp;rsquo;t feel I should sit here and tell you all the reasons why you should test, you should know them already, and frankly, they&amp;rsquo;re all very obvious! But, if you need a few bullet points to &amp;lsquo;convince&amp;rsquo; your client, here are a few:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Less bugs - The more tests you have the less bugs you will have. It&amp;rsquo;s just a fact. You won&amp;rsquo;t have 100% bug free code, that&amp;rsquo;s a nearly impossible goal, but you highly reduce the likely hood that as soon as you get your code into production your users will find all the breaking points of your code.&lt;/li&gt;
+&lt;li&gt;Better maintainability, means faster feature turn around - When you have a large test suite it means adding, updating, or even removing features because a whole lot easier, which means it SAVES time! Why? Simple, you don&amp;rsquo;t have to go through and manually test every aspect of your code to make sure you didn&amp;rsquo;t break something elsewhere by adding that validation, or by refactoring that bit of code, etc&amp;hellip; That translates into real $ savings.&lt;/li&gt;
+&lt;li&gt;Test driven development saves time - this isn&amp;rsquo;t quite the same as my last bullet point. Imagine, if you will, you are writing a four step wizard in your application. If you write a few test scripts using something like Cucumber first before you write your code you can simply keep re-running those to make sure your code is working. If you don&amp;rsquo;t have those test scripts written then you continually have to keep going to a browser and entering all the information in each of the steps so you can test something in step four. Which one do you think takes longer, having a few test scripts you can run, or manually going through the four page wizard each time you make a change?&lt;/li&gt;
+&lt;li&gt;It&amp;rsquo;s an investment - thinking of having test scripts like owning a house. When you don&amp;rsquo;t have tests and you just keep testing in the browser or the command line what you are doing is a kin to &amp;ldquo;renting&amp;rdquo;. There is money being spent, but at the end of the day you have nothing to show for it. You&amp;rsquo;ve spent hours &amp;ldquo;testing&amp;rdquo;, but tomorrow when you come in you have to do it all over again. When you spend those hours writing tests you are actually &amp;ldquo;buying&amp;rdquo; something. You have something to show for that time and money you&amp;rsquo;ve spent. Tomorrow, next week, next month, next year, those scripts will still be there, they&amp;rsquo;ll still be working for you, giving  you a return on your investment.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Well, I hope I have hopefully made a case to you the engineer as to why you should insist on testing. It&amp;rsquo;s the right thing to do, for you, for your application and for you client. If if anyone tries to give you grief about it, send them my way, I&amp;rsquo;ll sort em out!&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

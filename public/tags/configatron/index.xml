@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Configatron on MetaBates.com</title>
+    <link>/tags/configatron/</link>
+    <description>Recent content in Configatron on MetaBates.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
+    <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
+    <copyright>(c) 2016 Mark Bates.</copyright>
+    <lastBuildDate>Tue, 28 Jun 2011 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/configatron/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Let&#39;s say goodbye to YAML for configuration, shall we?</title>
+      <link>/2011/06/28/lets-say-goodbye-to-yaml-for-configuration-shall-we/</link>
+      <pubDate>Tue, 28 Jun 2011 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2011/06/28/lets-say-goodbye-to-yaml-for-configuration-shall-we/</guid>
+      <description>&lt;p&gt;&lt;img style=&#34;float: left; padding-right: 10px&#34; class=&#34;size-medium wp-image-489&#34; title=&#34;yml&#34; src=&#34;/assets/images/2011/06/yml-300x300.png&#34; alt=&#34;&#34; width=&#34;180&#34; height=&#34;180&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I have to ask a question to my fellow Rubyists out there? Why are you still using YAML? I know why you &lt;em&gt;think&lt;/em&gt; you like YAML. You think it&amp;rsquo;s a great way to write configuration files, but it&amp;rsquo;s really not. You know what&amp;rsquo;s a great way of writing configuration files for Ruby apps? RUBY!&lt;/p&gt;
+
+&lt;p&gt;I know it&amp;rsquo;s crazy, isn&amp;rsquo;t it? But why not? Why would you not want to use Ruby for configuring your applications instead of YAML?&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m the maintainer of a pretty popular configuration tool for Ruby apps, &lt;a href=&#34;http://github.com/markbates/configatron&#34;&gt;Configatron&lt;/a&gt;, so I think I have a little experience in this field. I also write and maintain a lot of libraries that require configuration and I have never thought that YAML is the best way to do this.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s look at an example of what a library developer has to do to load a YAML file to get configurations:&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/1051635.js&#34;&gt; &lt;/script&gt;
+
+&lt;p&gt;I don&amp;rsquo;t know about you, but I think that&amp;rsquo;s kind of lame. Most everybody runs their YAML files through ERB so that they can make their YAML files more &amp;lsquo;Ruby-ish&amp;rsquo;. Why not just use Ruby?? Here&amp;rsquo;s the same example in Ruby:&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/1051638.js&#34;&gt; &lt;/script&gt;
+
+&lt;p&gt;In addition to not having to deal with all the whitespace, tabs, crazy nesting, etc&amp;hellip; that YAML brings we get to use the full power of Ruby for our configurations! Try storing a Proc in YAML. Yeah, that&amp;rsquo;s what I thought. You can drive configurations from the database, environment variables, crazy equations, etc&amp;hellip; the world is your oyster. All you need to do now is stop using YAML!&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve decided to drop YAML support in Configatron 2.9 (coming sometime this Summer) and I encourage all other library developers to do the same. It&amp;rsquo;s just not needed, or very nice for that matter. Now, if we can only get Rails to drop the database.yml file, I think we&amp;rsquo;ll be all set.&lt;/p&gt;
+
+&lt;address&gt;Ps. Make sure to check out my app [FluxTracker.com](http://www.fluxtracker.com?ref=yaml) for all your issue, project, and error tracking needs. Also check out [TweetKO.com](http://tweetko.com?ref=yaml) for backing up and bookmarking your favorite tweets.&lt;/address&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Cachetastic 3.0.0 Released</title>
+      <link>/2009/06/18/cachetastic-3-0-0-released/</link>
+      <pubDate>Thu, 18 Jun 2009 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2009/06/18/cachetastic-3-0-0-released/</guid>
+      <description>&lt;p&gt;After more than two years powering production level applications I found that Cachetastic was starting to get a bit long in the tooth. I felt that there was a lot I could to make Cachetastic an even better library than it already was. I thought that I had added a bunch of cruft to the framework that people were just not using and maintaining it all seemed like a bit of a pointless chore.&lt;/p&gt;
+
+&lt;p&gt;So what was I unhappy about?
+&lt;h3&gt;Configuration:&lt;/h3&gt;
+I was pretty unhappy with the way configuration was being done. I liked using Configatron to power the configuration, but I didn&amp;rsquo;t like the way I implemented the way I was using Configatron. For example, to set up one of the default settings, like the expiry time, you would configure it like such:
+&lt;pre&gt;configatron.cachetastic_default_options.expiry_time = 30.minutes&lt;/pre&gt;
+Now you would configure that same option like this:
+&lt;pre&gt;configatron.cachetastic.defaults.expiry_time = 30.minutes&lt;/pre&gt;
+That&amp;rsquo;s a little savings, but it really hits when you want to configure a particular cache. Let&amp;rsquo;s say we a cache called My::Super::AwesomeCache, to configure it in past versions of Cachetastic we would do this:
+&lt;pre&gt;configatron.my_super_awesome_cache_options.expiry_time = 15.minutes&lt;/pre&gt;
+Now in Cachetastic 3.0.0 we configure like this:
+&lt;pre&gt;configatron.cachetastic.my.super.awesome_cache.expire_time = 15.minutes.&lt;/pre&gt;
+As you can see all configuration now happens under the cachetastic namespace in Configatron. Then it&amp;rsquo;s a matter of using a Configatron namespace for each of your modules. I find it a lot easier to manage.&lt;/p&gt;
+
+&lt;p&gt;Another change in configuration is that in previous versions if you wanted to override one default configuration value for a particular cache,  you had to override them all. Now, you can just override the one value  you want, and the rest will be nicely inherited from the defaults.
+&lt;h3&gt;Speed&lt;/h3&gt;
+Cachetastic has always been a very fast library, but I knew that more could be squeezed from that stone. With Cachetastic 3.0.0 you now get a hefty 25% improvement in the Memcached adapter and a whopping 99% in the LocalMemory adapter! Those are pretty awesome numbers. These numbers were easy to achieve when I stepped back and examined what it was I really wanted to do, and picked the most straightforward path to that goal.
+&lt;h3&gt;Bloat&lt;/h3&gt;
+After more than two years Cachetastic was starting to suffer from a severe case of bloat. For example, I&amp;rsquo;ve never used the DRb adapter, have you? So why is it there? The same goes for the HtmlFile adapter. I wrote that because at my last job the operations team weren&amp;rsquo;t savvy  enough to be able to get Apache to talk to Memcached, so they wanted to serve HTML files, hence the rather awful adapter. Both of those adapters are now history.&lt;/p&gt;
+
+&lt;p&gt;There also used to be support for Rails Session Caching. Considering that most people are now using the Cookie store for sessions, there really is no need for this cache. It could also be argued that it should not have been bundled with Cachetastic at all. I would agree with those arguments. Cachetastic is, and should always be, a standalone caching framework, that can be plugged into Rails or any plain old Ruby project that needs caching support.&lt;/p&gt;
+
+&lt;p&gt;Also purged is automatic support for mixing in the Cachetastic::Cacheable module into ActiveRecord. If you want this functionality, it is very easy to include in your application. I don&amp;rsquo;t want to force it on anyone, so that is gone now.&lt;/p&gt;
+
+&lt;p&gt;Finally there are a handful of smaller features that I&amp;rsquo;m sure no one will miss that I&amp;rsquo;ve yanked out in the name of performance, reliability, and ease of maintenance.
+&lt;h3&gt;Nice and Clean&lt;/h3&gt;
+When I realized what I really wanted, and what I didn&amp;rsquo;t want, it became clear that what was needed was a fresh code base. With that said, I hit delete (well, not really) and started over again. The code is now smooth, so much easier to read, and fast. In previous versions even my eyes went a bit crossed when I tried to figure out exactly what was going on. There where quite a few levels of indirection, and things just weren&amp;rsquo;t place where they probably should&amp;rsquo;ve been. That has all been fixed.&lt;/p&gt;
+
+&lt;p&gt;With a nice, clean code base comes a brand new set of tests. The tests are now extremely comprehensive, and while 2.x was very well tested, I know that 3.0.0, is tested to the hilt.&lt;/p&gt;
+
+&lt;p&gt;Because 3.0.0 is a brand new code base, I should probably stress the fact that is &lt;strong&gt;NOT&lt;/strong&gt; backward compatible. So please be advised.
+&lt;h3&gt;Installation:&lt;/h3&gt;
+&lt;pre&gt;$ sudo gem install cachetastic&lt;/pre&gt;
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+I really hope everyone likes this brand new version of Cachetastic. I&amp;rsquo;m very happy with it, and I think if you give it a chance, you will be too.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;rsquo;d like to have a peek at the RDoc, it can be found at:
+&lt;a href=&#34;http://cachetastic-api.mackframework.com/&#34;&gt;http://cachetastic-api.mackframework.com/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Configatron 2.2.0 Released, now with Ruby 1.9 and JRuby support!</title>
+      <link>/2009/01/01/configatron-220-released-now-with-ruby-19-and-jruby-support/</link>
+      <pubDate>Thu, 01 Jan 2009 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2009/01/01/configatron-220-released-now-with-ruby-19-and-jruby-support/</guid>
+      <description>&lt;p&gt;Happy New Year everyone!&lt;/p&gt;
+
+&lt;p&gt;With the help of the absolutely amazing &lt;a href=&#34;http://blog.robseaman.com/2008/12/20/switching-between-ruby-1-8-1-9-with-multiruby&#34;&gt;multiruby&lt;/a&gt; library and an edge version of rspec from GitHub, the latest version of Configatron now supports JRuby 1.1.6 and Ruby 1.9.1rc1. There are no other functional changes to the library, so it&amp;rsquo;s a full drop in replacement for vesion 2.1.6.&lt;/p&gt;
+
+&lt;p&gt;I highly encourage everyone to checkout multiruby and start upgrading their libraries so we can all move to 1.9 quicker, which means more speed and more power. Once we&amp;rsquo;re all in 1.9 land we can really make use of some of the amazing features it provides.&lt;/p&gt;
+
+&lt;p&gt;Anyway, I&amp;rsquo;ll be working on upgrading all my libraries and applications to work on 1.8 and 1.9, and hopefully JRuby, over the next couple of months. So be on the look out for a new versions of Cachetastic, Genosaurus update: &lt;em&gt;Genosaurus already works with 1.9 and JRuby. Hoorah!&lt;/em&gt;, and, of course, Mack.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

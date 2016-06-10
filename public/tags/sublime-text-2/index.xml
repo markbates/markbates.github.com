@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sublime Text 2 on MetaBates.com</title>
+    <link>/tags/sublime-text-2/</link>
+    <description>Recent content in Sublime Text 2 on MetaBates.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
+    <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
+    <copyright>(c) 2016 Mark Bates.</copyright>
+    <lastBuildDate>Fri, 19 Oct 2012 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/sublime-text-2/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Editor Wars (Won&#39;t Someone Think of the Children?)</title>
+      <link>/2012/10/19/editor-wars-wont-someone-think-of-the-children/</link>
+      <pubDate>Fri, 19 Oct 2012 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2012/10/19/editor-wars-wont-someone-think-of-the-children/</guid>
+      <description>&lt;p&gt;My editor/IDE is better than yours! That&amp;rsquo;s right. My editor can do everything, and yours is just a toy. My editor let&amp;rsquo;s me write code, edit code, delete code. It can generate Lorem Ipsum, flay a salmon, and program my VCR. Can your editor do that? I doubt it. My awesome editor makes me a better developer. More importantly it makes me a better developer than you. If you don&amp;rsquo;t switch to my editor you&amp;rsquo;re a fool and your code must clearly be terrible.&lt;/p&gt;
+
+&lt;p&gt;Does this conversation sound familiar to you? It should. I hear similar conversations to this all the time. There are a lot of different editors/IDEs out there, but they all pretty much do the same thing. Some do certain things better than others, and so on. So why do we feel that those who don&amp;rsquo;t use the same editor that we do are somehow inferior developers to ourselves?&lt;/p&gt;
+
+&lt;p&gt;Do you use VIM? Sublime Text 2? TextMate? Emacs? Etc&amp;hellip;? Who cares? I have a better question for you. If the need arose could you write your code without the help of a dedicated editor or IDE? Could you wrap an entire application using Notepad? I&amp;rsquo;m not saying that you would want to, but could you?&lt;/p&gt;
+
+&lt;p&gt;A lot of developers use their preferred editor as a crutch. A way to not truly have to learn the languages, frameworks, and other tools that are actively developing in. Why should you learn the correct syntax for something when your editor will fill it all in for you with a keyboard shortcut? Sadly, I know a lot of developers who fall into this category. Developers who are being held hostage by their editors.&lt;/p&gt;
+
+&lt;p&gt;We don&amp;rsquo;t go around arguing with people over which toaster they should be using, so why should we do that with text editors? Instead of arguing about editor choices, instead, spend that time being constructive. Challenge yourself to try those other editors, and see what the fuss is about, or better yet, throw away your editor and try coding your next project in the most basic text editor you can find. It&amp;rsquo;ll be an eye opening experience. Trust me.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

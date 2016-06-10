@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lighthouse on MetaBates.com</title>
+    <link>/tags/lighthouse/</link>
+    <description>Recent content in Lighthouse on MetaBates.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
+    <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
+    <copyright>(c) 2016 Mark Bates.</copyright>
+    <lastBuildDate>Mon, 25 Apr 2011 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/lighthouse/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Project, Issue, and Error Tracking United!</title>
+      <link>/2011/04/25/project-issue-and-error-tracking-united/</link>
+      <pubDate>Mon, 25 Apr 2011 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2011/04/25/project-issue-and-error-tracking-united/</guid>
+      <description>&lt;p&gt;&lt;img style=&#34;float: left; padding-right: 10px&#34; class=&#34;size-medium wp-image-437&#34; title=&#34;issue_list_big&#34; src=&#34;/assets/images/2011/04/issue_list_big-300x225.png&#34; alt=&#34;&#34; width=&#34;300&#34; height=&#34;225&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;UPDATE: Unfortunately FluxTracker is no longer available. Sorry about that.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;For the last few years every project or company I&amp;rsquo;ve worked for has started the same way, by setting up Basecamp, Lighthouse and Hoptoad (or similar ones anyway). Why? Basecamp  - so we could share documents and todos. Lighthouse - so we could track our issues and bugs. Hoptoad - so we could track the errors our application was generating.&lt;/p&gt;
+
+&lt;p&gt;These are all very good applications and have served myself and my clients well, but they&amp;rsquo;ve suffered from several very big flaws. The first big flaw was the cost. You can easily drop $100 or more a month across these different services. But that wasn&amp;rsquo;t the biggest flaw or problem I&amp;rsquo;ve had with these services. The biggest problem was lack of integration.&lt;/p&gt;
+
+&lt;p&gt;So what do I mean by lack of integration? Well, when an error comes in I want to easily be able to create a new issue from it. When the issue gets resolved, so should the error. If the error reoccurs it should re-open automatically, and so should the issue. I want to be able to create an issue right from a document or be able to attach issues to a document. I should be able to follow the flow from document to issue to error and back again very easily. Unfortunately, these applications don&amp;rsquo;t give you that level of integration. They offer some level, but just not enough.&lt;/p&gt;
+
+&lt;p&gt;Well, my friends, welcome to the future. Welcome to FluxTracker.com. FluxTracker combines a great issue tracker, a project management system, and an error tracker all in one application. Now you can full integration without any configuration, oh, and you can do it at a fraction of the cost!&lt;/p&gt;
+
+&lt;p&gt;We know it isn&amp;rsquo;t easy to switch to a different application, that&amp;rsquo;s why we&amp;rsquo;ve made it easy for you. You can easily import your Lighthouse account. FluxTracker also allows you to easily use the Hoptoad Notifier plugin for your project by just setting a few configuration parameters.&lt;/p&gt;
+
+&lt;p&gt;So know you know, you&amp;rsquo;re life can be easier. And you now know how easy it is to get started! So what are you waiting for? Go and sign up for our Free plan and start living the dream.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

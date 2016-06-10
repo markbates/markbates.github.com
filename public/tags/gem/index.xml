@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gem on MetaBates.com</title>
+    <link>/tags/gem/</link>
+    <description>Recent content in Gem on MetaBates.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
+    <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
+    <copyright>(c) 2016 Mark Bates.</copyright>
+    <lastBuildDate>Thu, 30 Sep 2010 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/gem/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>CoverMe – Code Coverage for Ruby 1.9 Reaches RC1</title>
+      <link>/2010/09/30/coverme-%E2%80%93-code-coverage-for-ruby-1-9-reaches-rc1/</link>
+      <pubDate>Thu, 30 Sep 2010 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2010/09/30/coverme-%E2%80%93-code-coverage-for-ruby-1-9-reaches-rc1/</guid>
+      <description>&lt;p&gt;In &lt;a href=&#34;http://www.metabates.com/2010/08/13/coverme-code-coverage-for-ruby-1-9/&#34;&gt;August&lt;/a&gt; I announced &lt;a href=&#34;http://github.com/markbates/cover_me&#34;&gt;CoverMe&lt;/a&gt; a code coverage tool for Ruby 1.9. Well, today I announce that it has hit it&amp;rsquo;s first release candidate! I&amp;rsquo;ve very excited by the fact it&amp;rsquo;s getting close to an &amp;lsquo;official&amp;rsquo; release.&lt;/p&gt;
+
+&lt;p&gt;The response to CoverMe has been great and through feedback from the community I&amp;rsquo;ve made a lot of improvements and fixed a lot of issues.&lt;/p&gt;
+
+&lt;p&gt;While quite a few things have changed under the hood, not much has changed in how you use CoverMe.
+&lt;h2&gt;Installation&lt;/h2&gt;
+The following are instructions for how you would configure CoverMe for a Rails 3 project, adjust to your local environment accordingly.&lt;/p&gt;
+
+&lt;p&gt;In  your Gemfile add the following:
+&lt;pre&gt;gem &amp;lsquo;cover_me&amp;rsquo;, &amp;lsquo;&amp;gt;= 1.0.0.rc1&amp;rsquo;, :group =&amp;gt; :test&lt;/pre&gt;
+Then run:
+&lt;pre&gt;$ bundle install&lt;/pre&gt;
+After CoverMe is installed place the following line at the &lt;strong&gt;&lt;em&gt;VERY TOP&lt;/em&gt;&lt;/strong&gt; of your &amp;lsquo;test_helper.rb&amp;rsquo; or &amp;lsquo;spec_helper.rb&amp;rsquo; file (for Cucumber put it at the top of the &amp;lsquo;env.rb&amp;rsquo; file):
+&lt;pre&gt;require &amp;lsquo;cover_me&amp;rsquo;&lt;/pre&gt;
+I can&amp;rsquo;t emphasize enough how important it is that the require statement is at the &lt;strong&gt;&lt;em&gt;VERY&lt;/em&gt;&lt;/strong&gt; top of that file!&lt;/p&gt;
+
+&lt;p&gt;Finally (and optionally) run:
+&lt;pre&gt;$ rails g cover_me:install&lt;/pre&gt;
+This will simply install a Rake task that will wrap both Test::Unit and RSpec tasks with CoverMe and will launch the results at the end of the test suites. I would recommend it. It&amp;rsquo;s kinda the whole point. :)
+&lt;h2&gt;That&amp;rsquo;s it!&lt;/h2&gt;
+Enjoy the release candidate, and of course, please let me know if you find any issues with it. Issues can be reported on &lt;a href=&#34;http://github.com/markbates/cover_me/issues&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>CoverMe - Code Coverage for Ruby 1.9</title>
+      <link>/2010/08/13/coverme-code-coverage-for-ruby-1-9/</link>
+      <pubDate>Fri, 13 Aug 2010 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2010/08/13/coverme-code-coverage-for-ruby-1-9/</guid>
+      <description>&lt;p&gt;Ruby 1.9(.2) is an amazing language to develop applications in. It&amp;rsquo;s faster, more powerful, cleaner, and a huge improvement over Ruby 1.8.x. Because of those reasons every Ruby developer should move to this exciting new version of our language.&lt;/p&gt;
+
+&lt;p&gt;When making a move of this size it&amp;rsquo;s important to have the right tools to help us along. Unfortunately, one of the most useful tools as a Ruby developer, &lt;a href=&#34;http://github.com/relevance/rcov&#34;&gt;RCov&lt;/a&gt;, does not work with Ruby 1.9.&lt;/p&gt;
+
+&lt;p&gt;RCov, for those unfamiliar analyzes your code and tells you which part of your code was not executed. This is INCREDIBLY useful when hooked up to your test suite. While, it&amp;rsquo;s not the only metric you should use when determining how good your test coverage it, it certainly is a great first step to point out exactly which parts of your code haven&amp;rsquo;t been touched at all!&lt;/p&gt;
+
+&lt;p&gt;Enter &lt;a href=&#34;http://github.com/markbates/cover_me&#34;&gt;CoverMe&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;##History&lt;/p&gt;
+
+&lt;p&gt;While working on a Ruby 1.9/Rails 3 project, and loving everything about it (except for the lack of RCov), I came across a &lt;a href=&#34;http://engineering.attinteractive.com/2010/08/code-coverage-in-ruby-1-9/&#34;&gt;post&lt;/a&gt; by Aaron Patterson (of &lt;a href=&#34;http://github.com/tenderlove/nokogiri&#34;&gt;Nokogiri&lt;/a&gt; fame). In this post he quickly outlined a very basic coverage tool using the new built-in Coverage module in Ruby 1.9.&lt;/p&gt;
+
+&lt;p&gt;After spending a morning playing with it, I was quickly able to grow the idea into something useful for the project. Later that day the company I was consulting for &lt;a href=&#34;http://www.biddingforgood.com&#34;&gt;BiddingForGood.com&lt;/a&gt;, and in particular their chief architect, &lt;a href=&#34;http://twitter.com/stuartmg&#34;&gt;Stuart Garner&lt;/a&gt;, told me to take a day or two and clean it up and release it for the world to use, and so &lt;a href=&#34;http://github.com/markbates/cover_me&#34;&gt;here&lt;/a&gt; it is.
+##Features&lt;/p&gt;
+
+&lt;p&gt;Here is a brief overview of the features of CoverMe:&lt;/p&gt;
+
+&lt;p&gt;###Index Page&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Sortable column headers (File, Lines, Lines of Code, Tested %).&lt;/li&gt;
+&lt;li&gt;Searching/filtering by file name.&lt;/li&gt;
+&lt;li&gt;Filtering by coverage percent.&lt;/li&gt;
+&lt;li&gt;Color coded list of files to quickly see which ones are 100% covered, &amp;gt; 90% covered, or less than 90% covered.&lt;/li&gt;
+&lt;li&gt;Large color coded average coverage percent, for quick reference.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;###Detail Page&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Line by line coverage report&lt;/li&gt;
+&lt;li&gt;Color coded lines to quickly see which lines where executed and which ones were not.&lt;/li&gt;
+&lt;li&gt;Side by side viewing with the corresponding test/spec file (if one exists).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;See the &lt;a href=&#34;http://github.com/markbates/cover_me&#34;&gt;README&lt;/a&gt; file for more information on installation and usage.&lt;/p&gt;
+
+&lt;p&gt;##Thanks&lt;/p&gt;
+
+&lt;p&gt;I would just quickly like to give another quick thanks to Aaron Patterson for pointing out the Coverage module in Ruby 1.9 and inspiring this, hopefully, helpful little gem. Also another big thanks to Stuart Garner for pushing me to package this up and release it to the world.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Introducing Warp Drive for Rails</title>
+      <link>/2009/10/07/introducing-warp-drive-for-rails/</link>
+      <pubDate>Wed, 07 Oct 2009 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2009/10/07/introducing-warp-drive-for-rails/</guid>
+      <description>
+
+&lt;p&gt;At work recently we had a need to build a large Rails application that we then wanted to, for lack of a better word, subclass. Unfortunately there is no real good way of doing that. Rails Engines and templates have way too may limitations. We wanted to bundle up the entire Rails app (models, controllers, views, routes, migrations, configurations, libs, assets, etc&amp;hellip; everything!), but there was no good way of doing that. Well, now there is, it&amp;rsquo;s called the Warp Drive.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve decided to just include my README file below to explain what it is, since it&amp;rsquo;s a bit lengthy, and I don&amp;rsquo;t feel like retyping.&lt;/p&gt;
+
+&lt;p&gt;This is still in it&amp;rsquo;s early stages, so use with care, but it does seem to be working for us on a daily basis. Let me know what you think!&lt;/p&gt;
+
+&lt;h2 id=&#34;what-is-warp-drive&#34;&gt;What is Warp Drive?&lt;/h2&gt;
+
+&lt;p&gt;Warp Drive is what Rails Engines wish they could be, and more! They kick Rails templates in the ass, and they beat keeping an ever evolving base Rails app up to date.&lt;/p&gt;
+
+&lt;h3 id=&#34;what-are-rails-engines&#34;&gt;What are Rails Engines?&lt;/h3&gt;
+
+&lt;p&gt;Rails Engines allow you to package up some of a Rails app (controllers, models, views, routes, libs) and put them in a plugin that can be included into a new Rails app, thereby giving it the functionality you had in the engine. That sounds good, but what about the downsides of using an engine? Well, you can&amp;rsquo;t override or extend any of the functionality from the engine in your main application. You can hack at the plugin, but now you&amp;rsquo;ve made it difficult to update. So what do you do if you want to add or alter a method to a controller or model? What do you do if you want to change the look and feel of a view? You have to copy everything into your main application. Boo!&lt;/p&gt;
+
+&lt;p&gt;Rails Engines also don&amp;rsquo;t allow you to package up migrations, assets, plugins, initializers, etc&amp;hellip; All the fun stuff that you&amp;rsquo;ve come to know and love about a Rails application.&lt;/p&gt;
+
+&lt;h3 id=&#34;enter-the-warp-drive&#34;&gt;Enter the Warp Drive!&lt;/h3&gt;
+
+&lt;p&gt;So what is a Warp Drive? Great question. To put it simply a Warp Drive is a standard, full featured, Rails application that you can easily bundle up into a Ruby Gem, and include into another Rails app. That second Rails app now has all the power of the first Rails. That is all there is to it.&lt;/p&gt;
+
+&lt;h2 id=&#34;creating-a-warp-drive&#34;&gt;Creating a Warp Drive.&lt;/h2&gt;
+
+&lt;p&gt;Let&amp;rsquo;s assume we have an application that implements AuthLogic for handling user registration/authentication. We have controllers, views, models, plugins, initializers, configurations, migrations, tasks, etc&amp;hellip; it&amp;rsquo;s a full featured fully functional Rails application, we call it authenticator.&lt;/p&gt;
+
+&lt;p&gt;We want to turn our authenticator application into a Warp Drive. We can do it in three simple steps, the first two steps you only need to do the first time, to set everything up.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;$ gem install warp_drive&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ warpify&lt;/code&gt; That will add a little bit of code to your &lt;code&gt;Rakefile&lt;/code&gt;. That code simply requires the Warp Drive gem, and gives you hooks to configure the gem of your Warp Drive application.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ rake warp_drive:compile&lt;/code&gt; (&lt;code&gt;$ rake warp_drive:install&lt;/code&gt;) This will either compile your gem for your (&lt;code&gt;warp_drive:compile&lt;/code&gt;) or compile and install your gem (&lt;code&gt;warp_drive:install&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;That&amp;rsquo;s it! You should now have your Rails application bundled up and/or installed as a RubyGem!&lt;/p&gt;
+
+&lt;h2 id=&#34;using-a-warp-drive&#34;&gt;Using a Warp Drive.&lt;/h2&gt;
+
+&lt;p&gt;With your fancy new Warp Drive, authenticator, built and installed how do you use it in that new application your building? Again, it&amp;rsquo;s stupid easy, and it only takes one step, that only needs to be run once:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;$ install_warp_drive authenticator&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;That will put a few lines of code in your &lt;code&gt;Rakefile&lt;/code&gt;, so you have access to all the &lt;code&gt;Rakefile&lt;/code&gt; tasks in your Warp Drive, and a line in your &lt;code&gt;config/environment.rb&lt;/code&gt; so that it will load your Warp Drive when you launch your application.&lt;/p&gt;
+
+&lt;p&gt;That&amp;rsquo;s it! You&amp;rsquo;re done. Now you can run &lt;code&gt;rake db:migrate&lt;/code&gt; to run the migrations from both your Warp Drive and your new application. Enjoy!&lt;/p&gt;
+
+&lt;h2 id=&#34;overriding-extending-and-other-such-fun-things&#34;&gt;Overriding, Extending, and Other Such Fun Things&lt;/h2&gt;
+
+&lt;h3 id=&#34;overriding-and-extending&#34;&gt;Overriding and Extending&lt;/h3&gt;
+
+&lt;p&gt;You&amp;rsquo;ve been enjoying your new Warp Drive back application for a little while now, but you decide you really need to change an action in your controller, how do you go about that? Simple, just like you would any normal alteration to a Ruby class.&lt;/p&gt;
+
+&lt;p&gt;Example:
+Here is what the action looks like in our Warp Drive UsersController:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;new&lt;/span&gt;
+  &lt;span class=&#34;vi&#34;&gt;@user&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;User&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;new&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;In our new application we can just open up the UsersController like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;UsersController&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;ApplicationController&lt;/span&gt;
+
+  &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;new_with_default_name&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;new_without_default_name&lt;/span&gt;
+    &lt;span class=&#34;vi&#34;&gt;@user&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;login&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;default_name&amp;#39;&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+
+  &lt;span class=&#34;n&#34;&gt;alias_method_chain&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;:new&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;:default_name&lt;/span&gt;
+
+&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Viola! The same works for any thing else in the system, models, libs, etc&amp;hellip; In our example we used &lt;code&gt;alias_method_chain&lt;/code&gt; to retain the original method, but we could have completely rewritten the method as well.&lt;/p&gt;
+
+&lt;p&gt;You can also plop in a new view and it will override the view that was in your Warp Drive. The sky is really the limit.&lt;/p&gt;
+
+&lt;h3 id=&#34;assets&#34;&gt;Assets&lt;/h3&gt;
+
+&lt;p&gt;You can easily bundle assets from your public directory in your Warp Drive. Just make sure they are in folders called &lt;code&gt;warp_drive&lt;/code&gt;. Those folders will then be symlinked to your new project&amp;rsquo;s public directory when the application starts up.&lt;/p&gt;
+
+&lt;h3 id=&#34;keep-those-rake-tasks-private&#34;&gt;Keep Those Rake Tasks Private!&lt;/h3&gt;
+
+&lt;p&gt;We all them, Rake tasks we have created to help us do all sorts of things, and we usually don&amp;rsquo;t want them to ship. Well, Warp Drive has you covered there. Just place your tasks in folders called &lt;code&gt;private&lt;/code&gt; and Bob&amp;rsquo;s your uncle they won&amp;rsquo;t be available in the compiled gem.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span class=&#34;n&#34;&gt;lib&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;
+  &lt;span class=&#34;n&#34;&gt;tasks&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;foo&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;rake&lt;/span&gt;
+    &lt;span class=&#34;kp&#34;&gt;private&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;
+      &lt;span class=&#34;n&#34;&gt;bar&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;rake&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;In this example &lt;code&gt;foo.rake&lt;/code&gt; will be available to clients of your Warp Drive, but &lt;code&gt;bar.rake&lt;/code&gt; will not be.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>APN on Rails 0.3.0 Released</title>
+      <link>/2009/07/31/apn-on-rails-0-3-0-released/</link>
+      <pubDate>Fri, 31 Jul 2009 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2009/07/31/apn-on-rails-0-3-0-released/</guid>
+      <description>&lt;p&gt;The latest version of Apple Push Notifications on Rails (APN on Rails) has been released. This release brings a few bug fixes, a new migration, and Feedback processing.&lt;/p&gt;
+
+&lt;p&gt;Installing/upgrading is easy:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ sudo gem install apn_on_rails
+$ ruby script/generate apn_migrations
+$ rake db:migrate
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s important to always run the migrations generator after each update to get the latest database schema needed for the the gem.&lt;/p&gt;
+
+&lt;p&gt;To use the new Feedback integration you have to first make sure that you update the new &lt;code&gt;last_registered_at&lt;/code&gt; column when your iPhone application calls home. This column is checked against the timestamp Apple returns with the device token. If the &lt;code&gt;last_registered_at&lt;/code&gt; is older than Apple&amp;rsquo;s date then the device is deleted, otherwise the Feedback is ignored.&lt;/p&gt;
+
+&lt;p&gt;To get and process the list of devices from Apple&amp;rsquo;s Feedback service just run the following Rake task:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ rake apn:feedback:process&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Enjoy!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Apple Push Notifications on Rails</title>
+      <link>/2009/07/24/apple-push-notifications-on-rails/</link>
+      <pubDate>Fri, 24 Jul 2009 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2009/07/24/apple-push-notifications-on-rails/</guid>
+      <description>&lt;p&gt;The other night I submitted a new iPhone application to the Apple Store. The app, which I&amp;rsquo;ll speak about when, and if it gets approved, uses the new Apple Push Notification service available in iPhone OS 3.0. On the server side I have a Rails application that I am using to send the notifications to Apple. The problem I ran into was how.&lt;/p&gt;
+
+&lt;p&gt;Enter the APN on Rails gem. While searching I found one plugin for Rails that mostly worked for me, Sam Soffes&amp;rsquo; apple_push_notification plugin. It was a great place to start, but I found that there were things that didn&amp;rsquo;t suite me. For starters, not having any tests is always a big turn off for me when it comes to any code. I also didn&amp;rsquo;t like that you didn&amp;rsquo;t need to save a notification in order to send it. That means you don&amp;rsquo;t have a record of what was sent and when. I also wanted to have devices stored separately from the notification. Finally, I wanted to be able to easily configure the plugin. Sam&amp;rsquo;s was using constants that would need to be changed when it hit production.&lt;/p&gt;
+
+&lt;p&gt;So, with all that said and done I took Sam&amp;rsquo;s great work, ripped it apart, and put it back together again, this time in gem form instead of a plugin, and here it is.&lt;/p&gt;
+
+&lt;p&gt;There are a few migrations, a few models, and a few Rake tasks, but here is the basic idea of how it works:&lt;/p&gt;
+
+&lt;script src=&#34;http://gist.github.com/154516.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;To get a better understanding of exactly how it works, and what it does, I highly recommend reading the &lt;a href=&#34;http://apnonrails.metabates.com/&#34;&gt;RDOC&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;There are a few things I still would like to add, for example, a controller to do CRUD for devices so iPhones can register with the Rails app. I&amp;rsquo;d also like to add a task that talks to Apple and finds out which devices are no longer accepting messages so they can be removed.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;rsquo;d like to contribute, please feel free and for the project on GitHub:
+&lt;a href=&#34;http://github.com/markbates/apn_on_rails/tree&#34;&gt;http://github.com/markbates/apn_on_rails/tree&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Again, a special thanks to Fabien Penso and Sam Soffes for their initial work on this project.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

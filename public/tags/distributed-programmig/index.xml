@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Distributed Programmig on MetaBates.com</title>
+    <link>/tags/distributed-programmig/</link>
+    <description>Recent content in Distributed Programmig on MetaBates.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
+    <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
+    <copyright>(c) 2016 Mark Bates.</copyright>
+    <lastBuildDate>Thu, 19 Nov 2009 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/distributed-programmig/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>First Book Review is a 5-Star One!</title>
+      <link>/2009/11/19/first-book-review-is-a-5-star-one/</link>
+      <pubDate>Thu, 19 Nov 2009 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2009/11/19/first-book-review-is-a-5-star-one/</guid>
+      <description>&lt;p&gt;About.com became the first, that I know about, to review my book, &amp;ldquo;Distributed Programming with Ruby&amp;rdquo;. What a great first review to have as well. They rated the book 5 out of 5 stars! The review can be found &lt;a href=&#34;http://ruby.about.com/od/bookreviews/gr/distributedprogramming.htm&#34;&gt;here&lt;/a&gt;.
+&lt;blockquote&gt;&amp;ldquo;Anyone working with distributed programming in Ruby will want this book.&amp;rdquo;&lt;/blockquote&gt;
+The only downside they saw in the book, was that they wanted it to be longer! I have to save something for the 2nd edition, don&amp;rsquo;t I? :)&lt;/p&gt;
+
+&lt;p&gt;If you haven&amp;rsquo;t purchased yours yet, I encourage you to do so. It&amp;rsquo;s on sale at &lt;a href=&#34;http://book.markbates.com&#34;&gt;Amazon.com&lt;/a&gt; right now.&lt;/p&gt;
+
+&lt;p&gt;If you have reviewed the book, or know of a review of the book, please pass it along.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Distributed Programming with Ruby - Now Available</title>
+      <link>/2009/11/12/distributed-programming-with-ruby-now-available/</link>
+      <pubDate>Thu, 12 Nov 2009 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2009/11/12/distributed-programming-with-ruby-now-available/</guid>
+      <description>
+
+&lt;p&gt;&lt;img style=&#34;float: left; padding-right: 10px&#34; class=&#34;size-medium wp-image-231&#34; title=&#34;Distributed Programming with Ruby&#34; src=&#34;/assets/images/2009/06/0321638360_bates_mech_page_3-261x300.jpg&#34; alt=&#34;Distributed Programming with Ruby&#34; width=&#34;261&#34; height=&#34;300&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Well folks, it&amp;rsquo;s been a long road, nearly a year since I presented the idea for &amp;ldquo;Distributed Programming with Ruby&amp;rdquo; to Obie Fernandez in a hot tub in Florida, but finally my book is done, dusted, back from the printers and available for purchase from a variety of places, include &lt;a href=&#34;http://books.markbates.com&#34;&gt;Amazon.com&lt;/a&gt;!&lt;/p&gt;
+
+&lt;p&gt;It was an absolutely amazing experience and I can&amp;rsquo;t thank everyone involved with the project enough for all of their help, guidance, and having to put up with me over the past year.&lt;/p&gt;
+
+&lt;p&gt;I would go into detail about all the people I wish to thank, but I did that already in the book, and let&amp;rsquo;s be honest, you&amp;rsquo;re going to buy it and read it anyway, so I don&amp;rsquo;t want to ruin the surprise. :)&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m sure you&amp;rsquo;ve already purchased your copy, but if you haven&amp;rsquo;t might I recommend you pop over to &lt;a href=&#34;http://books.markbates.com&#34;&gt;Amazon&lt;/a&gt; right now and pick yourself up a copy. They&amp;rsquo;re selling pretty well and you don&amp;rsquo;t want to miss out, do you? I didn&amp;rsquo;t think so.&lt;/p&gt;
+
+&lt;p&gt;If you are someone with a popular blog and you would like to do a review of the book, please drop me a line and I&amp;rsquo;ll see what we can do about hooking you up with a copy. Please understand, though, the publishers aren&amp;rsquo;t going to send out copies to everyone who requests them, so there will be a bit of vetting going on.&lt;/p&gt;
+
+&lt;p&gt;Also, if you have already purchased the book if you wouldn&amp;rsquo;t mind leaving a review of it on &lt;a href=&#34;http://books.markbates.com&#34;&gt;Amazon&lt;/a&gt;, that would be much appreciated. It doesn&amp;rsquo;t matter where you bought the book, if you could leave a review there, it will really make a difference. Thanks.&lt;/p&gt;
+
+&lt;h3 id=&#34;buy-distributed-programming-with-ruby-today-http-books-markbates-com&#34;&gt;&lt;a href=&#34;http://books.markbates.com&#34;&gt;Buy &amp;ldquo;Distributed Programming with Ruby&amp;rdquo; Today!&lt;/a&gt;&lt;/h3&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Evolving Table of Contents</title>
+      <link>/2009/06/20/the-evolving-table-of-contents/</link>
+      <pubDate>Sat, 20 Jun 2009 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2009/06/20/the-evolving-table-of-contents/</guid>
+      <description>&lt;p&gt;For those of you who have checked out the Rough Cuts version of my book, &amp;ldquo;Distributed Programming with Ruby&amp;rdquo;, I thought you would like to get a peek into how the Table of Contents is going to change shortly. For those of you who haven&amp;rsquo;t seen the old Table of Contents, or are just plain old interested to see what&amp;rsquo;s going to be in the book, or to see how far along with the book I am, here is the current Table of Contents as of tonight:&lt;/p&gt;
+
+&lt;script src=&#34;http://gist.github.com/133394.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;As you can see it has evolved quite a bit from what was posted on Rough Cuts just about a month ago. Chances are that it will probably change again, and as it does, I&amp;rsquo;ll try and keep you all posted. There is talk of adding a large chapter at the end that takes a handful of the technologies I discuss in the book and use them to build a &amp;ldquo;real world&amp;rdquo; example application, like a Twitter clone, or something like that. If anyone has any good ideas on what they would like to see for this example, please them my way, I&amp;rsquo;d love to hear them.&lt;/p&gt;
+
+&lt;p&gt;If there are no sections listed below a particular chapter that means that I have either not written it yet, or I&amp;rsquo;m still too early in that chapter&amp;rsquo;s development to have properly assigned it actual sections.&lt;/p&gt;
+
+&lt;p&gt;The first draft of the book is slated for the end of July. So there is still a lot of work to be done, but it&amp;rsquo;s still rather exciting. Well, it&amp;rsquo;s exciting for me at least. Talk to you all soon.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

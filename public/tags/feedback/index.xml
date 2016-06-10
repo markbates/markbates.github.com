@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Feedback on MetaBates.com</title>
+    <link>/tags/feedback/</link>
+    <description>Recent content in Feedback on MetaBates.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
+    <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
+    <copyright>(c) 2016 Mark Bates.</copyright>
+    <lastBuildDate>Mon, 13 Jun 2011 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/feedback/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Collect user feedback through FluxTracker.com</title>
+      <link>/2011/06/13/collect-user-feedback-through-fluxtracker-com/</link>
+      <pubDate>Mon, 13 Jun 2011 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2011/06/13/collect-user-feedback-through-fluxtracker-com/</guid>
+      <description>&lt;p&gt;About six weeks ago I announced &lt;a href=&#34;http://www.fluxtracker.com?ref=metabates2&#34;&gt;FluxTracker.com&lt;/a&gt; a unified issue, document, and error management service. The response has been amazing. People love that you can now manage all of those things in one place, without any configuration. Well, today I&amp;rsquo;m happy to announce that FluxTracker has taken the next step forward to make managing all aspects of your project easier. Introducing FluxTracker &lt;a href=&#34;http://bit.ly/juVpLJ&#34;&gt;Feedback&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;FluxTracker Feedback allows you to put a little feedback widget on your site that can be used to collect information from your users, such as feature requests, support requests, and general comments. This feedback is automatically added to your FluxTracker project and from there it&amp;rsquo;s up to you to decide what you want to do with it. Of course it supports FluxTracker&amp;rsquo;s Issue Connect system so you can turn that customer feedback into an actionable issue with just one click?&lt;/p&gt;
+
+&lt;p&gt;Now you&amp;rsquo;re probably saying to yourself, I bet it&amp;rsquo;s really difficult to implement on my site. Well, you&amp;rsquo;d be wrong! It&amp;rsquo;s as simple as just adding one line to your site:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.fluxtracker.com/pages/api/feedback&#34;&gt;http://www.fluxtracker.com/pages/api/feedback&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The widget can be customized too. CSS, text, and even the questions can be customized (well, depending on the plan you&amp;rsquo;re on). Just check out the Feedback tab on the right side of the page to see the Feedback widget in action.&lt;/p&gt;
+
+&lt;p&gt;Well, as you can tell I&amp;rsquo;m very excited about this. I think it really makes FluxTracker the true center for managing your application, and I think  you&amp;rsquo;ll find that too. Enjoy!&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
