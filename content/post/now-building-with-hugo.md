@@ -8,6 +8,6 @@ type = "post"
 
 +++
 
-# Some Headline
+# Some Headline!
 
 Text
