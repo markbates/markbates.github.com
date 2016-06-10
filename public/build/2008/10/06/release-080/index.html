@@ -1,0 +1,340 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Release 0.8.0</title>
+    
+    
+    <meta name="author" content="Mark Bates">
+    <link href="http://feeds.feedburner.com/MetaBates" rel="alternate" title="Release 0.8.0" type="application/atom+xml">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/metabates/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/themes/metabates/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+  </head>
+
+  <body>
+  <style>#forkongithub a{background:#000;color:#fff;text-decoration:none;font-family:arial, sans-serif;text-align:center;font-weight:bold;padding:5px 40px;font-size:1rem;line-height:2rem;position:relative;transition:0.5s;}#forkongithub a:hover{background:#3F9FD9;color:#fff;}#forkongithub a::before,#forkongithub a::after{content:"";width:100%;display:block;position:absolute;top:1px;left:0;height:1px;background:#fff;}#forkongithub a::after{bottom:1px;top:auto;}@media screen and (min-width:800px){#forkongithub{position:absolute;display:block;top:0;right:0;width:200px;overflow:hidden;height:200px;}#forkongithub a{width:200px;position:absolute;top:60px;right:-60px;transform:rotate(45deg);-webkit-transform:rotate(45deg);box-shadow:4px 4px 10px rgba(0,0,0,0.8);}}</style><span id="forkongithub" style='z-index: 9999;'><a href="https://github.com/markbates">Fork me on GitHub</a></span>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/">Mark Bates</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              
+              
+              
+
+
+  
+    
+      
+      	
+      	<li><a href="/about.html">About</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/archive.html">Archives</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/books.html">Books</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags.html">Tags</a></li>
+      	
+      
+    
+  
+
+
+
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="span8">
+          
+<div class="page-header">
+  <h1>Release 0.8.0</h1>
+  
+    <h6>06 October 2008</h6>
+  
+</div>
+
+<div class="row">
+  <div class="span">
+    <p>Here it is the 0.8.0 release of Mack! What a fun and exciting release it is as well. There are a few big changes under the hood, all for the better of course, but there&#8217;s only really one that will cause existing Mack projects some conversion pain. However, we&#8217;ve tried to take the sting out of that with a helpful rake task.</p>
+
+<h3 id='configatron_support'>Configatron Support</h3>
+
+<p>Mack 0.8.0 replaces the old application_configuration system with the new ultra sexy and cool, <a href='/2008/10/03/configatron-214-released/'>Configatron</a> system. This is a much better way of doing system configurations, and I&#8217;m sure you&#8217;ll agree once you give it a spin. We&#8217;ve tried to take the edge off the conversion of these configuration systems with a helpful little rake task: <pre>$&nbsp;rake mack:update:configuration</pre> For most cases, that task should do just fine. There might be a few places you have to tweak, such as in your own code, but once you do that, you&#8217;ll love Configatron!</p>
+
+<p>For more information about using Configatron checkout this page:</p>
+
+<p><a href='http://github.com/markbates/configatron'>http://github.com/markbates/configatron</a></p>
+
+<h3 id='a_new_router'>A New Router</h3>
+
+<p>That&#8217;s right, the router in Mack has been completely rewritten from the ground up, yet unlike other frameworks, we&#8217;ve managed to keep our external API the same, so you don&#8217;t have to change your routes.rb at all. :) That&#8217;s a bit of good news, isn&#8217;t it?</p>
+
+<p>What do you get with the new router? Well, for one, it should be faster, that&#8217;s always a plus. You can also now do &#8216;wildcard&#8217; parameters in routes, use procs, extended &#8216;resourced&#8217; routes, define &#8216;host&#8217; and &#8216;scheme&#8217; parameters, use regular expressions, and a few other little nifty things. Plus, because of the rewrite, it&#8217;s going to make it easier to extending the routing system to be even more powerful! In a future release, sometime in the 0.8.x series, you&#8217;ll even be able to plugin in your own router just by implementing a few API methods.</p>
+
+<h3 id='asset_management'>Asset Management</h3>
+
+<p>There is now a really great asset management system that easily allows you to build bundles of CSS and JavaScript files to help keep your code neat and easy to use. Bundle that with the new mack-asset_packager gem, and support for asset hosts, you get a simple, easy, and fast way to compress and deliver your assets.&#160;</p>
+
+<h3 id='misc'>Misc.</h3>
+
+<p>As always, there&#8217;s a bunch of other great stuff just lurking around in this release. A better logger, for a start, more helpers, bug fixes, better error reporting, default 404 and 500 pages, and more. Please download and enjoy the release, I&#8217;m sure you&#8217;ll find worth it. Enjoy!</p>
+
+<p>Changelog:</p>
+
+<ul>
+<li>[#187] Fixed: When an exception is raised, the request doesn&#8217;t get &#8216;logged&#8217;</li>
+
+<li>[#185] Fixed: .html is being appended to logged requests when there&#8217;s a 404</li>
+
+<li>[#184] Request logging should also print the message of the status code</li>
+
+<li>[#183] Updates to asset mgr/host</li>
+
+<li>[#181] Content-type can now be set with calling render.</li>
+
+<li>[#179] When configatron.mack.show_exceptions is false you now either the public/404.html or public/500.html file.</li>
+
+<li>[#178] Added a configure parameter to turn off log coloring</li>
+
+<li>[#176] Added a Google Analytics helper.</li>
+
+<li>[#175] Generating urls should use host or scheme if defined</li>
+
+<li>[#171] Ability to extend resources in routes</li>
+
+<li>[#170] Regex support in routes</li>
+
+<li>[#169] Proc support for Routes</li>
+
+<li>[#168] Fixed ERB errors not being reported correctly.</li>
+
+<li>[#167] Rake task to convert app config yamls to configatron</li>
+
+<li>[#165] Asset Packager</li>
+
+<li>[#164] Response helper for &#8216;attachments&#8217;</li>
+
+<li>[#159] Added link_unless_current and link_if helpers</li>
+
+<li>[#156] Added &#8216;Wildcard&#8217; Routes support</li>
+
+<li>[#152] INCOMPATIBILITY NOTICE: Removed deprecated support for delivered_emails use delivered_notifiers instead.</li>
+
+<li>[#138] Added support for &#8216;host&#8217; &#38; &#8216;scheme&#8217; parameters in routes</li>
+
+<li>[#135] Replaced log4r with logging gem.</li>
+
+<li>[#119] Freeze gems</li>
+
+<li>[#106] INCOMPATIBILITY NOTICE: Removed deprecated support for droute_url</li>
+
+<li>[#93] INCOMPATIBILITY NOTICE: Removed deprecated support for &#8216;top&#8217; level ApplicationHelper</li>
+
+<li>[#23] INCOMPATIBILITY NOTICE: Removed support for application_configuration and added support for configatron</li>
+
+<li>gem: logging 0.9.4</li>
+
+<li>gem: thin 1.0.0</li>
+
+<li>gem: rspec 1.1.8</li>
+
+<li>gem: configatron 2.1.4</li>
+
+<li>gem: cachetastic 2.0.0</li>
+</ul>
+    <hr>
+    
+      <div class='tag_box'>
+        <h5>Tags</h5>
+        
+        
+           
+            <a href="/tags.html#assets-ref" class="tag">assets</a>
+           
+            <a href="/tags.html#cachetastic-ref" class="tag">cachetastic</a>
+           
+            <a href="/tags.html#configatron-ref" class="tag">configatron</a>
+           
+            <a href="/tags.html#General-ref" class="tag">General</a>
+           
+            <a href="/tags.html#logging-ref" class="tag">logging</a>
+           
+            <a href="/tags.html#mack-ref" class="tag">mack</a>
+           
+            <a href="/tags.html#release-ref" class="tag">release</a>
+           
+            <a href="/tags.html#Releases-ref" class="tag">Releases</a>
+           
+            <a href="/tags.html#routes-ref" class="tag">routes</a>
+           
+            <a href="/tags.html#routing-ref" class="tag">routing</a>
+           
+            <a href="/tags.html#Updates-ref" class="tag">Updates</a>
+          
+        
+        <hr />
+      </div>
+    
+    
+    <!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style ">
+<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+<a class="addthis_button_tweet"></a>
+<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+<a class="addthis_counter addthis_pill_style"></a>
+</div>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4f7cef9a0d4f7bd5"></script>
+<!-- AddThis Button END -->
+    <hr>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2008/10/03/configatron-214-released" title="Configatron 2.1.4 Released!">&larr; Previous</a></li>
+      
+        <li><a href="/archive.html">Archive</a></li>
+      
+        <li class="next"><a href="/2008/10/17/mack-featured-on-this-weeks-rails-envy-podcast" title="Mack featured on this week's Rails Envy Podcast">Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+    <hr>
+    
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+    var disqus_shortname = 'metabates'; // required: replace example with your forum shortname
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+  </div>
+
+</div>
+
+
+        </div><!--/span-->
+        <div class="span4">
+          <a href="/books.html" class="thumbnail">
+            <img src="/assets/images/2012/02/cover_300.png" />
+          </a>
+          <hr />
+
+          <a class="twitter-timeline" href="https://twitter.com/markbates" data-widget-id="274503565609934848">Tweets by @markbates</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+          <hr />
+
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Latest Posts</li>
+              
+                <li><a href="/2013/06/02/introducting-linelyticscom">Introducting LineLytics.com</a></li>
+              
+                <li><a href="/2013/01/01/announcing-metacaststv-screen-casts">Announcing MetaCasts.tv Screen Casts</a></li>
+              
+                <li><a href="/2012/12/15/javascript-prototypes-video">JavaScript Prototypes (Video)</a></li>
+              
+                <li><a href="/2012/12/08/getting-started-with-sinatra-video">Getting Started with Sinatra (Video)</a></li>
+              
+                <li><a href="/2012/12/02/getting-started-with-rack-video">Getting Started with Rack (Video)</a></li>
+              
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <p>
+          &copy; Mark Bates 2012 |
+          <a href="http://feeds.feedburner.com/MetaBates">RSS</a> |
+          <a href="http://twitter.com/markbates/" rel="me">Twitter</a> |
+          <a href="http://github.com/markbates/" rel="me">GitHub</a> |
+          <a href="mailto:mark+blog@markbates.com">Email</a>
+        </p>
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-9756583-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+  </body>
+</html>
+

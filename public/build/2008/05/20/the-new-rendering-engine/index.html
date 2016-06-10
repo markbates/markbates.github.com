@@ -1,0 +1,276 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Preview (0.5.5): The New Rendering Engine</title>
+    
+    
+    <meta name="author" content="Mark Bates">
+    <link href="http://feeds.feedburner.com/MetaBates" rel="alternate" title="Preview (0.5.5): The New Rendering Engine" type="application/atom+xml">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/metabates/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/themes/metabates/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+  </head>
+
+  <body>
+  <style>#forkongithub a{background:#000;color:#fff;text-decoration:none;font-family:arial, sans-serif;text-align:center;font-weight:bold;padding:5px 40px;font-size:1rem;line-height:2rem;position:relative;transition:0.5s;}#forkongithub a:hover{background:#3F9FD9;color:#fff;}#forkongithub a::before,#forkongithub a::after{content:"";width:100%;display:block;position:absolute;top:1px;left:0;height:1px;background:#fff;}#forkongithub a::after{bottom:1px;top:auto;}@media screen and (min-width:800px){#forkongithub{position:absolute;display:block;top:0;right:0;width:200px;overflow:hidden;height:200px;}#forkongithub a{width:200px;position:absolute;top:60px;right:-60px;transform:rotate(45deg);-webkit-transform:rotate(45deg);box-shadow:4px 4px 10px rgba(0,0,0,0.8);}}</style><span id="forkongithub" style='z-index: 9999;'><a href="https://github.com/markbates">Fork me on GitHub</a></span>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/">Mark Bates</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              
+              
+              
+
+
+  
+    
+      
+      	
+      	<li><a href="/about.html">About</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/archive.html">Archives</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/books.html">Books</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags.html">Tags</a></li>
+      	
+      
+    
+  
+
+
+
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="span8">
+          
+<div class="page-header">
+  <h1>Preview (0.5.5): The New Rendering Engine</h1>
+  
+    <h6>20 May 2008</h6>
+  
+</div>
+
+<div class="row">
+  <div class="span">
+    <p>In the latest version of Mack the rendering engine has been completely re-written from the ground up. With this comes some new features, some incompatibility, and most importantly, extensibility. Let&#8217;s jump on in and see what we can expect with this release.</p>
+
+<h3 id='incompatibility'>Incompatibility</h3>
+
+<ul>
+<li>Gone is <code>&lt;%= @content_for_layout %&gt;</code> in layouts. In is <code>&lt;%= yield_to :view %&gt;</code></li>
+
+<li>Gone is <code>render(options_hash)</code> in controllers/views. In is <code>render(type, value, options_hash)</code> Examples: <code>render(:action =&gt; :new)</code> is now <code>render(:action, :new)</code> <code>render(:url =&gt; &quot;http://www.mackframework.com&quot;, :parameters =&gt; {:message =&gt; &quot;hi&quot;})</code> is now <code>render(:url, &quot;http://www.mackframework.com&quot;, :parameters =&gt; {:message =&gt; &quot;hi&quot;})</code></li>
+
+<li>Gone is <code>*.xml.erb</code>. In is <code>*.xml.builder</code></li>
+</ul>
+
+<p>Let&#8217;s quickly talk about how these incompatibilities have come about. First there were several bugs that needed to be addressed with the rendering engine. For example, if you set an instance variable in a view, it wasn&#8217;t available in the layout. That&#8217;s a pain if you want to do things like programatically set the page title. There were also &#8216;hacks&#8217; used to do things like render xml using the <code>Builder::XmlMarkup</code> library. It wasn&#8217;t clean, but it worked. Finally, the rendering engine itself wasn&#8217;t that extensible. All of that has now changed.</p>
+
+<h3 id='render_me_softly'>Render Me Softly</h3>
+
+<p>In the new rendering engine there are two parts to the system, <code>Mack::Rendering::Type::*</code> objects and <code>Mack::Rendering::Engine::*</code> objects. Let me explain the difference.</p>
+
+<h4 id='mackrenderingtype'>Mack::Rendering::Type::*</h4>
+
+<p>A type is something like <code>:action</code>, <code>:text</code>, <code>:inline</code>, <code>:url</code>, etc&#8230; That is the type of thing you want to do. I want to render an action. I want to render a url, etc&#8230; There are classes for each of these types, and you can easily add your own. These types do all sorts of work before they pass it off to an engine, if need be. For example, in the case of <code>Mack::Rendering::Type::Partial</code> the render method does the work of inserting an &#8216;_&#8217; in the appropriate place, so the file can found.</p>
+
+<p>Liquid error: No such file or directory - posix_spawnp</p>
+
+<p>Once that happens it tries to find an engine to process the partial.</p>
+
+<h4 id='mackrenderingengine'>Mack::Rendering::Engine::*</h4>
+
+<p>An engine does the actual work of rendering the io, with the binding of the <code>Mack::Rendering::ViewTemplate</code> object, its been given by the results of the <code>render</code> method in the <code>Mack::Rendering::Type::*</code> object. Engine examples would be, Erubis (ERB), Markaby, Haml, and Builder::XmlMarkup, all of which are included with Mack in this release. New engines can easily be plugged in and registered with the system.</p>
+
+<p>Coming soon a tutorial on adding PDF::Writer support using the new system.</p>
+    <hr>
+    
+      <div class='tag_box'>
+        <h5>Tags</h5>
+        
+        
+           
+            <a href="/tags.html#erb-ref" class="tag">erb</a>
+           
+            <a href="/tags.html#erubis-ref" class="tag">erubis</a>
+           
+            <a href="/tags.html#General-ref" class="tag">General</a>
+           
+            <a href="/tags.html#haml-ref" class="tag">haml</a>
+           
+            <a href="/tags.html#mack-ref" class="tag">mack</a>
+           
+            <a href="/tags.html#markaby-ref" class="tag">markaby</a>
+           
+            <a href="/tags.html#rendering-ref" class="tag">rendering</a>
+          
+        
+        <hr />
+      </div>
+    
+    
+    <!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style ">
+<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+<a class="addthis_button_tweet"></a>
+<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+<a class="addthis_counter addthis_pill_style"></a>
+</div>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4f7cef9a0d4f7bd5"></script>
+<!-- AddThis Button END -->
+    <hr>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2008/05/20/055-adding-pdfwriter-plugin-support-tutorial" title="Preview (0.5.5): Adding PDF::Writer Plugin Support Tutorial">&larr; Previous</a></li>
+      
+        <li><a href="/archive.html">Archive</a></li>
+      
+        <li class="next"><a href="/2008/05/21/release-055" title="Release 0.5.5">Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+    <hr>
+    
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+    var disqus_shortname = 'metabates'; // required: replace example with your forum shortname
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+  </div>
+
+</div>
+
+
+        </div><!--/span-->
+        <div class="span4">
+          <a href="/books.html" class="thumbnail">
+            <img src="/assets/images/2012/02/cover_300.png" />
+          </a>
+          <hr />
+
+          <a class="twitter-timeline" href="https://twitter.com/markbates" data-widget-id="274503565609934848">Tweets by @markbates</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+          <hr />
+
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Latest Posts</li>
+              
+                <li><a href="/2013/06/02/introducting-linelyticscom">Introducting LineLytics.com</a></li>
+              
+                <li><a href="/2013/01/01/announcing-metacaststv-screen-casts">Announcing MetaCasts.tv Screen Casts</a></li>
+              
+                <li><a href="/2012/12/15/javascript-prototypes-video">JavaScript Prototypes (Video)</a></li>
+              
+                <li><a href="/2012/12/08/getting-started-with-sinatra-video">Getting Started with Sinatra (Video)</a></li>
+              
+                <li><a href="/2012/12/02/getting-started-with-rack-video">Getting Started with Rack (Video)</a></li>
+              
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <p>
+          &copy; Mark Bates 2012 |
+          <a href="http://feeds.feedburner.com/MetaBates">RSS</a> |
+          <a href="http://twitter.com/markbates/" rel="me">Twitter</a> |
+          <a href="http://github.com/markbates/" rel="me">GitHub</a> |
+          <a href="mailto:mark+blog@markbates.com">Email</a>
+        </p>
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-9756583-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+  </body>
+</html>
+

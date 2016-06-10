@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2016-06-09T16:20:56-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2016/06/09/now-building-with-hugo/</loc>
+    <lastmod>2016-06-09T16:20:56-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2015/10/15/handling-http-request-errors-in-go/</loc>
+    <lastmod>2015-10-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2015/06/01/metacaststv-acquired-by-oreilly-media/</loc>
+    <lastmod>2015-06-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2015/05/07/so-long-and-thanks-for-all-the-fish/</loc>
+    <lastmod>2015-05-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2015/02/07/what-is-happinessconf-and-why-its-important/</loc>
+    <lastmod>2015-02-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2014/10/15/goth-multi-provider-authentication-for-go/</loc>
+    <lastmod>2014-10-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2014/10/09/metacaststv-gothamgo-winner/</loc>
+    <lastmod>2014-10-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2014/09/01/100th-episode--a-free-ticket-to-gothamgo/</loc>
+    <lastmod>2014-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2014/07/08/metacasts-golang-future/</loc>
+    <lastmod>2014-07-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2014/05/28/the-war-on-testing/</loc>
+    <lastmod>2014-05-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2014/05/11/how-i-cut-the-cable-cord/</loc>
+    <lastmod>2014-05-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2014/03/28/metacaststv-episode-stats/</loc>
+    <lastmod>2014-03-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2014/01/07/announcing-conquering-the-command-line---a-free-online-book/</loc>
+    <lastmod>2014-01-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2013/12/10/team-subscriptions-for-metacaststv/</loc>
+    <lastmod>2013-12-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2013/06/02/introducting-linelyticscom/</loc>
+    <lastmod>2013-06-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2013/01/01/announcing-metacaststv-screen-casts/</loc>
+    <lastmod>2013-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2012/12/15/javascript-prototypes-video/</loc>
+    <lastmod>2012-12-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2012/12/08/getting-started-with-sinatra-video/</loc>
+    <lastmod>2012-12-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2012/12/02/getting-started-with-rack-video/</loc>
+    <lastmod>2012-12-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2012/11/21/coffeescript-fat-arrow-functions/</loc>
+    <lastmod>2012-11-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2012/10/23/deploying-to-heroku-from-travisci/</loc>
+    <lastmod>2012-10-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2012/10/19/editor-wars-wont-someone-think-of-the-children/</loc>
+    <lastmod>2012-10-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2012/05/09/just-say-no-to-laptops-at-conferences/</loc>
+    <lastmod>2012-05-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2012/04/17/there-is-no-escape-actually-there-is-and-you-should-always-use-it/</loc>
+    <lastmod>2012-04-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2012/04/15/capturing-and-uploading-photos-on-ios-with-phonegap/</loc>
+    <lastmod>2012-04-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2012/04/05/how-to-write-an-api-without-even-trying/</loc>
+    <lastmod>2012-04-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2012/04/04/now-blogging-with-jekyll/</loc>
+    <lastmod>2012-04-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2012/02/22/adding-pagination-to-an-api/</loc>
+    <lastmod>2012-02-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2011/08/31/using-sprockets-without-rails/</loc>
+    <lastmod>2011-08-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2011/08/10/coffeescript-a-rubyists-love-affair/</loc>
+    <lastmod>2011-08-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2011/06/28/lets-say-goodbye-to-yaml-for-configuration-shall-we/</loc>
+    <lastmod>2011-06-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2011/06/19/backup-and-bookmark-your-tweets-with-tweetko-com/</loc>
+    <lastmod>2011-06-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2011/06/13/collect-user-feedback-through-fluxtracker-com/</loc>
+    <lastmod>2011-06-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2011/05/24/stop-complaining-start-contributing/</loc>
+    <lastmod>2011-05-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2011/04/25/project-issue-and-error-tracking-united/</loc>
+    <lastmod>2011-04-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2011/04/15/because-everybody-has-an-opinion/</loc>
+    <lastmod>2011-04-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2011/03/04/407-testing-tools-arent-all-the-same-choose-wisely/</loc>
+    <lastmod>2011-03-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2011/02/07/building-interfaces-and-abstract-classes-in-ruby/</loc>
+    <lastmod>2011-02-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2010/11/17/becoming-an-expert-developer/</loc>
+    <lastmod>2010-11-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2010/10/12/how-to-become-a-test-driven-developer/</loc>
+    <lastmod>2010-10-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2010/09/30/coverme-%E2%80%93-code-coverage-for-ruby-1-9-reaches-rc1/</loc>
+    <lastmod>2010-09-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2010/08/15/fixtures-v-factories-cant-we-all-just-get-along/</loc>
+    <lastmod>2010-08-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2010/08/13/coverme-code-coverage-for-ruby-1-9/</loc>
+    <lastmod>2010-08-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2010/07/01/testing-is-not-an-option/</loc>
+    <lastmod>2010-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2010/06/14/six-tracks-of-drums/</loc>
+    <lastmod>2010-06-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2010/03/10/apn-on-rails-has-a-new-home/</loc>
+    <lastmod>2010-03-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2010/02/08/ruby-1-9-rails-3-0/</loc>
+    <lastmod>2010-02-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2009/12/21/apn-on-rails-needs-a-home/</loc>
+    <lastmod>2009-12-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2009/11/19/first-book-review-is-a-5-star-one/</loc>
+    <lastmod>2009-11-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2009/11/12/distributed-programming-with-ruby-now-available/</loc>
+    <lastmod>2009-11-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2009/10/07/introducing-warp-drive-for-rails/</loc>
+    <lastmod>2009-10-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2009/09/07/a-few-rails-nuggets/</loc>
+    <lastmod>2009-09-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2009/07/31/apn-on-rails-0-3-0-released/</loc>
+    <lastmod>2009-07-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2009/07/27/almost-there-book-wise/</loc>
+    <lastmod>2009-07-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2009/07/24/apple-push-notifications-on-rails/</loc>
+    <lastmod>2009-07-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2009/07/12/becoming-a-recording-sorry-i-meant-software-engineer/</loc>
+    <lastmod>2009-07-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2009/06/20/the-evolving-table-of-contents/</loc>
+    <lastmod>2009-06-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2009/06/18/cachetastic-3-0-0-released/</loc>
+    <lastmod>2009-06-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2009/05/22/distributed-programming-with-ruby-book-update/</loc>
+    <lastmod>2009-05-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2009/04/05/distribunaut/</loc>
+    <lastmod>2009-04-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2009/03/04/thank-you/</loc>
+    <lastmod>2009-03-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2009/01/18/release-083/</loc>
+    <lastmod>2009-01-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2009/01/01/configatron-220-released-now-with-ruby-19-and-jruby-support/</loc>
+    <lastmod>2009-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/about/</loc>
+  </url>
+  
+  <url>
+    <loc>/books/</loc>
+  </url>
+  
+</urlset>

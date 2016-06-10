@@ -1,0 +1,651 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on MetaBates.com</title>
+    <link>/post/</link>
+    <description>Recent content in Posts on MetaBates.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
+    <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
+    <copyright>(c) 2016 Mark Bates.</copyright>
+    <lastBuildDate>Thu, 09 Jun 2016 16:20:56 -0400</lastBuildDate>
+    <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Now Building With Hugo</title>
+      <link>/2016/06/09/now-building-with-hugo/</link>
+      <pubDate>Thu, 09 Jun 2016 16:20:56 -0400</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2016/06/09/now-building-with-hugo/</guid>
+      <description>
+
+&lt;h1 id=&#34;some-headline&#34;&gt;Some Headline&lt;/h1&gt;
+
+&lt;p&gt;Text&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Handling HTTP Request Errors in GO</title>
+      <link>/2015/10/15/handling-http-request-errors-in-go/</link>
+      <pubDate>Thu, 15 Oct 2015 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2015/10/15/handling-http-request-errors-in-go/</guid>
+      <description>
+
+&lt;p&gt;I&amp;rsquo;d like to take a quick moment and discuss handling HTTP request errors in Go. I often see people write code that they believe to be handling errors when making HTTP requests, but they&amp;rsquo;re not actually handling any errors the application you&amp;rsquo;re making requests to might be returning.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s take the following piece of code:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;main&lt;/span&gt;
+
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+  &lt;span class=&#34;s&#34;&gt;&amp;quot;fmt&amp;quot;&lt;/span&gt;
+  &lt;span class=&#34;s&#34;&gt;&amp;quot;log&amp;quot;&lt;/span&gt;
+  &lt;span class=&#34;s&#34;&gt;&amp;quot;net/http&amp;quot;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;nx&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;HandleFunc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;/boom&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ResponseWriter&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;req&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Request&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;WriteHeader&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;500&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Write&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;([]&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;byte&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;Boom!&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;})&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;go&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ListenAndServe&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;:9000&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;nil&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+  &lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Get&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;http://127.0.0.1:9000/boom&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;nil&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Fatal&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+  &lt;span class=&#34;nx&#34;&gt;fmt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;res.StatusCode: %d\n&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;StatusCode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Admittedly this is a pretty simple piece of code, not much happening. We are starting up a server, then we make a request to that server. This is all well and good, until we get to the following piece of code:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;nil&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;nx&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Fatal&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;fmt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;res.StatusCode: %d\n&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;StatusCode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;That second of code is doing the &amp;ldquo;error&amp;rdquo; checking of the request. If we run this code we&amp;rsquo;ll see the following output:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;StatusCode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;500&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Wait, if our response status code was 500, which is an error code, why didn&amp;rsquo;t our error handling work? The application should have logged the error and quit. The reason for this can be found in the Go documentation.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;An error is returned if there were too many redirects or if there was an HTTP protocol error. &lt;strong&gt;A non-2xx response doesn&amp;rsquo;t cause an error.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I added the emphasis on that last sentence myself, because it highlights why our error checking code didn&amp;rsquo;t work. The &lt;code&gt;http&lt;/code&gt; package does not return an error if the status is a non-2xx code. We have to check for that manually ourselves.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s rework the error handling portion of our example, this time let&amp;rsquo;s check the status and handle a non-200 response:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Get&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;http://127.0.0.1:9000/boom&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;nil&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;nx&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Fatal&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;fmt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;res.StatusCode: %d\n&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;StatusCode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;StatusCode&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;200&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;_&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;ioutil&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ReadAll&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Body&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+  &lt;span class=&#34;nx&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Fatal&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;string&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now if we were to run this code you can see we now see the error printed out the screen and the application quits as we expect it to. We are now handling the responses from the application properly.&lt;/p&gt;
+
+&lt;p&gt;Beware of this trap when you&amp;rsquo;re making HTTP requests in your Go apps. I see this mistake made &lt;strong&gt;all the time&lt;/strong&gt;. It&amp;rsquo;s an easy mistake to make. But now you you know, and knowing, as they say, is half the battle!&lt;/p&gt;
+
+&lt;h3 id=&#34;one-final-note&#34;&gt;One Final Note&lt;/h3&gt;
+
+&lt;p&gt;Despite using it in my example, there are very few times when you should actually use &lt;code&gt;ioutil.ReadAll&lt;/code&gt;. It is highly inefficient and reads everything into memory. I only used it here because it simplified my code example and I knew what it would be reading. Please seriously think twice about using &lt;code&gt;ioutil.ReadAll&lt;/code&gt;. (There &lt;a href=&#34;https://twitter.com/goinggodotnet&#34;&gt;Bill Kennedy&lt;/a&gt;, happy?)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>MetaCasts.tv Acquired by O&#39;Reilly Media</title>
+      <link>/2015/06/01/metacaststv-acquired-by-oreilly-media/</link>
+      <pubDate>Mon, 01 Jun 2015 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2015/06/01/metacaststv-acquired-by-oreilly-media/</guid>
+      <description>
+
+&lt;p&gt;For the past two and half years I have prided myself on bringing MetaCasts.tv subscribers high quality, educational screencasts on a variety of subjects, from Ruby to JavaScript to Go. In that time I have produced almost 37 hours of video. It has been a remarkably fun ride, but that ride has now come to an end.&lt;/p&gt;
+
+&lt;p&gt;When I announced that MetaCasts.tv would be shutting down there was a lot of speculation as to why, but at the time I was unable to provide any specifics behind it. Well, now I can. I’m happy to announce that O’Reilly Media, Inc. has acquired MetaCasts.tv. Over the coming months I will work closely with the great team over at O’Reilly to make all of the MetaCasts content available on their properties.&lt;/p&gt;
+
+&lt;p&gt;While I will not be joining the O’Reilly team, I will, however, be producing new content with them from time to time in the future.&lt;/p&gt;
+
+&lt;p&gt;I am very excited about the opportunity to see these screencasts get in the hands of a lot of developers, to help them grow and learn, and I can’t think of a better partner to do that with than O’Reilly.&lt;/p&gt;
+
+&lt;p&gt;Thank you all, again, for your great support over the past two and a half years. It’s been wonderful!&lt;/p&gt;
+
+&lt;h3 id=&#34;markbates-https-twitter-com-markbates&#34;&gt;&lt;a href=&#34;https://twitter.com/markbates&#34;&gt;@markbates&lt;/a&gt;&lt;/h3&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>So Long, and Thanks For All The Fish</title>
+      <link>/2015/05/07/so-long-and-thanks-for-all-the-fish/</link>
+      <pubDate>Thu, 07 May 2015 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2015/05/07/so-long-and-thanks-for-all-the-fish/</guid>
+      <description>
+
+&lt;p&gt;On January 1st, 2013 I &lt;a href=&#34;http://metabates.com/2013/01/01/announcing-metacaststv-screen-casts/&#34;&gt;announced&lt;/a&gt; MetaCasts.tv a weekly screencast site that would focus on Ruby, JavaScript, and any other technologies I thought fun, exciting, and interesting. The response was great. I couldn&amp;rsquo;t believe how well received it was. In July of 2014 I &lt;a href=&#34;http://metabates.com/2014/07/08/metacasts-golang-future/&#34;&gt;announced&lt;/a&gt;  that MetaCasts.tv would be focused entirely on &lt;a href=&#34;http://golang.org&#34;&gt;Go&lt;/a&gt;. It was a scary move, but it paid off. The change was welcomed with an overwhelming positive response.&lt;/p&gt;
+
+&lt;p&gt;Now, nearly a year after making the switch to Go, and almost two and a half years since starting MetaCasts.tv I have made the decision that, as much as I love MetaCasts, I must let it go. It was not an easy decision to make, but it is the right one.&lt;/p&gt;
+
+&lt;p&gt;In the coming weeks I will be announcing plans for the future of MetaCasts, and yes, there is a future! You don&amp;rsquo;t think I would just close up shop and go away, did you?&lt;/p&gt;
+
+&lt;p&gt;What does all of this mean for current MetaCasts subscribers? Well, as of May 11th, 2015, all active subscribers have been issued a pro-rated refund on their last subscription payment. That goes for both monthly and yearly subscribers. MetaCasts.tv will remain up and available until at least June 1st, which means if you were an active subscriber as of May 11th, 2015, you will be able to still watch, and download, all 37 hours worth of content.&lt;/p&gt;
+
+&lt;p&gt;In closing you can expect another post from me in a few weeks with further details about the future of MetaCasts.tv and it&amp;rsquo;s content. I would also like to thank each and everyone of you for your support over the past two and a half years. It was such an amazing experience.&lt;/p&gt;
+
+&lt;h3 id=&#34;thank-you&#34;&gt;Thank you.&lt;/h3&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>What is HappinessConf and Why is it Important?</title>
+      <link>/2015/02/07/what-is-happinessconf-and-why-its-important/</link>
+      <pubDate>Sat, 07 Feb 2015 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2015/02/07/what-is-happinessconf-and-why-its-important/</guid>
+      <description>
+
+&lt;h1 id=&#34;what-is-happinessconf&#34;&gt;What is HappinessConf?&lt;/h1&gt;
+
+&lt;p&gt;HappinessConf is a two day, single track conference, to help promote developer happiness. That&amp;rsquo;s the single line pitch for the conference, but there&amp;rsquo;s more to it than that.&lt;/p&gt;
+
+&lt;p&gt;To fully understand why I, along with Scott Feinberg, am organizing a conference such as this we have to jump back to the Summer of 2014.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-history-part&#34;&gt;The History Part&lt;/h2&gt;
+
+&lt;p&gt;Over the last few years I&amp;rsquo;ve been flying around the world speaking at many different conferences, all with their on style and slant on what a conference should be. I learned a lot during that those trips, but one thing in particular really stuck out&lt;/p&gt;
+
+&lt;p&gt;Conferences can get very repetitive. The same topics, the same speakers, etc&amp;hellip; One can only take hearing the same talk so many times before you want to rage flip the coffee stand in the hallway.&lt;/p&gt;
+
+&lt;p&gt;In May of 2014 I spoke at &lt;a href=&#34;http://devslovebacon.com&#34;&gt;Devs Love Bacon&lt;/a&gt; in London, England. What a great conference! It was almost all &amp;ldquo;soft&amp;rdquo; talks! But they weren&amp;rsquo;t just any ordinary set of soft talks, they were about things that developers love! I watched one talk that was about the differences in different types of Whiskey, including a tasting session! I watched another talk about power lifting! What?? It was great. Bacon really stuck with me as one of the most interesting conferences I have ever attended.&lt;/p&gt;
+
+&lt;p&gt;Fast-forward a few months and it was announced that the Wicked Good Ruby conference, meant to be held in my home town of Boston, was going to be canceled. There would be no conferences in Boston in 2014. I was disappointed by this, but understood completely why the organizers canceled it.&lt;/p&gt;
+
+&lt;p&gt;Shortly after the cancellation of Wicked Good, I was having a drink with Scott Feinberg (&lt;a href=&#34;http://blog.sefindustries.com/why-happinessconf/&#34;&gt;here&amp;rsquo;s his take on HappinessConf&lt;/a&gt;) who suggested we organize a conference in Boston to replace Wicked Good. I flat out refused. I told him that I think there are too many Ruby conferences already, and that if the organizers of Wicked Good couldn&amp;rsquo;t make it work, we couldn&amp;rsquo;t either.&lt;/p&gt;
+
+&lt;p&gt;I then told Scott that the only type of conference I would help organize would be one similar to Devs Love Bacon. HappinessConf was born.&lt;/p&gt;
+
+&lt;h2 id=&#34;so-exactly-what-does-happinessconf-mean&#34;&gt;So Exactly What Does &amp;ldquo;HappinessConf&amp;rdquo; Mean?&lt;/h2&gt;
+
+&lt;p&gt;Scott and I want to organize a conference where developers, regardless of their programming language of choice, level of experience, etc&amp;hellip; could come together and help improve each other&amp;rsquo;s happiness.&lt;/p&gt;
+
+&lt;p&gt;We want talks that cover tools, languages, practices, fun side projects, weird hacks, office setups, anything that makes you, as a developer, happy, and that can help make another developer happy.&lt;/p&gt;
+
+&lt;p&gt;We picked a cool venue, the &lt;a href=&#34;http://feitheatres.com/somerville-theatre/history/&#34;&gt;Somerville Theater&lt;/a&gt; in Somerville, MA. We&amp;rsquo;re getting cool sponsors (if you&amp;rsquo;re interested in &lt;a href=&#34;http://www.happinessconf.com/sponsorship/&#34;&gt;sponsoring&lt;/a&gt;, please let us know). We&amp;rsquo;re going to show an old movie, have free beer, and a bunch of other fun surprises.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s going to be the place to be for 2 days, we&amp;rsquo;ll make sure of that.&lt;/p&gt;
+
+&lt;h2 id=&#34;why-is-it-important&#34;&gt;Why is it Important?&lt;/h2&gt;
+
+&lt;p&gt;You only get one life and it should be the best one you can make it. You should be happy. It&amp;rsquo;s that simple. Your job shouldn&amp;rsquo;t be torture. It should be something that makes you excited to get out of bed in the morning. Something you have to pry yourself away from at the end of the day.&lt;/p&gt;
+
+&lt;p&gt;As developers we should help each other achieve those goals. To do that we just need to talk and share.&lt;/p&gt;
+
+&lt;p&gt;Together we can make all of our lives better.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;The &lt;a href=&#34;https://www.papercall.io/happiness-conf&#34;&gt;CFP&lt;/a&gt; is open until March 1st, so hurry up and get your talk submitted. Help make your fellow developers happier!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;CFP - &lt;a href=&#34;https://www.papercall.io/happiness-conf&#34;&gt;https://www.papercall.io/happiness-conf&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Early bird tickets are now on &lt;a href=&#34;http://tickets.happinessconf.com&#34;&gt;sale&lt;/a&gt;, but they&amp;rsquo;re selling fast, so I would recommend getting them quick.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Tickets - &lt;a href=&#34;http://tickets.happinessconf.com&#34;&gt;http://tickets.happinessconf.com&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;I hope to see you all at the Somerville Theater in April, it&amp;rsquo;s just going to be so much damn fun!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Goth: Multi Provider Authentication for Go</title>
+      <link>/2014/10/15/goth-multi-provider-authentication-for-go/</link>
+      <pubDate>Wed, 15 Oct 2014 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2014/10/15/goth-multi-provider-authentication-for-go/</guid>
+      <description>
+
+&lt;h2 id=&#34;in-the-beginning&#34;&gt;In The Beginning&amp;hellip;&lt;/h2&gt;
+
+&lt;p&gt;In Ruby there is a great gem called, &lt;a href=&#34;https://github.com/intridea/omniauth&#34;&gt;OmniAuth&lt;/a&gt;. When I write Ruby applications, this is one of the first gems I install. I use it almost exclusively for all of my authentication needs for my Ruby applications. It very easily allows for authentication through third party services, such as Twitter, Facebook, etc&amp;hellip; and it does this in a very nice, clean, and uniformed interface. It doesn&amp;rsquo;t try to be all things to all people. It doesn&amp;rsquo;t let you make regular like posting a message to Facebook, or getting a list of tweets from Twitter. Instead it simply handles authentication, and that&amp;rsquo;s it.&lt;/p&gt;
+
+&lt;p&gt;Recently I started working on both an app for myself, and an app for a client of mine, both of these applications required logging in through Twitter and/or Facebook. Naturally I started looking at existing Go packages that would provide me this functionality and, hopefully, do it in an idiomatic, simple, and expandable way. Unfortunately, I couldn&amp;rsquo;t find that package, and trust me I looked. Hard.&lt;/p&gt;
+
+&lt;p&gt;The only package to come anywhere close to my dreams was &lt;a href=&#34;https://github.com/stretchr/gomniauth&#34;&gt;gomniauth&lt;/a&gt;. Gomniauth, at first glanced, appeared to pay homage to OmniAuth. I was excited. This was just what I was looking, at least that is, until I discovered that it didn&amp;rsquo;t support Twitter. No worries, I thought, I&amp;rsquo;ll fork it, add Twitter support and everyone will be happy.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately adding Twitter support to gomniauth was not as easy as it would seem. This is as much the fault of Twitter as it is the gomniauth package maintainers. Twitter&amp;rsquo;s auth support is ancient. It supports OAuth 1.1, and not the more modern OAuth2. Gomniauth, however, is pretty much hard coded to only support OAuth2.&lt;/p&gt;
+
+&lt;p&gt;What&amp;rsquo;s a person to do? I really needed Twitter support, as well as the ability to add other non-OAuth2 authentication methods. I also didn&amp;rsquo;t feel like writing a new package, I&amp;rsquo;m not a fan of &amp;ldquo;not invented here&amp;rdquo;, but looking at what it would take to refactor gomniauth, not to mention break every application that uses it, I wasn&amp;rsquo;t really left with a choice.&lt;/p&gt;
+
+&lt;h2 id=&#34;and-there-s-goth&#34;&gt;And There&amp;rsquo;s Goth&amp;hellip;&lt;/h2&gt;
+
+&lt;p&gt;And that was how &lt;a href=&#34;https://github.com/markbates/goth&#34;&gt;Goth&lt;/a&gt; was born. Goth, and it&amp;rsquo;s sub-package, Gothic, aim to be the OmniAuth of the Go world. Truly simple, clean, and easy multi-provider authentication. The first two providers implemented are Twitter and Facebook, proving that it can indeed handle both OAuth and OAuth2 providers.&lt;/p&gt;
+
+&lt;p&gt;Goth asks providers to implement a couple of simple &lt;a href=&#34;http://godoc.org/github.com/markbates/goth&#34;&gt;interfaces&lt;/a&gt; and that&amp;rsquo;s it. By implementing the &lt;a href=&#34;http://godoc.org/github.com/markbates/goth#Provider&#34;&gt;Provider&lt;/a&gt; and &lt;a href=&#34;http://godoc.org/github.com/markbates/goth#Session&#34;&gt;Session&lt;/a&gt; interfaces a new provider can easily be plugged in.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m hoping that the community helps out and builds implementations for their favorite authentication providers.&lt;/p&gt;
+
+&lt;h2 id=&#34;example&#34;&gt;Example&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;nx&#34;&gt;goth&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;UseProviders&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;twitter&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;New&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;os&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Getenv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;TWITTER_KEY&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;os&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Getenv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;TWITTER_SECRET&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;http://localhost:3000/auth/twitter/callback&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;facebook&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;New&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;os&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Getenv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;FACEBOOK_KEY&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;os&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Getenv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;FACEBOOK_SECRET&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;http://localhost:3000/auth/facebook/callback&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+  &lt;span class=&#34;nx&#34;&gt;p&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;pat&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;New&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+  &lt;span class=&#34;nx&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Get&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;/auth/{provider}/callback&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ResponseWriter&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;req&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Request&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;user&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;gothic&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;CompleteUserAuth&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;req&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;nil&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+      &lt;span class=&#34;nx&#34;&gt;fmt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Fprintln&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+      &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;_&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;template&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;New&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;foo&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Parse&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;userTemplate&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Execute&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;user&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;})&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;main&lt;/span&gt;
+
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+  &lt;span class=&#34;s&#34;&gt;&amp;quot;fmt&amp;quot;&lt;/span&gt;
+  &lt;span class=&#34;s&#34;&gt;&amp;quot;html/template&amp;quot;&lt;/span&gt;
+  &lt;span class=&#34;s&#34;&gt;&amp;quot;net/http&amp;quot;&lt;/span&gt;
+  &lt;span class=&#34;s&#34;&gt;&amp;quot;os&amp;quot;&lt;/span&gt;
+
+  &lt;span class=&#34;s&#34;&gt;&amp;quot;github.com/gorilla/pat&amp;quot;&lt;/span&gt;
+  &lt;span class=&#34;s&#34;&gt;&amp;quot;github.com/markbates/goth&amp;quot;&lt;/span&gt;
+  &lt;span class=&#34;s&#34;&gt;&amp;quot;github.com/markbates/goth/gothic&amp;quot;&lt;/span&gt;
+  &lt;span class=&#34;s&#34;&gt;&amp;quot;github.com/markbates/goth/providers/facebook&amp;quot;&lt;/span&gt;
+  &lt;span class=&#34;s&#34;&gt;&amp;quot;github.com/markbates/goth/providers/twitter&amp;quot;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;nx&#34;&gt;goth&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;UseProviders&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;twitter&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;New&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;os&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Getenv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;TWITTER_KEY&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;os&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Getenv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;TWITTER_SECRET&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;http://localhost:3000/auth/twitter/callback&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;facebook&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;New&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;os&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Getenv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;FACEBOOK_KEY&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;os&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Getenv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;FACEBOOK_SECRET&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;http://localhost:3000/auth/facebook/callback&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+  &lt;span class=&#34;nx&#34;&gt;p&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;pat&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;New&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+  &lt;span class=&#34;nx&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Get&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;/auth/{provider}/callback&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ResponseWriter&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;req&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Request&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;user&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;gothic&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;CompleteUserAuth&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;req&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;nil&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+      &lt;span class=&#34;nx&#34;&gt;fmt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Fprintln&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+      &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;_&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;template&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;New&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;foo&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Parse&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;userTemplate&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Execute&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;user&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;})&lt;/span&gt;
+
+  &lt;span class=&#34;nx&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Get&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;/auth/{provider}&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;gothic&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;BeginAuthHandler&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+  &lt;span class=&#34;nx&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Get&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;/&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ResponseWriter&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;req&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Request&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;_&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;template&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;New&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;foo&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Parse&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;indexTemplate&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Execute&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;nil&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;})&lt;/span&gt;
+  &lt;span class=&#34;nx&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ListenAndServe&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;:3000&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;indexTemplate&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;`&lt;/span&gt;
+&lt;span class=&#34;s&#34;&gt;&amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;/auth/twitter&amp;quot;&amp;gt;Log in with Twitter&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;s&#34;&gt;&amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;/auth/facebook&amp;quot;&amp;gt;Log in with Facebook&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;s&#34;&gt;`&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;userTemplate&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;`&lt;/span&gt;
+&lt;span class=&#34;s&#34;&gt;&amp;lt;p&amp;gt;Name: {{.Name}}&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;s&#34;&gt;&amp;lt;p&amp;gt;Email: {{.Email}}&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;s&#34;&gt;&amp;lt;p&amp;gt;NickName: {{.NickName}}&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;s&#34;&gt;&amp;lt;p&amp;gt;Location: {{.Location}}&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;s&#34;&gt;&amp;lt;p&amp;gt;AvatarURL: {{.AvatarURL}} &amp;lt;img src=&amp;quot;{{.AvatarURL}}&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;s&#34;&gt;&amp;lt;p&amp;gt;Description: {{.Description}}&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;s&#34;&gt;&amp;lt;p&amp;gt;UserID: {{.UserID}}&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;s&#34;&gt;&amp;lt;p&amp;gt;AccessToken: {{.AccessToken}}&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;s&#34;&gt;`&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;links&#34;&gt;Links&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/markbates/goth&#34;&gt;Goth&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://godoc.org/github.com/markbates/goth&#34;&gt;Godoc&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>MetaCasts.tv/GothamGo Winner</title>
+      <link>/2014/10/09/metacaststv-gothamgo-winner/</link>
+      <pubDate>Thu, 09 Oct 2014 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2014/10/09/metacaststv-gothamgo-winner/</guid>
+      <description>&lt;p&gt;Congratulations to Sean Powell, &lt;a href=&#34;http://twitter.com/seanpowell&#34;&gt;@seanpowell&lt;/a&gt;, who won last month&amp;rsquo;s &lt;a href=&#34;/2014/09/01/100th-episode--a-free-ticket-to-gothamgo/&#34;&gt;contest&lt;/a&gt; to win a free ticket to the &lt;a href=&#34;http://www.gothamgo.com&#34;&gt;GothamGo&lt;/a&gt; conference in New York City in November, courtesy of &lt;a href=&#34;http://www.metacasts.tv?source=blog&#34;&gt;MetaCasts.tv&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m really excited that MetaCasts is sponsoring this great conference, and I&amp;rsquo;m even more excited that I was able to help someone like Sean, a supporter of MetaCasts, get to go to the conference. If you haven&amp;rsquo;t already purchased your ticket for the conference, you should hurry up, it&amp;rsquo;s going to be great!&lt;/p&gt;
+
+&lt;p&gt;If you are going to be there, find me, come say hi, and don&amp;rsquo;t forget to ask me for a MetaCasts sticker!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>100th Episode | A Free Ticket to GothamGo!</title>
+      <link>/2014/09/01/100th-episode--a-free-ticket-to-gothamgo/</link>
+      <pubDate>Mon, 01 Sep 2014 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2014/09/01/100th-episode--a-free-ticket-to-gothamgo/</guid>
+      <description>
+
+&lt;h3 id=&#34;win-a-free-ticket-to-gothamgo&#34;&gt;Win a Free Ticket to GothamGO!&lt;/h3&gt;
+
+&lt;p&gt;Today I released the 100th episode of &lt;a href=&#34;http://www.metacasts.tv&#34;&gt;MetaCasts&lt;/a&gt;! To help celebrate that I want to give one lucky subscriber a free ticket to the &lt;a href=&#34;http://gothamgo.com&#34;&gt;GothamGo&lt;/a&gt; conference in New York City on November 15th.&lt;/p&gt;
+
+&lt;p&gt;On October 1st I will choose a winner from the active MetaCasts subscribers with a yearly plan.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Current subscribers&lt;/strong&gt;: If you&amp;rsquo;re already a yearly subscriber, congrats, you don&amp;rsquo;t have to do anything to enter. If you&amp;rsquo;re a monthly subscriber, just upgrade to a yearly plan and you&amp;rsquo;ll be entered.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Everyone else&lt;/strong&gt;: For those of you who aren&amp;rsquo;t subscribers, what are you waiting for? Register as a yearly subscriber between now and the end of September to be entered to win.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Pro-tip&lt;/strong&gt;: Yearly team subscriptions get more entries in the contest. For example, if you have a yearly team plan for 5 members then you have 5 chances to win. Pretty simple. :)&lt;/p&gt;
+
+&lt;p&gt;Good luck to everyone, and if I haven&amp;rsquo;t said it lately, thank you again for all of your support!&lt;/p&gt;
+
+&lt;p&gt;This week&amp;rsquo;s (100th) episode: &lt;a href=&#34;http://metacasts.tv/casts/bundling-assets&#34;&gt;Bundling Assets&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;div style=&#39;text-align: center&#39;&gt;
+    &lt;a href=&#39;http://www.metacasts.tv&#39; target=&#39;_blank&#39; class=&#39;btn btn-large btn-primary&#39;&gt;&lt;b&gt;Subscribe to MetaCasts.tv!&lt;/b&gt;&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>MetaCasts Golang Future</title>
+      <link>/2014/07/08/metacasts-golang-future/</link>
+      <pubDate>Tue, 08 Jul 2014 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2014/07/08/metacasts-golang-future/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;/assets/images/2014/07/gopher.png&#34; class=&#39;img-left&#39;&gt;In January of 2013 I launched &lt;a href=&#34;http://www.metacasts.tv&#34;&gt;MetaCasts.tv&lt;/a&gt; with the idea that I would generate a new screencast each week on whatever technology excited me that week. I wanted MetaCasts to be a place where developers could come and learn about topics related to their current needs, as well as technologies they might not have thought to try, or have even heard about.&lt;/p&gt;
+
+&lt;p&gt;During the past year and a half two things happened that have made me question this philosophy, and the overall direction of MetaCasts. The first is feedback from subscribers. The biggest complaint/criticism I&amp;rsquo;ve received is that the topics are too varied. One week it&amp;rsquo;s Ruby, the next week it&amp;rsquo;s JavaScript, the week after that Go, etc&amp;hellip; People are unsure about what they&amp;rsquo;re subscribing to. I can understand this. If you don&amp;rsquo;t care about, say, Backbone, why should you have to sit through five weeks of it to get to the topics you enjoy? I got it. Message received.&lt;/p&gt;
+
+&lt;p&gt;The second change that has happened in the last year has been my discovering and falling in love with &lt;a href=&#34;http://golang.org&#34;&gt;Go&lt;/a&gt;. I think Go is just the bee&amp;rsquo;s knees. Because of this I&amp;rsquo;m finding it very hard to generate screencasts on topics such as Ruby or Ruby on Rails when all I want to do is talk about Go.&lt;/p&gt;
+
+&lt;p&gt;With these two thoughts in my mind, one being the need to focus MetaCasts, and the other being my desire to spend more time with Go I have decided to stop generating Ruby screencasts on MetaCasts.&lt;/p&gt;
+
+&lt;p&gt;This was not an easy decision to make. I know I&amp;rsquo;m going to lose some/a lot of subscribers because of this. I&amp;rsquo;m OK with that. Ruby is great, it&amp;rsquo;s a wonderful language, and I continue to use it every day, but I have to follow my heart, and by following my heart I&amp;rsquo;ll be able to make better and more interesting screencasts, and after all, that is what this is all about.&lt;/p&gt;
+
+&lt;p&gt;I will still be covering JavaScript topics, although they will be more focused as well. For example, I will no longer be making any more videos about frameworks such as Ember.js or Backbone.js, but I will continue to generate videos on Angular.js, as I think it is a great companion for Go (and any other back-end technology).&lt;/p&gt;
+
+&lt;p&gt;I hope that people understand why I&amp;rsquo;ve decided to make these changes. I will continue to keep all previously recorded videos, regardless of topic, available to subscribers, nothing is changing there. The only change is going forward all videos will be about Go or JavaScript (as it relates to Go).&lt;/p&gt;
+
+&lt;p&gt;Thank you to all my current, past, and present subscribers, and I hope everyone will come along for the ride! It&amp;rsquo;s going to be a blast!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The War on Testing</title>
+      <link>/2014/05/28/the-war-on-testing/</link>
+      <pubDate>Wed, 28 May 2014 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2014/05/28/the-war-on-testing/</guid>
+      <description>&lt;p&gt;Apologies for the slightly inflammatory title, but I&amp;rsquo;m beginning to get worried about the Ruby community, and sadly my worries are stemming from an area that first made me fall in love with Ruby, testing.&lt;/p&gt;
+
+&lt;p&gt;By now you are probably familiar with the whole &amp;ldquo;&lt;a href=&#34;https://www.google.com/#q=ruby+tdd+is+dead&#34;&gt;TDD is Dead&lt;/a&gt;&amp;rdquo; saga that stemmed from a keynote that DHH recently gave at RailsConf. I&amp;rsquo;m not going to bother recapping that, do a Google search and you&amp;rsquo;ll find out all about it. I&amp;rsquo;m not even here to weigh in on the matter.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m here to discuss an even more trouble matter, the removal of a testing framework from the Ruby standard library in 2.2. The ticket that removed test-unit and MiniTest from Ruby 2.2 can be found at &lt;a href=&#34;https://bugs.ruby-lang.org/issues/9711#note-12&#34;&gt;https://bugs.ruby-lang.org/issues/9711#note-12&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The reasons behind removing these tools from the standard library is that it is difficult to maintain them inside the standard library, and that if people want to use them they can just install them as gems. This sounds fine, in theory, but is deeply troubling for a few reasons.&lt;/p&gt;
+
+&lt;p&gt;When I tweeted about this the other day I got several responses. Here are a couple that caught my eye:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#39;/assets/images/2014/05/tweet2.png&#39;&gt;
+&lt;img src=&#39;/assets/images/2014/05/tweet3.png&#39;&gt;&lt;/p&gt;
+
+&lt;p&gt;In regards to the later tweet I would encourage the author of the tweet to consult the Rails documentation on how to turn off automatic test generation. These tweets are concerning because they share the same shortsightedness. These tweets are analogous to saying, &amp;ldquo;Well, I use HashWithIndifferenceAccess so I don&amp;rsquo;t care if they remove Hash from the standard library&amp;rdquo;. This idea that because you use Rspec and not test-unit or MiniTest that this change does not somehow affect you is wrong. This affects the entire Ruby community.&lt;/p&gt;
+
+&lt;p&gt;When I first got introduced to Ruby back in 2005 I was blown away by how testing was a first class citizen in Ruby, and of course Rails. Testing was, and I hope still is, a core tenant of the Ruby community. By removing a testing framework from the standard library we are telling newcomers, as well as though who wish Ruby ill that we don&amp;rsquo;t value testing.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#39;/assets/images/2014/05/tweet1.png&#39;&gt;&lt;/p&gt;
+
+&lt;p&gt;Imagine for a second that you are checking out a new language. You scan through their standard library and find no testing framework. What would you think? I would be taken back. I would assume that there some tool I can probably download somewhere that would allow me to write tests in the language, but I honestly wouldn&amp;rsquo;t get that far. I might just turn the page on that language because they clearly don&amp;rsquo;t value testing.&lt;/p&gt;
+
+&lt;p&gt;Previously when a newcomer came to Ruby they could install the standard library and start learning the language right away, that included the ability to write tests for the applications they were writing. Now when a newbie comes to Ruby they have to know to also install RubyGems, then to also install a testing library, of course they&amp;rsquo;ll then have to do some research on what RubyGems are and what testing frameworks there are out there, but once they get through all of that then they&amp;rsquo;ll be able to start learning the language, well&amp;hellip; at least until they run into some sort of weird bundler issue, or RubyGems.org is down, but newcomers will just be able to figure all of that out, right?&lt;/p&gt;
+
+&lt;p&gt;Now I know I&amp;rsquo;ve got a reputation as being a big MiniTest supporter, and I am, for lots of very good reasons, but this goes beyond that. This gets to the core of who we are as a community and how we want to be perceived by others, and how we want to welcome those who are interested in Ruby.&lt;/p&gt;
+
+&lt;p&gt;Do we really want to be the language that doesn&amp;rsquo;t ship with a testing framework as part of our standard library? Do we really want to be like Java???&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How I Cut the (Cable) Cord</title>
+      <link>/2014/05/11/how-i-cut-the-cable-cord/</link>
+      <pubDate>Sun, 11 May 2014 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2014/05/11/how-i-cut-the-cable-cord/</guid>
+      <description>
+
+&lt;p&gt;Having recently moved I used the opportunity to do something I had been thinking about doing for quite sometime, cancel my cable subscription.&lt;/p&gt;
+
+&lt;p&gt;This was not an easy decision to make, as I am a TV addict in every sense of the word. My previous cable package was the ultimate, super deluxe package. I had quite literally all the channels that my provider would give me. Did I need all these channels, of course not! I had them for fear that I would miss out on something.&lt;/p&gt;
+
+&lt;p&gt;Using the move I re-assessed my TV viewing needs to decide what it was I really needed.&lt;/p&gt;
+
+&lt;h3 id=&#34;my-previous-setup&#34;&gt;My Previous Setup&lt;/h3&gt;
+
+&lt;p&gt;My previous cable, plus internet bill was $225 a month. That means that over two years, the length of a &amp;ldquo;contract&amp;rdquo; with Verizon, I would spend $5,400. That&amp;rsquo;s a lot of cash! I had two DVRs, for a total of 4 tuners. I also had a &amp;ldquo;standard&amp;rdquo; box on a third TV that would let me watch recorded shows from the two DVRs.&lt;/p&gt;
+
+&lt;p&gt;In addition to standard cable I also had a Netflix account, $8/month, as well as a Hulu Plus account, another $8 a month. That means my true monthly spend was actually $241, and my two year spend was $5,784.&lt;/p&gt;
+
+&lt;p&gt;I think I just threw up a little bit in my throat typing those numbers. Wow. When I first saw those numbers I knew there was space to save.&lt;/p&gt;
+
+&lt;h3 id=&#34;my-cable-free-setup&#34;&gt;My Cable-free Setup&lt;/h3&gt;
+
+&lt;p&gt;When planning out my cable-free setup, I wanted to still be able to watch TV on all the TVs in my house. I knew that I wanted to watch most of my shows on the major networks, NBC, CBS, ABC, FOX, etc&amp;hellip; Sports is not something I ever watch, so I was less concerned about that, however my wife does watch Premier League Soccer, so that was a requirement.&lt;/p&gt;
+
+&lt;p&gt;My stop was to purchase a digital antenna. I opted for the &lt;a href=&#34;http://www.amazon.com/gp/product/B00BN5Z2WM/ref=oh_details_o00_s00_i00&#34;&gt;Winegard FL5500A FlatWave Amplified Antenna&lt;/a&gt;. It was $59.99 on Amazon, had great reviews, and was quite stylish. This would get me FREE access to those major networks, all for a small upfront hardware cost.&lt;/p&gt;
+
+&lt;p&gt;The next question became, how to record the shows I wanted to watch on those channels. For that I purchased a &lt;a href=&#34;http://www.amazon.com/gp/product/B00EEOSZK0/ref=oh_details_o09_s00_i04&#34;&gt;TiVo Roamio DVR&lt;/a&gt;. For $175.91 I was able to get a 4-tuner DVR that worked with my digital antenna. There is a service fee of $14.99 that comes along with it, however.&lt;/p&gt;
+
+&lt;p&gt;I also grabbed two &lt;a href=&#34;http://www.amazon.com/gp/product/B00BUCLVZU/ref=oh_details_o09_s01_i01&#34;&gt;TiVo Mini&lt;/a&gt; boxes, $79.99, which allow you to stream recorded shows from the main DVR to another TV. It also allows you to stream live TV, from the HD antenna, to other TVs. This meant I only needed one antenna in the house to get live TV to the other TVs in the house! Win! There is, however, a $5.99/month fee for each of the TiVo Minis.&lt;/p&gt;
+
+&lt;h3 id=&#34;what-about-non-antenna-shows-hbo-amc-etc&#34;&gt;What About Non-Antenna Shows? (HBO, AMC, etc&amp;hellip;)&lt;/h3&gt;
+
+&lt;p&gt;Of course, this solution only gets me about 90% of the way to fulfilling my TV watching needs. Even with the major networks, Hulu Plus, and Netflix, I&amp;rsquo;m still short shows that appear on channels such as HBO, AMC, etc&amp;hellip; These shows can be purchased from iTunes, and in some cases, if you&amp;rsquo;re lucky, you can use a friend or relatives cable login. This works for HBO GO, or NBC Sports (in the case of my wife&amp;rsquo;s soccer requirements).&lt;/p&gt;
+
+&lt;h3 id=&#34;final-tally&#34;&gt;Final Tally&lt;/h3&gt;
+
+&lt;p&gt;To make all of this work, I did need to retain an internet connection. I had a choice in connection speeds, &lt;sup&gt;75&lt;/sup&gt;&amp;frasl;&lt;sub&gt;35&lt;/sub&gt; Mbps for $55/month or &lt;sup&gt;150&lt;/sup&gt;&amp;frasl;&lt;sub&gt;75&lt;/sub&gt; Mbps for $100/month. I went with the faster connection. Why? For a lot of reasons, most which have to do with my job as a software developer.&lt;/p&gt;
+
+&lt;p&gt;With the final numbers in, let&amp;rsquo;s take a look at what my new monthly, and two year costs are. I am now paying $142.97 a month versus $241/month previous. That&amp;rsquo;s a $100 savings each month!! I could&amp;rsquo;ve cut that by another $45/month had I gone with the lower plan.&lt;/p&gt;
+
+&lt;p&gt;My new two year spend is $3,431.28 vs. $5,784 for a difference of $2,352.72!!&lt;/p&gt;
+
+&lt;p&gt;Now I did have to spend $315.89 in hardware to achieve these savings. When you look at the math, however, I will pay off that hardware in just a little over three months. After that it&amp;rsquo;s pure savings. That extra $100/month is also plenty of money to cover the couple of TV shows that I might want to buy season passes for on iTunes.&lt;/p&gt;
+
+&lt;h3 id=&#34;final-thoughts&#34;&gt;Final Thoughts&lt;/h3&gt;
+
+&lt;p&gt;Overall I&amp;rsquo;m incredibly happy with my choice to cut the cable cord. I don&amp;rsquo;t feel as though I&amp;rsquo;m losing anything from my life, I still get to watch all of the programming I want, but I get to save $100/month (or more if I lower my internet plan) while doing it.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;rsquo;re on the fence about cutting the cord yourself, I say go for it. It&amp;rsquo;s a cheap investment to get setup with, and you can always go back to Cable, if it doesn&amp;rsquo;t work out for you.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>MetaCasts.tv Episode Stats</title>
+      <link>/2014/03/28/metacaststv-episode-stats/</link>
+      <pubDate>Fri, 28 Mar 2014 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2014/03/28/metacaststv-episode-stats/</guid>
+      <description>
+
+&lt;p&gt;When I first started &lt;a href=&#34;http://www.metacasts.tv&#34;&gt;MetaCasts.tv&lt;/a&gt; in January of 2013 I set out to create a unique screen cast series. I wanted a series that didn&amp;rsquo;t focus on just one topic, just Ruby, just JavaScript, etc&amp;hellip; instead I wanted something that would challenge my subscribers, as well as myself. I wanted to talk about all sorts of technologies. I knew that some weeks the topic at hand might be incredibly relevant to viewers, and that other weeks it wouldn&amp;rsquo;t be. My hope was, and still is, that the weeks were the topic isn&amp;rsquo;t &amp;ldquo;relevant&amp;rdquo; that viewers will learn something new that they wouldn&amp;rsquo;t have otherwise.&lt;/p&gt;
+
+&lt;p&gt;I love to grow and learn about topics outside of my daily comfort zone, so I&amp;rsquo;ve made &lt;a href=&#34;http://www.metacasts.tv&#34;&gt;MetaCasts.tv&lt;/a&gt; a venue for that. There are some episodes where I know the topic intimately, and there are others where I sat down, studied the topic, wrote lots of code, and presented my findings. All of it an educational experience as much for me, as my viewers.&lt;/p&gt;
+
+&lt;p&gt;Out of curiosity I thought I would take a quick look some numbers related to &lt;a href=&#34;http://www.metacasts.tv&#34;&gt;MetaCasts.tv&lt;/a&gt; and the topics that I&amp;rsquo;ve been covering there for just over the past year, and I thought I would share them with you. Personally, I found these numbers to be incredibly interesting. I was, for example very surprised to find out what language (programming, not spoken) was most prominently featured in the episodes.&lt;/p&gt;
+
+&lt;h2 id=&#34;total-hours-of-video-22-19-42&#34;&gt;Total Hours of Video: 22:19:42&lt;/h2&gt;
+
+&lt;p&gt;As of this post I have produced over 22 hours of video! I couldn&amp;rsquo;t believe it. I&amp;rsquo;m super happy with that number. That means as a subscriber you could fly from Boston to Sydney and still have episodes left over to watch!&lt;/p&gt;
+
+&lt;h2 id=&#34;average-video-length-00-17-23&#34;&gt;Average Video Length: 00:17:23&lt;/h2&gt;
+
+&lt;p&gt;The average length of a MetaCasts episode is just over 17 minutes. That means over your morning cup of coffee or breakfast you can watch a whole episode and impress your friends at work with your depth of knowledge.&lt;/p&gt;
+
+&lt;h2 id=&#34;it-s-all-about-javascript-coffeescript&#34;&gt;It&amp;rsquo;s All About JavaScript (CoffeeScript)&lt;/h2&gt;
+
+&lt;p&gt;Looking at how much time I&amp;rsquo;ve spent covering different languages it would appear the clear winner is JavaScript/CoffeeScript, with Ruby in second place.&lt;/p&gt;
+
+&lt;table align=&#39;center&#39;&gt;
+  &lt;thead class=&#39;language-table&#39;&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Language&lt;/th&gt;
+      &lt;th&gt;Total # of Hours&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody class=&#39;language-table&#39;&gt;
+    &lt;tr&gt;
+      &lt;td&gt; CoffeeScript &lt;/td&gt;&lt;td&gt; 13:05:26 &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; Ruby &lt;/td&gt;&lt;td&gt; 06:37:19 &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; Go &lt;/td&gt;&lt;td&gt; 01:00:56 &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; Bash &lt;/td&gt;&lt;td&gt; 00:43:07 &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; JavaScript &lt;/td&gt;&lt;td&gt; 00:26:20 &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; SQL &lt;/td&gt;&lt;td&gt; 00:14:30 &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; Other &lt;/td&gt;&lt;td&gt; 00:12:04 &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;These numbers are determined by the &amp;ldquo;primary language&amp;rdquo; of the video. For example a video about Ember.js would be listed as CoffeeScript, or JavaScript, even though the back-end might have been written using Ruby.&lt;/p&gt;
+
+&lt;h2 id=&#34;most-purchased-video&#34;&gt;Most Purchased Video&lt;/h2&gt;
+
+&lt;p&gt;The most purchased video on &lt;a href=&#34;http://www.metacasts.tv&#34;&gt;MetaCasts.tv&lt;/a&gt; is not surprising considering most subscribers are also Ruby on Rails developers; &lt;a href=&#34;http://www.metacasts.tv/casts/ember-js-pts-1-5-updated&#34;&gt;Ember.js Pts 1 - 5 [UPDATED]&lt;/a&gt;. Ember is an incredibly hot topic these days, especially amongst Rails developers, and whole of people have turned to &lt;a href=&#34;http://www.metacasts.tv&#34;&gt;MetaCasts.tv&lt;/a&gt; to help them learn about it, and I&amp;rsquo;m honored to have helped them.&lt;/p&gt;
+
+&lt;p&gt;Just for completeness the second most purchased video on &lt;a href=&#34;http://www.metacasts.tv&#34;&gt;MetaCasts.tv&lt;/a&gt; is &lt;a href=&#34;http://www.metacasts.tv/casts/angular-js-revised-pts-1-4&#34;&gt;Angular.js (revised) Pts 1 - 4&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;People can&amp;rsquo;t get enough of JavaScript frameworks, and neither can I. I love playing with them, and I love presenting my findings, sometimes good, sometimes bad, to subscribers.&lt;/p&gt;
+
+&lt;h2 id=&#34;most-watched-video&#34;&gt;Most Watched Video&lt;/h2&gt;
+
+&lt;p&gt;The most watched video on &lt;a href=&#34;http://www.metacasts.tv&#34;&gt;MetaCasts.tv&lt;/a&gt; was from February of 2013, in which I covered the recently released &lt;a href=&#34;http://www.metacasts.tv/casts/ruby-2-0-0-rc2&#34;&gt;Ruby 2.0.0-rc2&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;final-thoughts&#34;&gt;Final Thoughts&lt;/h2&gt;
+
+&lt;p&gt;Well, those are just a few of the fun numbers from over the past year or so. Looking at those numbers the ideal subscriber is a Ruby developer who wants to level up their JavaScript/CoffeeScript skills, as well as their Ruby, and along the way perhaps learn a bit about Go, SQL, Bash, and other fun stuff.&lt;/p&gt;
+
+&lt;p&gt;I really couldn&amp;rsquo;t be happier with how things are going with &lt;a href=&#34;http://www.metacasts.tv&#34;&gt;MetaCasts.tv&lt;/a&gt;. I&amp;rsquo;ve received amazing support from the community, subscribers, friends, and so many great people. So I guess as long as you&amp;rsquo;re willing to come along for the ride with me, I&amp;rsquo;ll be happy to keep generating new episodes for you.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Announcing Conquering the Command Line - A Free Online Book</title>
+      <link>/2014/01/07/announcing-conquering-the-command-line---a-free-online-book/</link>
+      <pubDate>Tue, 07 Jan 2014 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2014/01/07/announcing-conquering-the-command-line---a-free-online-book/</guid>
+      <description>
+
+&lt;p&gt;&lt;img src=&#34;/assets/images/2014/01/unix_300.png&#34; class=&#39;img-left&#39; width=&#34;200px&#34;&gt; I&amp;rsquo;m really happy today to announce my newest book, and screencasts, &amp;ldquo;Conquering the Command Line&amp;rdquo;. This is a book I&amp;rsquo;ve been wanting as a developer since I first begin my career in the late 90s. Let me explain a little bit about my background to help you understand why I&amp;rsquo;ve always wanted this book.&lt;/p&gt;
+
+&lt;p&gt;My background, that is to say my degree, is in music. That&amp;rsquo;s right, music, not computer science. Because of my unorthodox path into programming I was never taught how to really get the most out of the command line that I spend most of my day working in. Over the years I&amp;rsquo;ve picked up tips and tricks from my fellow developers, screencasts, and from scouring the web.&lt;/p&gt;
+
+&lt;p&gt;What I really wish I had, back when I was first starting out, was a book that help me understand the most useful commands, and within that the most useful flags and options, to help boost my productivity when in the command line. That&amp;rsquo;s what this book is all about. Increasing your productivity when using the command line, which as developers, is where we spend most of our day.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Learn to master and conquer the most valuable and useful command line tools for Unix and Linux based systems. In this book you will find not only the most useful command line tools you need to know, but also the most helpful options and flags for those tools. Conquering the Command Line isn&amp;rsquo;t just a rehash of the MAN page for these tools, but rather human-readable walk-through of these tools to make you instantly more productive in your daily development life.&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I&amp;rsquo;m really excited by this book, and I hope you are too. It takes a lot of people to help make a book possible. I would like to thank Michael Hartl (and the rest of the gang at Softcover.io), Pat Shaughnessy, Pete Brown, Michael Denomy, Johnny Bourisquot, and Dan Pickett for all of their help making this book as good as it is.&lt;/p&gt;
+
+&lt;h4 id=&#34;if-reading-isn-t-your-thing-there-are-nearly-5-hours-of-videos-also-available-that-include-not-only-the-content-from-the-book-but-also-exclusive-content-not-found-anywhere-else&#34;&gt;If reading isn&amp;rsquo;t your thing there are nearly 5 hours of videos also available that include, not only the content from the book, but also exclusive content not found anywhere else.&lt;/h4&gt;
+
+&lt;p&gt;
+  &lt;div style=&#39;text-align: center&#39;&gt;
+    &lt;a href=&#39;http://conqueringthecommandline.com&#39; target=&#39;_blank&#39; class=&#39;btn btn-large btn-primary&#39;&gt;&lt;b&gt;Read Conquering the Command Line online for free!&lt;/b&gt;&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Team Subscriptions for MetaCasts.tv</title>
+      <link>/2013/12/10/team-subscriptions-for-metacaststv/</link>
+      <pubDate>Tue, 10 Dec 2013 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2013/12/10/team-subscriptions-for-metacaststv/</guid>
+      <description>
+
+&lt;p&gt;On January 1st of this year I &lt;a href=&#34;/2013/01/01/announcing-metacaststv-screen-casts/&#34;&gt;announced&lt;/a&gt; a weekly screencast site called, &lt;a href=&#34;http://www.metacasts.tv?source=blog-team-metacasts&#34;&gt;MetaCasts.tv&lt;/a&gt;, and I have been thrilled with the response it has received over the past year.&lt;/p&gt;
+
+&lt;p&gt;In it&amp;rsquo;s first year I&amp;rsquo;ve released over 60 videos (17+ hours) on Ruby, Rails, Go, JavaScript, Node, Redis, iOS, and so much more, and next year I plan on releasing even more great videos on those topics, as well as new ones.&lt;/p&gt;
+
+&lt;p&gt;The response I&amp;rsquo;ve received for MetaCasts has been overwhelming positive. I get stopped at conferences by subscribers (from around the world) who just want to tell me how much they enjoy my videos. I get emails, tweets, and more thanking me for helping shed some light on an issue someone was having or for introducing them to a new topic.&lt;/p&gt;
+
+&lt;p&gt;Today I&amp;rsquo;m happy to announce that team support has been added to MetaCasts making it easier for companies and organizations to easily help their members level up their development skills.&lt;/p&gt;
+
+&lt;p&gt;Team subscriptions are simple and easy to use. Simply create a new team subscription and enter the GitHub usernames of the users you want to have access to MetaCasts. That&amp;rsquo;s it. When they login, using their GitHub username, they&amp;rsquo;ll have full access to all of the MetaCasts episodes.&lt;/p&gt;
+
+&lt;p&gt;Pricing for team subscriptions depends on the amount of team members on the subscription. Team subscriptions, like single user subscriptions, come in both monthly and yearly plans, with yearly plans offering a significant discount.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m really happy with team subscriptions, as people have been asking for them for a while now. Learning, and growing, as a developer is incredibly important, so I encourage team leaders, managers, etc&amp;hellip; to help their teams out and sign up today!&lt;/p&gt;
+
+&lt;h2 id=&#34;sign-up-metacasts-tv-http-www-metacasts-tv-source-blog-team-metacasts&#34;&gt;&lt;a href=&#34;http://www.metacasts.tv?source=blog-team-metacasts&#34;&gt;Sign up - MetaCasts.tv&lt;/a&gt;&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Introducting LineLytics.com</title>
+      <link>/2013/06/02/introducting-linelyticscom/</link>
+      <pubDate>Sun, 02 Jun 2013 00:00:00 +0000</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2013/06/02/introducting-linelyticscom/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.linelytics.com/assets/screenshots/dashboard.png&#34; class=&#34;img-right&#34; style=&#34;width: 400px&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;Today I am announcing the release of a new SaaS application I&amp;rsquo;ve written, &lt;a href=&#34;http://www.linelytics.com?from=metabates.com&#34;&gt;LineLytics.com&lt;/a&gt;. I&amp;rsquo;m very excited about this application, and if you are a &lt;a href=&#34;http://stripe.com&#34;&gt;Stripe&lt;/a&gt; user, then you should be too.&lt;/p&gt;
+
+&lt;p&gt;So what is &lt;a href=&#34;http://www.linelytics.com?from=metabates.com&#34;&gt;LineLytics.com&lt;/a&gt;? First, let me give you a little background on how the application came to be. At the beginning of the year I announced my weekly screen cast site, &lt;a href=&#34;http://www.metacasts.tv&#34;&gt;MetaCasts.tv&lt;/a&gt;. The site has a monthly subscription of $9, or a yearly subscription of $90. If you don&amp;rsquo;t want to subscribe you can also buy individual videos, usually around $6 each.&lt;/p&gt;
+
+&lt;p&gt;When it came time to implement the purchasing/subscribing functionality in MetaCasts I looked at all the different payment processors on the market. I&amp;rsquo;ve used several different ones in the past, and was never satisfied with them. Either they charged too much (even if you weren&amp;rsquo;t making any money) or they were difficult to implement. Usually it was both. Then I found &lt;a href=&#34;http://stripe.com&#34;&gt;Stripe&lt;/a&gt;. &lt;a href=&#34;http://stripe.com&#34;&gt;Stripe&lt;/a&gt; was a revelation. It was both sanely priced (2.9% + $.30) &lt;em&gt;and&lt;/em&gt; easy to implement. I was in love.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.linelytics.com/assets/screenshots/sales.png&#34; class=&#34;img-left&#34; style=&#34;width: 400px&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;After using &lt;a href=&#34;http://stripe.com&#34;&gt;Stripe&lt;/a&gt; for several months to power MetaCasts, I found a chink in their armor. I had no idea where my revenue was coming from. Which of my products were selling the best? Which coupons were proving effective? What was my subscriber churn? I needed this information, and more. I needed to be able to analyze my revenue and make decisions based on it.&lt;/p&gt;
+
+&lt;p&gt;That is where &lt;a href=&#34;http://www.linelytics.com?from=metabates.com&#34;&gt;LineLytics.com&lt;/a&gt;. Knowing that &lt;a href=&#34;http://stripe.com&#34;&gt;Stripe&lt;/a&gt; has an amazing API I was able to build an application that provided to me, in real-time mind you, all sorts of great information about my sales.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve been using &lt;a href=&#34;http://www.linelytics.com?from=metabates.com&#34;&gt;LineLytics.com&lt;/a&gt; last couple of months while I&amp;rsquo;ve been developing it, and I can tell you my mind has been blown at some of the information I&amp;rsquo;ve seen in my data. Information that is just not readily apparent in the &lt;a href=&#34;http://stripe.com&#34;&gt;Stripe&lt;/a&gt; platform today.&lt;/p&gt;
+
+&lt;p&gt;I could go into specifics about the technologies I&amp;rsquo;m using, but I won&amp;rsquo;t, this isn&amp;rsquo;t that sort of post. Instead I just want to say that if you too are a &lt;a href=&#34;http://stripe.com&#34;&gt;Stripe&lt;/a&gt; customer, than you owe it to yourself to sign up for &lt;a href=&#34;http://www.linelytics.com?from=metabates.com&#34;&gt;LineLytics.com&lt;/a&gt; your business better than you&amp;rsquo;ve ever been able to before.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m really looking forward to seeing how people use the application, and I&amp;rsquo;m open to any suggestions you might have on reports that you&amp;rsquo;d like to see, I know I have a lot of great ideas that I still want to implement.&lt;/p&gt;
+
+&lt;p&gt;I hope this helps!&lt;/p&gt;
+
+&lt;div style=&#39;text-align: center&#39;&gt;
+  &lt;a href=&#39;http://www.linelytics.com?from=metabates.com&#39; target=&#39;_blank&#39; class=&#39;btn btn-large btn-primary&#39;&gt;&lt;b&gt;Check out LineLytics.com&lt;/b&gt;&lt;/a&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

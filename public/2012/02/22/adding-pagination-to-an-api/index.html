@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Adding Pagination to an API  &middot; MetaBates.com</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="" />
+
+<meta name="keywords" content="api, General, json, rails, ruby, Tutorials, will_paginate, ">
+
+
+<meta property="og:title" content="Adding Pagination to an API  &middot; MetaBates.com ">
+<meta property="og:site_name" content="MetaBates.com"/>
+<meta property="og:url" content="/2012/02/22/adding-pagination-to-an-api/" />
+<meta property="og:locale" content="en-us">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content=""/>
+<meta property="og:article:published_time" content="2012-02-22T00:00:00Z" />
+<meta property="og:article:modified_time" content="2012-02-22T00:00:00Z" />
+
+  
+    
+<meta property="og:article:tag" content="api">
+    
+<meta property="og:article:tag" content="General">
+    
+<meta property="og:article:tag" content="json">
+    
+<meta property="og:article:tag" content="rails">
+    
+<meta property="og:article:tag" content="ruby">
+    
+<meta property="og:article:tag" content="Tutorials">
+    
+<meta property="og:article:tag" content="will_paginate">
+    
+  
+
+  
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@markbates" />
+<meta name="twitter:creator" content="@markbates" />
+<meta name="twitter:title" content="Adding Pagination to an API" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:url" content="/2012/02/22/adding-pagination-to-an-api/" />
+<meta name="twitter:domain" content="/">
+  
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "Adding Pagination to an API",
+    "author": {
+      "@type": "Person",
+      "name": "http://profiles.google.com/+?rel=author"
+    },
+    "datePublished": "2012-02-22",
+    "description": "",
+    "wordCount":  489 
+  }
+</script>
+
+
+
+<link rel="canonical" href="/2012/02/22/adding-pagination-to-an-api/" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+<link rel="icon" href="/favicon.png">
+<meta name="generator" content="Hugo 0.16" />
+
+  <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+
+
+    <link rel="stylesheet" href="/css/bootswatch/cerulean/bootstrap.min.css">
+
+
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/style.css">
+
+
+  <link rel="stylesheet" href="/css/highlight/monokai.css">
+
+
+</head>
+<body class="map[name:cerulean]" data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
+    <header id="main-header">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+          
+            <a class="navbar-brand" href="/">
+          MetaBates.com
+          
+          
+        </a>
+
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li>
+
+            <a href="/about"
+            >
+
+            
+
+            About
+            </a>
+          </li>
+          
+          <li>
+
+            <a href="/post"
+             title="Archives">
+
+            
+
+            Archives
+            </a>
+          </li>
+          
+          <li>
+
+            <a href="/books"
+            >
+
+            
+
+            Books
+            </a>
+          </li>
+          
+          <li>
+
+            <a href="/tags"
+            >
+
+            
+
+            Tags
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      
+    </div>
+  </nav>
+
+</header>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  <div class="text-center">
+
+    <h1>Adding Pagination to an API
+</h1>
+
+    <div class="metas">
+<small>
+  <i class="fa fa-calendar"></i>
+  <time datetime="2012-02-22">22 Feb, 2012</time>
+</small>
+
+
+  <small>
+  &middot; Read in about 3 min
+  &middot; (489 Words)
+</small>
+
+
+<div class="margin-10">
+  <i class="fa fa-tags"></i>
+  
+  <a href="/tags/api" class="label label-primary">api</a>
+  
+  <a href="/tags/general" class="label label-primary">General</a>
+  
+  <a href="/tags/json" class="label label-primary">json</a>
+  
+  <a href="/tags/rails" class="label label-primary">rails</a>
+  
+  <a href="/tags/ruby" class="label label-primary">ruby</a>
+  
+  <a href="/tags/tutorials" class="label label-primary">Tutorials</a>
+  
+  <a href="/tags/will_paginate" class="label label-primary">will_paginate</a>
+  
+
+
+</div>
+<br>
+</div>
+
+  </div>
+</div>
+
+      <div class="content">
+  <p><img alt="" src="http://www.robertsabuda.com/store/images/sharks_shark.jpg" title="popup book" style="float: left; padding-right: 10px" width="250" /></p>
+
+<p><em>Before I start this article, let me apologize for the lack of writing over the last six months. My only excuse is that I&rsquo;ve been working on a new book and that is where all my writing energy has gone. So with apologies out of the way, let&rsquo;s talk pagination.</em></p>
+
+<p>Dealing with pagination in any application is never easy. There are a lot of great libraries out there that help you better handle this awkward, but unavoidable part of application programming. Things get even more complicated when you are trying to define an API.</p>
+
+<p>APIs are fickle beasts. They have to be both clean and functional. Two things that are often at odds with one another. No sooner does clean and functional have a go at each than when trying to add pagination to an API. Pagination requires all sorts of meta-data; how many total results there are, how pages there are, etc&hellip;</p>
+
+<p>There are two approaches to handling pagination in your API, let&rsquo;s look at those two approaches in this article.</p>
+
+<p>The first approach is the easiest one to code, but I find it to be the most intrusive and less clean approach. A typical response would look something like this:</p>
+
+<script src="https://gist.github.com/1889261.js"> </script>
+
+<p>Here the API returns the pagination meta-data right inside of the JSON response. The advantage here is that everything is very visible to the end developer. They can easily see the details of the pagination, as well as the <code>widgets</code> element which contains the array of data the end user was most likely looking for when they requested the API.</p>
+
+<p>The downside of this approach is that the pagination meta-data is right there in the body of the response. The client trying to use the API has to dig into the response to extract the data it was originally looking for, potentially ignoring the pagination meta-data, if it doesn&rsquo;t need it.</p>
+
+<p>The other way to send the pagination meta-data along with our response is in the headers of the response. This is my preferred way of handling this situation.</p>
+
+<p>Let&rsquo;s look at how we can do this in a Rails application using WillPaginate. Of course if you&rsquo;re not using WillPaginate you can easily substitute your pagination library of choice.</p>
+
+<p>I start by creating a class method in <code>ApplicationController</code> that will create an <code>after_filter</code> that will set the pagination meta-data in the response headers:</p>
+
+<script src="https://gist.github.com/1889206.js"> </script>
+
+<p>Then in the controller we want to add pagination headers we can call it like such:</p>
+
+<script src="https://gist.github.com/1889221.js"> </script>
+
+<p>Now when someone calls the <code>index</code> action on the <code>API::V1::WidgetsController</code> it will respond with JSON that looks like this:</p>
+
+<script src="https://gist.github.com/1889259.js"> </script>
+
+<p>And with response headers that look like this:</p>
+
+<script src="https://gist.github.com/1889226.js"> </script>
+
+<p>Now the client can easily gain access to the array of widgets they originally wanted, and should they need the pagination meta-data the client can just easily pull that information right out of the headers.</p>
+
+<p>The API is once again nice and clean and yet it can now easily be paginated.</p>
+
+</div>
+
+
+      <footer>
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      
+  
+    <nav><ul class="pager">
+    
+        <li class="previous">
+          <a href="/2011/08/31/using-sprockets-without-rails/" title="Using Sprockets without Rails">
+            <span aria-hidden="true">&larr;</span>Previous
+          </a>
+        </li>
+    
+
+    
+      <li class="next">
+        <a href="/2012/04/04/now-blogging-with-jekyll/" title="Now Blogging with Jekyll">
+            Next <span aria-hidden="true">&rarr;</span>
+        </a>
+      </li>
+    
+    </ul> </nav>
+  
+
+
+</div>
+
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  (function() {
+    
+    
+    if (window.location.hostname == "localhost")
+      return;
+
+    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+    dsq.src = '//metabates.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+</footer>
+
+    </div>
+    
+      <div class="col-sm-3">
+                  <a class="twitter-timeline" href="https://twitter.com/markbates" data-widget-id="274503565609934848">Tweets by @markbates</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+<hr>
+
+<div>
+  
+
+    <div class="section">
+      <header><div class="title"><b>Latest Posts</b></div></header>
+      <div class="content">
+        <ul>
+        
+          <li>
+          <a href="/2016/06/09/now-building-with-hugo/">Now Building With Hugo</a>
+          </li>
+        
+          <li>
+          <a href="/2015/10/15/handling-http-request-errors-in-go/">Handling HTTP Request Errors in GO</a>
+          </li>
+        
+          <li>
+          <a href="/2015/06/01/metacaststv-acquired-by-oreilly-media/">MetaCasts.tv Acquired by O&#39;Reilly Media</a>
+          </li>
+        
+          <li>
+          <a href="/2015/05/07/so-long-and-thanks-for-all-the-fish/">So Long, and Thanks For All The Fish</a>
+          </li>
+        
+          <li>
+          <a href="/2015/02/07/what-is-happinessconf-and-why-its-important/">What is HappinessConf and Why is it Important?</a>
+          </li>
+        
+          <li>
+          <a href="/2014/10/15/goth-multi-provider-authentication-for-go/">Goth: Multi Provider Authentication for Go</a>
+          </li>
+        
+          <li>
+          <a href="/2014/10/09/metacaststv-gothamgo-winner/">MetaCasts.tv/GothamGo Winner</a>
+          </li>
+        
+          <li>
+          <a href="/2014/09/01/100th-episode--a-free-ticket-to-gothamgo/">100th Episode | A Free Ticket to GothamGo!</a>
+          </li>
+        
+          <li>
+          <a href="/2014/07/08/metacasts-golang-future/">MetaCasts Golang Future</a>
+          </li>
+        
+          <li>
+          <a href="/2014/05/28/the-war-on-testing/">The War on Testing</a>
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+
+    
+
+</div>
+
+      </div>
+    
+  </div>
+</div>
+      
+<footer class="footer hidden-print">
+  <div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+           <div class="pull-left">
+  <a class="toplink" href="#">back to top</a>
+</div>
+<div class="pull-right">
+  <a href="http://feeds.feedburner.com/MetaBates" target="_blank">RSS</a> |
+  <a href="http://twitter.com/markbates/" target="_blank">Twitter</a> |
+  <a href="http://github.com/markbates/" target="_blank">GitHub</a> |
+  <a href="mailto:mark+blog@markbates.com">Email</a>
+</div>
+
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+              
+    
+<div class="container footline">
+    <small>
+  code with <i class='fa fa-heart'></i>
+
+</small>
+</div>
+
+
+    
+<div class="container copyright">
+    <small>
+  &copy; 2016 Mark Bates.
+
+  </small>
+</div>
+
+
+
+        </div>
+    </div>
+  </div>
+</footer>
+
+    
+
+<script src="//s3.amazonaws.com/mailmunch/static/site.js" id="mailmunch-script" data-mailmunch-site-id="" async="async"></script>
+
+
+
+<script src="//load.sumome.com/" data-sumo-site-id="" async="async"></script>
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+<script src="/js/popover/angular-storage.min.js"></script>
+
+
+<script type="text/javascript">
+  (function() {
+    
+    
+    if (window.location.hostname == "localhost")
+      return;
+
+    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+    dsq.src = '//metabates.disqus.com/count.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="/js/highlight.pack.js"></script>
+<script src="/js/site.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script>
+  var _gaq=[['_setAccount','UA-9756583-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+<script>
+var ENABLE_POPOVER = ""; 
+var EXPIRE_COOKIE = ""; 
+var SHOW_MODAL_TIMEOUT = ""; 
+var MOUSE_LEAVE = ""; 
+var MODAL_SIZE = ""; 
+var POST_URL = ""; 
+var SIGNUP_HEADER = "";
+var HEADER_IMAGE = "";
+var IMG_DESCRIPTION = "";
+var SIGNUP_TEXT = "";
+var INPUT_PLACEHOLDER = "";
+var SUBMIT_BUTTON = "";
+var SUCCESS_MESSAGE = "";
+var ERROR_MESSAGE = "";
+var OPTIN = "";
+var COOKIE_NAME = "";
+</script>
+<script src="/js/popover/angular-modal-service.min.js"></script>
+<script src="/js/angular-ismobile.min.js"></script>
+<script src="/js/popover/popover.min.js"></script>
+
+  </body>
+</html>
+

@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Building Interfaces and Abstract Classes in Ruby  &middot; MetaBates.com</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="" />
+
+<meta name="keywords" content="General, java, ruby, Tutorials, ">
+
+
+<meta property="og:title" content="Building Interfaces and Abstract Classes in Ruby  &middot; MetaBates.com ">
+<meta property="og:site_name" content="MetaBates.com"/>
+<meta property="og:url" content="/2011/02/07/building-interfaces-and-abstract-classes-in-ruby/" />
+<meta property="og:locale" content="en-us">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content=""/>
+<meta property="og:article:published_time" content="2011-02-07T00:00:00Z" />
+<meta property="og:article:modified_time" content="2011-02-07T00:00:00Z" />
+
+  
+    
+<meta property="og:article:tag" content="General">
+    
+<meta property="og:article:tag" content="java">
+    
+<meta property="og:article:tag" content="ruby">
+    
+<meta property="og:article:tag" content="Tutorials">
+    
+  
+
+  
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@markbates" />
+<meta name="twitter:creator" content="@markbates" />
+<meta name="twitter:title" content="Building Interfaces and Abstract Classes in Ruby" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:url" content="/2011/02/07/building-interfaces-and-abstract-classes-in-ruby/" />
+<meta name="twitter:domain" content="/">
+  
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "Building Interfaces and Abstract Classes in Ruby",
+    "author": {
+      "@type": "Person",
+      "name": "http://profiles.google.com/+?rel=author"
+    },
+    "datePublished": "2011-02-07",
+    "description": "",
+    "wordCount":  1140 
+  }
+</script>
+
+
+
+<link rel="canonical" href="/2011/02/07/building-interfaces-and-abstract-classes-in-ruby/" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+<link rel="icon" href="/favicon.png">
+<meta name="generator" content="Hugo 0.16" />
+
+  <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+
+
+    <link rel="stylesheet" href="/css/bootswatch/cerulean/bootstrap.min.css">
+
+
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/style.css">
+
+
+  <link rel="stylesheet" href="/css/highlight/monokai.css">
+
+
+</head>
+<body class="map[name:cerulean]" data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
+    <header id="main-header">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+          
+            <a class="navbar-brand" href="/">
+          MetaBates.com
+          
+          
+        </a>
+
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li>
+
+            <a href="/about"
+            >
+
+            
+
+            About
+            </a>
+          </li>
+          
+          <li>
+
+            <a href="/post"
+             title="Archives">
+
+            
+
+            Archives
+            </a>
+          </li>
+          
+          <li>
+
+            <a href="/books"
+            >
+
+            
+
+            Books
+            </a>
+          </li>
+          
+          <li>
+
+            <a href="/tags"
+            >
+
+            
+
+            Tags
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      
+    </div>
+  </nav>
+
+</header>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  <div class="text-center">
+
+    <h1>Building Interfaces and Abstract Classes in Ruby
+</h1>
+
+    <div class="metas">
+<small>
+  <i class="fa fa-calendar"></i>
+  <time datetime="2011-02-07">7 Feb, 2011</time>
+</small>
+
+
+  <small>
+  &middot; Read in about 6 min
+  &middot; (1140 Words)
+</small>
+
+
+<div class="margin-10">
+  <i class="fa fa-tags"></i>
+  
+  <a href="/tags/general" class="label label-primary">General</a>
+  
+  <a href="/tags/java" class="label label-primary">java</a>
+  
+  <a href="/tags/ruby" class="label label-primary">ruby</a>
+  
+  <a href="/tags/tutorials" class="label label-primary">Tutorials</a>
+  
+
+
+</div>
+<br>
+</div>
+
+  </div>
+</div>
+
+      <div class="content">
+  <p>So back in the dark ages of my career, pre-2006, I spent a long time coding Java. Yeah, I know, please don&rsquo;t judge. Anyway, In Java, for those of you who are unaware were two constructs that I occasionally wish I had in Ruby, those are <a href="http://download.oracle.com/javase/tutorial/java/concepts/interface.html">Interfaces</a> and <a href="http://download.oracle.com/javase/tutorial/java/IandI/abstract.html">Abstract Classes</a>. The difference between these two constructs is subtle, but important.</p>
+
+<p>In Java an Interface is a basically a blueprint of methods that the class who implements the Interface needs to implement. For example:</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">interface</span> <span class="nc">Bicycle</span> <span class="o">{</span>
+
+  <span class="kt">void</span> <span class="nf">changeGear</span><span class="o">(</span><span class="kt">int</span> <span class="n">newValue</span><span class="o">);</span>
+
+  <span class="kt">void</span> <span class="nf">speedUp</span><span class="o">(</span><span class="kt">int</span> <span class="n">increment</span><span class="o">);</span>
+
+  <span class="kt">void</span> <span class="nf">applyBrakes</span><span class="o">(</span><span class="kt">int</span> <span class="n">decrement</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ACMEBicycle</span> <span class="kd">implements</span> <span class="n">Bicycle</span> <span class="o">{</span>
+
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">changeGear</span><span class="o">(</span><span class="kt">int</span> <span class="n">newValue</span><span class="o">)</span> <span class="o">{</span>
+     <span class="c1">// do some work here</span>
+   <span class="o">}</span>
+
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">speedUp</span><span class="o">(</span><span class="kt">int</span> <span class="n">increment</span><span class="o">)</span> <span class="o">{</span>
+     <span class="c1">// do some work here</span>
+   <span class="o">}</span>
+
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">applyBrakes</span><span class="o">(</span><span class="kt">int</span> <span class="n">decrement</span><span class="o">)</span> <span class="o">{</span>
+     <span class="c1">// do some work here</span>
+   <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></div>
+
+<p>Here we have a <code>Bicycle</code> Interface that says there are three methods that need to be implemented. It is then the responsibility of the <code>ACMEBicycle</code> class to implement those methods. Now, an Abstract Class in Java is similar to an Interface in that it too is a blueprint of methods that the extending class may or may not need to implement. There in lies one of the differences between the two. Let&rsquo;s take a look at the same example, but this time we want to implement the same behavior of all of our extending classes for the <code>applyBrakes</code> method:</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Bicycle</span> <span class="o">{</span>
+
+  <span class="kd">abstract</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">changeGear</span><span class="o">(</span><span class="kt">int</span> <span class="n">newValue</span><span class="o">);</span>
+
+  <span class="kd">abstract</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">speedUp</span><span class="o">(</span><span class="kt">int</span> <span class="n">increment</span><span class="o">);</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">applyBrakes</span><span class="o">(</span><span class="kt">int</span> <span class="n">decrement</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// do some work here</span>
+  <span class="o">}</span>
+
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ACMEBicycle</span> <span class="kd">extends</span> <span class="n">Bicycle</span> <span class="o">{</span>
+
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">applyBrakes</span><span class="o">(</span><span class="kt">int</span> <span class="n">decrement</span><span class="o">)</span> <span class="o">{</span>
+     <span class="c1">// do some work here</span>
+   <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></div>
+
+<p>An Abstract Class is a great way to provide a mix of fully implemented methods as well as providing subclasses with a mixture of methods that need to be implemented by the extending class.</p>
+
+<p>The really powerful part of all of this is two fold. First, the Java compiler will happily yell at you and fail if it finds that you haven&rsquo;t implemented some of the methods that you were told you had to. Second, you can easily see the methods that you need to document right there, you can even copy/paste their definitions right into your class so you can start to fill them out.</p>
+
+<p>So, how does this bring us over to Ruby? Great question. I&rsquo;d like to take a few moments and explore a few ways we can get some of this power in Ruby.</p>
+
+<p>Unfortunately, or fortunately depending on how you look at it (I see it as a mixed blessing), there is no compiler in Ruby, so we don&rsquo;t really have a good way of having the system yell at us if we don&rsquo;t implement the methods we were supposed to. But, there is still plenty we can do to help those who are implementing our classes both know what they need to implement and to find out what they haven&rsquo;t implemented when their program is executing.</p>
+
+<p>Here is one implementation on we can gain a bit of that functionality back in Ruby:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">module</span> <span class="nn">AbstractInterface</span>
+
+  <span class="k">class</span> <span class="nc">InterfaceNotImplementedError</span> <span class="o">&lt;</span> <span class="no">NoMethodError</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">included</span><span class="p">(</span><span class="n">klass</span><span class="p">)</span>
+    <span class="n">klass</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="ss">:include</span><span class="p">,</span> <span class="ss">AbstractInterface</span><span class="p">:</span><span class="ss">:Methods</span><span class="p">)</span>
+    <span class="n">klass</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="ss">:extend</span><span class="p">,</span> <span class="ss">AbstractInterface</span><span class="p">:</span><span class="ss">:Methods</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="k">module</span> <span class="nn">Methods</span>
+
+    <span class="k">def</span> <span class="nf">api_not_implemented</span><span class="p">(</span><span class="n">klass</span><span class="p">)</span>
+      <span class="nb">caller</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sr">/in \`(.+)\&#39;/</span><span class="p">)</span>
+      <span class="n">method_name</span> <span class="o">=</span> <span class="vg">$1</span>
+      <span class="k">raise</span> <span class="ss">AbstractInterface</span><span class="p">:</span><span class="ss">:InterfaceNotImplementedError</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">klass</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> needs to implement &#39;</span><span class="si">#{</span><span class="n">method_name</span><span class="si">}</span><span class="s2">&#39; for interface </span><span class="si">#{</span><span class="nb">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
+    <span class="k">end</span>
+
+  <span class="k">end</span>
+
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Bicycle</span>
+  <span class="kp">include</span> <span class="no">AbstractInterface</span>
+
+  <span class="c1"># Some documentation on the change_gear method</span>
+  <span class="k">def</span> <span class="nf">change_gear</span><span class="p">(</span><span class="n">new_value</span><span class="p">)</span>
+    <span class="no">Bicycle</span><span class="o">.</span><span class="n">api_not_implemented</span><span class="p">(</span><span class="nb">self</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="c1"># Some documentation on the speed_up method</span>
+  <span class="k">def</span> <span class="nf">speed_up</span><span class="p">(</span><span class="n">increment</span><span class="p">)</span>
+    <span class="no">Bicycle</span><span class="o">.</span><span class="n">api_not_implemented</span><span class="p">(</span><span class="nb">self</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="c1"># Some documentation on the apply_brakes method</span>
+  <span class="k">def</span> <span class="nf">apply_brakes</span><span class="p">(</span><span class="n">decrement</span><span class="p">)</span>
+    <span class="c1"># do some work here</span>
+  <span class="k">end</span>
+
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">AcmeBicycle</span> <span class="o">&lt;</span> <span class="no">Bicycle</span>
+<span class="k">end</span>
+
+<span class="n">bike</span> <span class="o">=</span> <span class="no">AcmeBicycle</span><span class="o">.</span><span class="n">new</span>
+<span class="n">bike</span><span class="o">.</span><span class="n">change_gear</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># AbstractInterface::InterfaceNotImplementedError: AcmeBicycle needs to implement &#39;change_gear&#39; for interface Bicycle!</span>
+</code></pre></div>
+
+<p>What we&rsquo;ve done here is to inject a Module into our <code>Bicycle</code> class to give it a nice error it can raise and a little bit of help building a nice error message for the user. Then in our <code>Bicycle</code> class we define all the methods we want and in the ones we need the end user to define we can call the <code>api_not_implemented</code> method and it will raise the <code>AbstractInterface::InterfaceNotImplementedError</code> error for us.</p>
+
+<p>We could simplify this a bit by having a nice little helper macro that we can use to build these methods, like this:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">module</span> <span class="nn">AbstractInterface</span>
+
+  <span class="k">class</span> <span class="nc">InterfaceNotImplementedError</span> <span class="o">&lt;</span> <span class="no">NoMethodError</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">included</span><span class="p">(</span><span class="n">klass</span><span class="p">)</span>
+    <span class="n">klass</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="ss">:include</span><span class="p">,</span> <span class="ss">AbstractInterface</span><span class="p">:</span><span class="ss">:Methods</span><span class="p">)</span>
+    <span class="n">klass</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="ss">:extend</span><span class="p">,</span> <span class="ss">AbstractInterface</span><span class="p">:</span><span class="ss">:Methods</span><span class="p">)</span>
+    <span class="n">klass</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="ss">:extend</span><span class="p">,</span> <span class="ss">AbstractInterface</span><span class="p">:</span><span class="ss">:ClassMethods</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="k">module</span> <span class="nn">Methods</span>
+
+    <span class="k">def</span> <span class="nf">api_not_implemented</span><span class="p">(</span><span class="n">klass</span><span class="p">,</span> <span class="n">method_name</span> <span class="o">=</span> <span class="kp">nil</span><span class="p">)</span>
+      <span class="k">if</span> <span class="n">method_name</span><span class="o">.</span><span class="n">nil?</span>
+        <span class="nb">caller</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sr">/in \`(.+)\&#39;/</span><span class="p">)</span>
+        <span class="n">method_name</span> <span class="o">=</span> <span class="vg">$1</span>
+      <span class="k">end</span>
+      <span class="k">raise</span> <span class="ss">AbstractInterface</span><span class="p">:</span><span class="ss">:InterfaceNotImplementedError</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">klass</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> needs to implement &#39;</span><span class="si">#{</span><span class="n">method_name</span><span class="si">}</span><span class="s2">&#39; for interface </span><span class="si">#{</span><span class="nb">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
+    <span class="k">end</span>
+
+  <span class="k">end</span>
+
+  <span class="k">module</span> <span class="nn">ClassMethods</span>
+
+    <span class="k">def</span> <span class="nf">needs_implementation</span><span class="p">(</span><span class="nb">name</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
+      <span class="nb">self</span><span class="o">.</span><span class="n">class_eval</span> <span class="k">do</span>
+        <span class="n">define_method</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span> <span class="k">do</span> <span class="o">|*</span><span class="n">args</span><span class="o">|</span>
+          <span class="no">Bicycle</span><span class="o">.</span><span class="n">api_not_implemented</span><span class="p">(</span><span class="nb">self</span><span class="p">,</span> <span class="nb">name</span><span class="p">)</span>
+        <span class="k">end</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+
+  <span class="k">end</span>
+
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Bicycle</span>
+  <span class="kp">include</span> <span class="no">AbstractInterface</span>
+
+  <span class="n">needs_implementation</span> <span class="ss">:change_gear</span><span class="p">,</span> <span class="ss">:new_value</span>
+  <span class="n">needs_implementation</span> <span class="ss">:speed_up</span><span class="p">,</span> <span class="ss">:increment</span>
+
+  <span class="c1"># Some documentation on the apply_brakes method</span>
+  <span class="k">def</span> <span class="nf">apply_brakes</span><span class="p">(</span><span class="n">decrement</span><span class="p">)</span>
+    <span class="c1"># do some work here</span>
+  <span class="k">end</span>
+
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">AcmeBicycle</span> <span class="o">&lt;</span> <span class="no">Bicycle</span>
+<span class="k">end</span>
+
+<span class="n">bike</span> <span class="o">=</span> <span class="no">AcmeBicycle</span><span class="o">.</span><span class="n">new</span>
+<span class="n">bike</span><span class="o">.</span><span class="n">change_gear</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># AbstractInterface::InterfaceNotImplementedError: AcmeBicycle needs to implement &#39;change_gear&#39; for interface Bicycle!</span>
+</code></pre></div>
+
+<p>That approach certainly makes our code look a bit cleaner, I&rsquo;m not denying that, however it has one really big flaw, at least for me anyway, it doesn&rsquo;t give us a good to place to hang our documentation hat. In the previous approach we had actual methods that we could then document and that documentation would then show up in RDoc when it&rsquo;s outputted. With the latter approach, however, we can document the hell out of the <code>needs_implementation</code> calls we have in the <code>Bicycle</code> class, but they won&rsquo;t ever show up in the documentation. That means that users of our library have to crack open the actual code itself to see what it they are expected to implement.</p>
+
+<p>Another approach we could&rsquo;ve taken, which I bother to demonstrate here as I don&rsquo;t think it offers a better approach is to have the <code>needs_implementation</code> method collect up the names of those methods and use <code>method_missing</code> to report that the method needs to be implemented. I mention it here only for completeness, but it definitely is not the best solution to this problem.</p>
+
+<p>Finally, I would like to note that, as far as I can see, there is no way in Ruby to create a callback hook for when a class has been defined. If there was in fact such a hook we could use to it immediately notify the end user that they have forgotten to implement certain methods. Perhaps in Ruby 2.0??? That&rsquo;s just pure hope on my part.</p>
+
+<p>That&rsquo;s it. I hope you enjoyed our brief (<em>cough</em>) look through implementing Interface and Abstract Classes in Ruby. I hope you&rsquo;ve enjoyed it.</p>
+
+<ul>
+<li>PS, yes, I&rsquo;m aware I didn&rsquo;t talk about multiple vs. single inheritance in either Java or Ruby, nor did I talk about the fact that in Ruby you can&rsquo;t really have Abstract Classes. I thought that was all a bit much for an already rather lengthy post as it was. Perhaps another day. :)</li>
+</ul>
+
+</div>
+
+
+      <footer>
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      
+  
+    <nav><ul class="pager">
+    
+        <li class="previous">
+          <a href="/2010/11/17/becoming-an-expert-developer/" title="Becoming an &#39;Expert&#39; Developer">
+            <span aria-hidden="true">&larr;</span>Previous
+          </a>
+        </li>
+    
+
+    
+      <li class="next">
+        <a href="/2011/03/04/407-testing-tools-arent-all-the-same-choose-wisely/" title="Testing Tools Aren&#39;t All the Same, Choose Wisely">
+            Next <span aria-hidden="true">&rarr;</span>
+        </a>
+      </li>
+    
+    </ul> </nav>
+  
+
+
+</div>
+
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  (function() {
+    
+    
+    if (window.location.hostname == "localhost")
+      return;
+
+    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+    dsq.src = '//metabates.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+</footer>
+
+    </div>
+    
+      <div class="col-sm-3">
+                  <a class="twitter-timeline" href="https://twitter.com/markbates" data-widget-id="274503565609934848">Tweets by @markbates</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+<hr>
+
+<div>
+  
+
+    <div class="section">
+      <header><div class="title"><b>Latest Posts</b></div></header>
+      <div class="content">
+        <ul>
+        
+          <li>
+          <a href="/2016/06/09/now-building-with-hugo/">Now Building With Hugo</a>
+          </li>
+        
+          <li>
+          <a href="/2015/10/15/handling-http-request-errors-in-go/">Handling HTTP Request Errors in GO</a>
+          </li>
+        
+          <li>
+          <a href="/2015/06/01/metacaststv-acquired-by-oreilly-media/">MetaCasts.tv Acquired by O&#39;Reilly Media</a>
+          </li>
+        
+          <li>
+          <a href="/2015/05/07/so-long-and-thanks-for-all-the-fish/">So Long, and Thanks For All The Fish</a>
+          </li>
+        
+          <li>
+          <a href="/2015/02/07/what-is-happinessconf-and-why-its-important/">What is HappinessConf and Why is it Important?</a>
+          </li>
+        
+          <li>
+          <a href="/2014/10/15/goth-multi-provider-authentication-for-go/">Goth: Multi Provider Authentication for Go</a>
+          </li>
+        
+          <li>
+          <a href="/2014/10/09/metacaststv-gothamgo-winner/">MetaCasts.tv/GothamGo Winner</a>
+          </li>
+        
+          <li>
+          <a href="/2014/09/01/100th-episode--a-free-ticket-to-gothamgo/">100th Episode | A Free Ticket to GothamGo!</a>
+          </li>
+        
+          <li>
+          <a href="/2014/07/08/metacasts-golang-future/">MetaCasts Golang Future</a>
+          </li>
+        
+          <li>
+          <a href="/2014/05/28/the-war-on-testing/">The War on Testing</a>
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+
+    
+
+</div>
+
+      </div>
+    
+  </div>
+</div>
+      
+<footer class="footer hidden-print">
+  <div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+           <div class="pull-left">
+  <a class="toplink" href="#">back to top</a>
+</div>
+<div class="pull-right">
+  <a href="http://feeds.feedburner.com/MetaBates" target="_blank">RSS</a> |
+  <a href="http://twitter.com/markbates/" target="_blank">Twitter</a> |
+  <a href="http://github.com/markbates/" target="_blank">GitHub</a> |
+  <a href="mailto:mark+blog@markbates.com">Email</a>
+</div>
+
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+              
+    
+<div class="container footline">
+    <small>
+  code with <i class='fa fa-heart'></i>
+
+</small>
+</div>
+
+
+    
+<div class="container copyright">
+    <small>
+  &copy; 2016 Mark Bates.
+
+  </small>
+</div>
+
+
+
+        </div>
+    </div>
+  </div>
+</footer>
+
+    
+
+<script src="//s3.amazonaws.com/mailmunch/static/site.js" id="mailmunch-script" data-mailmunch-site-id="" async="async"></script>
+
+
+
+<script src="//load.sumome.com/" data-sumo-site-id="" async="async"></script>
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+<script src="/js/popover/angular-storage.min.js"></script>
+
+
+<script type="text/javascript">
+  (function() {
+    
+    
+    if (window.location.hostname == "localhost")
+      return;
+
+    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+    dsq.src = '//metabates.disqus.com/count.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="/js/highlight.pack.js"></script>
+<script src="/js/site.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script>
+  var _gaq=[['_setAccount','UA-9756583-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+<script>
+var ENABLE_POPOVER = ""; 
+var EXPIRE_COOKIE = ""; 
+var SHOW_MODAL_TIMEOUT = ""; 
+var MOUSE_LEAVE = ""; 
+var MODAL_SIZE = ""; 
+var POST_URL = ""; 
+var SIGNUP_HEADER = "";
+var HEADER_IMAGE = "";
+var IMG_DESCRIPTION = "";
+var SIGNUP_TEXT = "";
+var INPUT_PLACEHOLDER = "";
+var SUBMIT_BUTTON = "";
+var SUCCESS_MESSAGE = "";
+var ERROR_MESSAGE = "";
+var OPTIN = "";
+var COOKIE_NAME = "";
+</script>
+<script src="/js/popover/angular-modal-service.min.js"></script>
+<script src="/js/angular-ismobile.min.js"></script>
+<script src="/js/popover/popover.min.js"></script>
+
+  </body>
+</html>
+

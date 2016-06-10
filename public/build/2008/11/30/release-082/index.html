@@ -1,0 +1,295 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Release 0.8.2</title>
+    
+    
+    <meta name="author" content="Mark Bates">
+    <link href="http://feeds.feedburner.com/MetaBates" rel="alternate" title="Release 0.8.2" type="application/atom+xml">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/metabates/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/themes/metabates/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+  </head>
+
+  <body>
+  <style>#forkongithub a{background:#000;color:#fff;text-decoration:none;font-family:arial, sans-serif;text-align:center;font-weight:bold;padding:5px 40px;font-size:1rem;line-height:2rem;position:relative;transition:0.5s;}#forkongithub a:hover{background:#3F9FD9;color:#fff;}#forkongithub a::before,#forkongithub a::after{content:"";width:100%;display:block;position:absolute;top:1px;left:0;height:1px;background:#fff;}#forkongithub a::after{bottom:1px;top:auto;}@media screen and (min-width:800px){#forkongithub{position:absolute;display:block;top:0;right:0;width:200px;overflow:hidden;height:200px;}#forkongithub a{width:200px;position:absolute;top:60px;right:-60px;transform:rotate(45deg);-webkit-transform:rotate(45deg);box-shadow:4px 4px 10px rgba(0,0,0,0.8);}}</style><span id="forkongithub" style='z-index: 9999;'><a href="https://github.com/markbates">Fork me on GitHub</a></span>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/">Mark Bates</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              
+              
+              
+
+
+  
+    
+      
+      	
+      	<li><a href="/about.html">About</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/archive.html">Archives</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/books.html">Books</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags.html">Tags</a></li>
+      	
+      
+    
+  
+
+
+
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="span8">
+          
+<div class="page-header">
+  <h1>Release 0.8.2</h1>
+  
+    <h6>30 November 2008</h6>
+  
+</div>
+
+<div class="row">
+  <div class="span">
+    <p>Hey there folks, sorry for the long wait for this release, but it&#8217;s here. It&#8217;s been a long November for yours truly. I&#8217;ve had to find a new job. I&#8217;ve had pneumonia. We, at least in America, have celebrated Thanksgiving. And, of course, who can forget RubyConf 2008?</p>
+
+<p>So with that said, what&#8217;s in 0.8.2? Honestly, not a whole lot. There are a couple of bug fixes, a button_to_remote (think submit_to_remote in Rails) helper, and deferred routes. More on deferred routes in a moment, as it&#8217;s actually a pretty cool feature that only Mack and Merb share. And finally there is bundled gems. <h3>Bundled Gems</h3> What do I mean I say &#8216;bundled gems&#8217;? Well, because of the rather large number of gems that get installed with Mack, and because of some gem version dependency issues, Mack is now bundling it&#8217;s third party dependency gems inside itself. For example, mack-facets used to rely on the gems &#8216;facets&#8217; and &#8216;english&#8217;. Those gems are now bundled inside the mack-facets gem and now longer need to be downloaded and installed by end users. This should make installing Mack super easy. It should also make dealing with having multiple versions of Mack installed on your system easier to deal with and maintain. <h3>Deferred? Routes</h3> So what are deferred routes? Ezra wrote a really great write up back in <a href='http://brainspl.at/articles/2008/04/18/deferred-requests-with-merb-ebb-and-thin'>April</a>. The idea is simple, with newer web servers such as Thin and Ebb, you can tell them to spawn a new thread to handle particular requests, such as long running processes like file uploads. This can really help speed things up as server can process regular requests using an event machine model, which is very fast, but can be really slow and block the server for longer processes. Now those processes can spawn into their own threads and not block the server.</p>
+
+<p>In Mack 0.8.2 you can mark your routes with a deferred? =&#62; true option which will trigger this behavior. It&#8217;s much more advanced than the similar feature that can be found in Merb, which requires a separate configuration for your deferred actions, and the urls have to be &#8216;hard coded&#8217;. Mack let&#8217;s you use all the dynamic power of your routes, like you would want to. It&#8217;s just another option on the route itself. For a great tutorial on using deferred routes, check out the following page on www.mackery.com:</p>
+
+<p><a href='http://www.mackery.com/routing/deferred_routes'>http://www.mackery.com/routing/deferred_routes</a> <h3>Upgraded Dependencies</h3> A few gems have been upgraded as part of this release, the big ones include DataMapper to 0.9.7, ActiveRecord to 2.2.2, and Haml to 2.0.4.</p>
+
+<p>Changelog: <ul>
+	<li>\[#237\] Fixed render :rjs throws errors</li>
+	<li>\[#236\] Upgraded to ActiveRecord 2.2.2</li>
+	<li>\[#235\] Upgraded to DataMapper 0.9.7</li>
+	<li>\[#230\] Upgraded to facets 2.4.5</li>
+	<li>\[#229\] Upgraded to english 0.3.1</li>
+	<li>\[#227\] Removed WEBrick logging</li>
+	<li>\[#226\] Bundled gems.</li>
+	<li>\[#225\] Removed dependency on Thin</li>
+	<li>\[#223\] Fixed mackery console fails</li>
+	<li>\[#148\] Added button_to_remote helper method.</li>
+	<li>\[#16\] Added deferred? routes.</li>
+	<li>gem: active_record 2.2.2</li>
+	<li>gem: data_mapper 0.9.7</li>
+	<li>gem: addressable 2.0.0</li>
+	<li>gem: facets 2.4.5</li>
+	<li>gem: english 0.3.1</li>
+	<li>gem: rspec 1.1.11</li>
+	<li>gem: haml 2.0.4</li>
+</ul></p>
+    <hr>
+    
+      <div class='tag_box'>
+        <h5>Tags</h5>
+        
+        
+           
+            <a href="/tags.html#active record-ref" class="tag">active record</a>
+           
+            <a href="/tags.html#addressable-ref" class="tag">addressable</a>
+           
+            <a href="/tags.html#data mapper-ref" class="tag">data mapper</a>
+           
+            <a href="/tags.html#deferred? routes-ref" class="tag">deferred? routes</a>
+           
+            <a href="/tags.html#ebb-ref" class="tag">ebb</a>
+           
+            <a href="/tags.html#english-ref" class="tag">english</a>
+           
+            <a href="/tags.html#Ezra Zygmuntowicz-ref" class="tag">Ezra Zygmuntowicz</a>
+           
+            <a href="/tags.html#facets-ref" class="tag">facets</a>
+           
+            <a href="/tags.html#gems-ref" class="tag">gems</a>
+           
+            <a href="/tags.html#General-ref" class="tag">General</a>
+           
+            <a href="/tags.html#haml-ref" class="tag">haml</a>
+           
+            <a href="/tags.html#mack-ref" class="tag">mack</a>
+           
+            <a href="/tags.html#merb-ref" class="tag">merb</a>
+           
+            <a href="/tags.html#release-ref" class="tag">release</a>
+           
+            <a href="/tags.html#Releases-ref" class="tag">Releases</a>
+           
+            <a href="/tags.html#rspec-ref" class="tag">rspec</a>
+           
+            <a href="/tags.html#thin-ref" class="tag">thin</a>
+           
+            <a href="/tags.html#Updates-ref" class="tag">Updates</a>
+          
+        
+        <hr />
+      </div>
+    
+    
+    <!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style ">
+<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+<a class="addthis_button_tweet"></a>
+<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+<a class="addthis_counter addthis_pill_style"></a>
+</div>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4f7cef9a0d4f7bd5"></script>
+<!-- AddThis Button END -->
+    <hr>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2008/11/29/building-distributed-applications-from-rubyconf-2008" title="Building Distributed Applications from RubyConf 2008">&larr; Previous</a></li>
+      
+        <li><a href="/archive.html">Archive</a></li>
+      
+        <li class="next"><a href="/2008/12/23/merb-rails3-rarb" title="Merb + Rails3 = Rarb?">Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+    <hr>
+    
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+    var disqus_shortname = 'metabates'; // required: replace example with your forum shortname
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+  </div>
+
+</div>
+
+
+        </div><!--/span-->
+        <div class="span4">
+          <a href="/books.html" class="thumbnail">
+            <img src="/assets/images/2012/02/cover_300.png" />
+          </a>
+          <hr />
+
+          <a class="twitter-timeline" href="https://twitter.com/markbates" data-widget-id="274503565609934848">Tweets by @markbates</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+          <hr />
+
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Latest Posts</li>
+              
+                <li><a href="/2013/06/02/introducting-linelyticscom">Introducting LineLytics.com</a></li>
+              
+                <li><a href="/2013/01/01/announcing-metacaststv-screen-casts">Announcing MetaCasts.tv Screen Casts</a></li>
+              
+                <li><a href="/2012/12/15/javascript-prototypes-video">JavaScript Prototypes (Video)</a></li>
+              
+                <li><a href="/2012/12/08/getting-started-with-sinatra-video">Getting Started with Sinatra (Video)</a></li>
+              
+                <li><a href="/2012/12/02/getting-started-with-rack-video">Getting Started with Rack (Video)</a></li>
+              
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <p>
+          &copy; Mark Bates 2012 |
+          <a href="http://feeds.feedburner.com/MetaBates">RSS</a> |
+          <a href="http://twitter.com/markbates/" rel="me">Twitter</a> |
+          <a href="http://github.com/markbates/" rel="me">GitHub</a> |
+          <a href="mailto:mark+blog@markbates.com">Email</a>
+        </p>
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-9756583-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+  </body>
+</html>
+

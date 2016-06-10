@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Capturing and Uploading Photos on iOS with PhoneGap (Cordova)  &middot; MetaBates.com</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="" />
+
+<meta name="keywords" content="phonegap, ios, iphone, javascript, cordova, ">
+
+
+<meta property="og:title" content="Capturing and Uploading Photos on iOS with PhoneGap (Cordova)  &middot; MetaBates.com ">
+<meta property="og:site_name" content="MetaBates.com"/>
+<meta property="og:url" content="/2012/04/15/capturing-and-uploading-photos-on-ios-with-phonegap/" />
+<meta property="og:locale" content="en-us">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content=""/>
+<meta property="og:article:published_time" content="2012-04-15T00:00:00Z" />
+<meta property="og:article:modified_time" content="2012-04-15T00:00:00Z" />
+
+  
+    
+<meta property="og:article:tag" content="phonegap">
+    
+<meta property="og:article:tag" content="ios">
+    
+<meta property="og:article:tag" content="iphone">
+    
+<meta property="og:article:tag" content="javascript">
+    
+<meta property="og:article:tag" content="cordova">
+    
+  
+
+  
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@markbates" />
+<meta name="twitter:creator" content="@markbates" />
+<meta name="twitter:title" content="Capturing and Uploading Photos on iOS with PhoneGap (Cordova)" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:url" content="/2012/04/15/capturing-and-uploading-photos-on-ios-with-phonegap/" />
+<meta name="twitter:domain" content="/">
+  
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "Capturing and Uploading Photos on iOS with PhoneGap (Cordova)",
+    "author": {
+      "@type": "Person",
+      "name": "http://profiles.google.com/+?rel=author"
+    },
+    "datePublished": "2012-04-15",
+    "description": "",
+    "wordCount":  967 
+  }
+</script>
+
+
+
+<link rel="canonical" href="/2012/04/15/capturing-and-uploading-photos-on-ios-with-phonegap/" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+<link rel="icon" href="/favicon.png">
+<meta name="generator" content="Hugo 0.16" />
+
+  <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+
+
+    <link rel="stylesheet" href="/css/bootswatch/cerulean/bootstrap.min.css">
+
+
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/style.css">
+
+
+  <link rel="stylesheet" href="/css/highlight/monokai.css">
+
+
+</head>
+<body class="map[name:cerulean]" data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
+    <header id="main-header">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+          
+            <a class="navbar-brand" href="/">
+          MetaBates.com
+          
+          
+        </a>
+
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li>
+
+            <a href="/about"
+            >
+
+            
+
+            About
+            </a>
+          </li>
+          
+          <li>
+
+            <a href="/post"
+             title="Archives">
+
+            
+
+            Archives
+            </a>
+          </li>
+          
+          <li>
+
+            <a href="/books"
+            >
+
+            
+
+            Books
+            </a>
+          </li>
+          
+          <li>
+
+            <a href="/tags"
+            >
+
+            
+
+            Tags
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      
+    </div>
+  </nav>
+
+</header>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  <div class="text-center">
+
+    <h1>Capturing and Uploading Photos on iOS with PhoneGap (Cordova)
+</h1>
+
+    <div class="metas">
+<small>
+  <i class="fa fa-calendar"></i>
+  <time datetime="2012-04-15">15 Apr, 2012</time>
+</small>
+
+
+  <small>
+  &middot; Read in about 5 min
+  &middot; (967 Words)
+</small>
+
+
+<div class="margin-10">
+  <i class="fa fa-tags"></i>
+  
+  <a href="/tags/phonegap" class="label label-primary">phonegap</a>
+  
+  <a href="/tags/ios" class="label label-primary">ios</a>
+  
+  <a href="/tags/iphone" class="label label-primary">iphone</a>
+  
+  <a href="/tags/javascript" class="label label-primary">javascript</a>
+  
+  <a href="/tags/cordova" class="label label-primary">cordova</a>
+  
+
+
+</div>
+<br>
+</div>
+
+  </div>
+</div>
+
+      <div class="content">
+  
+
+<p><img src="/assets/images/2012/04/15/phonegaplogo.png" class='img-left' style="width: 120px; height: 120px;"/></p>
+
+<p>Lately I&rsquo;ve been doing a lot of work with <a href="http://docs.phonegap.com">PhoneGap</a>, now known as Cordova. PhoneGap lets you write &ldquo;native&rdquo; iOS, Android, Blackberry, etc&hellip; applications using standard web technologies, such as HTML, CSS, and JavaScript. They also give you a JavaScript API to access parts of the device, such as the camera, the accelerometer, the compass, etc&hellip;</p>
+
+<p>In this article I would like to take a quick look at how to take a new picture, or use an existing library photo, and how to upload it to a webserver somewhere. This is one of the most common things to do in a mobile application, and as you&rsquo;re about to see, PhoneGap makes this, commonly painful task, pretty simple.</p>
+
+<h3 id="the-code">The Code:</h3>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// use an existing photo from the library:</span>
+<span class="nx">useExistingPhoto</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">capture</span><span class="p">(</span><span class="nx">Camera</span><span class="p">.</span><span class="nx">PictureSourceType</span><span class="p">.</span><span class="nx">SAVEDPHOTOALBUM</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="c1">// take a new photo:</span>
+<span class="nx">takePhoto</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">capture</span><span class="p">(</span><span class="nx">Camera</span><span class="p">.</span><span class="nx">PictureSourceType</span><span class="p">.</span><span class="nx">CAMERA</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="c1">// capture either new or existing photo:</span>
+<span class="nx">capture</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">sourceType</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">navigator</span><span class="p">.</span><span class="nx">camera</span><span class="p">.</span><span class="nx">getPicture</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">onCaptureSuccess</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">onCaptureFail</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">destinationType</span><span class="o">:</span> <span class="nx">Camera</span><span class="p">.</span><span class="nx">DestinationType</span><span class="p">.</span><span class="nx">FILE_URI</span><span class="p">,</span>
+    <span class="nx">sourceType</span><span class="o">:</span> <span class="nx">sourceType</span><span class="p">,</span>
+    <span class="nx">correctOrientation</span><span class="o">:</span> <span class="kc">true</span>
+  <span class="p">});</span>
+<span class="p">};</span>
+
+<span class="c1">// if photo is captured successfully, then upload to server:</span>
+<span class="nx">onCaptureSuccess</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">imageURI</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">fail</span><span class="p">,</span> <span class="nx">ft</span><span class="p">,</span> <span class="nx">options</span><span class="p">,</span> <span class="nx">params</span><span class="p">,</span> <span class="nx">win</span><span class="p">;</span>
+  <span class="c1">// callback for when the photo has been successfully uploaded:</span>
+  <span class="nx">success</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Your photo has been uploaded!&quot;</span><span class="p">);</span>
+  <span class="p">};</span>
+  <span class="c1">// callback if the photo fails to upload successfully.</span>
+  <span class="nx">fail</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;An error has occurred: Code = &quot;</span> <span class="o">+</span> <span class="nx">error</span><span class="p">.</span><span class="nx">code</span><span class="p">);</span>
+  <span class="p">};</span>
+  <span class="nx">options</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FileUploadOptions</span><span class="p">();</span>
+  <span class="c1">// parameter name of file:</span>
+  <span class="nx">options</span><span class="p">.</span><span class="nx">fileKey</span> <span class="o">=</span> <span class="s2">&quot;my_image&quot;</span><span class="p">;</span>
+  <span class="c1">// name of the file:</span>
+  <span class="nx">options</span><span class="p">.</span><span class="nx">fileName</span> <span class="o">=</span> <span class="nx">imageURI</span><span class="p">.</span><span class="nx">substr</span><span class="p">(</span><span class="nx">imageURI</span><span class="p">.</span><span class="nx">lastIndexOf</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="c1">// mime type:</span>
+  <span class="nx">options</span><span class="p">.</span><span class="nx">mimeType</span> <span class="o">=</span> <span class="s2">&quot;text/plain&quot;</span><span class="p">;</span>
+  <span class="nx">params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">val1</span><span class="o">:</span> <span class="s2">&quot;some value&quot;</span><span class="p">,</span>
+    <span class="nx">val2</span><span class="o">:</span> <span class="s2">&quot;some other value&quot;</span>
+  <span class="p">};</span>
+  <span class="nx">options</span><span class="p">.</span><span class="nx">params</span> <span class="o">=</span> <span class="nx">params</span><span class="p">;</span>
+  <span class="nx">ft</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FileTransfer</span><span class="p">();</span>
+  <span class="nx">ft</span><span class="p">.</span><span class="nx">upload</span><span class="p">(</span><span class="nx">imageURI</span><span class="p">,</span> <span class="s1">&#39;http://example.com/path/to/service&#39;</span><span class="p">,</span> <span class="nx">success</span><span class="p">,</span> <span class="nx">fail</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="c1">// there was an error capturing the photo:</span>
+<span class="nx">onCaptureFail</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Failed because: &quot;</span> <span class="o">+</span> <span class="nx">message</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div>
+
+<p>On the whole it&rsquo;s not all that difficult a task to accomplish. The two functions that deserve a bit of attention are <code>capture</code> and <code>onCaptureSuccess</code>. Those two functions are where the real heavy lifting is happening.</p>
+
+<h3 id="capture">capture:</h3>
+
+<p>Let&rsquo;s look at the <code>capture</code> function first. The <code>navigator.camera.getPicture</code> function that is provided by PhoneGap takes three arguments. The first argument is a success callback, the second argument is a failure callback, and the third argument is an object containing options. The documentation spells out most of the options you can pass in here, but since the docs don&rsquo;t cover all of the options, specifically the <code>correctOrientation</code> option, let&rsquo;s quickly look at what each one does.</p>
+
+<ul>
+<li><p><strong>destinationType</strong>: It is <em>incredibly</em> important that you set this options to <code>Camera.DestinationType.FILE_URI</code>. This will make sure the <code>onCaptureSuccess</code> gets a path to the image file, and not the image file itself. This is important because as cameras get more powerful on phones, the more memory these images will take up. If you don&rsquo;t set this option correctly your application will quickly throw a out of memory exception and that&rsquo;s it, game over.</p></li>
+
+<li><p><strong>sourceType</strong>: This option defines where the photo will be coming from. Set to <code>Camera.PictureSourceType.SAVEDPHOTOALBUM</code> for an existing photo or <code>Camera.PictureSourceType.CAMERA</code> to take a new picture.</p></li>
+
+<li><p><strong>correctOrientation</strong>: This last option is undocumented, but also <em>incredibly</em> important! By default <code>correctOrientation</code> is set to <code>false</code>, because of this the photo that is uploaded won&rsquo;t necessarily have the orientation that the user who took the photo intended. This is because the meta data for such things as orientation is store on the device, and not in the phone. By setting this to <code>true</code>, the photo will be adjusted to the correct orientation when it is passed into the <code>onCaptureSuccess</code> function.</p></li>
+</ul>
+
+<p>So those are the most important options that need to be set when calling <code>navigator.camera.getPicture</code>.</p>
+
+<h3 id="oncapturesuccess">onCaptureSuccess:</h3>
+
+<p>When a photo is successfully captured, via the <code>capture</code> function, the <code>onCaptureSuccess</code> function will be called. This function will be passed a path, <code>imageURI</code> to the photo on disk.</p>
+
+<p>PhoneGap has an object that is specifically designed for transfers files from the phone to a web service somewhere. This object is called, <code>FileTransfer</code>. This object exposes a function called, <code>upload</code>, that will send an HTTP POST to the web service and properly encode the photo (we can send file we want, for this example it&rsquo;s a photo) for transport.</p>
+
+<p>The <code>upload</code> function takes five arguments. We can see this in action near the bottom of the <code>onCaptureSuccess</code> function.</p>
+
+<ul>
+<li><p>The first argument is the path to the file on disk, the <code>imageURI</code> argument that the <code>onCaptureSuccess</code> function received.</p></li>
+
+<li><p>The second argument is the URL of the web service you wish to post the file to.</p></li>
+
+<li><p>The third argument is a callback that will be executed when the file has been successfully uploaded to the server. This is the <code>success</code> function we defined inside of <code>onCaptureSuccess</code>.</p></li>
+
+<li><p>The fourth argument is a callback that will be executed should the file fail to upload successfully to the server. This is the <code>fail</code> function we defined inside of <code>onCaptureSuccess</code>.</p></li>
+
+<li><p>The fifth argument is an object containing any extra parameters you want to send to the server. Let&rsquo;s talk about that a bit more.</p></li>
+</ul>
+
+<h3 id="fileuploadoptions">FileUploadOptions:</h3>
+
+<p>PhoneGap provides a <code>FileUploadOptions</code> object that convienently sets a few helpful defaults for uploading files to a server, include the mime-type, data chunking, etc&hellip; There are three of these parameters that are important to set your own values for.</p>
+
+<ul>
+<li><p><strong>fileKey</strong>: This will be the name of the request parameter that is sent to the server. The default value is <code>file</code>.</p></li>
+
+<li><p><strong>fileName</strong>: This is the name you want the file to be called when the server recieves it. The default is <code>image.jpg</code>.</p></li>
+
+<li><p><strong>params</strong>: This an object containing any additional parameters you want sent to the server. Pretty simple.</p></li>
+</ul>
+
+<h3 id="the-end">The End</h3>
+
+<p>And with all of that you have successfully uploaded a photo from and iOS device using PhoneGap. It might seem a little daunting, but actually it pretty and straightforward. Honestly, it is a lot simplier than doing it in Objective-C.</p>
+
+</div>
+
+
+      <footer>
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      
+  
+    <nav><ul class="pager">
+    
+        <li class="previous">
+          <a href="/2012/04/05/how-to-write-an-api-without-even-trying/" title="How To Write An API Without Even Trying">
+            <span aria-hidden="true">&larr;</span>Previous
+          </a>
+        </li>
+    
+
+    
+      <li class="next">
+        <a href="/2012/04/17/there-is-no-escape-actually-there-is-and-you-should-always-use-it/" title="There is No Escape! (Actually There is and You Should Always Use It.)">
+            Next <span aria-hidden="true">&rarr;</span>
+        </a>
+      </li>
+    
+    </ul> </nav>
+  
+
+
+</div>
+
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  (function() {
+    
+    
+    if (window.location.hostname == "localhost")
+      return;
+
+    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+    dsq.src = '//metabates.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+</footer>
+
+    </div>
+    
+      <div class="col-sm-3">
+                  <a class="twitter-timeline" href="https://twitter.com/markbates" data-widget-id="274503565609934848">Tweets by @markbates</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+<hr>
+
+<div>
+  
+
+    <div class="section">
+      <header><div class="title"><b>Latest Posts</b></div></header>
+      <div class="content">
+        <ul>
+        
+          <li>
+          <a href="/2016/06/09/now-building-with-hugo/">Now Building With Hugo</a>
+          </li>
+        
+          <li>
+          <a href="/2015/10/15/handling-http-request-errors-in-go/">Handling HTTP Request Errors in GO</a>
+          </li>
+        
+          <li>
+          <a href="/2015/06/01/metacaststv-acquired-by-oreilly-media/">MetaCasts.tv Acquired by O&#39;Reilly Media</a>
+          </li>
+        
+          <li>
+          <a href="/2015/05/07/so-long-and-thanks-for-all-the-fish/">So Long, and Thanks For All The Fish</a>
+          </li>
+        
+          <li>
+          <a href="/2015/02/07/what-is-happinessconf-and-why-its-important/">What is HappinessConf and Why is it Important?</a>
+          </li>
+        
+          <li>
+          <a href="/2014/10/15/goth-multi-provider-authentication-for-go/">Goth: Multi Provider Authentication for Go</a>
+          </li>
+        
+          <li>
+          <a href="/2014/10/09/metacaststv-gothamgo-winner/">MetaCasts.tv/GothamGo Winner</a>
+          </li>
+        
+          <li>
+          <a href="/2014/09/01/100th-episode--a-free-ticket-to-gothamgo/">100th Episode | A Free Ticket to GothamGo!</a>
+          </li>
+        
+          <li>
+          <a href="/2014/07/08/metacasts-golang-future/">MetaCasts Golang Future</a>
+          </li>
+        
+          <li>
+          <a href="/2014/05/28/the-war-on-testing/">The War on Testing</a>
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+
+    
+
+</div>
+
+      </div>
+    
+  </div>
+</div>
+      
+<footer class="footer hidden-print">
+  <div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+           <div class="pull-left">
+  <a class="toplink" href="#">back to top</a>
+</div>
+<div class="pull-right">
+  <a href="http://feeds.feedburner.com/MetaBates" target="_blank">RSS</a> |
+  <a href="http://twitter.com/markbates/" target="_blank">Twitter</a> |
+  <a href="http://github.com/markbates/" target="_blank">GitHub</a> |
+  <a href="mailto:mark+blog@markbates.com">Email</a>
+</div>
+
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+              
+    
+<div class="container footline">
+    <small>
+  code with <i class='fa fa-heart'></i>
+
+</small>
+</div>
+
+
+    
+<div class="container copyright">
+    <small>
+  &copy; 2016 Mark Bates.
+
+  </small>
+</div>
+
+
+
+        </div>
+    </div>
+  </div>
+</footer>
+
+    
+
+<script src="//s3.amazonaws.com/mailmunch/static/site.js" id="mailmunch-script" data-mailmunch-site-id="" async="async"></script>
+
+
+
+<script src="//load.sumome.com/" data-sumo-site-id="" async="async"></script>
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+<script src="/js/popover/angular-storage.min.js"></script>
+
+
+<script type="text/javascript">
+  (function() {
+    
+    
+    if (window.location.hostname == "localhost")
+      return;
+
+    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+    dsq.src = '//metabates.disqus.com/count.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="/js/highlight.pack.js"></script>
+<script src="/js/site.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script>
+  var _gaq=[['_setAccount','UA-9756583-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+<script>
+var ENABLE_POPOVER = ""; 
+var EXPIRE_COOKIE = ""; 
+var SHOW_MODAL_TIMEOUT = ""; 
+var MOUSE_LEAVE = ""; 
+var MODAL_SIZE = ""; 
+var POST_URL = ""; 
+var SIGNUP_HEADER = "";
+var HEADER_IMAGE = "";
+var IMG_DESCRIPTION = "";
+var SIGNUP_TEXT = "";
+var INPUT_PLACEHOLDER = "";
+var SUBMIT_BUTTON = "";
+var SUCCESS_MESSAGE = "";
+var ERROR_MESSAGE = "";
+var OPTIN = "";
+var COOKIE_NAME = "";
+</script>
+<script src="/js/popover/angular-modal-service.min.js"></script>
+<script src="/js/angular-ismobile.min.js"></script>
+<script src="/js/popover/popover.min.js"></script>
+
+  </body>
+</html>
+

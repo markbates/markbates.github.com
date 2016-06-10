@@ -1,0 +1,294 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Because everybody has an opinion...</title>
+    
+    
+    <meta name="author" content="Mark Bates">
+    <link href="http://feeds.feedburner.com/MetaBates" rel="alternate" title="Because everybody has an opinion..." type="application/atom+xml">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/metabates/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/themes/metabates/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+  </head>
+
+  <body>
+  <style>#forkongithub a{background:#000;color:#fff;text-decoration:none;font-family:arial, sans-serif;text-align:center;font-weight:bold;padding:5px 40px;font-size:1rem;line-height:2rem;position:relative;transition:0.5s;}#forkongithub a:hover{background:#3F9FD9;color:#fff;}#forkongithub a::before,#forkongithub a::after{content:"";width:100%;display:block;position:absolute;top:1px;left:0;height:1px;background:#fff;}#forkongithub a::after{bottom:1px;top:auto;}@media screen and (min-width:800px){#forkongithub{position:absolute;display:block;top:0;right:0;width:200px;overflow:hidden;height:200px;}#forkongithub a{width:200px;position:absolute;top:60px;right:-60px;transform:rotate(45deg);-webkit-transform:rotate(45deg);box-shadow:4px 4px 10px rgba(0,0,0,0.8);}}</style><span id="forkongithub" style='z-index: 9999;'><a href="https://github.com/markbates">Fork me on GitHub</a></span>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/">Mark Bates</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              
+              
+              
+
+
+  
+    
+      
+      	
+      	<li><a href="/about.html">About</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/archive.html">Archives</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/books.html">Books</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags.html">Tags</a></li>
+      	
+      
+    
+  
+
+
+
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="span8">
+          
+<div class="page-header">
+  <h1>Because everybody has an opinion...</h1>
+  
+    <h6>15 April 2011</h6>
+  
+</div>
+
+<div class="row">
+  <div class="span">
+    <p>In case you&#8217;ve been living in a cave this week you&#8217;ve probably heard that <a href='http://www.rubyinside.com/rails-3-1-adopts-coffeescript-jquery-sass-and-controversy-4669.html'>Ruby on Rails</a> is going to be including both the <a href='http://coffeescript.org/'>CoffeeScript</a> and <a href='http://sass-lang.com/'>SASS</a> libraries, it will also make <a href='http://jquery.com/'>jQuery</a> the default JavaScript framework, replacing the <a href='http://www.prototypejs.org/'>Prototype</a> framework.</p>
+
+<p>I would like to start by addressing my experiences with CoffeeScript. My opinion of it is of ambivalence. I&#8217;ve used it on a project, I&#8217;ve played with and in the end I&#8217;ve come out with the opinion of &#8220;it&#8217;s ok&#8221;. It didn&#8217;t blow me away, but at the same time I can see why so many people like. It offers some really cool features that I really wish JavaScript had and you can cut down on the amount of code you have to write. On the other hand the apps I tend to write don&#8217;t tend to be that JavaScript heavy that I really needed to reach out for something like CoffeeScript.</p>
+<img alt='' height='246' src='http://blogs.worldbank.org/files/publicsphere/public%20opinion_JGRNLY.jpeg' style='float: left; padding-right: 10px' width='326' />
+<p>So, how do I feel about CoffeeScript being included with Rails? Well, I&#8217;ll get to that. Let&#8217;s go over some of the most common arguments I&#8217;ve heard from people this week about why they&#8217;re anti-CoffeeScript in Rails.</p>
+
+<blockquote>
+<p>&#8220;It&#8217;s an abstraction layer of JavaScript! JavaScript isn&#8217;t that bad, why can&#8217;t you just write JavaScript?&#8221;</p>
+
+<p>&#8220;It&#8217;s going to be a hinderance to newbies. It&#8217;ll be too much of a learning curve!&#8221;</p>
+</blockquote>
+
+<p>Let&#8217;s start with that second point first, shall we? I agree, it does represent a new element that needs to be learned when coming to Rails. But here&#8217;s the pretty nifty thing about how it&#8217;s all implemented in Rails. In order to actually use CoffeeScript in Rails you have to create your files named foo.js.coffee if, however, you just name your file foo.js then, guess what? You will have to write plain old JavaScript! Seems like newbies, and those who don&#8217;t like CoffeeScript, can just keep writing plain old JavaScript without anything stopping them at all.</p>
+
+<p>Now, let&#8217;s talk about the abstraction layer argument. Yes, CoffeeScript is an abstraction on top of JavaScript, but let&#8217;s take a look at a few other parts of the Rails stack and see how they hold up against this argument.</p>
+
+<p>Here&#8217;s a fairly common Rails stack:</p>
+
+<ul>
+<li>ActiveRecord</li>
+
+<li>Haml</li>
+
+<li>jQuery</li>
+
+<li>RSpec</li>
+</ul>
+
+<p>What do all those things have in common? Well, they&#8217;re all abstraction layers that sit on top of something else, don&#8217;t they? Let&#8217;s look at that list again?</p>
+
+<ul>
+<li>ActiveRecord - SQL (Structured Query Language)</li>
+
+<li>Haml - HTML</li>
+
+<li>jQuery - JavaScript, you could just as easily hand roll those AJAX calls in pure JavaScript.</li>
+
+<li>RSpec - Test/Unit</li>
+</ul>
+
+<p>What I&#8217;ve found funny about the particular argument is that I&#8217;ve heard it MOST from those who use things like HAML, which is a DEFINITELY an abstraction layer that sits on top of HTML. See where I&#8217;m going with this one? Good, I don&#8217;t want to belabor the point. :)</p>
+
+<p>So, finally, where do I stand on this whole thing? Well, I view like it Test/Unit and Prototype. Those are both the current standard (although jQuery will replace Prototype in 3.1) and I don&#8217;t like or use either of them. Instead I configure Rails to use jQuery and RSpec. I don&#8217;t like Haml, but those that do simply replace ERB with Haml and they move on with their day. So my take is this, it&#8217;s there, it&#8217;s included. Use it if you like, or don&#8217;t. Is it really that big a deal? No, it really isn&#8217;t. If Rails dropped ERB and went with Haml as the default, would I bitch and moan, probably a bit, but then I&#8217;d just install the Rails-ERB gem and move on with my day, just like I do with jQuery and RSpec today.</p>
+
+<p>So sit back, relax, use the libraries that you want to use, Rails let&#8217;s you do that. Oh, while you&#8217;re relaxing why not try out CoffeeScript, who knows, you might just enjoy it. Or not.</p>
+    <hr>
+    
+      <div class='tag_box'>
+        <h5>Tags</h5>
+        
+        
+           
+            <a href="/tags.html#active record-ref" class="tag">active record</a>
+           
+            <a href="/tags.html#coffee script-ref" class="tag">coffee script</a>
+           
+            <a href="/tags.html#erb-ref" class="tag">erb</a>
+           
+            <a href="/tags.html#General-ref" class="tag">General</a>
+           
+            <a href="/tags.html#haml-ref" class="tag">haml</a>
+           
+            <a href="/tags.html#jquery-ref" class="tag">jquery</a>
+           
+            <a href="/tags.html#rails-ref" class="tag">rails</a>
+           
+            <a href="/tags.html#rspec-ref" class="tag">rspec</a>
+           
+            <a href="/tags.html#ruby-ref" class="tag">ruby</a>
+          
+        
+        <hr />
+      </div>
+    
+    
+    <!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style ">
+<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+<a class="addthis_button_tweet"></a>
+<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+<a class="addthis_counter addthis_pill_style"></a>
+</div>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4f7cef9a0d4f7bd5"></script>
+<!-- AddThis Button END -->
+    <hr>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2011/03/04/407-testing-tools-arent-all-the-same-choose-wisely" title="Testing Tools Aren't All the Same, Choose Wisely">&larr; Previous</a></li>
+      
+        <li><a href="/archive.html">Archive</a></li>
+      
+        <li class="next"><a href="/2011/04/25/project-issue-and-error-tracking-united" title="Project, Issue, and Error Tracking United!">Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+    <hr>
+    
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+    var disqus_shortname = 'metabates'; // required: replace example with your forum shortname
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+  </div>
+
+</div>
+
+
+        </div><!--/span-->
+        <div class="span4">
+          <a href="/books.html" class="thumbnail">
+            <img src="/assets/images/2012/02/cover_300.png" />
+          </a>
+          <hr />
+
+          <a class="twitter-timeline" href="https://twitter.com/markbates" data-widget-id="274503565609934848">Tweets by @markbates</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+          <hr />
+
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Latest Posts</li>
+              
+                <li><a href="/2013/06/02/introducting-linelyticscom">Introducting LineLytics.com</a></li>
+              
+                <li><a href="/2013/01/01/announcing-metacaststv-screen-casts">Announcing MetaCasts.tv Screen Casts</a></li>
+              
+                <li><a href="/2012/12/15/javascript-prototypes-video">JavaScript Prototypes (Video)</a></li>
+              
+                <li><a href="/2012/12/08/getting-started-with-sinatra-video">Getting Started with Sinatra (Video)</a></li>
+              
+                <li><a href="/2012/12/02/getting-started-with-rack-video">Getting Started with Rack (Video)</a></li>
+              
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <p>
+          &copy; Mark Bates 2012 |
+          <a href="http://feeds.feedburner.com/MetaBates">RSS</a> |
+          <a href="http://twitter.com/markbates/" rel="me">Twitter</a> |
+          <a href="http://github.com/markbates/" rel="me">GitHub</a> |
+          <a href="mailto:mark+blog@markbates.com">Email</a>
+        </p>
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-9756583-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+  </body>
+</html>
+
