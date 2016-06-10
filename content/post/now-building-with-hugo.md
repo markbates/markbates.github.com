@@ -9,6 +9,6 @@ type = "post"
 
 +++
 
-# Headline
+# Some Headline
 
 Text
