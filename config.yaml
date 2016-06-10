@@ -31,7 +31,6 @@ permalinks:
 
 taxonomies:
  tag: "tags"
- # topic: "topics"
 
 author:
   name: "Mark Bates"
@@ -66,7 +65,7 @@ params:
 
     # Select a syntax highight.
     # Check the static/css/highlight directory for options.
-  highlight: "monokai"
+  highlight: "monokai_sublime"
 
     # Google Analytics.
   googleAnalytics: "UA-9756583-1"
