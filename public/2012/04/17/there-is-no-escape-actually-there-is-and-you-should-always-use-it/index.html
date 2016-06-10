@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>There is No Escape! (Actually There is and You Should Always Use It.)  &middot; MetaBates.com</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="" />
+
+<meta name="keywords" content="javascript, backbone, rails, xss, ">
+
+
+<meta property="og:title" content="There is No Escape! (Actually There is and You Should Always Use It.)  &middot; MetaBates.com ">
+<meta property="og:site_name" content="MetaBates.com"/>
+<meta property="og:url" content="/2012/04/17/there-is-no-escape-actually-there-is-and-you-should-always-use-it/" />
+<meta property="og:locale" content="en-us">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content=""/>
+<meta property="og:article:published_time" content="2012-04-17T00:00:00Z" />
+<meta property="og:article:modified_time" content="2012-04-17T00:00:00Z" />
+
+  
+    
+<meta property="og:article:tag" content="javascript">
+    
+<meta property="og:article:tag" content="backbone">
+    
+<meta property="og:article:tag" content="rails">
+    
+<meta property="og:article:tag" content="xss">
+    
+  
+
+  
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@markbates" />
+<meta name="twitter:creator" content="@markbates" />
+<meta name="twitter:title" content="There is No Escape! (Actually There is and You Should Always Use It.)" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:url" content="/2012/04/17/there-is-no-escape-actually-there-is-and-you-should-always-use-it/" />
+<meta name="twitter:domain" content="/">
+  
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "There is No Escape! (Actually There is and You Should Always Use It.)",
+    "author": {
+      "@type": "Person",
+      "name": "http://profiles.google.com/+?rel=author"
+    },
+    "datePublished": "2012-04-17",
+    "description": "",
+    "wordCount":  804 
+  }
+</script>
+
+
+
+<link rel="canonical" href="/2012/04/17/there-is-no-escape-actually-there-is-and-you-should-always-use-it/" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+<link rel="icon" href="/favicon.png">
+<meta name="generator" content="Hugo 0.16" />
+
+  <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+
+
+    <link rel="stylesheet" href="/css/bootswatch/cerulean/bootstrap.min.css">
+
+
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/style.css">
+
+
+  <link rel="stylesheet" href="/css/highlight/monokai.css">
+
+
+</head>
+<body class="map[name:cerulean]" data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
+    <header id="main-header">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+          
+            <a class="navbar-brand" href="/">
+          MetaBates.com
+          
+          
+        </a>
+
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li>
+
+            <a href="/about"
+            >
+
+            
+
+            About
+            </a>
+          </li>
+          
+          <li>
+
+            <a href="/post"
+             title="Archives">
+
+            
+
+            Archives
+            </a>
+          </li>
+          
+          <li>
+
+            <a href="/books"
+            >
+
+            
+
+            Books
+            </a>
+          </li>
+          
+          <li>
+
+            <a href="/tags"
+            >
+
+            
+
+            Tags
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      
+    </div>
+  </nav>
+
+</header>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  <div class="text-center">
+
+    <h1>There is No Escape! (Actually There is and You Should Always Use It.)
+</h1>
+
+    <div class="metas">
+<small>
+  <i class="fa fa-calendar"></i>
+  <time datetime="2012-04-17">17 Apr, 2012</time>
+</small>
+
+
+  <small>
+  &middot; Read in about 4 min
+  &middot; (804 Words)
+</small>
+
+
+<div class="margin-10">
+  <i class="fa fa-tags"></i>
+  
+  <a href="/tags/javascript" class="label label-primary">javascript</a>
+  
+  <a href="/tags/backbone" class="label label-primary">backbone</a>
+  
+  <a href="/tags/rails" class="label label-primary">rails</a>
+  
+  <a href="/tags/xss" class="label label-primary">xss</a>
+  
+
+
+</div>
+<br>
+</div>
+
+  </div>
+</div>
+
+      <div class="content">
+  
+
+<h3 id="beware-your-users">Beware Your Users:</h3>
+
+<p><img src="/assets/images/2012/04/17/escape_pod.jpg" class="img-right" style="width: 300px" /></p>
+
+<p>Every developer should already know about, and work to prevent, <a href="http://en.wikipedia.org/wiki/Cross-site_scripting">scripting attacks</a> on their site. Scripting attacks are one of the easiest ways for a hacker to attack your site, they are also one of the easiest attacks to prevent.</p>
+
+<p>Whenever you let an end user enter text into a form on your site, and then display that text to other users on your site, you&rsquo;ve opened yourself up to this sort of attack.</p>
+
+<p>What can a hacker do in these sorts of attacks? Well, they can run malicious JavaScript that appears to the world to have come from your site. That means they can read cookies? Alter the page and ask for things such as passwords, credit card numbers, etc&hellip; All the while the end user believes these requests are coming from your site. That&rsquo;s not good.</p>
+
+<p>So how do you prevent against this? Well, you should always escape any text that orginally came from an end user to get rid of any <code>&lt;script&gt;</code> tags for a start. I would say go all out and get rid of, or escape, anything inside of <code>&lt;</code> or <code>&gt;</code> brackets.</p>
+
+<p>A lot of web frameworks are trying to build this in now, to make it easier for developers to protect against such attacks. For example, in <a href="http://rubyonrails.org/">Rails</a> all data that comes from the database is considered tainted and will be automatically escaped when displayed to the screen. The developer has to go out of their way to tell Rails that a particular string is safe. I, personally, really like this approach.</p>
+
+<p>Lately I&rsquo;ve been doing a lot of work with <a href="http://documentcloud.github.com/backbone/">Backbone.js</a>, it has replaced the view layer in Rails for me. When working with a Backbone model if you want to get an attribute you would normally call the <code>get</code> function. Let me demonstrate:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">model</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">Model</span><span class="p">({</span><span class="nx">foo</span><span class="o">:</span> <span class="s2">&quot;Bar&quot;</span><span class="p">});</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;h1&quot;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">));</span>
+</code></pre></div>
+
+<p>That code will set the <code>h1</code> tag on the page to whatever the value of the attribute <code>foo</code> is, in this case the value <code>&ldquo;Bar&rdquo;</code>. That&rsquo;s all fine and dandy, but what if we set the value of the <code>foo</code> attribute to something a bit more malicious:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">model</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">Model</span><span class="p">({</span><span class="nx">foo</span><span class="o">:</span> <span class="s2">&quot;&lt;script&gt;alert(&#39;xss&#39;)&lt;/script&gt;&quot;</span><span class="p">});</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;h1&quot;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">));</span>
+</code></pre></div>
+
+<p>If we were to run that code this time we would get an alert window that said <code>xss</code>. Not the worse thing that can happen, but it&rsquo;s still pretty darn bad!</p>
+
+<p>How can you prevent this from happening when using Backbone? Stop using the <code>get</code> function! There are only two places where I can see ever using the <code>get</code>function, and I&rsquo;ll get to those in a second.</p>
+
+<h3 id="code-escape-code-is-your-only-option"><code>escape</code> is Your Only Option:</h3>
+
+<p>To prevent these sorts of scripting attacks when using Backbone, you should be using the <code>escape</code> function. It essentially behaves just like the <code>get</code> function, but it will return an escaped version of the attribute.</p>
+
+<p>If we were to update the malicious code example to look something like this:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">model</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">Model</span><span class="p">({</span><span class="nx">foo</span><span class="o">:</span> <span class="s2">&quot;&lt;script&gt;alert(&#39;xss&#39;)&lt;/script&gt;&quot;</span><span class="p">});</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;h1&quot;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">escape</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">));</span>
+</code></pre></div>
+
+<p>when it is run we would end up with an <code>h1</code> tag that had a value of <code>&amp;lt;script&amp;gt;alert(&amp;#x27;xss&amp;#x27;)&amp;lt;&amp;#x2F;script&amp;gt;</code></p>
+
+<p>Now, I&rsquo;ll be the first to admit that doesn&rsquo;t look very pretty, but at least the scripting attack has failed.</p>
+
+<h3 id="when-you-should-use-code-get-code">When You Should Use <code>get</code>:</h3>
+
+<p>Earlier I mentioned there are two places where I could see using the <code>get</code> function.</p>
+
+<p>Because the <code>escape</code> function is santizing the value of the attribute for you there is a slight performance overhead, therefore, if you are definitely not going to executing the value of that attribute, then using the <code>get</code> function is acceptable. For example if you were doing something like the following:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">model</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">Model</span><span class="p">({</span><span class="nx">foo</span><span class="o">:</span> <span class="s2">&quot;Bar&quot;</span><span class="p">});</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;h1&quot;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">escape</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Notice how there I used the <code>get</code> function to check whether the attribute&rsquo;s value was <code>null</code> and then I used the <code>escape</code> function to actually print out that value. That is a perfectly acceptable use of the <code>get</code> function. It also, happens to the exact reason for use case number two.</p>
+
+<p>The second reason you would want to use the <code>get</code> function has already been highlighted in the previous code example. The <code>get</code> function returns the original attribute value, unaltered. The <code>escape</code> function, however, will always return a <code>string</code> value, even if the original value was <code>null</code>.</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">model</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">Model</span><span class="p">({});</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">));</span> <span class="c1">// null</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">escape</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">));</span> <span class="c1">// &quot;&quot;</span>
+</code></pre></div>
+
+<p>See the difference there? I believe this to be a bug. I&rsquo;ve submitted a <a href="https://github.com/documentcloud/backbone/pull/1227">pull request</a> to fix this issue, so hopefully it&rsquo;ll be resolved shortly. Because of this if you are doing any sort of comparisons, boolean checks, etc&hellip; always do it with the <code>get</code> function. If you are executing the value, such as printing it to the screen, always use the <code>escape</code> function.</p>
+
+<p>Your users will be happier, and you&rsquo;ll sleep better, if you always use the <code>escape</code> route!</p>
+
+</div>
+
+
+      <footer>
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      
+  
+    <nav><ul class="pager">
+    
+        <li class="previous">
+          <a href="/2012/04/15/capturing-and-uploading-photos-on-ios-with-phonegap/" title="Capturing and Uploading Photos on iOS with PhoneGap (Cordova)">
+            <span aria-hidden="true">&larr;</span>Previous
+          </a>
+        </li>
+    
+
+    
+      <li class="next">
+        <a href="/2012/05/09/just-say-no-to-laptops-at-conferences/" title="Just Say No To Laptops... At Conferences">
+            Next <span aria-hidden="true">&rarr;</span>
+        </a>
+      </li>
+    
+    </ul> </nav>
+  
+
+
+</div>
+
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  (function() {
+    
+    
+    if (window.location.hostname == "localhost")
+      return;
+
+    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+    dsq.src = '//metabates.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+</footer>
+
+    </div>
+    
+      <div class="col-sm-3">
+                  <a class="twitter-timeline" href="https://twitter.com/markbates" data-widget-id="274503565609934848">Tweets by @markbates</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+<hr>
+
+<div>
+  
+
+    <div class="section">
+      <header><div class="title"><b>Latest Posts</b></div></header>
+      <div class="content">
+        <ul>
+        
+          <li>
+          <a href="/2016/06/09/now-building-with-hugo/">Now Building With Hugo</a>
+          </li>
+        
+          <li>
+          <a href="/2015/10/15/handling-http-request-errors-in-go/">Handling HTTP Request Errors in GO</a>
+          </li>
+        
+          <li>
+          <a href="/2015/06/01/metacaststv-acquired-by-oreilly-media/">MetaCasts.tv Acquired by O&#39;Reilly Media</a>
+          </li>
+        
+          <li>
+          <a href="/2015/05/07/so-long-and-thanks-for-all-the-fish/">So Long, and Thanks For All The Fish</a>
+          </li>
+        
+          <li>
+          <a href="/2015/02/07/what-is-happinessconf-and-why-its-important/">What is HappinessConf and Why is it Important?</a>
+          </li>
+        
+          <li>
+          <a href="/2014/10/15/goth-multi-provider-authentication-for-go/">Goth: Multi Provider Authentication for Go</a>
+          </li>
+        
+          <li>
+          <a href="/2014/10/09/metacaststv-gothamgo-winner/">MetaCasts.tv/GothamGo Winner</a>
+          </li>
+        
+          <li>
+          <a href="/2014/09/01/100th-episode--a-free-ticket-to-gothamgo/">100th Episode | A Free Ticket to GothamGo!</a>
+          </li>
+        
+          <li>
+          <a href="/2014/07/08/metacasts-golang-future/">MetaCasts Golang Future</a>
+          </li>
+        
+          <li>
+          <a href="/2014/05/28/the-war-on-testing/">The War on Testing</a>
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+
+    
+
+</div>
+
+      </div>
+    
+  </div>
+</div>
+      
+<footer class="footer hidden-print">
+  <div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+           <div class="pull-left">
+  <a class="toplink" href="#">back to top</a>
+</div>
+<div class="pull-right">
+  <a href="http://feeds.feedburner.com/MetaBates" target="_blank">RSS</a> |
+  <a href="http://twitter.com/markbates/" target="_blank">Twitter</a> |
+  <a href="http://github.com/markbates/" target="_blank">GitHub</a> |
+  <a href="mailto:mark+blog@markbates.com">Email</a>
+</div>
+
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+              
+    
+<div class="container footline">
+    <small>
+  code with <i class='fa fa-heart'></i>
+
+</small>
+</div>
+
+
+    
+<div class="container copyright">
+    <small>
+  &copy; 2016 Mark Bates.
+
+  </small>
+</div>
+
+
+
+        </div>
+    </div>
+  </div>
+</footer>
+
+    
+
+<script src="//s3.amazonaws.com/mailmunch/static/site.js" id="mailmunch-script" data-mailmunch-site-id="" async="async"></script>
+
+
+
+<script src="//load.sumome.com/" data-sumo-site-id="" async="async"></script>
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+<script src="/js/popover/angular-storage.min.js"></script>
+
+
+<script type="text/javascript">
+  (function() {
+    
+    
+    if (window.location.hostname == "localhost")
+      return;
+
+    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+    dsq.src = '//metabates.disqus.com/count.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="/js/highlight.pack.js"></script>
+<script src="/js/site.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script>
+  var _gaq=[['_setAccount','UA-9756583-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+<script>
+var ENABLE_POPOVER = ""; 
+var EXPIRE_COOKIE = ""; 
+var SHOW_MODAL_TIMEOUT = ""; 
+var MOUSE_LEAVE = ""; 
+var MODAL_SIZE = ""; 
+var POST_URL = ""; 
+var SIGNUP_HEADER = "";
+var HEADER_IMAGE = "";
+var IMG_DESCRIPTION = "";
+var SIGNUP_TEXT = "";
+var INPUT_PLACEHOLDER = "";
+var SUBMIT_BUTTON = "";
+var SUCCESS_MESSAGE = "";
+var ERROR_MESSAGE = "";
+var OPTIN = "";
+var COOKIE_NAME = "";
+</script>
+<script src="/js/popover/angular-modal-service.min.js"></script>
+<script src="/js/angular-ismobile.min.js"></script>
+<script src="/js/popover/popover.min.js"></script>
+
+  </body>
+</html>
+

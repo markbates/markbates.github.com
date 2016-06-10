@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>A Few Rails Nuggets  &middot; MetaBates.com</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="" />
+
+<meta name="keywords" content="authlogic, book, cucumber, delayed job, distributed programming with ruby, General, rails, webrat, ">
+
+
+<meta property="og:title" content="A Few Rails Nuggets  &middot; MetaBates.com ">
+<meta property="og:site_name" content="MetaBates.com"/>
+<meta property="og:url" content="/2009/09/07/a-few-rails-nuggets/" />
+<meta property="og:locale" content="en-us">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content=""/>
+<meta property="og:article:published_time" content="2009-09-07T00:00:00Z" />
+<meta property="og:article:modified_time" content="2009-09-07T00:00:00Z" />
+
+  
+    
+<meta property="og:article:tag" content="authlogic">
+    
+<meta property="og:article:tag" content="book">
+    
+<meta property="og:article:tag" content="cucumber">
+    
+<meta property="og:article:tag" content="delayed job">
+    
+<meta property="og:article:tag" content="distributed programming with ruby">
+    
+<meta property="og:article:tag" content="General">
+    
+<meta property="og:article:tag" content="rails">
+    
+<meta property="og:article:tag" content="webrat">
+    
+  
+
+  
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@markbates" />
+<meta name="twitter:creator" content="@markbates" />
+<meta name="twitter:title" content="A Few Rails Nuggets" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:url" content="/2009/09/07/a-few-rails-nuggets/" />
+<meta name="twitter:domain" content="/">
+  
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "A Few Rails Nuggets",
+    "author": {
+      "@type": "Person",
+      "name": "http://profiles.google.com/+?rel=author"
+    },
+    "datePublished": "2009-09-07",
+    "description": "",
+    "wordCount":  588 
+  }
+</script>
+
+
+
+<link rel="canonical" href="/2009/09/07/a-few-rails-nuggets/" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+<link rel="icon" href="/favicon.png">
+<meta name="generator" content="Hugo 0.16" />
+
+  <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+
+
+    <link rel="stylesheet" href="/css/bootswatch/cerulean/bootstrap.min.css">
+
+
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/style.css">
+
+
+  <link rel="stylesheet" href="/css/highlight/monokai.css">
+
+
+</head>
+<body class="map[name:cerulean]" data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
+    <header id="main-header">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+          
+            <a class="navbar-brand" href="/">
+          MetaBates.com
+          
+          
+        </a>
+
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li>
+
+            <a href="/about"
+            >
+
+            
+
+            About
+            </a>
+          </li>
+          
+          <li>
+
+            <a href="/post"
+             title="Archives">
+
+            
+
+            Archives
+            </a>
+          </li>
+          
+          <li>
+
+            <a href="/books"
+            >
+
+            
+
+            Books
+            </a>
+          </li>
+          
+          <li>
+
+            <a href="/tags"
+            >
+
+            
+
+            Tags
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      
+    </div>
+  </nav>
+
+</header>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  <div class="text-center">
+
+    <h1>A Few Rails Nuggets
+</h1>
+
+    <div class="metas">
+<small>
+  <i class="fa fa-calendar"></i>
+  <time datetime="2009-09-07">7 Sep, 2009</time>
+</small>
+
+
+  <small>
+  &middot; Read in about 3 min
+  &middot; (588 Words)
+</small>
+
+
+<div class="margin-10">
+  <i class="fa fa-tags"></i>
+  
+  <a href="/tags/authlogic" class="label label-primary">authlogic</a>
+  
+  <a href="/tags/book" class="label label-primary">book</a>
+  
+  <a href="/tags/cucumber" class="label label-primary">cucumber</a>
+  
+  <a href="/tags/delayed-job" class="label label-primary">delayed job</a>
+  
+  <a href="/tags/distributed-programming-with-ruby" class="label label-primary">distributed programming with ruby</a>
+  
+  <a href="/tags/general" class="label label-primary">General</a>
+  
+  <a href="/tags/rails" class="label label-primary">rails</a>
+  
+  <a href="/tags/webrat" class="label label-primary">webrat</a>
+  
+
+
+</div>
+<br>
+</div>
+
+  </div>
+</div>
+
+      <div class="content">
+  <p>So with my book, <a href="http://my.safaribooksonline.com:80/9780321669919">Distributed Programming with Ruby</a>, finally finished, and a nice long weekend I was able to sit down and work on a little pet project of mine. I decided to work on a little site that I could use to track my rather large Pez collection. (Yes, I know, I collect Pez - so what!)</p>
+
+<p>While working on it I got to use some new technologies that I really haven&rsquo;t had a chance to play, so I thought I would talk a bit about some of the ones I liked the most.
+<h3>Authlogic</h3>
+Love it! Finally a decent authentication system! The thing I love most about it? It doesn&rsquo;t generate a lot of crap in your project. If I were to say one bad thing about it, it would be that it doesn&rsquo;t generate enough in your project. :) I know that sounds silly, but it&rsquo;s the truth. It gives you so much power, without having to generate a ton of lib code and crazy controller code, which is awesome. However, it would be nice if it had a generator that generated a &lsquo;basic&rsquo; application for you. Just a little thing, apart from that, love it!</p>
+
+<p><a href="http://github.com/binarylogic/authlogic/tree/master">http://github.com/binarylogic/authlogic/tree/master</a>
+<h3>Cucumber/Webrat</h3>
+I&rsquo;m sure by now everyone has heard of Cucumber. I&rsquo;m not going to pretend that I&rsquo;m the first to that party! Over the last month or so I&rsquo;ve really started to use it and it has completely changed my life. That&rsquo;s not an overstatement.</p>
+
+<p>Cucumber lets you write features and scenario in human readable format. Combine that with Webrat, which lets you do things like click buttons and follow links, you can write some amazing tests that look like something a project manager would write! Brilliant!</p>
+
+<p>These tests beat the hell out of Rails integration tests. Trust me! I love watching Cucumber and Webrat click around my site while I just watch.</p>
+
+<p><a href="http://cukes.info/">http://cukes.info/</a>
+<a href="http://github.com/brynary/webrat/tree/master">http://github.com/brynary/webrat/tree/master</a>
+<h3>Web App Theme Generator</h3>
+This cool little plugin helps you to quickly generate a very useful, and laid out, theme for your application. The themes would be familiar to anyone who has used sites like Lighthouse. They&rsquo;re basic, but they are very well coded and get you on your quickly so you can have something that looks fairly decent.</p>
+
+<p>My only gripe with this plugin is that it is a bit clumsy to use, but thankfully you don&rsquo;t have to run it very often, only when you create a new controller/resource.</p>
+
+<p><a href="http://gravityblast.com/2009/07/30/2-minutes-admin-layout-with-rails-and-the-web-app-theme-generator/">http://gravityblast.com/2009/07/30/2-minutes-admin-layout-with-rails-and-the-web-app-theme-generator/</a>
+<h3>Delayed Job</h3>
+The last piece of tech is Delayed Job. I first discovered Delayed Job when I wrote about it in my <a href="http://my.safaribooksonline.com:80/9780321669919">book</a>. It is a great way to handle and process background tasks. It&rsquo;s easy, reliable, and scales really well. I&rsquo;ve been using the Collective Idea fork of the project. It has a generator to create the migration you need. It also has a nice binary to run in the background on your server.</p>
+
+<p>I&rsquo;ve also been using a little gem I wrote that gives me hooks into Hoptoad, the is_paranoid gem, and a nice subclass for writing workers.</p>
+
+<p>I have been completely enamored with Delayed Job from the first moment I used it, and I&rsquo;m sure if you haven&rsquo;t checked it out yet, and you do, you&rsquo;ll feel the same!</p>
+
+<p><a href="http://github.com/collectiveidea/delayed_job/tree/master">http://github.com/collectiveidea/delayed_job/tree/master</a>
+<a href="http://github.com/markbates/delayed_job_extras/tree/master">http://github.com/markbates/delayed_job_extras/tree/master</a></p>
+
+<p>There you go, that&rsquo;s just a few things I&rsquo;ve been playing with lately, that I think are going to become mainstays in any Rails project I work on. Hopefully this has given you a little for for thought on things you can use in your next project.</p>
+
+</div>
+
+
+      <footer>
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      
+  
+    <nav><ul class="pager">
+    
+        <li class="previous">
+          <a href="/2009/07/31/apn-on-rails-0-3-0-released/" title="APN on Rails 0.3.0 Released">
+            <span aria-hidden="true">&larr;</span>Previous
+          </a>
+        </li>
+    
+
+    
+      <li class="next">
+        <a href="/2009/10/07/introducing-warp-drive-for-rails/" title="Introducing Warp Drive for Rails">
+            Next <span aria-hidden="true">&rarr;</span>
+        </a>
+      </li>
+    
+    </ul> </nav>
+  
+
+
+</div>
+
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  (function() {
+    
+    
+    if (window.location.hostname == "localhost")
+      return;
+
+    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+    dsq.src = '//metabates.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+</footer>
+
+    </div>
+    
+      <div class="col-sm-3">
+                  <a class="twitter-timeline" href="https://twitter.com/markbates" data-widget-id="274503565609934848">Tweets by @markbates</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+<hr>
+
+<div>
+  
+
+    <div class="section">
+      <header><div class="title"><b>Latest Posts</b></div></header>
+      <div class="content">
+        <ul>
+        
+          <li>
+          <a href="/2016/06/09/now-building-with-hugo/">Now Building With Hugo</a>
+          </li>
+        
+          <li>
+          <a href="/2015/10/15/handling-http-request-errors-in-go/">Handling HTTP Request Errors in GO</a>
+          </li>
+        
+          <li>
+          <a href="/2015/06/01/metacaststv-acquired-by-oreilly-media/">MetaCasts.tv Acquired by O&#39;Reilly Media</a>
+          </li>
+        
+          <li>
+          <a href="/2015/05/07/so-long-and-thanks-for-all-the-fish/">So Long, and Thanks For All The Fish</a>
+          </li>
+        
+          <li>
+          <a href="/2015/02/07/what-is-happinessconf-and-why-its-important/">What is HappinessConf and Why is it Important?</a>
+          </li>
+        
+          <li>
+          <a href="/2014/10/15/goth-multi-provider-authentication-for-go/">Goth: Multi Provider Authentication for Go</a>
+          </li>
+        
+          <li>
+          <a href="/2014/10/09/metacaststv-gothamgo-winner/">MetaCasts.tv/GothamGo Winner</a>
+          </li>
+        
+          <li>
+          <a href="/2014/09/01/100th-episode--a-free-ticket-to-gothamgo/">100th Episode | A Free Ticket to GothamGo!</a>
+          </li>
+        
+          <li>
+          <a href="/2014/07/08/metacasts-golang-future/">MetaCasts Golang Future</a>
+          </li>
+        
+          <li>
+          <a href="/2014/05/28/the-war-on-testing/">The War on Testing</a>
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+
+    
+
+</div>
+
+      </div>
+    
+  </div>
+</div>
+      
+<footer class="footer hidden-print">
+  <div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+           <div class="pull-left">
+  <a class="toplink" href="#">back to top</a>
+</div>
+<div class="pull-right">
+  <a href="http://feeds.feedburner.com/MetaBates" target="_blank">RSS</a> |
+  <a href="http://twitter.com/markbates/" target="_blank">Twitter</a> |
+  <a href="http://github.com/markbates/" target="_blank">GitHub</a> |
+  <a href="mailto:mark+blog@markbates.com">Email</a>
+</div>
+
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+              
+    
+<div class="container footline">
+    <small>
+  code with <i class='fa fa-heart'></i>
+
+</small>
+</div>
+
+
+    
+<div class="container copyright">
+    <small>
+  &copy; 2016 Mark Bates.
+
+  </small>
+</div>
+
+
+
+        </div>
+    </div>
+  </div>
+</footer>
+
+    
+
+<script src="//s3.amazonaws.com/mailmunch/static/site.js" id="mailmunch-script" data-mailmunch-site-id="" async="async"></script>
+
+
+
+<script src="//load.sumome.com/" data-sumo-site-id="" async="async"></script>
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+<script src="/js/popover/angular-storage.min.js"></script>
+
+
+<script type="text/javascript">
+  (function() {
+    
+    
+    if (window.location.hostname == "localhost")
+      return;
+
+    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+    dsq.src = '//metabates.disqus.com/count.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="/js/highlight.pack.js"></script>
+<script src="/js/site.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script>
+  var _gaq=[['_setAccount','UA-9756583-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+<script>
+var ENABLE_POPOVER = ""; 
+var EXPIRE_COOKIE = ""; 
+var SHOW_MODAL_TIMEOUT = ""; 
+var MOUSE_LEAVE = ""; 
+var MODAL_SIZE = ""; 
+var POST_URL = ""; 
+var SIGNUP_HEADER = "";
+var HEADER_IMAGE = "";
+var IMG_DESCRIPTION = "";
+var SIGNUP_TEXT = "";
+var INPUT_PLACEHOLDER = "";
+var SUBMIT_BUTTON = "";
+var SUCCESS_MESSAGE = "";
+var ERROR_MESSAGE = "";
+var OPTIN = "";
+var COOKIE_NAME = "";
+</script>
+<script src="/js/popover/angular-modal-service.min.js"></script>
+<script src="/js/angular-ismobile.min.js"></script>
+<script src="/js/popover/popover.min.js"></script>
+
+  </body>
+</html>
+

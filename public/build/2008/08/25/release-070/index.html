@@ -1,0 +1,324 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Release 0.7.0</title>
+    
+    
+    <meta name="author" content="Mark Bates">
+    <link href="http://feeds.feedburner.com/MetaBates" rel="alternate" title="Release 0.7.0" type="application/atom+xml">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/metabates/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/themes/metabates/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+  </head>
+
+  <body>
+  <style>#forkongithub a{background:#000;color:#fff;text-decoration:none;font-family:arial, sans-serif;text-align:center;font-weight:bold;padding:5px 40px;font-size:1rem;line-height:2rem;position:relative;transition:0.5s;}#forkongithub a:hover{background:#3F9FD9;color:#fff;}#forkongithub a::before,#forkongithub a::after{content:"";width:100%;display:block;position:absolute;top:1px;left:0;height:1px;background:#fff;}#forkongithub a::after{bottom:1px;top:auto;}@media screen and (min-width:800px){#forkongithub{position:absolute;display:block;top:0;right:0;width:200px;overflow:hidden;height:200px;}#forkongithub a{width:200px;position:absolute;top:60px;right:-60px;transform:rotate(45deg);-webkit-transform:rotate(45deg);box-shadow:4px 4px 10px rgba(0,0,0,0.8);}}</style><span id="forkongithub" style='z-index: 9999;'><a href="https://github.com/markbates">Fork me on GitHub</a></span>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/">Mark Bates</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              
+              
+              
+
+
+  
+    
+      
+      	
+      	<li><a href="/about.html">About</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/archive.html">Archives</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/books.html">Books</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags.html">Tags</a></li>
+      	
+      
+    
+  
+
+
+
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="span8">
+          
+<div class="page-header">
+  <h1>Release 0.7.0</h1>
+  
+    <h6>25 August 2008</h6>
+  
+</div>
+
+<div class="row">
+  <div class="span">
+    <p>I know that with every release I say something like, &#8220;This is a big release&#8221;, but the fact of the matter is this is a big release. Amongst the 49 tickets that make up release 0.7.0, there are two in particular that are at the core of Mack&#8217;s very existence, they are Distributed Objects and Distributed Views/Layouts.</p>
+
+<p>Back on March 26th Mack 0.4.0 was released. This release brought the first of three large distributed features, Distributed Routes. With 0.7.0 Mack fully realizes it&#8217;s goal of making it easy to write fully distributed web applications.&#160;There is a very nice wiki page, on our new wiki, that shows in detail how to use the new distributed features. That page can found&#160;<a href='http://www.mackwiki.com/using_the_mack-distributed_gem'>here</a>. Also, don&#8217;t forget to watch the screencast of the new distributed features that can be found <a href='http://screencasts.mackframework.com/Mack%20Distributed%20Demo.mov'>here</a>. <h3>Distributed Objects</h3> Distributed objects allow you to easily distribute access to your library and model code amongst any of your other Mack applications. Allowing this access is as simple as requiring the mack-distributed gem, adding a few lines to your configuration, and starting the mack_ring_server binary. &#8216;Client&#8217; applications just need to require the mack-distributed gem. <h3>Distributed Views/Layouts</h3> With distributed views and layouts you can now share the look and feel from one application with all of your applications. Configuration and use is just as easy using distributed objects. <h3>Form and HTML Helpers</h3> People have been requesting more HTML and form helper methods, and we&#8217;re more than happy to comply. There are whole bunch of these new methods now to help you more easily build your applications. The generators have been updated to use these new methods, to make your job even easier. There is also now support for doing Date/Time drop downs, similar to Rails and Merb. <h3>'Tell' Messaging</h3> Rails folks know &#8216;tell&#8217; messaging as &#8216;flash&#8217; messaging and Merb folks know it as &#8216;message&#8217; messaging. We went with &#8216;tell&#8217;. Tell messages are cleared after any non-redirect request. They&#8217;re a great way to send a simple message down to the client. <h3>New Wiki</h3> With this release there is also a new wiki at, <a href='http://www.mackwiki.com'>http://www.mackwiki.com</a>. This new wiki, incidentally built using Mack 0.7.0, will house all the tutorials and how-to&#8217;s for Mack. There are a few entries from the old wiki that still need to brought over during the next day or two.</p>
+
+<p>Changelog: <ul>
+	<li>[\[#114\](http://mack.lighthouseapp.com/projects/11385/tickets/114-add-javascript-link_helper)] Javascript link_helper</li>
+	<li>[\[#112\](http://mack.lighthouseapp.com/projects/11385/tickets/112-error-generating-mack-application)] Error generating mack application</li>
+	<li>[\[#109\](http://mack.lighthouseapp.com/projects/11385/tickets/109-update-to-datamapper-0-9-4)] DataMapper 0.9.4</li>
+	<li>[\[#103\](http://mack.lighthouseapp.com/projects/11385/tickets/103-log-colors-for-console-output-should-be-configurable-by-level)] Log colors for the console are now configurable per log level.</li>
+	<li>[\[#102\](http://mack.lighthouseapp.com/projects/11385/tickets/102-define-association-method-in-data-factory)] New association method in data_factory</li>
+	<li>[\[#101\](http://mack.lighthouseapp.com/projects/11385/tickets/101-update-file-upload-testing)] Update to file upload testing (build_file -&gt; file_for_upload, and multipart support in put)</li>
+	<li>[\[#100\](http://mack.lighthouseapp.com/projects/11385/tickets/100-inline-routing-parameters-are-being-mutated)] Inline routing parameters are being mutated</li>
+	<li>[\[#99\](http://mack.lighthouseapp.com/projects/11385/tickets/99-facets-2-4-3-support)] Upgraded to facets 2.4.3</li>
+	<li>[\[#98\](http://mack.lighthouseapp.com/projects/11385/tickets/98-facets-don-t-seem-to-be-loaded-when-reading-app_config-files)] Fixed mack-facets not being loaded before app_config files.</li>
+	<li>[\[#97\](http://mack.lighthouseapp.com/projects/11385/tickets/97-sessions-only-work-with-local_memory-mode)] Fixed sessions only working with 'local_memory' mode</li>
+	<li>[\[#96\](http://mack.lighthouseapp.com/projects/11385/tickets/96-need-to-cache-distributed-view-files)] Distributed Views module now uses file cache</li>
+	<li>[\[#92\](http://mack.lighthouseapp.com/projects/11385/tickets/92-remove-deprecated-orm-code-from-mack)] Removed deprecated app_config.orm code.</li>
+	<li>[\[#91\](http://mack.lighthouseapp.com/projects/11385/tickets/91-if-gems-rb-doesn-t-exist-mack-blows-up)] Fixed Mack blowing up if there is no config/initializers/gems.rb file.</li>
+	<li>[\[#90\](http://mack.lighthouseapp.com/projects/11385/tickets/90-add-deprecation-system)] Added deprecation system.</li>
+	<li>[\[#89\](http://mack.lighthouseapp.com/projects/11385/tickets/89-gems-tasks-don-t-work)] rake gems:* will now only display warning if any gem required is not installed (and not break)</li>
+	<li>[\[#88\](http://mack.lighthouseapp.com/projects/11385/tickets/88-sqlite3-tests-in-mack-active_record)] Implemented pending SQLite3 tests in mack-activerecord</li>
+	<li>[\[#87\](http://mack.lighthouseapp.com/projects/11385/tickets/87-refactor-common-orm-code-into-mack-orm-gem)] Refactored out common ORM code from mack-active_record and mack-data_mapper into mack-orm</li>
+	<li>[\[#86\](http://mack.lighthouseapp.com/projects/11385/tickets/86-add-stylesheet-link-helper)] stylesheet link helper</li>
+	<li>[\[#85\](http://mack.lighthouseapp.com/projects/11385/tickets/85-mack-viewhelpers-htmlhelpers-needs-to-be-refactored)] Refactored out Mack::ViewHelpers::HtmlHelpers into Mack::ViewHelpers::HtmlHelpers, Mack::ViewHelpers::FormHelpers and&nbsp;Mack::ViewHelpers::linkHelpers</li>
+	<li>[\[#84\](http://mack.lighthouseapp.com/projects/11385/tickets/84-there-needs-to-be-a-way-to-lookup-a-specific-distributed-service)] Added Mack::Distributed.lookup(url) to retrieve specific distributed services.</li>
+	<li>[\[#83\](http://mack.lighthouseapp.com/projects/11385/tickets/83-mail_to-helper-needed)] Added mail_to HTML helper.</li>
+	<li>[\[#82\](http://mack.lighthouseapp.com/projects/11385/tickets/82-mack-distributed-needs-an-acl)] Added ACL support to mack-distributed</li>
+	<li>[\[#81\](http://mack.lighthouseapp.com/projects/11385/tickets/81-session-s-don-t-carry-across-a-redirect-in-testing)] Fixed sessions working with redirects in testing</li>
+	<li>[\[#80\](http://mack.lighthouseapp.com/projects/11385/tickets/80-original-object-s-inspect-should-be-added-to-the-distributed-proxy-object-s-inspect)] Distributed objects present both the DRb::DRbObject inspect and the original object's inspect when asked.</li>
+	<li>[\[#79\](http://mack.lighthouseapp.com/projects/11385/tickets/79-rename-use_distributed_routes-config)] Renamed app_config.mack.use_distributed_routes to app_config.mack.share_routes</li>
+	<li>[\[#76\](http://mack.lighthouseapp.com/projects/11385/tickets/76-move-mack_ring_server-to-mack-distributed)] Move mack_ring_server to mack-distributed</li>
+	<li>[\[#75\](http://mack.lighthouseapp.com/projects/11385/tickets/75-there-are-still-distributed-rake-tasks-in-mack-core)] Left over mack-distributed rake tasks</li>
+	<li>[\[#74\](http://mack.lighthouseapp.com/projects/11385/tickets/74-optional-disable-initialization-logging)] Added optional feature to disable initialization logging.</li>
+	<li>[\[#73\](http://mack.lighthouseapp.com/projects/11385/tickets/73-tests-should-no-longer-use-functional-unit-folders)] Tests no longer use the functional/unit directories</li>
+	<li>[\[#69\](http://mack.lighthouseapp.com/projects/11385/tickets/69-generators-for-view-helpers-and-controller-helpers)] Added ViewHelperGenerator and ControllerHelperGenerator</li>
+	<li>[\[#68\](http://mack.lighthouseapp.com/projects/11385/tickets/68-transactional-support-in-mack-activerecord)] Transactional support in mack-AR</li>
+	<li>[\[#67\](http://mack.lighthouseapp.com/projects/11385/tickets/67-proper-test-setup-tasks-for-datamapper-and-activerecord)] Added test:setup tasks for active_record and data_mapper</li>
+	<li>[\[#62\](http://mack.lighthouseapp.com/projects/11385/tickets/62-remove-l10n-warnings)] Removed const redefined warnings if mack-l10n is used along with mack-activerecord</li>
+	<li>[\[#39\](http://mack.lighthouseapp.com/projects/11385/tickets/39-haml-2-x-support)] HAML 2.0.2 support</li>
+	<li>[\[#28\](http://mack.lighthouseapp.com/projects/11385/tickets/28-refactor-out-encryption-code)] Refactored out encryption into the mack-encryption gem.</li>
+	<li>[\[#25\](http://mack.lighthouseapp.com/projects/11385/tickets/25-simple-controller-generator)] Added ControllerGenerator</li>
+	<li>[\[#19\](http://mack.lighthouseapp.com/projects/11385/tickets/19-more-html-helpers)] Added HTML form helpers</li>
+	<li>[\[#15\](http://mack.lighthouseapp.com/projects/11385/tickets/15-file-upload-testing)] File upload testing support (ability to do multipart form post in testing)</li>
+	<li>[\[#11\](http://mack.lighthouseapp.com/projects/11385/tickets/11-distributed-views-layouts)] Distributed Layout/Views</li>
+	<li>[\[#10\](http://mack.lighthouseapp.com/projects/11385/tickets/10-distributed-models)] Added distributed objects to mack-distributed.</li>
+	<li>[\[#8\](http://mack.lighthouseapp.com/projects/11385/tickets/8-refactor-out-distributed-code)]  Move distributed code from mack-core to mack-more</li>
+	<li>[\[#5\](http://mack.lighthouseapp.com/projects/11385/tickets/5-flash-messaging)] Added tell messaging</li>
+	<li>gem: genosaurus 1.2.2</li>
+	<li>gem: haml 2.0.2</li>
+	<li>gem: addressable 1.0.4</li>
+	<li>gem: facets 2.4.3</li>
+	<li>gem: data_mapper 0.9.4</li>
+</ul></p>
+    <hr>
+    
+      <div class='tag_box'>
+        <h5>Tags</h5>
+        
+        
+           
+            <a href="/tags.html#addressable-ref" class="tag">addressable</a>
+           
+            <a href="/tags.html#data factory-ref" class="tag">data factory</a>
+           
+            <a href="/tags.html#data_mapper-ref" class="tag">data_mapper</a>
+           
+            <a href="/tags.html#distributed objects-ref" class="tag">distributed objects</a>
+           
+            <a href="/tags.html#distributed routes-ref" class="tag">distributed routes</a>
+           
+            <a href="/tags.html#distributed views/layouts-ref" class="tag">distributed views/layouts</a>
+           
+            <a href="/tags.html#facets-ref" class="tag">facets</a>
+           
+            <a href="/tags.html#General-ref" class="tag">General</a>
+           
+            <a href="/tags.html#genosaurus-ref" class="tag">genosaurus</a>
+           
+            <a href="/tags.html#haml-ref" class="tag">haml</a>
+           
+            <a href="/tags.html#helpers-ref" class="tag">helpers</a>
+           
+            <a href="/tags.html#mack-ref" class="tag">mack</a>
+           
+            <a href="/tags.html#merb-ref" class="tag">merb</a>
+           
+            <a href="/tags.html#rails-ref" class="tag">rails</a>
+           
+            <a href="/tags.html#release-ref" class="tag">release</a>
+           
+            <a href="/tags.html#Releases-ref" class="tag">Releases</a>
+           
+            <a href="/tags.html#rinda-ref" class="tag">rinda</a>
+           
+            <a href="/tags.html#tell messaging-ref" class="tag">tell messaging</a>
+           
+            <a href="/tags.html#Updates-ref" class="tag">Updates</a>
+           
+            <a href="/tags.html#wiki-ref" class="tag">wiki</a>
+          
+        
+        <hr />
+      </div>
+    
+    
+    <!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style ">
+<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+<a class="addthis_button_tweet"></a>
+<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+<a class="addthis_counter addthis_pill_style"></a>
+</div>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4f7cef9a0d4f7bd5"></script>
+<!-- AddThis Button END -->
+    <hr>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2008/08/18/preview-070-building-distributed-application-w-mack-screencast" title="Preview (0.7.0): Building Distributed Application w/ Mack (Screencast!)">&larr; Previous</a></li>
+      
+        <li><a href="/archive.html">Archive</a></li>
+      
+        <li class="next"><a href="/2008/08/26/mack-articleinterview-on-rubyinside" title="Mack Article/Interview on RubyInside">Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+    <hr>
+    
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+    var disqus_shortname = 'metabates'; // required: replace example with your forum shortname
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+  </div>
+
+</div>
+
+
+        </div><!--/span-->
+        <div class="span4">
+          <a href="/books.html" class="thumbnail">
+            <img src="/assets/images/2012/02/cover_300.png" />
+          </a>
+          <hr />
+
+          <a class="twitter-timeline" href="https://twitter.com/markbates" data-widget-id="274503565609934848">Tweets by @markbates</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+          <hr />
+
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Latest Posts</li>
+              
+                <li><a href="/2013/06/02/introducting-linelyticscom">Introducting LineLytics.com</a></li>
+              
+                <li><a href="/2013/01/01/announcing-metacaststv-screen-casts">Announcing MetaCasts.tv Screen Casts</a></li>
+              
+                <li><a href="/2012/12/15/javascript-prototypes-video">JavaScript Prototypes (Video)</a></li>
+              
+                <li><a href="/2012/12/08/getting-started-with-sinatra-video">Getting Started with Sinatra (Video)</a></li>
+              
+                <li><a href="/2012/12/02/getting-started-with-rack-video">Getting Started with Rack (Video)</a></li>
+              
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <p>
+          &copy; Mark Bates 2012 |
+          <a href="http://feeds.feedburner.com/MetaBates">RSS</a> |
+          <a href="http://twitter.com/markbates/" rel="me">Twitter</a> |
+          <a href="http://github.com/markbates/" rel="me">GitHub</a> |
+          <a href="mailto:mark+blog@markbates.com">Email</a>
+        </p>
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-9756583-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+  </body>
+</html>
+

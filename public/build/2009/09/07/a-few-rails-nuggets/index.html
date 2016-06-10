@@ -1,0 +1,270 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>A Few Rails Nuggets</title>
+    
+    
+    <meta name="author" content="Mark Bates">
+    <link href="http://feeds.feedburner.com/MetaBates" rel="alternate" title="A Few Rails Nuggets" type="application/atom+xml">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/metabates/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/themes/metabates/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+  </head>
+
+  <body>
+  <style>#forkongithub a{background:#000;color:#fff;text-decoration:none;font-family:arial, sans-serif;text-align:center;font-weight:bold;padding:5px 40px;font-size:1rem;line-height:2rem;position:relative;transition:0.5s;}#forkongithub a:hover{background:#3F9FD9;color:#fff;}#forkongithub a::before,#forkongithub a::after{content:"";width:100%;display:block;position:absolute;top:1px;left:0;height:1px;background:#fff;}#forkongithub a::after{bottom:1px;top:auto;}@media screen and (min-width:800px){#forkongithub{position:absolute;display:block;top:0;right:0;width:200px;overflow:hidden;height:200px;}#forkongithub a{width:200px;position:absolute;top:60px;right:-60px;transform:rotate(45deg);-webkit-transform:rotate(45deg);box-shadow:4px 4px 10px rgba(0,0,0,0.8);}}</style><span id="forkongithub" style='z-index: 9999;'><a href="https://github.com/markbates">Fork me on GitHub</a></span>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/">Mark Bates</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              
+              
+              
+
+
+  
+    
+      
+      	
+      	<li><a href="/about.html">About</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/archive.html">Archives</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/books.html">Books</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags.html">Tags</a></li>
+      	
+      
+    
+  
+
+
+
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="span8">
+          
+<div class="page-header">
+  <h1>A Few Rails Nuggets</h1>
+  
+    <h6>07 September 2009</h6>
+  
+</div>
+
+<div class="row">
+  <div class="span">
+    <p>So with my book, <a href='http://my.safaribooksonline.com:80/9780321669919'>Distributed Programming with Ruby</a>, finally finished, and a nice long weekend I was able to sit down and work on a little pet project of mine. I decided to work on a little site that I could use to track my rather large Pez collection. (Yes, I know, I collect Pez - so what!)</p>
+
+<p>While working on it I got to use some new technologies that I really haven&#8217;t had a chance to play, so I thought I would talk a bit about some of the ones I liked the most. <h3>Authlogic</h3> Love it! Finally a decent authentication system! The thing I love most about it? It doesn&#8217;t generate a lot of crap in your project. If I were to say one bad thing about it, it would be that it doesn&#8217;t generate enough in your project. :) I know that sounds silly, but it&#8217;s the truth. It gives you so much power, without having to generate a ton of lib code and crazy controller code, which is awesome. However, it would be nice if it had a generator that generated a &#8216;basic&#8217; application for you. Just a little thing, apart from that, love it!</p>
+
+<p><a href='http://github.com/binarylogic/authlogic/tree/master'>http://github.com/binarylogic/authlogic/tree/master</a> <h3>Cucumber/Webrat</h3> I&#8217;m sure by now everyone has heard of Cucumber. I&#8217;m not going to pretend that I&#8217;m the first to that party! Over the last month or so I&#8217;ve really started to use it and it has completely changed my life. That&#8217;s not an overstatement.</p>
+
+<p>Cucumber lets you write features and scenario in human readable format. Combine that with Webrat, which lets you do things like click buttons and follow links, you can write some amazing tests that look like something a project manager would write! Brilliant!</p>
+
+<p>These tests beat the hell out of Rails integration tests. Trust me! I love watching Cucumber and Webrat click around my site while I just watch.</p>
+
+<p><a href='http://cukes.info/'>http://cukes.info/</a> <a href='http://github.com/brynary/webrat/tree/master'>http://github.com/brynary/webrat/tree/master</a> <h3>Web App Theme Generator</h3> This cool little plugin helps you to quickly generate a very useful, and laid out, theme for your application. The themes would be familiar to anyone who has used sites like Lighthouse. They&#8217;re basic, but they are very well coded and get you on your quickly so you can have something that looks fairly decent.</p>
+
+<p>My only gripe with this plugin is that it is a bit clumsy to use, but thankfully you don&#8217;t have to run it very often, only when you create a new controller/resource.</p>
+
+<p><a href='http://gravityblast.com/2009/07/30/2-minutes-admin-layout-with-rails-and-the-web-app-theme-generator/'>http://gravityblast.com/2009/07/30/2-minutes-admin-layout-with-rails-and-the-web-app-theme-generator/</a> <h3>Delayed Job</h3> The last piece of tech is Delayed Job. I first discovered Delayed Job when I wrote about it in my <a href='http://my.safaribooksonline.com:80/9780321669919'>book</a>. It is a great way to handle and process background tasks. It&#8217;s easy, reliable, and scales really well. I&#8217;ve been using the Collective Idea fork of the project. It has a generator to create the migration you need. It also has a nice binary to run in the background on your server.</p>
+
+<p>I&#8217;ve also been using a little gem I wrote that gives me hooks into Hoptoad, the is_paranoid gem, and a nice subclass for writing workers.</p>
+
+<p>I have been completely enamored with Delayed Job from the first moment I used it, and I&#8217;m sure if you haven&#8217;t checked it out yet, and you do, you&#8217;ll feel the same!</p>
+
+<p><a href='http://github.com/collectiveidea/delayed_job/tree/master'>http://github.com/collectiveidea/delayed_job/tree/master</a> <a href='http://github.com/markbates/delayed_job_extras/tree/master'>http://github.com/markbates/delayed_job_extras/tree/master</a></p>
+
+<p>There you go, that&#8217;s just a few things I&#8217;ve been playing with lately, that I think are going to become mainstays in any Rails project I work on. Hopefully this has given you a little for for thought on things you can use in your next project.</p>
+    <hr>
+    
+      <div class='tag_box'>
+        <h5>Tags</h5>
+        
+        
+           
+            <a href="/tags.html#authlogic-ref" class="tag">authlogic</a>
+           
+            <a href="/tags.html#book-ref" class="tag">book</a>
+           
+            <a href="/tags.html#cucumber-ref" class="tag">cucumber</a>
+           
+            <a href="/tags.html#delayed job-ref" class="tag">delayed job</a>
+           
+            <a href="/tags.html#distributed programming with ruby-ref" class="tag">distributed programming with ruby</a>
+           
+            <a href="/tags.html#General-ref" class="tag">General</a>
+           
+            <a href="/tags.html#rails-ref" class="tag">rails</a>
+           
+            <a href="/tags.html#webrat-ref" class="tag">webrat</a>
+          
+        
+        <hr />
+      </div>
+    
+    
+    <!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style ">
+<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+<a class="addthis_button_tweet"></a>
+<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+<a class="addthis_counter addthis_pill_style"></a>
+</div>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4f7cef9a0d4f7bd5"></script>
+<!-- AddThis Button END -->
+    <hr>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2009/07/31/apn-on-rails-0-3-0-released" title="APN on Rails 0.3.0 Released">&larr; Previous</a></li>
+      
+        <li><a href="/archive.html">Archive</a></li>
+      
+        <li class="next"><a href="/2009/10/07/introducing-warp-drive-for-rails" title="Introducing Warp Drive for Rails">Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+    <hr>
+    
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+    var disqus_shortname = 'metabates'; // required: replace example with your forum shortname
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+  </div>
+
+</div>
+
+
+        </div><!--/span-->
+        <div class="span4">
+          <a href="/books.html" class="thumbnail">
+            <img src="/assets/images/2012/02/cover_300.png" />
+          </a>
+          <hr />
+
+          <a class="twitter-timeline" href="https://twitter.com/markbates" data-widget-id="274503565609934848">Tweets by @markbates</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+          <hr />
+
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Latest Posts</li>
+              
+                <li><a href="/2013/06/02/introducting-linelyticscom">Introducting LineLytics.com</a></li>
+              
+                <li><a href="/2013/01/01/announcing-metacaststv-screen-casts">Announcing MetaCasts.tv Screen Casts</a></li>
+              
+                <li><a href="/2012/12/15/javascript-prototypes-video">JavaScript Prototypes (Video)</a></li>
+              
+                <li><a href="/2012/12/08/getting-started-with-sinatra-video">Getting Started with Sinatra (Video)</a></li>
+              
+                <li><a href="/2012/12/02/getting-started-with-rack-video">Getting Started with Rack (Video)</a></li>
+              
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <p>
+          &copy; Mark Bates 2012 |
+          <a href="http://feeds.feedburner.com/MetaBates">RSS</a> |
+          <a href="http://twitter.com/markbates/" rel="me">Twitter</a> |
+          <a href="http://github.com/markbates/" rel="me">GitHub</a> |
+          <a href="mailto:mark+blog@markbates.com">Email</a>
+        </p>
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-9756583-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+  </body>
+</html>
+
