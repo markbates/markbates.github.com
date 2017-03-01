@@ -2,14 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Steak on MetaBates.com</title>
-    <link>/tags/steak/</link>
+    <link>/tags/steak/index.xml</link>
     <description>Recent content in Steak on MetaBates.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
     <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
     <copyright>(c) 2016 Mark Bates.</copyright>
-    <lastBuildDate>Fri, 04 Mar 2011 00:00:00 +0000</lastBuildDate>
     <atom:link href="/tags/steak/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -19,13 +18,13 @@
       <author>mark&#43;blog@markbates.com (Mark Bates)</author>
       <guid>/2011/03/04/407-testing-tools-arent-all-the-same-choose-wisely/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;&amp;ldquo;Testing is painful.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&amp;laquo;Testing is painful.&amp;raquo;&lt;/p&gt;
 
-&lt;p&gt;&amp;ldquo;Testing is hard.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&amp;laquo;Testing is hard.&amp;raquo;&lt;/p&gt;
 
-&lt;p&gt;&amp;ldquo;Testing is complicated.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&amp;laquo;Testing is complicated.&amp;raquo;&lt;/p&gt;
 
-&lt;p&gt;&amp;ldquo;Testing is not fun.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&amp;laquo;Testing is not fun.&amp;raquo;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;I hear those sorts of things all the time when I talk to people about testing. I agree that sometimes testing can be all of those things, but if you choose the right tools, the tools that best suite you, testing doesn&amp;rsquo;t have to be. Let me give you an example of what I&amp;rsquo;m talking about, how choosing the right tools can make a huge impact on how you feel about testing.&lt;/p&gt;

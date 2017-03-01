@@ -2,14 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rails on MetaBates.com</title>
-    <link>/tags/rails/</link>
+    <link>/tags/rails/index.xml</link>
     <description>Recent content in Rails on MetaBates.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
     <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
     <copyright>(c) 2016 Mark Bates.</copyright>
-    <lastBuildDate>Wed, 28 May 2014 00:00:00 +0000</lastBuildDate>
     <atom:link href="/tags/rails/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -20,7 +19,7 @@
       <guid>/2014/05/28/the-war-on-testing/</guid>
       <description>&lt;p&gt;Apologies for the slightly inflammatory title, but I&amp;rsquo;m beginning to get worried about the Ruby community, and sadly my worries are stemming from an area that first made me fall in love with Ruby, testing.&lt;/p&gt;
 
-&lt;p&gt;By now you are probably familiar with the whole &amp;ldquo;&lt;a href=&#34;https://www.google.com/#q=ruby+tdd+is+dead&#34;&gt;TDD is Dead&lt;/a&gt;&amp;rdquo; saga that stemmed from a keynote that DHH recently gave at RailsConf. I&amp;rsquo;m not going to bother recapping that, do a Google search and you&amp;rsquo;ll find out all about it. I&amp;rsquo;m not even here to weigh in on the matter.&lt;/p&gt;
+&lt;p&gt;By now you are probably familiar with the whole &amp;laquo;&lt;a href=&#34;https://www.google.com/#q=ruby+tdd+is+dead&#34;&gt;TDD is Dead&lt;/a&gt;&amp;raquo; saga that stemmed from a keynote that DHH recently gave at RailsConf. I&amp;rsquo;m not going to bother recapping that, do a Google search and you&amp;rsquo;ll find out all about it. I&amp;rsquo;m not even here to weigh in on the matter.&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;m here to discuss an even more trouble matter, the removal of a testing framework from the Ruby standard library in 2.2. The ticket that removed test-unit and MiniTest from Ruby 2.2 can be found at &lt;a href=&#34;https://bugs.ruby-lang.org/issues/9711#note-12&#34;&gt;https://bugs.ruby-lang.org/issues/9711#note-12&lt;/a&gt;.&lt;/p&gt;
 
@@ -31,7 +30,7 @@
 &lt;p&gt;&lt;img src=&#39;/assets/images/2014/05/tweet2.png&#39;&gt;
 &lt;img src=&#39;/assets/images/2014/05/tweet3.png&#39;&gt;&lt;/p&gt;
 
-&lt;p&gt;In regards to the later tweet I would encourage the author of the tweet to consult the Rails documentation on how to turn off automatic test generation. These tweets are concerning because they share the same shortsightedness. These tweets are analogous to saying, &amp;ldquo;Well, I use HashWithIndifferenceAccess so I don&amp;rsquo;t care if they remove Hash from the standard library&amp;rdquo;. This idea that because you use Rspec and not test-unit or MiniTest that this change does not somehow affect you is wrong. This affects the entire Ruby community.&lt;/p&gt;
+&lt;p&gt;In regards to the later tweet I would encourage the author of the tweet to consult the Rails documentation on how to turn off automatic test generation. These tweets are concerning because they share the same shortsightedness. These tweets are analogous to saying, &amp;laquo;Well, I use HashWithIndifferenceAccess so I don&amp;rsquo;t care if they remove Hash from the standard library&amp;raquo;. This idea that because you use Rspec and not test-unit or MiniTest that this change does not somehow affect you is wrong. This affects the entire Ruby community.&lt;/p&gt;
 
 &lt;p&gt;When I first got introduced to Ruby back in 2005 I was blown away by how testing was a first class citizen in Ruby, and of course Rails. Testing was, and I hope still is, a core tenant of the Ruby community. By removing a testing framework from the standard library we are telling newcomers, as well as though who wish Ruby ill that we don&amp;rsquo;t value testing.&lt;/p&gt;
 
@@ -55,7 +54,7 @@
       <guid>/2014/03/28/metacaststv-episode-stats/</guid>
       <description>
 
-&lt;p&gt;When I first started &lt;a href=&#34;http://www.metacasts.tv&#34;&gt;MetaCasts.tv&lt;/a&gt; in January of 2013 I set out to create a unique screen cast series. I wanted a series that didn&amp;rsquo;t focus on just one topic, just Ruby, just JavaScript, etc&amp;hellip; instead I wanted something that would challenge my subscribers, as well as myself. I wanted to talk about all sorts of technologies. I knew that some weeks the topic at hand might be incredibly relevant to viewers, and that other weeks it wouldn&amp;rsquo;t be. My hope was, and still is, that the weeks were the topic isn&amp;rsquo;t &amp;ldquo;relevant&amp;rdquo; that viewers will learn something new that they wouldn&amp;rsquo;t have otherwise.&lt;/p&gt;
+&lt;p&gt;When I first started &lt;a href=&#34;http://www.metacasts.tv&#34;&gt;MetaCasts.tv&lt;/a&gt; in January of 2013 I set out to create a unique screen cast series. I wanted a series that didn&amp;rsquo;t focus on just one topic, just Ruby, just JavaScript, etc&amp;hellip; instead I wanted something that would challenge my subscribers, as well as myself. I wanted to talk about all sorts of technologies. I knew that some weeks the topic at hand might be incredibly relevant to viewers, and that other weeks it wouldn&amp;rsquo;t be. My hope was, and still is, that the weeks were the topic isn&amp;rsquo;t &amp;laquo;relevant&amp;raquo; that viewers will learn something new that they wouldn&amp;rsquo;t have otherwise.&lt;/p&gt;
 
 &lt;p&gt;I love to grow and learn about topics outside of my daily comfort zone, so I&amp;rsquo;ve made &lt;a href=&#34;http://www.metacasts.tv&#34;&gt;MetaCasts.tv&lt;/a&gt; a venue for that. There are some episodes where I know the topic intimately, and there are others where I sat down, studied the topic, wrote lots of code, and presented my findings. All of it an educational experience as much for me, as my viewers.&lt;/p&gt;
 
@@ -105,7 +104,7 @@
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p&gt;These numbers are determined by the &amp;ldquo;primary language&amp;rdquo; of the video. For example a video about Ember.js would be listed as CoffeeScript, or JavaScript, even though the back-end might have been written using Ruby.&lt;/p&gt;
+&lt;p&gt;These numbers are determined by the &amp;laquo;primary language&amp;raquo; of the video. For example a video about Ember.js would be listed as CoffeeScript, or JavaScript, even though the back-end might have been written using Ruby.&lt;/p&gt;
 
 &lt;h2 id=&#34;most-purchased-video&#34;&gt;Most Purchased Video&lt;/h2&gt;
 
@@ -242,7 +241,7 @@
 &lt;span class=&#34;nx&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;h1&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;html&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;model&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;foo&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;));&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;That code will set the &lt;code&gt;h1&lt;/code&gt; tag on the page to whatever the value of the attribute &lt;code&gt;foo&lt;/code&gt; is, in this case the value &lt;code&gt;&amp;ldquo;Bar&amp;rdquo;&lt;/code&gt;. That&amp;rsquo;s all fine and dandy, but what if we set the value of the &lt;code&gt;foo&lt;/code&gt; attribute to something a bit more malicious:&lt;/p&gt;
+&lt;p&gt;That code will set the &lt;code&gt;h1&lt;/code&gt; tag on the page to whatever the value of the attribute &lt;code&gt;foo&lt;/code&gt; is, in this case the value &lt;code&gt;&amp;laquo;Bar&amp;raquo;&lt;/code&gt;. That&amp;rsquo;s all fine and dandy, but what if we set the value of the &lt;code&gt;foo&lt;/code&gt; attribute to something a bit more malicious:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;model&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Backbone&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Model&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;({&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;foo&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;lt;script&amp;gt;alert(&amp;#39;xss&amp;#39;)&amp;lt;/script&amp;gt;&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;});&lt;/span&gt;
 &lt;span class=&#34;nx&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;h1&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;html&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;model&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;foo&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;));&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -305,7 +304,7 @@
 
 &lt;p&gt;My views on the other hand were big. They contained all of the view logic. There were loops to print things to the screen, helpers to make things easier to do in the view layer, forms, etc&amp;hellip;&lt;/p&gt;
 
-&lt;p&gt;Somewhere near the end of the project my client would inevitably tell me they want me to build an API for them. Of course, this usually happens with only minutes left on the clock. So quickly, and hastily, I throw together a quick API for them. Sure I test the API with my test suite, but the API has never really been &amp;ldquo;tested&amp;rdquo;, in a real world sense.&lt;/p&gt;
+&lt;p&gt;Somewhere near the end of the project my client would inevitably tell me they want me to build an API for them. Of course, this usually happens with only minutes left on the clock. So quickly, and hastily, I throw together a quick API for them. Sure I test the API with my test suite, but the API has never really been &amp;laquo;tested&amp;raquo;, in a real world sense.&lt;/p&gt;
 
 &lt;p&gt;This writing an API in a vacuum seems to be quite a common practice. Everyone knows they need an API, but people don&amp;rsquo;t put much thought into it because they&amp;rsquo;re too busy trying to crank out their great idea as fast as possible. This leads to less than stellar APIs, which can both hurt the business and make it difficult when the time comes to do things like build clients for mobile devices and desktops.&lt;/p&gt;
 
@@ -449,16 +448,16 @@ The same goes for JavaScript files.&lt;/p&gt;
       <guid>/2011/04/15/because-everybody-has-an-opinion/</guid>
       <description>&lt;p&gt;In case you&amp;rsquo;ve been living in a cave this week you&amp;rsquo;ve probably heard that &lt;a href=&#34;http://www.rubyinside.com/rails-3-1-adopts-coffeescript-jquery-sass-and-controversy-4669.html&#34;&gt;Ruby on Rails&lt;/a&gt; is going to be including both the &lt;a href=&#34;http://coffeescript.org/&#34;&gt;CoffeeScript&lt;/a&gt; and &lt;a href=&#34;http://sass-lang.com/&#34;&gt;SASS&lt;/a&gt; libraries, it will also make &lt;a href=&#34;http://jquery.com/&#34;&gt;jQuery&lt;/a&gt; the default JavaScript framework, replacing the &lt;a href=&#34;http://www.prototypejs.org/&#34;&gt;Prototype&lt;/a&gt; framework.&lt;/p&gt;
 
-&lt;p&gt;I would like to start by addressing my experiences with CoffeeScript. My opinion of it is of ambivalence. I&amp;rsquo;ve used it on a project, I&amp;rsquo;ve played with and in the end I&amp;rsquo;ve come out with the opinion of &amp;ldquo;it&amp;rsquo;s ok&amp;rdquo;. It didn&amp;rsquo;t blow me away, but at the same time I can see why so many people like. It offers some really cool features that I really wish JavaScript had and you can cut down on the amount of code you have to write. On the other hand the apps I tend to write don&amp;rsquo;t tend to be that JavaScript heavy that I really needed to reach out for something like CoffeeScript.&lt;/p&gt;
+&lt;p&gt;I would like to start by addressing my experiences with CoffeeScript. My opinion of it is of ambivalence. I&amp;rsquo;ve used it on a project, I&amp;rsquo;ve played with and in the end I&amp;rsquo;ve come out with the opinion of &amp;laquo;it&amp;rsquo;s ok&amp;raquo;. It didn&amp;rsquo;t blow me away, but at the same time I can see why so many people like. It offers some really cool features that I really wish JavaScript had and you can cut down on the amount of code you have to write. On the other hand the apps I tend to write don&amp;rsquo;t tend to be that JavaScript heavy that I really needed to reach out for something like CoffeeScript.&lt;/p&gt;
 
 &lt;p&gt;&lt;img style=&#34;float: left; padding-right: 10px&#34; src=&#34;http://blogs.worldbank.org/files/publicsphere/public%20opinion_JGRNLY.jpeg&#34; alt=&#34;&#34; width=&#34;326&#34; height=&#34;246&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;So, how do I feel about CoffeeScript being included with Rails? Well, I&amp;rsquo;ll get to that. Let&amp;rsquo;s go over some of the most common arguments I&amp;rsquo;ve heard from people this week about why they&amp;rsquo;re anti-CoffeeScript in Rails.&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;&amp;ldquo;It&amp;rsquo;s an abstraction layer of JavaScript! JavaScript isn&amp;rsquo;t that bad, why can&amp;rsquo;t you just write JavaScript?&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&amp;laquo;It&amp;rsquo;s an abstraction layer of JavaScript! JavaScript isn&amp;rsquo;t that bad, why can&amp;rsquo;t you just write JavaScript?&amp;raquo;&lt;/p&gt;
 
-&lt;p&gt;&amp;ldquo;It&amp;rsquo;s going to be a hinderance to newbies. It&amp;rsquo;ll be too much of a learning curve!&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&amp;laquo;It&amp;rsquo;s going to be a hinderance to newbies. It&amp;rsquo;ll be too much of a learning curve!&amp;raquo;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;Let&amp;rsquo;s start with that second point first, shall we? I agree, it does represent a new element that needs to be learned when coming to Rails. But here&amp;rsquo;s the pretty nifty thing about how it&amp;rsquo;s all implemented in Rails. In order to actually use CoffeeScript in Rails you have to create your files named foo.js.coffee if, however, you just name your file foo.js then, guess what? You will have to write plain old JavaScript! Seems like newbies, and those who don&amp;rsquo;t like CoffeeScript, can just keep writing plain old JavaScript without anything stopping them at all.&lt;/p&gt;

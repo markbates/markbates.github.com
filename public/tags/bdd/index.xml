@@ -2,14 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bdd on MetaBates.com</title>
-    <link>/tags/bdd/</link>
+    <link>/tags/bdd/index.xml</link>
     <description>Recent content in Bdd on MetaBates.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
     <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
     <copyright>(c) 2016 Mark Bates.</copyright>
-    <lastBuildDate>Tue, 12 Oct 2010 00:00:00 +0000</lastBuildDate>
     <atom:link href="/tags/bdd/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -32,20 +31,20 @@
 
 &lt;p&gt;Let&amp;rsquo;s talk about each of this points for a minute.&lt;/p&gt;
 
-&lt;h3 id=&#34;we-don-t-didn-t-have-the-time&#34;&gt;&amp;ldquo;We don&amp;rsquo;t/didn&amp;rsquo;t have the time.&amp;rdquo;&lt;/h3&gt;
+&lt;h3 id=&#34;we-don-t-didn-t-have-the-time&#34;&gt;&amp;laquo;We don&amp;rsquo;t/didn&amp;rsquo;t have the time.&amp;raquo;&lt;/h3&gt;
 
 &lt;p&gt;I never accept time as an argument against testing. Testing ends up repaying it&amp;rsquo;s time investment, and will ultimately give you more time than if you didn&amp;rsquo;t write code. It&amp;rsquo;s a win-win. Again see my previous post in how to get the time signed off on as part of t he project timeline.&lt;/p&gt;
 
-&lt;h3 id=&#34;we-don-t-know-how&#34;&gt;&amp;ldquo;We don&amp;rsquo;t know how.&amp;rdquo;&lt;/h3&gt;
+&lt;h3 id=&#34;we-don-t-know-how&#34;&gt;&amp;laquo;We don&amp;rsquo;t know how.&amp;raquo;&lt;/h3&gt;
 
 &lt;p&gt;Learn. There&amp;rsquo;s no better time than the present and no better way to learn than being thrown into the deep end. The web is crawling with documentation, screen casts, how to articles and tutorials, and there are plenty of books to get you going. In short the k knowledge is literally at your finger tips, and to be honest it&amp;rsquo;s easier than you think.&lt;/p&gt;
 
-&lt;h3 id=&#34;it-was-is-too-complicated&#34;&gt;&amp;ldquo;It was/is too complicated.&amp;rdquo;&lt;/h3&gt;
+&lt;h3 id=&#34;it-was-is-too-complicated&#34;&gt;&amp;laquo;It was/is too complicated.&amp;raquo;&lt;/h3&gt;
 
 &lt;p&gt;That usually means you&amp;rsquo;re doing i
 t wrong. Take a step back and assess what it is you&amp;rsquo;re trying to do. You&amp;rsquo;re tests should be simple and concise. Don&amp;rsquo;t write tests that are hundreds of lines long. They&amp;rsquo;re tests, not entrance exams to MIT.&lt;/p&gt;
 
-&lt;h3 id=&#34;it-was-is-too-overwhelming&#34;&gt;&amp;ldquo;It was/is too overwhelming.&amp;rdquo;&lt;/h3&gt;
+&lt;h3 id=&#34;it-was-is-too-overwhelming&#34;&gt;&amp;laquo;It was/is too overwhelming.&amp;raquo;&lt;/h3&gt;
 
 &lt;p&gt;Certainly if you didn&amp;rsquo;t write tests as you went along it can get quite overwhelming thinking about all the tests you now need to write for your monolithic app. I&amp;rsquo;ll talk about how you can solve that problem in a minute.&lt;/p&gt;
 

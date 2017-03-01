@@ -2,14 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Javascript on MetaBates.com</title>
-    <link>/tags/javascript/</link>
+    <link>/tags/javascript/index.xml</link>
     <description>Recent content in Javascript on MetaBates.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
     <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
     <copyright>(c) 2016 Mark Bates.</copyright>
-    <lastBuildDate>Fri, 28 Mar 2014 00:00:00 +0000</lastBuildDate>
     <atom:link href="/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -20,7 +19,7 @@
       <guid>/2014/03/28/metacaststv-episode-stats/</guid>
       <description>
 
-&lt;p&gt;When I first started &lt;a href=&#34;http://www.metacasts.tv&#34;&gt;MetaCasts.tv&lt;/a&gt; in January of 2013 I set out to create a unique screen cast series. I wanted a series that didn&amp;rsquo;t focus on just one topic, just Ruby, just JavaScript, etc&amp;hellip; instead I wanted something that would challenge my subscribers, as well as myself. I wanted to talk about all sorts of technologies. I knew that some weeks the topic at hand might be incredibly relevant to viewers, and that other weeks it wouldn&amp;rsquo;t be. My hope was, and still is, that the weeks were the topic isn&amp;rsquo;t &amp;ldquo;relevant&amp;rdquo; that viewers will learn something new that they wouldn&amp;rsquo;t have otherwise.&lt;/p&gt;
+&lt;p&gt;When I first started &lt;a href=&#34;http://www.metacasts.tv&#34;&gt;MetaCasts.tv&lt;/a&gt; in January of 2013 I set out to create a unique screen cast series. I wanted a series that didn&amp;rsquo;t focus on just one topic, just Ruby, just JavaScript, etc&amp;hellip; instead I wanted something that would challenge my subscribers, as well as myself. I wanted to talk about all sorts of technologies. I knew that some weeks the topic at hand might be incredibly relevant to viewers, and that other weeks it wouldn&amp;rsquo;t be. My hope was, and still is, that the weeks were the topic isn&amp;rsquo;t &amp;laquo;relevant&amp;raquo; that viewers will learn something new that they wouldn&amp;rsquo;t have otherwise.&lt;/p&gt;
 
 &lt;p&gt;I love to grow and learn about topics outside of my daily comfort zone, so I&amp;rsquo;ve made &lt;a href=&#34;http://www.metacasts.tv&#34;&gt;MetaCasts.tv&lt;/a&gt; a venue for that. There are some episodes where I know the topic intimately, and there are others where I sat down, studied the topic, wrote lots of code, and presented my findings. All of it an educational experience as much for me, as my viewers.&lt;/p&gt;
 
@@ -70,7 +69,7 @@
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p&gt;These numbers are determined by the &amp;ldquo;primary language&amp;rdquo; of the video. For example a video about Ember.js would be listed as CoffeeScript, or JavaScript, even though the back-end might have been written using Ruby.&lt;/p&gt;
+&lt;p&gt;These numbers are determined by the &amp;laquo;primary language&amp;raquo; of the video. For example a video about Ember.js would be listed as CoffeeScript, or JavaScript, even though the back-end might have been written using Ruby.&lt;/p&gt;
 
 &lt;h2 id=&#34;most-purchased-video&#34;&gt;Most Purchased Video&lt;/h2&gt;
 
@@ -166,7 +165,7 @@
 
 &lt;p&gt;Because I&amp;rsquo;m just starting to get my feet wet in this area I thought I would share the first of these screencasts with everyone here in the hopes of getting some feedback, good or bad.&lt;/p&gt;
 
-&lt;p&gt;So without further adieu I offer up to you my first screencast, &amp;ldquo;CoffeeScript: Fat Arrow Functions&amp;rdquo;. Enjoy!&lt;/p&gt;
+&lt;p&gt;So without further adieu I offer up to you my first screencast, &amp;laquo;CoffeeScript: Fat Arrow Functions&amp;raquo;. Enjoy!&lt;/p&gt;
 
 &lt;iframe src=&#34;http://player.vimeo.com/video/54050364&#34; width=&#34;620&#34; height=&#34;350&#34; frameborder=&#34;0&#34; webkitAllowFullScreen=&#34;webkitAllowFullScreen&#34; mozallowfullscreen=&#34;mozallowfullscreen&#34; allowFullScreen=&#34;allowFullScreen&#34;&gt;&lt;!-- sdfasdfasd --&gt;&lt;/iframe&gt;
 </description>
@@ -199,7 +198,7 @@
 &lt;span class=&#34;nx&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;h1&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;html&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;model&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;foo&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;));&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;That code will set the &lt;code&gt;h1&lt;/code&gt; tag on the page to whatever the value of the attribute &lt;code&gt;foo&lt;/code&gt; is, in this case the value &lt;code&gt;&amp;ldquo;Bar&amp;rdquo;&lt;/code&gt;. That&amp;rsquo;s all fine and dandy, but what if we set the value of the &lt;code&gt;foo&lt;/code&gt; attribute to something a bit more malicious:&lt;/p&gt;
+&lt;p&gt;That code will set the &lt;code&gt;h1&lt;/code&gt; tag on the page to whatever the value of the attribute &lt;code&gt;foo&lt;/code&gt; is, in this case the value &lt;code&gt;&amp;laquo;Bar&amp;raquo;&lt;/code&gt;. That&amp;rsquo;s all fine and dandy, but what if we set the value of the &lt;code&gt;foo&lt;/code&gt; attribute to something a bit more malicious:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;model&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Backbone&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Model&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;({&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;foo&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;lt;script&amp;gt;alert(&amp;#39;xss&amp;#39;)&amp;lt;/script&amp;gt;&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;});&lt;/span&gt;
 &lt;span class=&#34;nx&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;h1&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;html&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;model&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;foo&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;));&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -256,7 +255,7 @@
 
 &lt;p&gt;&lt;img src=&#34;/assets/images/2012/04/15/phonegaplogo.png&#34; class=&#39;img-left&#39; style=&#34;width: 120px; height: 120px;&#34;/&gt;&lt;/p&gt;
 
-&lt;p&gt;Lately I&amp;rsquo;ve been doing a lot of work with &lt;a href=&#34;http://docs.phonegap.com&#34;&gt;PhoneGap&lt;/a&gt;, now known as Cordova. PhoneGap lets you write &amp;ldquo;native&amp;rdquo; iOS, Android, Blackberry, etc&amp;hellip; applications using standard web technologies, such as HTML, CSS, and JavaScript. They also give you a JavaScript API to access parts of the device, such as the camera, the accelerometer, the compass, etc&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Lately I&amp;rsquo;ve been doing a lot of work with &lt;a href=&#34;http://docs.phonegap.com&#34;&gt;PhoneGap&lt;/a&gt;, now known as Cordova. PhoneGap lets you write &amp;laquo;native&amp;raquo; iOS, Android, Blackberry, etc&amp;hellip; applications using standard web technologies, such as HTML, CSS, and JavaScript. They also give you a JavaScript API to access parts of the device, such as the camera, the accelerometer, the compass, etc&amp;hellip;&lt;/p&gt;
 
 &lt;p&gt;In this article I would like to take a quick look at how to take a new picture, or use an existing library photo, and how to upload it to a webserver somewhere. This is one of the most common things to do in a mobile application, and as you&amp;rsquo;re about to see, PhoneGap makes this, commonly painful task, pretty simple.&lt;/p&gt;
 

@@ -2,14 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Deployment on MetaBates.com</title>
-    <link>/tags/deployment/</link>
+    <link>/tags/deployment/index.xml</link>
     <description>Recent content in Deployment on MetaBates.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
     <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
     <copyright>(c) 2016 Mark Bates.</copyright>
-    <lastBuildDate>Tue, 23 Oct 2012 00:00:00 +0000</lastBuildDate>
     <atom:link href="/tags/deployment/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -43,7 +42,7 @@
 
 &lt;p&gt;Replace with your own Heroku API key and your Heroku git endpoint and Bob&amp;rsquo;s your uncle Travis will do the heavy lifting for you and deploy to Heroku for you if, and only if, your tests pass.&lt;/p&gt;
 
-&lt;p&gt;One quick final note, I would recommend creating a new Heroku account to use as a &amp;ldquo;deployer&amp;rdquo; account because you do have to include your API key in the &lt;code&gt;.travis.yml&lt;/code&gt; file.&lt;/p&gt;
+&lt;p&gt;One quick final note, I would recommend creating a new Heroku account to use as a &amp;laquo;deployer&amp;raquo; account because you do have to include your API key in the &lt;code&gt;.travis.yml&lt;/code&gt; file.&lt;/p&gt;
 
 &lt;p&gt;That&amp;rsquo;s it! Enjoy your continuous integration and continuous deployment all mixed up.&lt;/p&gt;
 </description>

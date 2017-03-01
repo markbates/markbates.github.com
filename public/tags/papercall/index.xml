@@ -2,14 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Papercall on MetaBates.com</title>
-    <link>/tags/papercall/</link>
+    <link>/tags/papercall/index.xml</link>
     <description>Recent content in Papercall on MetaBates.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
     <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
     <copyright>(c) 2016 Mark Bates.</copyright>
-    <lastBuildDate>Sat, 07 Feb 2015 00:00:00 +0000</lastBuildDate>
     <atom:link href="/tags/papercall/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -32,7 +31,7 @@
 
 &lt;p&gt;Conferences can get very repetitive. The same topics, the same speakers, etc&amp;hellip; One can only take hearing the same talk so many times before you want to rage flip the coffee stand in the hallway.&lt;/p&gt;
 
-&lt;p&gt;In May of 2014 I spoke at &lt;a href=&#34;http://devslovebacon.com&#34;&gt;Devs Love Bacon&lt;/a&gt; in London, England. What a great conference! It was almost all &amp;ldquo;soft&amp;rdquo; talks! But they weren&amp;rsquo;t just any ordinary set of soft talks, they were about things that developers love! I watched one talk that was about the differences in different types of Whiskey, including a tasting session! I watched another talk about power lifting! What?? It was great. Bacon really stuck with me as one of the most interesting conferences I have ever attended.&lt;/p&gt;
+&lt;p&gt;In May of 2014 I spoke at &lt;a href=&#34;http://devslovebacon.com&#34;&gt;Devs Love Bacon&lt;/a&gt; in London, England. What a great conference! It was almost all &amp;laquo;soft&amp;raquo; talks! But they weren&amp;rsquo;t just any ordinary set of soft talks, they were about things that developers love! I watched one talk that was about the differences in different types of Whiskey, including a tasting session! I watched another talk about power lifting! What?? It was great. Bacon really stuck with me as one of the most interesting conferences I have ever attended.&lt;/p&gt;
 
 &lt;p&gt;Fast-forward a few months and it was announced that the Wicked Good Ruby conference, meant to be held in my home town of Boston, was going to be canceled. There would be no conferences in Boston in 2014. I was disappointed by this, but understood completely why the organizers canceled it.&lt;/p&gt;
 
@@ -40,7 +39,7 @@
 
 &lt;p&gt;I then told Scott that the only type of conference I would help organize would be one similar to Devs Love Bacon. HappinessConf was born.&lt;/p&gt;
 
-&lt;h2 id=&#34;so-exactly-what-does-happinessconf-mean&#34;&gt;So Exactly What Does &amp;ldquo;HappinessConf&amp;rdquo; Mean?&lt;/h2&gt;
+&lt;h2 id=&#34;so-exactly-what-does-happinessconf-mean&#34;&gt;So Exactly What Does &amp;laquo;HappinessConf&amp;raquo; Mean?&lt;/h2&gt;
 
 &lt;p&gt;Scott and I want to organize a conference where developers, regardless of their programming language of choice, level of experience, etc&amp;hellip; could come together and help improve each other&amp;rsquo;s happiness.&lt;/p&gt;
 

@@ -2,14 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Github.Com on MetaBates.com</title>
-    <link>/tags/github/index.com/</link>
+    <link>/tags/github.com/index.xml</link>
     <description>Recent content in Github.Com on MetaBates.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
     <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
     <copyright>(c) 2016 Mark Bates.</copyright>
-    <lastBuildDate>Tue, 24 May 2011 00:00:00 +0000</lastBuildDate>
     <atom:link href="/tags/github.com/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -84,7 +83,7 @@ The gentleman who emailed me said that he was reading a lot of books in hopes of
 
 &lt;p&gt;Why do the open source projects always seem to get the ax? Well, let me start by saying that they don&amp;rsquo;t &lt;em&gt;always&lt;/em&gt; get the ax, but they certainly jump to the top of the list. There are certain libraries I&amp;rsquo;ve written, &lt;a href=&#34;http://github.com/markbates/cachetastic&#34;&gt;cachetastic&lt;/a&gt; and &lt;a href=&#34;http://github.com/markbates/configatron&#34;&gt;configatron&lt;/a&gt;, are the two most prominent that I use day in and day out. They will always get the love the deserve. Then there are projects like APN on Rails. I wrote it because I had an iPhone app (no longer available) that I wanted notifications for, and there was nothing else available for Ruby to do the job. The plugin took off like crazy and I was overwhelmed with patches, questions, bugs, etc&amp;hellip; That was great, and I was happy to help, for a time, but alas, I haven&amp;rsquo;t written an iPhone app for ages, and I just don&amp;rsquo;t have time to maintain a plugin that I wasn&amp;rsquo;t even using.&lt;/p&gt;
 
-&lt;p&gt;A while ago I realized that the best thing for APN on Rails, myself, and for the community was to find someone to take over the project so that it got the love it deserved. I put out the call and the good folks over at &lt;a href=&#34;http://www.prx.org/&#34;&gt;PRX&lt;/a&gt; (Public Radio Exchange) answered the call. The folks at PRX have written some great iPhone apps, including the very popular &amp;ldquo;This American Life&amp;rdquo; app.&lt;/p&gt;
+&lt;p&gt;A while ago I realized that the best thing for APN on Rails, myself, and for the community was to find someone to take over the project so that it got the love it deserved. I put out the call and the good folks over at &lt;a href=&#34;http://www.prx.org/&#34;&gt;PRX&lt;/a&gt; (Public Radio Exchange) answered the call. The folks at PRX have written some great iPhone apps, including the very popular &amp;laquo;This American Life&amp;raquo; app.&lt;/p&gt;
 
 &lt;p&gt;So I&amp;rsquo;m happy to announce that the new official home for APN on Rails is now at: &lt;a href=&#34;http://github.com/PRX/apn_on_rails&#34;&gt;http://github.com/PRX/apn_on_rails&lt;/a&gt;. I ask that you continue to show the same support to PRX that you have shown to me over the life of this plugin.&lt;/p&gt;
 
@@ -98,13 +97,13 @@ The gentleman who emailed me said that he was reading a lot of books in hopes of
       <pubDate>Fri, 22 May 2009 00:00:00 +0000</pubDate>
       <author>mark&#43;blog@markbates.com (Mark Bates)</author>
       <guid>/2009/05/22/distributed-programming-with-ruby-book-update/</guid>
-      <description>&lt;p&gt;Hey there folks, I know it&amp;rsquo;s been awhile, so I thought I would give you all a very quick update as to how the book is going. It&amp;rsquo;s going really well. I&amp;rsquo;m about 100 pages into it, and it&amp;rsquo;s shaping up very nicely. Addison-Wesley is preparing to put it into their &amp;ldquo;Rough Cuts&amp;rdquo; program so you can all get your dirty little hands on what I&amp;rsquo;ve written so far as early as a few weeks from now, or so I&amp;rsquo;m told.&lt;/p&gt;
+      <description>&lt;p&gt;Hey there folks, I know it&amp;rsquo;s been awhile, so I thought I would give you all a very quick update as to how the book is going. It&amp;rsquo;s going really well. I&amp;rsquo;m about 100 pages into it, and it&amp;rsquo;s shaping up very nicely. Addison-Wesley is preparing to put it into their &amp;laquo;Rough Cuts&amp;raquo; program so you can all get your dirty little hands on what I&amp;rsquo;ve written so far as early as a few weeks from now, or so I&amp;rsquo;m told.&lt;/p&gt;
 
 &lt;p&gt;While I don&amp;rsquo;t want to give too much away about the contents, everybody loves a good surprise, let me say that part one of the book will be the most comprehensive guide to DRb and Rinda that you&amp;rsquo;ll find anywhere. Including the source code!!&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;m working hard on part two of the book which focuses on third party tools, frameworks, and libraries. It&amp;rsquo;s quite a fun part of the book to write as there are a great deal of choices out there, including my own Distribunaut. (PS. I released a new version of it on GitHub a week or so ago.) Writing about different libraries is quite fun as I get to really delve into the source code and see the good and bad ways people like to write code. Plus some of the libraries have really great features, or really turn things on their head.&lt;/p&gt;
 
-&lt;p&gt;When the book is available as a &amp;ldquo;Rough Cut&amp;rdquo;, I&amp;rsquo;ll certainly keep you all informed. In the mean time keep watching this space and have a great weekend!&lt;/p&gt;
+&lt;p&gt;When the book is available as a &amp;laquo;Rough Cut&amp;raquo;, I&amp;rsquo;ll certainly keep you all informed. In the mean time keep watching this space and have a great weekend!&lt;/p&gt;
 </description>
     </item>
     

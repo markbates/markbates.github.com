@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>MetaBates.com</title>
-    <link>/</link>
+    <link>/index.xml</link>
     <description>Recent content on MetaBates.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -26,7 +26,7 @@
 
 &lt;p&gt;I spent some time with Steve a few weeks ago, and he told me that the latest version of Hugo had built-in support for importing Jekyll, and that I didn&amp;rsquo;t have to rely on hacking third party scripts to get the job done.&lt;/p&gt;
 
-&lt;p&gt;After running the importer all of my posts were there, and they only needed a wee bit of tweaking to make them look good with Hugo. Then I was off trying to find a good theme for the site, preferably something similar to what I had. That was easy enough, a few tweaks to a &amp;ldquo;bootstrap&amp;rdquo; theme and I was set.&lt;/p&gt;
+&lt;p&gt;After running the importer all of my posts were there, and they only needed a wee bit of tweaking to make them look good with Hugo. Then I was off trying to find a good theme for the site, preferably something similar to what I had. That was easy enough, a few tweaks to a &amp;laquo;bootstrap&amp;raquo; theme and I was set.&lt;/p&gt;
 
 &lt;p&gt;Overall I&amp;rsquo;ve been happy with Hugo, now that I have it set up. I just hit save and Hugo rebuilt my entire site in &lt;code&gt;234ms&lt;/code&gt;. That&amp;rsquo;s pretty darn fast! Especially compared with the speeds I was getting with Jekyll. Oh, and did I mention that it also reloaded the site in my browser for me so I can see it getting updated everytime I hit save? Yeah, pretty nice.&lt;/p&gt;
 
@@ -75,7 +75,7 @@
 &lt;span class=&#34;nx&#34;&gt;fmt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;res.StatusCode: %d\n&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;StatusCode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;That second of code is doing the &amp;ldquo;error&amp;rdquo; checking of the request. If we run this code we&amp;rsquo;ll see the following output:&lt;/p&gt;
+&lt;p&gt;That second of code is doing the &amp;laquo;error&amp;raquo; checking of the request. If we run this code we&amp;rsquo;ll see the following output:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;StatusCode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;500&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -173,7 +173,7 @@
 
 &lt;p&gt;Conferences can get very repetitive. The same topics, the same speakers, etc&amp;hellip; One can only take hearing the same talk so many times before you want to rage flip the coffee stand in the hallway.&lt;/p&gt;
 
-&lt;p&gt;In May of 2014 I spoke at &lt;a href=&#34;http://devslovebacon.com&#34;&gt;Devs Love Bacon&lt;/a&gt; in London, England. What a great conference! It was almost all &amp;ldquo;soft&amp;rdquo; talks! But they weren&amp;rsquo;t just any ordinary set of soft talks, they were about things that developers love! I watched one talk that was about the differences in different types of Whiskey, including a tasting session! I watched another talk about power lifting! What?? It was great. Bacon really stuck with me as one of the most interesting conferences I have ever attended.&lt;/p&gt;
+&lt;p&gt;In May of 2014 I spoke at &lt;a href=&#34;http://devslovebacon.com&#34;&gt;Devs Love Bacon&lt;/a&gt; in London, England. What a great conference! It was almost all &amp;laquo;soft&amp;raquo; talks! But they weren&amp;rsquo;t just any ordinary set of soft talks, they were about things that developers love! I watched one talk that was about the differences in different types of Whiskey, including a tasting session! I watched another talk about power lifting! What?? It was great. Bacon really stuck with me as one of the most interesting conferences I have ever attended.&lt;/p&gt;
 
 &lt;p&gt;Fast-forward a few months and it was announced that the Wicked Good Ruby conference, meant to be held in my home town of Boston, was going to be canceled. There would be no conferences in Boston in 2014. I was disappointed by this, but understood completely why the organizers canceled it.&lt;/p&gt;
 
@@ -181,7 +181,7 @@
 
 &lt;p&gt;I then told Scott that the only type of conference I would help organize would be one similar to Devs Love Bacon. HappinessConf was born.&lt;/p&gt;
 
-&lt;h2 id=&#34;so-exactly-what-does-happinessconf-mean&#34;&gt;So Exactly What Does &amp;ldquo;HappinessConf&amp;rdquo; Mean?&lt;/h2&gt;
+&lt;h2 id=&#34;so-exactly-what-does-happinessconf-mean&#34;&gt;So Exactly What Does &amp;laquo;HappinessConf&amp;raquo; Mean?&lt;/h2&gt;
 
 &lt;p&gt;Scott and I want to organize a conference where developers, regardless of their programming language of choice, level of experience, etc&amp;hellip; could come together and help improve each other&amp;rsquo;s happiness.&lt;/p&gt;
 
@@ -231,7 +231,7 @@
 
 &lt;p&gt;Unfortunately adding Twitter support to gomniauth was not as easy as it would seem. This is as much the fault of Twitter as it is the gomniauth package maintainers. Twitter&amp;rsquo;s auth support is ancient. It supports OAuth 1.1, and not the more modern OAuth2. Gomniauth, however, is pretty much hard coded to only support OAuth2.&lt;/p&gt;
 
-&lt;p&gt;What&amp;rsquo;s a person to do? I really needed Twitter support, as well as the ability to add other non-OAuth2 authentication methods. I also didn&amp;rsquo;t feel like writing a new package, I&amp;rsquo;m not a fan of &amp;ldquo;not invented here&amp;rdquo;, but looking at what it would take to refactor gomniauth, not to mention break every application that uses it, I wasn&amp;rsquo;t really left with a choice.&lt;/p&gt;
+&lt;p&gt;What&amp;rsquo;s a person to do? I really needed Twitter support, as well as the ability to add other non-OAuth2 authentication methods. I also didn&amp;rsquo;t feel like writing a new package, I&amp;rsquo;m not a fan of &amp;laquo;not invented here&amp;raquo;, but looking at what it would take to refactor gomniauth, not to mention break every application that uses it, I wasn&amp;rsquo;t really left with a choice.&lt;/p&gt;
 
 &lt;h2 id=&#34;and-there-s-goth&#34;&gt;And There&amp;rsquo;s Goth&amp;hellip;&lt;/h2&gt;
 
@@ -404,7 +404,7 @@
       <guid>/2014/05/28/the-war-on-testing/</guid>
       <description>&lt;p&gt;Apologies for the slightly inflammatory title, but I&amp;rsquo;m beginning to get worried about the Ruby community, and sadly my worries are stemming from an area that first made me fall in love with Ruby, testing.&lt;/p&gt;
 
-&lt;p&gt;By now you are probably familiar with the whole &amp;ldquo;&lt;a href=&#34;https://www.google.com/#q=ruby+tdd+is+dead&#34;&gt;TDD is Dead&lt;/a&gt;&amp;rdquo; saga that stemmed from a keynote that DHH recently gave at RailsConf. I&amp;rsquo;m not going to bother recapping that, do a Google search and you&amp;rsquo;ll find out all about it. I&amp;rsquo;m not even here to weigh in on the matter.&lt;/p&gt;
+&lt;p&gt;By now you are probably familiar with the whole &amp;laquo;&lt;a href=&#34;https://www.google.com/#q=ruby+tdd+is+dead&#34;&gt;TDD is Dead&lt;/a&gt;&amp;raquo; saga that stemmed from a keynote that DHH recently gave at RailsConf. I&amp;rsquo;m not going to bother recapping that, do a Google search and you&amp;rsquo;ll find out all about it. I&amp;rsquo;m not even here to weigh in on the matter.&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;m here to discuss an even more trouble matter, the removal of a testing framework from the Ruby standard library in 2.2. The ticket that removed test-unit and MiniTest from Ruby 2.2 can be found at &lt;a href=&#34;https://bugs.ruby-lang.org/issues/9711#note-12&#34;&gt;https://bugs.ruby-lang.org/issues/9711#note-12&lt;/a&gt;.&lt;/p&gt;
 
@@ -415,7 +415,7 @@
 &lt;p&gt;&lt;img src=&#39;/assets/images/2014/05/tweet2.png&#39;&gt;
 &lt;img src=&#39;/assets/images/2014/05/tweet3.png&#39;&gt;&lt;/p&gt;
 
-&lt;p&gt;In regards to the later tweet I would encourage the author of the tweet to consult the Rails documentation on how to turn off automatic test generation. These tweets are concerning because they share the same shortsightedness. These tweets are analogous to saying, &amp;ldquo;Well, I use HashWithIndifferenceAccess so I don&amp;rsquo;t care if they remove Hash from the standard library&amp;rdquo;. This idea that because you use Rspec and not test-unit or MiniTest that this change does not somehow affect you is wrong. This affects the entire Ruby community.&lt;/p&gt;
+&lt;p&gt;In regards to the later tweet I would encourage the author of the tweet to consult the Rails documentation on how to turn off automatic test generation. These tweets are concerning because they share the same shortsightedness. These tweets are analogous to saying, &amp;laquo;Well, I use HashWithIndifferenceAccess so I don&amp;rsquo;t care if they remove Hash from the standard library&amp;raquo;. This idea that because you use Rspec and not test-unit or MiniTest that this change does not somehow affect you is wrong. This affects the entire Ruby community.&lt;/p&gt;
 
 &lt;p&gt;When I first got introduced to Ruby back in 2005 I was blown away by how testing was a first class citizen in Ruby, and of course Rails. Testing was, and I hope still is, a core tenant of the Ruby community. By removing a testing framework from the standard library we are telling newcomers, as well as though who wish Ruby ill that we don&amp;rsquo;t value testing.&lt;/p&gt;
 
@@ -447,7 +447,7 @@
 
 &lt;h3 id=&#34;my-previous-setup&#34;&gt;My Previous Setup&lt;/h3&gt;
 
-&lt;p&gt;My previous cable, plus internet bill was $225 a month. That means that over two years, the length of a &amp;ldquo;contract&amp;rdquo; with Verizon, I would spend $5,400. That&amp;rsquo;s a lot of cash! I had two DVRs, for a total of 4 tuners. I also had a &amp;ldquo;standard&amp;rdquo; box on a third TV that would let me watch recorded shows from the two DVRs.&lt;/p&gt;
+&lt;p&gt;My previous cable, plus internet bill was $225 a month. That means that over two years, the length of a &amp;laquo;contract&amp;raquo; with Verizon, I would spend $5,400. That&amp;rsquo;s a lot of cash! I had two DVRs, for a total of 4 tuners. I also had a &amp;laquo;standard&amp;raquo; box on a third TV that would let me watch recorded shows from the two DVRs.&lt;/p&gt;
 
 &lt;p&gt;In addition to standard cable I also had a Netflix account, $8/month, as well as a Hulu Plus account, another $8 a month. That means my true monthly spend was actually $241, and my two year spend was $5,784.&lt;/p&gt;
 
@@ -469,7 +469,7 @@
 
 &lt;h3 id=&#34;final-tally&#34;&gt;Final Tally&lt;/h3&gt;
 
-&lt;p&gt;To make all of this work, I did need to retain an internet connection. I had a choice in connection speeds, &lt;sup&gt;75&lt;/sup&gt;&amp;frasl;&lt;sub&gt;35&lt;/sub&gt; Mbps for $55/month or &lt;sup&gt;150&lt;/sup&gt;&amp;frasl;&lt;sub&gt;75&lt;/sub&gt; Mbps for $100/month. I went with the faster connection. Why? For a lot of reasons, most which have to do with my job as a software developer.&lt;/p&gt;
+&lt;p&gt;To make all of this work, I did need to retain an internet connection. I had a choice in connection speeds, 75/35 Mbps for $55/month or 150/75 Mbps for $100/month. I went with the faster connection. Why? For a lot of reasons, most which have to do with my job as a software developer.&lt;/p&gt;
 
 &lt;p&gt;With the final numbers in, let&amp;rsquo;s take a look at what my new monthly, and two year costs are. I am now paying $142.97 a month versus $241/month previous. That&amp;rsquo;s a $100 savings each month!! I could&amp;rsquo;ve cut that by another $45/month had I gone with the lower plan.&lt;/p&gt;
 
@@ -493,7 +493,7 @@
       <guid>/2014/03/28/metacaststv-episode-stats/</guid>
       <description>
 
-&lt;p&gt;When I first started &lt;a href=&#34;http://www.metacasts.tv&#34;&gt;MetaCasts.tv&lt;/a&gt; in January of 2013 I set out to create a unique screen cast series. I wanted a series that didn&amp;rsquo;t focus on just one topic, just Ruby, just JavaScript, etc&amp;hellip; instead I wanted something that would challenge my subscribers, as well as myself. I wanted to talk about all sorts of technologies. I knew that some weeks the topic at hand might be incredibly relevant to viewers, and that other weeks it wouldn&amp;rsquo;t be. My hope was, and still is, that the weeks were the topic isn&amp;rsquo;t &amp;ldquo;relevant&amp;rdquo; that viewers will learn something new that they wouldn&amp;rsquo;t have otherwise.&lt;/p&gt;
+&lt;p&gt;When I first started &lt;a href=&#34;http://www.metacasts.tv&#34;&gt;MetaCasts.tv&lt;/a&gt; in January of 2013 I set out to create a unique screen cast series. I wanted a series that didn&amp;rsquo;t focus on just one topic, just Ruby, just JavaScript, etc&amp;hellip; instead I wanted something that would challenge my subscribers, as well as myself. I wanted to talk about all sorts of technologies. I knew that some weeks the topic at hand might be incredibly relevant to viewers, and that other weeks it wouldn&amp;rsquo;t be. My hope was, and still is, that the weeks were the topic isn&amp;rsquo;t &amp;laquo;relevant&amp;raquo; that viewers will learn something new that they wouldn&amp;rsquo;t have otherwise.&lt;/p&gt;
 
 &lt;p&gt;I love to grow and learn about topics outside of my daily comfort zone, so I&amp;rsquo;ve made &lt;a href=&#34;http://www.metacasts.tv&#34;&gt;MetaCasts.tv&lt;/a&gt; a venue for that. There are some episodes where I know the topic intimately, and there are others where I sat down, studied the topic, wrote lots of code, and presented my findings. All of it an educational experience as much for me, as my viewers.&lt;/p&gt;
 
@@ -543,7 +543,7 @@
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p&gt;These numbers are determined by the &amp;ldquo;primary language&amp;rdquo; of the video. For example a video about Ember.js would be listed as CoffeeScript, or JavaScript, even though the back-end might have been written using Ruby.&lt;/p&gt;
+&lt;p&gt;These numbers are determined by the &amp;laquo;primary language&amp;raquo; of the video. For example a video about Ember.js would be listed as CoffeeScript, or JavaScript, even though the back-end might have been written using Ruby.&lt;/p&gt;
 
 &lt;h2 id=&#34;most-purchased-video&#34;&gt;Most Purchased Video&lt;/h2&gt;
 
@@ -573,14 +573,14 @@
       <guid>/2014/01/07/announcing-conquering-the-command-line---a-free-online-book/</guid>
       <description>
 
-&lt;p&gt;&lt;img src=&#34;/assets/images/2014/01/unix_300.png&#34; class=&#39;img-left&#39; width=&#34;200px&#34;&gt; I&amp;rsquo;m really happy today to announce my newest book, and screencasts, &amp;ldquo;Conquering the Command Line&amp;rdquo;. This is a book I&amp;rsquo;ve been wanting as a developer since I first begin my career in the late 90s. Let me explain a little bit about my background to help you understand why I&amp;rsquo;ve always wanted this book.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/assets/images/2014/01/unix_300.png&#34; class=&#39;img-left&#39; width=&#34;200px&#34;&gt; I&amp;rsquo;m really happy today to announce my newest book, and screencasts, &amp;laquo;Conquering the Command Line&amp;raquo;. This is a book I&amp;rsquo;ve been wanting as a developer since I first begin my career in the late 90s. Let me explain a little bit about my background to help you understand why I&amp;rsquo;ve always wanted this book.&lt;/p&gt;
 
 &lt;p&gt;My background, that is to say my degree, is in music. That&amp;rsquo;s right, music, not computer science. Because of my unorthodox path into programming I was never taught how to really get the most out of the command line that I spend most of my day working in. Over the years I&amp;rsquo;ve picked up tips and tricks from my fellow developers, screencasts, and from scouring the web.&lt;/p&gt;
 
 &lt;p&gt;What I really wish I had, back when I was first starting out, was a book that help me understand the most useful commands, and within that the most useful flags and options, to help boost my productivity when in the command line. That&amp;rsquo;s what this book is all about. Increasing your productivity when using the command line, which as developers, is where we spend most of our day.&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;&amp;ldquo;Learn to master and conquer the most valuable and useful command line tools for Unix and Linux based systems. In this book you will find not only the most useful command line tools you need to know, but also the most helpful options and flags for those tools. Conquering the Command Line isn&amp;rsquo;t just a rehash of the MAN page for these tools, but rather human-readable walk-through of these tools to make you instantly more productive in your daily development life.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&amp;laquo;Learn to master and conquer the most valuable and useful command line tools for Unix and Linux based systems. In this book you will find not only the most useful command line tools you need to know, but also the most helpful options and flags for those tools. Conquering the Command Line isn&amp;rsquo;t just a rehash of the MAN page for these tools, but rather human-readable walk-through of these tools to make you instantly more productive in your daily development life.&amp;raquo;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;I&amp;rsquo;m really excited by this book, and I hope you are too. It takes a lot of people to help make a book possible. I would like to thank Michael Hartl (and the rest of the gang at Softcover.io), Pat Shaughnessy, Pete Brown, Michael Denomy, Johnny Bourisquot, and Dan Pickett for all of their help making this book as good as it is.&lt;/p&gt;

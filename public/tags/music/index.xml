@@ -2,14 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Music on MetaBates.com</title>
-    <link>/tags/music/</link>
+    <link>/tags/music/index.xml</link>
     <description>Recent content in Music on MetaBates.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
     <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
     <copyright>(c) 2016 Mark Bates.</copyright>
-    <lastBuildDate>Mon, 14 Jun 2010 00:00:00 +0000</lastBuildDate>
     <atom:link href="/tags/music/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -26,7 +25,7 @@
 
 &lt;p&gt;I had a two cassette boom box, it was a beast of a machine. It was a &amp;lsquo;portable&amp;rsquo; machine, meaning that it took 8 D batteries and a burly man named Attila to carry it. My recordings started simply on this machine. I would use the built in microphone to record my awful wailings and terribly out of tune acoustic guitar.&lt;/p&gt;
 
-&lt;p&gt;As my love of bands like the Beatles grew, so did my desire to capture my musical legacy the way I desired. It was around age 12 or so that the true experimentation began. I started playing around with using different input devices. I acquired a rather terrible Radio Shack microphone for the princely sum of $19.95. It sported, and I kind you not, a &amp;ldquo;built-in on/off switch&amp;rdquo;. That was actually a feature of this microphone. Actually it was the only feature of this microphone! My other trick for recording was to use a pair of headphones as a microphone. Did it sound good? Absolutely not! But it worked.&lt;/p&gt;
+&lt;p&gt;As my love of bands like the Beatles grew, so did my desire to capture my musical legacy the way I desired. It was around age 12 or so that the true experimentation began. I started playing around with using different input devices. I acquired a rather terrible Radio Shack microphone for the princely sum of $19.95. It sported, and I kind you not, a &amp;laquo;built-in on/off switch&amp;raquo;. That was actually a feature of this microphone. Actually it was the only feature of this microphone! My other trick for recording was to use a pair of headphones as a microphone. Did it sound good? Absolutely not! But it worked.&lt;/p&gt;
 
 &lt;p&gt;While the &amp;lsquo;quality&amp;rsquo; of the recordings got marginally better with my new microphone and headphone combinations, I was lacking the studio trickery I so desired. I needed multitrack. If the Beatles had it, why didn&amp;rsquo;t I? Of course I couldn&amp;rsquo;t afford an actual multitrack recorder at this age, so again, improvisation proved key. I realized that if I recorded me singing and playing (at the same time), I could then pop that tape into the top player and record me playing and singing again while the first tape plays back into the second tape. How did it sound? How do you think it sounded??&lt;/p&gt;
 
@@ -44,7 +43,7 @@
 
 &lt;p&gt;I finally got home, rushed out to the little studio room my father and I had built in his garage and proceeded to hook it up. I had a 4 EQs per channel, inserts, sends, cues, all sorts of wonderful things! The sound was better, the quality higher, it even had DBX noise reduction! DBX! I still don&amp;rsquo;t know what it is, but I get very excited knowing it&amp;rsquo;s there!&lt;/p&gt;
 
-&lt;p&gt;That day I re-recorded a song I had recorded on my 4-track, that song was called, &amp;ldquo;I and You&amp;rdquo;. It was a dreadful song that I thought had to be the next big thing. And why wouldn&amp;rsquo;t it be? I recorded it on an 8-track!&lt;/p&gt;
+&lt;p&gt;That day I re-recorded a song I had recorded on my 4-track, that song was called, &amp;laquo;I and You&amp;raquo;. It was a dreadful song that I thought had to be the next big thing. And why wouldn&amp;rsquo;t it be? I recorded it on an 8-track!&lt;/p&gt;
 
 &lt;h3 id=&#34;the-computer-age&#34;&gt;The Computer Age.&lt;/h3&gt;
 
@@ -68,7 +67,7 @@
 
 &lt;p&gt;&lt;img style=&#34;float: right; padding-left: 10px&#34; class=&#34;size-medium wp-image-333&#34; title=&#34;IMG_1095&#34; src=&#34;/assets/images/2010/06/IMG_1095-300x225.jpg&#34; alt=&#34;&#34; width=&#34;300&#34; height=&#34;225&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;I purchased a used Tascam 488 MKII on eBay, and tonight I transferred my first cassette. I&amp;rsquo;m excited about this project. Hearing these songs again brings up some great memories, and some awful ones. For example, tonight&amp;rsquo;s cassette contained six recordings. The first five I remember quite vividly. The sixth, however, is clear why I forgot. It was a &amp;lsquo;cover&amp;rsquo; of &amp;ldquo;A Day In The Life&amp;rdquo; by the Beatles. But it consisted of a click track, a vocal, and 6, yes 6, tracks of drums!!! Oh, during the middle eight of the songs, two of the drum tracks switch to piano!! Why?? That&amp;rsquo;s a question I would like answered as well.&lt;/p&gt;
+&lt;p&gt;I purchased a used Tascam 488 MKII on eBay, and tonight I transferred my first cassette. I&amp;rsquo;m excited about this project. Hearing these songs again brings up some great memories, and some awful ones. For example, tonight&amp;rsquo;s cassette contained six recordings. The first five I remember quite vividly. The sixth, however, is clear why I forgot. It was a &amp;lsquo;cover&amp;rsquo; of &amp;laquo;A Day In The Life&amp;raquo; by the Beatles. But it consisted of a click track, a vocal, and 6, yes 6, tracks of drums!!! Oh, during the middle eight of the songs, two of the drum tracks switch to piano!! Why?? That&amp;rsquo;s a question I would like answered as well.&lt;/p&gt;
 
 &lt;p&gt;Anyway, expect a post every now and again about my on going battle with these cassettes. I&amp;rsquo;m sure there will be some funny, and occasionally horrific, stories to share about the experience.&lt;/p&gt;
 
@@ -90,7 +89,7 @@
 
 &lt;p&gt;I had a two cassette boom box, it was a beast of a machine. It was a &amp;lsquo;portable&amp;rsquo; machine, meaning that it took 8 D batteries and a burly man named Attila to carry it. My recordings started simply on this machine. I would use the built in microphone to record my awful wailings and terribly out of tune acoustic guitar.&lt;/p&gt;
 
-&lt;p&gt;As my love of bands like the Beatles grew, so did my desire to capture my musical legacy the way I desired. It was around age 12 or so that the true experimentation began. I started playing around with using different input devices. I acquired a rather terrible Radio Shack microphone for the princely sum of $19.95. It sported, and I kind you not, a &amp;ldquo;built-in on/off switch&amp;rdquo;. That was actually a feature of this microphone. Actually it was the only feature of this microphone! My other trick for recording was to use a pair of headphones as a microphone. Did it sound good? Absolutely not! But it worked.&lt;/p&gt;
+&lt;p&gt;As my love of bands like the Beatles grew, so did my desire to capture my musical legacy the way I desired. It was around age 12 or so that the true experimentation began. I started playing around with using different input devices. I acquired a rather terrible Radio Shack microphone for the princely sum of $19.95. It sported, and I kind you not, a &amp;laquo;built-in on/off switch&amp;raquo;. That was actually a feature of this microphone. Actually it was the only feature of this microphone! My other trick for recording was to use a pair of headphones as a microphone. Did it sound good? Absolutely not! But it worked.&lt;/p&gt;
 
 &lt;p&gt;While the &amp;lsquo;quality&amp;rsquo; of the recordings got marginally better with my new microphone and headphone combinations, I was lacking the studio trickery I so desired. I needed multitrack. If the Beatles had it, why didn&amp;rsquo;t I? Of course I couldn&amp;rsquo;t afford an actual multitrack recorder at this age, so again, improvisation proved key. I realized that if I recorded me singing and playing (at the same time), I could then pop that tape into the top player and record me playing and singing again while the first tape plays back into the second tape. How did it sound? How do you think it sounded??&lt;/p&gt;
 
@@ -108,7 +107,7 @@
 
 &lt;p&gt;I finally got home, rushed out to the little studio room my father and I had built in his garage and proceeded to hook it up. I had a 4 EQs per channel, inserts, sends, cues, all sorts of wonderful things! The sound was better, the quality higher, it even had DBX noise reduction! DBX! I still don&amp;rsquo;t know what it is, but I get very excited knowing it&amp;rsquo;s there!&lt;/p&gt;
 
-&lt;p&gt;That day I re-recorded a song I had recorded on my 4-track, that song was called, &amp;ldquo;I and You&amp;rdquo;. It was a dreadful song that I thought had to be the next big thing. And why wouldn&amp;rsquo;t it be? I recorded it on an 8-track!&lt;/p&gt;
+&lt;p&gt;That day I re-recorded a song I had recorded on my 4-track, that song was called, &amp;laquo;I and You&amp;raquo;. It was a dreadful song that I thought had to be the next big thing. And why wouldn&amp;rsquo;t it be? I recorded it on an 8-track!&lt;/p&gt;
 
 &lt;h3 id=&#34;the-computer-age&#34;&gt;The Computer Age.&lt;/h3&gt;
 
@@ -132,7 +131,7 @@
 
 &lt;p&gt;&lt;img style=&#34;float: right; padding-left: 10px&#34; class=&#34;size-medium wp-image-333&#34; title=&#34;IMG_1095&#34; src=&#34;/assets/images/2010/06/IMG_1095-300x225.jpg&#34; alt=&#34;&#34; width=&#34;300&#34; height=&#34;225&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;I purchased a used Tascam 488 MKII on eBay, and tonight I transferred my first cassette. I&amp;rsquo;m excited about this project. Hearing these songs again brings up some great memories, and some awful ones. For example, tonight&amp;rsquo;s cassette contained six recordings. The first five I remember quite vividly. The sixth, however, is clear why I forgot. It was a &amp;lsquo;cover&amp;rsquo; of &amp;ldquo;A Day In The Life&amp;rdquo; by the Beatles. But it consisted of a click track, a vocal, and 6, yes 6, tracks of drums!!! Oh, during the middle eight of the songs, two of the drum tracks switch to piano!! Why?? That&amp;rsquo;s a question I would like answered as well.&lt;/p&gt;
+&lt;p&gt;I purchased a used Tascam 488 MKII on eBay, and tonight I transferred my first cassette. I&amp;rsquo;m excited about this project. Hearing these songs again brings up some great memories, and some awful ones. For example, tonight&amp;rsquo;s cassette contained six recordings. The first five I remember quite vividly. The sixth, however, is clear why I forgot. It was a &amp;lsquo;cover&amp;rsquo; of &amp;laquo;A Day In The Life&amp;raquo; by the Beatles. But it consisted of a click track, a vocal, and 6, yes 6, tracks of drums!!! Oh, during the middle eight of the songs, two of the drum tracks switch to piano!! Why?? That&amp;rsquo;s a question I would like answered as well.&lt;/p&gt;
 
 &lt;p&gt;Anyway, expect a post every now and again about my on going battle with these cassettes. I&amp;rsquo;m sure there will be some funny, and occasionally horrific, stories to share about the experience.&lt;/p&gt;
 

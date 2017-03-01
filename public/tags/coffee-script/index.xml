@@ -2,14 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Coffee Script on MetaBates.com</title>
-    <link>/tags/coffee-script/</link>
+    <link>/tags/coffee-script/index.xml</link>
     <description>Recent content in Coffee Script on MetaBates.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
     <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
     <copyright>(c) 2016 Mark Bates.</copyright>
-    <lastBuildDate>Wed, 31 Aug 2011 00:00:00 +0000</lastBuildDate>
     <atom:link href="/tags/coffee-script/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -60,16 +59,16 @@ The same goes for JavaScript files.&lt;/p&gt;
       <guid>/2011/04/15/because-everybody-has-an-opinion/</guid>
       <description>&lt;p&gt;In case you&amp;rsquo;ve been living in a cave this week you&amp;rsquo;ve probably heard that &lt;a href=&#34;http://www.rubyinside.com/rails-3-1-adopts-coffeescript-jquery-sass-and-controversy-4669.html&#34;&gt;Ruby on Rails&lt;/a&gt; is going to be including both the &lt;a href=&#34;http://coffeescript.org/&#34;&gt;CoffeeScript&lt;/a&gt; and &lt;a href=&#34;http://sass-lang.com/&#34;&gt;SASS&lt;/a&gt; libraries, it will also make &lt;a href=&#34;http://jquery.com/&#34;&gt;jQuery&lt;/a&gt; the default JavaScript framework, replacing the &lt;a href=&#34;http://www.prototypejs.org/&#34;&gt;Prototype&lt;/a&gt; framework.&lt;/p&gt;
 
-&lt;p&gt;I would like to start by addressing my experiences with CoffeeScript. My opinion of it is of ambivalence. I&amp;rsquo;ve used it on a project, I&amp;rsquo;ve played with and in the end I&amp;rsquo;ve come out with the opinion of &amp;ldquo;it&amp;rsquo;s ok&amp;rdquo;. It didn&amp;rsquo;t blow me away, but at the same time I can see why so many people like. It offers some really cool features that I really wish JavaScript had and you can cut down on the amount of code you have to write. On the other hand the apps I tend to write don&amp;rsquo;t tend to be that JavaScript heavy that I really needed to reach out for something like CoffeeScript.&lt;/p&gt;
+&lt;p&gt;I would like to start by addressing my experiences with CoffeeScript. My opinion of it is of ambivalence. I&amp;rsquo;ve used it on a project, I&amp;rsquo;ve played with and in the end I&amp;rsquo;ve come out with the opinion of &amp;laquo;it&amp;rsquo;s ok&amp;raquo;. It didn&amp;rsquo;t blow me away, but at the same time I can see why so many people like. It offers some really cool features that I really wish JavaScript had and you can cut down on the amount of code you have to write. On the other hand the apps I tend to write don&amp;rsquo;t tend to be that JavaScript heavy that I really needed to reach out for something like CoffeeScript.&lt;/p&gt;
 
 &lt;p&gt;&lt;img style=&#34;float: left; padding-right: 10px&#34; src=&#34;http://blogs.worldbank.org/files/publicsphere/public%20opinion_JGRNLY.jpeg&#34; alt=&#34;&#34; width=&#34;326&#34; height=&#34;246&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;So, how do I feel about CoffeeScript being included with Rails? Well, I&amp;rsquo;ll get to that. Let&amp;rsquo;s go over some of the most common arguments I&amp;rsquo;ve heard from people this week about why they&amp;rsquo;re anti-CoffeeScript in Rails.&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;&amp;ldquo;It&amp;rsquo;s an abstraction layer of JavaScript! JavaScript isn&amp;rsquo;t that bad, why can&amp;rsquo;t you just write JavaScript?&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&amp;laquo;It&amp;rsquo;s an abstraction layer of JavaScript! JavaScript isn&amp;rsquo;t that bad, why can&amp;rsquo;t you just write JavaScript?&amp;raquo;&lt;/p&gt;
 
-&lt;p&gt;&amp;ldquo;It&amp;rsquo;s going to be a hinderance to newbies. It&amp;rsquo;ll be too much of a learning curve!&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&amp;laquo;It&amp;rsquo;s going to be a hinderance to newbies. It&amp;rsquo;ll be too much of a learning curve!&amp;raquo;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;Let&amp;rsquo;s start with that second point first, shall we? I agree, it does represent a new element that needs to be learned when coming to Rails. But here&amp;rsquo;s the pretty nifty thing about how it&amp;rsquo;s all implemented in Rails. In order to actually use CoffeeScript in Rails you have to create your files named foo.js.coffee if, however, you just name your file foo.js then, guess what? You will have to write plain old JavaScript! Seems like newbies, and those who don&amp;rsquo;t like CoffeeScript, can just keep writing plain old JavaScript without anything stopping them at all.&lt;/p&gt;
