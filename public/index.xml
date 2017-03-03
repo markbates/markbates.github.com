@@ -9,8 +9,34 @@
     <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
     <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
     <copyright>(c) 2016 Mark Bates.</copyright>
-    <lastBuildDate>Thu, 09 Jun 2016 16:20:56 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 03 Mar 2017 09:25:02 -0500</lastBuildDate>
     <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>You&#39;re Benchmarking the Wrong Thing</title>
+      <link>/2017/03/03/youre-benchmarking-the-wrong-thing/</link>
+      <pubDate>Fri, 03 Mar 2017 09:25:02 -0500</pubDate>
+      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
+      <guid>/2017/03/03/youre-benchmarking-the-wrong-thing/</guid>
+      <description>
+
+&lt;h1 id=&#34;you-re-benchmarking-the-wrong-thing&#34;&gt;You&amp;rsquo;re Benchmarking the Wrong Thing&lt;/h1&gt;
+
+&lt;p&gt;The Go community loves benchmarks. It is obsessed with them. If you look at the bottom of most README&amp;rsquo;s for Go projects you will find a section labeled &amp;laquo;Benchmarks&amp;raquo;. Everyone wants to prove how much faster their package, library, framework, etc&amp;hellip; is from everyone elses. When looking at these benchmarks, the most important one is always missing, but we&amp;rsquo;ll get to that in a minute.&lt;/p&gt;
+
+&lt;p&gt;First, a quick aside to say that I believe certain benchmarks are important. For example, if I&amp;rsquo;m trying to improve a section of code have isolated benchmarks for that section of code is important so I know if I&amp;rsquo;ve made any improvements, or if I have regressed. These types of benchmarks are incredibly important. These are not the benchmarks I&amp;rsquo;m talking about in this post. This post is all about those comparison benchmarks against other projects that project maintainers are obsessed with.&lt;/p&gt;
+
+&lt;p&gt;Go is an incredibly fast language, let&amp;rsquo;s be honest, we already know that. For 98% of the projects out there Go is &amp;laquo;fast enough&amp;raquo; as is, yet, project maintainers feel a deeply embedded need to tweak every last bit of performance out of their code, but they&amp;rsquo;re doing it at a cost, that most of them aren&amp;rsquo;t aware of. That cost is the &amp;laquo;missing&amp;raquo; benchmark I spoke of earlier.&lt;/p&gt;
+
+&lt;p&gt;Recently I was having a conversation with a friend of mine. He was lamenting the fact that his Go package wasn&amp;rsquo;t seeing the uptick in usage he thought it would. He couldn&amp;rsquo;t understand why. He kept repeating that his was the &amp;laquo;fastest&amp;raquo; one out there. &amp;laquo;Just look at the benchmarks&amp;raquo;, he said. He was right, his is the fastest package in that category out there, but you know what, after reviewing the package it became very clear to me what the problem was. I knew why his project wasn&amp;rsquo;t &amp;laquo;selling&amp;raquo;. It was unusable. He sacrificed usuability for benchmarks. There, my friends, is the problem. That is the missing benchmark, usability.&lt;/p&gt;
+
+&lt;p&gt;An unusable project, no matter how fast it is, is, well, unusable. When writing code, you should always, always, always, optimize for usuability, clarity, and maintainability above all else. Those objectives are often at odds with satisfying the benchmark gods. When I design a package, library, tool, framework, etc&amp;hellip; I start with psuedo-code. I want to understand how it will be used. If my psuedo-code is too complex I delete it and try a different approach. I keep going until I find a pattern and design that is pleasant to use, and offers the features I need from the package, then I start coding.&lt;/p&gt;
+
+&lt;p&gt;I know I don&amp;rsquo;t write the fastest code out there. I&amp;rsquo;m fine with that. I accept that. Don&amp;rsquo;t get me wrong, I don&amp;rsquo;t want to write slow code, no one does. Using those isolated benchmarks I can target segments of my code that are slow and improve them, but I do that &lt;strong&gt;after&lt;/strong&gt; I have good solid public API that people will want to use.&lt;/p&gt;
+
+&lt;p&gt;The next time you sit down and start to write a new project, first consider the end user and what is important to them. Is speed the most important thing? Perhaps, if you&amp;rsquo;re writing something like a database. Or, is usuability the most important thing? If you&amp;rsquo;re unsure, err on the side of usuability. If no one is using your project, what is the point of it being the fastest out there? If it&amp;rsquo;s usuable, then people will use it, and then, you know what? Those same people will start contributing to it to make it better &lt;em&gt;and&lt;/em&gt; faster!&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Now Building With Hugo</title>
@@ -618,40 +644,6 @@
 &lt;p&gt;I&amp;rsquo;m really happy with team subscriptions, as people have been asking for them for a while now. Learning, and growing, as a developer is incredibly important, so I encourage team leaders, managers, etc&amp;hellip; to help their teams out and sign up today!&lt;/p&gt;
 
 &lt;h2 id=&#34;sign-up-metacasts-tv-http-www-metacasts-tv-source-blog-team-metacasts&#34;&gt;&lt;a href=&#34;http://www.metacasts.tv?source=blog-team-metacasts&#34;&gt;Sign up - MetaCasts.tv&lt;/a&gt;&lt;/h2&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Introducting LineLytics.com</title>
-      <link>/2013/06/02/introducting-linelyticscom/</link>
-      <pubDate>Sun, 02 Jun 2013 00:00:00 +0000</pubDate>
-      <author>mark&#43;blog@markbates.com (Mark Bates)</author>
-      <guid>/2013/06/02/introducting-linelyticscom/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://www.linelytics.com/assets/screenshots/dashboard.png&#34; class=&#34;img-right&#34; style=&#34;width: 400px&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;Today I am announcing the release of a new SaaS application I&amp;rsquo;ve written, &lt;a href=&#34;http://www.linelytics.com?from=metabates.com&#34;&gt;LineLytics.com&lt;/a&gt;. I&amp;rsquo;m very excited about this application, and if you are a &lt;a href=&#34;http://stripe.com&#34;&gt;Stripe&lt;/a&gt; user, then you should be too.&lt;/p&gt;
-
-&lt;p&gt;So what is &lt;a href=&#34;http://www.linelytics.com?from=metabates.com&#34;&gt;LineLytics.com&lt;/a&gt;? First, let me give you a little background on how the application came to be. At the beginning of the year I announced my weekly screen cast site, &lt;a href=&#34;http://www.metacasts.tv&#34;&gt;MetaCasts.tv&lt;/a&gt;. The site has a monthly subscription of $9, or a yearly subscription of $90. If you don&amp;rsquo;t want to subscribe you can also buy individual videos, usually around $6 each.&lt;/p&gt;
-
-&lt;p&gt;When it came time to implement the purchasing/subscribing functionality in MetaCasts I looked at all the different payment processors on the market. I&amp;rsquo;ve used several different ones in the past, and was never satisfied with them. Either they charged too much (even if you weren&amp;rsquo;t making any money) or they were difficult to implement. Usually it was both. Then I found &lt;a href=&#34;http://stripe.com&#34;&gt;Stripe&lt;/a&gt;. &lt;a href=&#34;http://stripe.com&#34;&gt;Stripe&lt;/a&gt; was a revelation. It was both sanely priced (2.9% + $.30) &lt;em&gt;and&lt;/em&gt; easy to implement. I was in love.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://www.linelytics.com/assets/screenshots/sales.png&#34; class=&#34;img-left&#34; style=&#34;width: 400px&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;After using &lt;a href=&#34;http://stripe.com&#34;&gt;Stripe&lt;/a&gt; for several months to power MetaCasts, I found a chink in their armor. I had no idea where my revenue was coming from. Which of my products were selling the best? Which coupons were proving effective? What was my subscriber churn? I needed this information, and more. I needed to be able to analyze my revenue and make decisions based on it.&lt;/p&gt;
-
-&lt;p&gt;That is where &lt;a href=&#34;http://www.linelytics.com?from=metabates.com&#34;&gt;LineLytics.com&lt;/a&gt;. Knowing that &lt;a href=&#34;http://stripe.com&#34;&gt;Stripe&lt;/a&gt; has an amazing API I was able to build an application that provided to me, in real-time mind you, all sorts of great information about my sales.&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;ve been using &lt;a href=&#34;http://www.linelytics.com?from=metabates.com&#34;&gt;LineLytics.com&lt;/a&gt; last couple of months while I&amp;rsquo;ve been developing it, and I can tell you my mind has been blown at some of the information I&amp;rsquo;ve seen in my data. Information that is just not readily apparent in the &lt;a href=&#34;http://stripe.com&#34;&gt;Stripe&lt;/a&gt; platform today.&lt;/p&gt;
-
-&lt;p&gt;I could go into specifics about the technologies I&amp;rsquo;m using, but I won&amp;rsquo;t, this isn&amp;rsquo;t that sort of post. Instead I just want to say that if you too are a &lt;a href=&#34;http://stripe.com&#34;&gt;Stripe&lt;/a&gt; customer, than you owe it to yourself to sign up for &lt;a href=&#34;http://www.linelytics.com?from=metabates.com&#34;&gt;LineLytics.com&lt;/a&gt; your business better than you&amp;rsquo;ve ever been able to before.&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;m really looking forward to seeing how people use the application, and I&amp;rsquo;m open to any suggestions you might have on reports that you&amp;rsquo;d like to see, I know I have a lot of great ideas that I still want to implement.&lt;/p&gt;
-
-&lt;p&gt;I hope this helps!&lt;/p&gt;
-
-&lt;div style=&#39;text-align: center&#39;&gt;
-  &lt;a href=&#39;http://www.linelytics.com?from=metabates.com&#39; target=&#39;_blank&#39; class=&#39;btn btn-large btn-primary&#39;&gt;&lt;b&gt;Check out LineLytics.com&lt;/b&gt;&lt;/a&gt;
-&lt;/div&gt;
 </description>
     </item>
     

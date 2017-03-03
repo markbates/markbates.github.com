@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>/2017/03/03/youre-benchmarking-the-wrong-thing/</loc>
+    <lastmod>2017-03-03T09:25:02-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2016/06/09/now-building-with-hugo/</loc>
     <lastmod>2016-06-09T16:20:56-04:00</lastmod>
   </url>
@@ -656,13 +661,13 @@
   
   <url>
     <loc>/tags/go/</loc>
-    <lastmod>2016-06-09T16:20:56-04:00</lastmod>
+    <lastmod>2017-03-03T09:25:02-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/golang/</loc>
-    <lastmod>2016-06-09T16:20:56-04:00</lastmod>
+    <lastmod>2017-03-03T09:25:02-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -830,7 +835,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2016-06-09T16:20:56-04:00</lastmod>
+    <lastmod>2017-03-03T09:25:02-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -890,7 +895,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2016-06-09T16:20:56-04:00</lastmod>
+    <lastmod>2017-03-03T09:25:02-05:00</lastmod>
     <priority>0</priority>
   </url>
   

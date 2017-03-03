@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <title>Now Building With Hugo  &middot; MetaBates.com</title>
+  <title>You&#39;re Benchmarking the Wrong Thing  &middot; MetaBates.com</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
@@ -14,31 +14,25 @@
 
 <meta name="description" content="" />
 
-<meta name="keywords" content="blog, hugo, go, golang, jekyll, ">
+<meta name="keywords" content="go, golang, ">
 
 
-<meta property="og:title" content="Now Building With Hugo  &middot; MetaBates.com ">
+<meta property="og:title" content="You&#39;re Benchmarking the Wrong Thing  &middot; MetaBates.com ">
 <meta property="og:site_name" content="MetaBates.com"/>
-<meta property="og:url" content="/2016/06/09/now-building-with-hugo/" />
+<meta property="og:url" content="/2017/03/03/youre-benchmarking-the-wrong-thing/" />
 <meta property="og:locale" content="en-us">
 
 
 <meta property="og:type" content="article" />
 <meta property="og:description" content=""/>
-<meta property="og:article:published_time" content="2016-06-09T16:20:56-04:00" />
-<meta property="og:article:modified_time" content="2016-06-09T16:20:56-04:00" />
+<meta property="og:article:published_time" content="2017-03-03T09:25:02-05:00" />
+<meta property="og:article:modified_time" content="2017-03-03T09:25:02-05:00" />
 
   
-    
-<meta property="og:article:tag" content="blog">
-    
-<meta property="og:article:tag" content="hugo">
     
 <meta property="og:article:tag" content="go">
     
 <meta property="og:article:tag" content="golang">
-    
-<meta property="og:article:tag" content="jekyll">
     
   
 
@@ -46,9 +40,9 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@markbates" />
 <meta name="twitter:creator" content="@markbates" />
-<meta name="twitter:title" content="Now Building With Hugo" />
+<meta name="twitter:title" content="You&#39;re Benchmarking the Wrong Thing" />
 <meta name="twitter:description" content="" />
-<meta name="twitter:url" content="/2016/06/09/now-building-with-hugo/" />
+<meta name="twitter:url" content="/2017/03/03/youre-benchmarking-the-wrong-thing/" />
 <meta name="twitter:domain" content="/">
   
 
@@ -56,20 +50,20 @@
   {
     "@context": "http://schema.org",
     "@type": "Article",
-    "headline": "Now Building With Hugo",
+    "headline": "You&#39;re Benchmarking the Wrong Thing",
     "author": {
       "@type": "Person",
       "name": "http://profiles.google.com/+?rel=author"
     },
-    "datePublished": "2016-06-09",
+    "datePublished": "2017-03-03",
     "description": "",
-    "wordCount": 342
+    "wordCount": 599
   }
 </script>
 
 
 
-<link rel="canonical" href="/2016/06/09/now-building-with-hugo/" />
+<link rel="canonical" href="/2017/03/03/youre-benchmarking-the-wrong-thing/" />
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
 <link rel="icon" href="/favicon.png">
 <meta name="generator" content="Hugo 0.20-DEV" />
@@ -174,36 +168,30 @@
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
   <div class="text-center">
 
-    <h1>Now Building With Hugo
+    <h1>You&#39;re Benchmarking the Wrong Thing
 </h1>
 
     <div class="metas">
 <small>
   <i class="fa fa-calendar"></i>
-  <time datetime="2016-06-09">9 Jun, 2016</time>
+  <time datetime="2017-03-03">3 Mar, 2017</time>
 </small>
 
 
   <small>
     &middot; by Mark Bates
   
-  &middot; Read in about 2 min
-  &middot; (342 Words)
+  &middot; Read in about 3 min
+  &middot; (599 Words)
 </small>
 
 
 <div class="margin-10">
   <i class="fa fa-tags"></i>
   
-  <a href="/tags/blog" class="label label-primary">blog</a>
-  
-  <a href="/tags/hugo" class="label label-primary">hugo</a>
-  
   <a href="/tags/go" class="label label-primary">go</a>
   
   <a href="/tags/golang" class="label label-primary">golang</a>
-  
-  <a href="/tags/jekyll" class="label label-primary">jekyll</a>
   
 
 
@@ -215,19 +203,23 @@
 </div>
 
       <div class="content">
-  <p>Recently a good friend of mine, <a href="https://twitter.com/spf13">Steve Francia</a>, released a new version of his static site generator, <a href="http://gohugo.io/meta/release-notes/">Hugo</a>. So I thought I would give it a spin to see if it&rsquo;s any better than my old platform, <a href="/2012/04/04/now-blogging-with-jekyll/">Jekyll</a>.</p>
+  
 
-<p>The big reason that I was interested in Hugo, wasn&rsquo;t just because I&rsquo;m friends with Steve, but rather speed. Jekyll had always been easy to use, but it was pretty slow. Like really slow. I also had the occasional issue with it not properly building after I would save a file. It wasn&rsquo;t that Jekyll was bad, but there was definitely room for improvement.</p>
+<h1 id="you-re-benchmarking-the-wrong-thing">You&rsquo;re Benchmarking the Wrong Thing</h1>
 
-<p>I had tried previously to switch over to Hugo, but there wasn&rsquo;t a good way to import from Jekyll and I had a) no intentions of manually converting all my previous posts and b) losing all of that content and starting over again.</p>
+<p>The Go community loves benchmarks. It is obsessed with them. If you look at the bottom of most README&rsquo;s for Go projects you will find a section labeled &laquo;Benchmarks&raquo;. Everyone wants to prove how much faster their package, library, framework, etc&hellip; is from everyone elses. When looking at these benchmarks, the most important one is always missing, but we&rsquo;ll get to that in a minute.</p>
 
-<p>I spent some time with Steve a few weeks ago, and he told me that the latest version of Hugo had built-in support for importing Jekyll, and that I didn&rsquo;t have to rely on hacking third party scripts to get the job done.</p>
+<p>First, a quick aside to say that I believe certain benchmarks are important. For example, if I&rsquo;m trying to improve a section of code have isolated benchmarks for that section of code is important so I know if I&rsquo;ve made any improvements, or if I have regressed. These types of benchmarks are incredibly important. These are not the benchmarks I&rsquo;m talking about in this post. This post is all about those comparison benchmarks against other projects that project maintainers are obsessed with.</p>
 
-<p>After running the importer all of my posts were there, and they only needed a wee bit of tweaking to make them look good with Hugo. Then I was off trying to find a good theme for the site, preferably something similar to what I had. That was easy enough, a few tweaks to a &laquo;bootstrap&raquo; theme and I was set.</p>
+<p>Go is an incredibly fast language, let&rsquo;s be honest, we already know that. For 98% of the projects out there Go is &laquo;fast enough&raquo; as is, yet, project maintainers feel a deeply embedded need to tweak every last bit of performance out of their code, but they&rsquo;re doing it at a cost, that most of them aren&rsquo;t aware of. That cost is the &laquo;missing&raquo; benchmark I spoke of earlier.</p>
 
-<p>Overall I&rsquo;ve been happy with Hugo, now that I have it set up. I just hit save and Hugo rebuilt my entire site in <code>234ms</code>. That&rsquo;s pretty darn fast! Especially compared with the speeds I was getting with Jekyll. Oh, and did I mention that it also reloaded the site in my browser for me so I can see it getting updated everytime I hit save? Yeah, pretty nice.</p>
+<p>Recently I was having a conversation with a friend of mine. He was lamenting the fact that his Go package wasn&rsquo;t seeing the uptick in usage he thought it would. He couldn&rsquo;t understand why. He kept repeating that his was the &laquo;fastest&raquo; one out there. &laquo;Just look at the benchmarks&raquo;, he said. He was right, his is the fastest package in that category out there, but you know what, after reviewing the package it became very clear to me what the problem was. I knew why his project wasn&rsquo;t &laquo;selling&raquo;. It was unusable. He sacrificed usuability for benchmarks. There, my friends, is the problem. That is the missing benchmark, usability.</p>
 
-<p>For now, I&rsquo;m sold on Hugo. Does that mean I will blog more? Who knows? I do know that it certainly couldn&rsquo;t hurt. :)</p>
+<p>An unusable project, no matter how fast it is, is, well, unusable. When writing code, you should always, always, always, optimize for usuability, clarity, and maintainability above all else. Those objectives are often at odds with satisfying the benchmark gods. When I design a package, library, tool, framework, etc&hellip; I start with psuedo-code. I want to understand how it will be used. If my psuedo-code is too complex I delete it and try a different approach. I keep going until I find a pattern and design that is pleasant to use, and offers the features I need from the package, then I start coding.</p>
+
+<p>I know I don&rsquo;t write the fastest code out there. I&rsquo;m fine with that. I accept that. Don&rsquo;t get me wrong, I don&rsquo;t want to write slow code, no one does. Using those isolated benchmarks I can target segments of my code that are slow and improve them, but I do that <strong>after</strong> I have good solid public API that people will want to use.</p>
+
+<p>The next time you sit down and start to write a new project, first consider the end user and what is important to them. Is speed the most important thing? Perhaps, if you&rsquo;re writing something like a database. Or, is usuability the most important thing? If you&rsquo;re unsure, err on the side of usuability. If no one is using your project, what is the point of it being the fastest out there? If it&rsquo;s usuable, then people will use it, and then, you know what? Those same people will start contributing to it to make it better <em>and</em> faster!</p>
 
 </div>
 
@@ -239,18 +231,12 @@
     <nav><ul class="pager">
     
         <li class="previous">
-          <a href="/2015/10/15/handling-http-request-errors-in-go/" title="Handling HTTP Request Errors in GO">
+          <a href="/2016/06/09/now-building-with-hugo/" title="Now Building With Hugo">
             <span aria-hidden="true">&larr;</span>Previous
           </a>
         </li>
     
 
-    
-      <li class="next">
-        <a href="/2017/03/03/youre-benchmarking-the-wrong-thing/" title="You&#39;re Benchmarking the Wrong Thing">
-            Next <span aria-hidden="true">&rarr;</span>
-        </a>
-      </li>
     
     </ul> </nav>
   
