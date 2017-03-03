@@ -2,14 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mack on MetaBates.com</title>
-    <link>/tags/mack/</link>
+    <link>/tags/mack/index.xml</link>
     <description>Recent content in Mack on MetaBates.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
     <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
     <copyright>(c) 2016 Mark Bates.</copyright>
-    <lastBuildDate>Sun, 05 Apr 2009 00:00:00 +0000</lastBuildDate>
     <atom:link href="/tags/mack/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -18,7 +17,7 @@
       <pubDate>Sun, 05 Apr 2009 00:00:00 +0000</pubDate>
       <author>mark&#43;blog@markbates.com (Mark Bates)</author>
       <guid>/2009/04/05/distribunaut/</guid>
-      <description>&lt;p&gt;Hey there everyone, it certainly has been awhile, a month by my count. I have been diligently working on a book for Addison-Wesley called, &amp;ldquo;Distributed Programming with Ruby&amp;rdquo;, so having the time to blog went from a luxury to almost non-existent. But here&amp;rsquo;s another little post to keep your RSS feeds happy.&lt;/p&gt;
+      <description>&lt;p&gt;Hey there everyone, it certainly has been awhile, a month by my count. I have been diligently working on a book for Addison-Wesley called, &amp;laquo;Distributed Programming with Ruby&amp;raquo;, so having the time to blog went from a luxury to almost non-existent. But here&amp;rsquo;s another little post to keep your RSS feeds happy.&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;ve started working on porting the mack-distributed package to the non-Mack world. This new project, and I use the term new loosely for the time being, is tentatively called Distribunaut. The project on GitHub can be found here: &lt;a href=&#34;http://github.com/markbates/distribunaut/tree/master&#34;&gt;http://github.com/markbates/distribunaut/tree/master&lt;/a&gt;. It&amp;rsquo;s pretty rough right now. I&amp;rsquo;ve ported over the distributed objects section of mack-distributed, but not the views and routes.&lt;/p&gt;
 
@@ -69,7 +68,7 @@ $ sudo gem install markbates-distribunaut&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Again, however, reality came into play. The company was forced to lay off nearly 50% of its staff, and I was one of them. I quickly took a position as the Director of Engineering for another startup in Boston. This shop, too, is a Rails shop. The difference between the two companies is that for the company I work for now Rails is the right solution. This means that I am spending my days working with Rails, and not developing Mack.&lt;/p&gt;
 
-&lt;p&gt;At night and on the weekends I like to spend time with my wife and my son. I play in a band, &lt;a href=&#34;http://www.thebluewires.com&#34;&gt;www.thebluewires.com&lt;/a&gt;, and I am working on a book for Addison-Wesley entitled, &amp;ldquo;Distributed Programming with Ruby&amp;rdquo;. I&amp;rsquo;m a busy man, and Mack is a big project. You can&amp;rsquo;t successfully write a web framework part time. Especially when that part time is really more like part-part time. You need to be able to put dedicated full time resources onto a project of that scale, and I just don&amp;rsquo;t have the time to do it.&lt;/p&gt;
+&lt;p&gt;At night and on the weekends I like to spend time with my wife and my son. I play in a band, &lt;a href=&#34;http://www.thebluewires.com&#34;&gt;www.thebluewires.com&lt;/a&gt;, and I am working on a book for Addison-Wesley entitled, &amp;laquo;Distributed Programming with Ruby&amp;raquo;. I&amp;rsquo;m a busy man, and Mack is a big project. You can&amp;rsquo;t successfully write a web framework part time. Especially when that part time is really more like part-part time. You need to be able to put dedicated full time resources onto a project of that scale, and I just don&amp;rsquo;t have the time to do it.&lt;/p&gt;
 
 &lt;p&gt;Would I love to see the project continue? Certainly. If there is someone out there who wants to take it on, please let me know. I would love to see it grow. There is so much I wanted to do with it. So many great ideas.&lt;/p&gt;
 

@@ -32,7 +32,7 @@
 <link rel="canonical" href="/" />
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
 <link rel="icon" href="/favicon.png">
-<meta name="generator" content="Hugo 0.16" />
+<meta name="generator" content="Hugo 0.20-DEV" />
 
   <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
@@ -131,7 +131,7 @@
   <div class="container">
     
     <div class="row">
-      <div class="col-sm-9">
+      <div class="col-sm-12">
         
         
           <div class="row">
@@ -167,7 +167,8 @@
     <p>
   
   
-    Recently a good friend of mine, Steve Francia, released a new version of his static site generator, Hugo. So I thought I would give it a spin to see if it&rsquo;s any better than my old platform, Jekyll. The big reason that I was interested in Hugo, wasn&rsquo;t just because I&rsquo;m friends with Steve, but rather speed. Jekyll had always been easy to use, but it was pretty slow. Like really slow.
+    Recently a good friend of mine, Steve Francia, released a new version of his static site generator, Hugo. So I thought I would give it a spin to see if it&rsquo;s any better than my old platform, Jekyll.
+The big reason that I was interested in Hugo, wasn&rsquo;t just because I&rsquo;m friends with Steve, but rather speed. Jekyll had always been easy to use, but it was pretty slow. Like really slow.
   
 
 
@@ -212,7 +213,9 @@
     <p>
   
   
-    I&rsquo;d like to take a quick moment and discuss handling HTTP request errors in Go. I often see people write code that they believe to be handling errors when making HTTP requests, but they&rsquo;re not actually handling any errors the application you&rsquo;re making requests to might be returning. Let&rsquo;s take the following piece of code: package main import ( &quot;fmt&quot; &quot;log&quot; &quot;net/http&quot; ) func main() { http.HandleFunc(&quot;/boom&quot;, func(res http.ResponseWriter, req *http.Request) { res.WriteHeader(500) res.Write([]byte(&quot;Boom!&quot;)) }) go http.ListenAndServe(&quot;:9000&quot;, nil) res, err := http.Get(&quot;http://127.0.0.1:9000/boom&quot;) if err != nil { log.Fatal(err) } fmt.Printf(&quot;res.StatusCode: %d\n&quot;, res.StatusCode) } Admittedly this is a pretty simple piece of code, not much happening.
+    I&rsquo;d like to take a quick moment and discuss handling HTTP request errors in Go. I often see people write code that they believe to be handling errors when making HTTP requests, but they&rsquo;re not actually handling any errors the application you&rsquo;re making requests to might be returning.
+Let&rsquo;s take the following piece of code:
+package main import ( &quot;fmt&quot; &quot;log&quot; &quot;net/http&quot; ) func main() { http.HandleFunc(&quot;/boom&quot;, func(res http.ResponseWriter, req *http.
   
 
 
@@ -251,7 +254,8 @@
     <p>
   
   
-    For the past two and half years I have prided myself on bringing MetaCasts.tv subscribers high quality, educational screencasts on a variety of subjects, from Ruby to JavaScript to Go. In that time I have produced almost 37 hours of video. It has been a remarkably fun ride, but that ride has now come to an end. When I announced that MetaCasts.tv would be shutting down there was a lot of speculation as to why, but at the time I was unable to provide any specifics behind it.
+    For the past two and half years I have prided myself on bringing MetaCasts.tv subscribers high quality, educational screencasts on a variety of subjects, from Ruby to JavaScript to Go. In that time I have produced almost 37 hours of video. It has been a remarkably fun ride, but that ride has now come to an end.
+When I announced that MetaCasts.tv would be shutting down there was a lot of speculation as to why, but at the time I was unable to provide any specifics behind it.
   
 
 
@@ -329,7 +333,9 @@
     <p>
   
   
-    What is HappinessConf? HappinessConf is a two day, single track conference, to help promote developer happiness. That&rsquo;s the single line pitch for the conference, but there&rsquo;s more to it than that. To fully understand why I, along with Scott Feinberg, am organizing a conference such as this we have to jump back to the Summer of 2014. The History Part Over the last few years I&rsquo;ve been flying around the world speaking at many different conferences, all with their on style and slant on what a conference should be.
+    What is HappinessConf? HappinessConf is a two day, single track conference, to help promote developer happiness. That&rsquo;s the single line pitch for the conference, but there&rsquo;s more to it than that.
+To fully understand why I, along with Scott Feinberg, am organizing a conference such as this we have to jump back to the Summer of 2014.
+The History Part Over the last few years I&rsquo;ve been flying around the world speaking at many different conferences, all with their on style and slant on what a conference should be.
   
 
 
@@ -415,7 +421,8 @@
     <p>
   
   
-    Congratulations to Sean Powell, @seanpowell, who won last month&rsquo;s contest to win a free ticket to the GothamGo conference in New York City in November, courtesy of MetaCasts.tv. I&rsquo;m really excited that MetaCasts is sponsoring this great conference, and I&rsquo;m even more excited that I was able to help someone like Sean, a supporter of MetaCasts, get to go to the conference. If you haven&rsquo;t already purchased your ticket for the conference, you should hurry up, it&rsquo;s going to be great!
+    Congratulations to Sean Powell, @seanpowell, who won last month&rsquo;s contest to win a free ticket to the GothamGo conference in New York City in November, courtesy of MetaCasts.tv.
+I&rsquo;m really excited that MetaCasts is sponsoring this great conference, and I&rsquo;m even more excited that I was able to help someone like Sean, a supporter of MetaCasts, get to go to the conference. If you haven&rsquo;t already purchased your ticket for the conference, you should hurry up, it&rsquo;s going to be great!
   
 
 
@@ -458,7 +465,9 @@
     <p>
   
   
-    Win a Free Ticket to GothamGO! Today I released the 100th episode of MetaCasts! To help celebrate that I want to give one lucky subscriber a free ticket to the GothamGo conference in New York City on November 15th. On October 1st I will choose a winner from the active MetaCasts subscribers with a yearly plan. Current subscribers: If you&rsquo;re already a yearly subscriber, congrats, you don&rsquo;t have to do anything to enter.
+    Win a Free Ticket to GothamGO! Today I released the 100th episode of MetaCasts! To help celebrate that I want to give one lucky subscriber a free ticket to the GothamGo conference in New York City on November 15th.
+On October 1st I will choose a winner from the active MetaCasts subscribers with a yearly plan.
+Current subscribers: If you&rsquo;re already a yearly subscriber, congrats, you don&rsquo;t have to do anything to enter.
   
 
 
@@ -501,7 +510,8 @@
     <p>
   
   
-    In January of 2013 I launched MetaCasts.tv with the idea that I would generate a new screencast each week on whatever technology excited me that week. I wanted MetaCasts to be a place where developers could come and learn about topics related to their current needs, as well as technologies they might not have thought to try, or have even heard about. During the past year and a half two things happened that have made me question this philosophy, and the overall direction of MetaCasts.
+    In January of 2013 I launched MetaCasts.tv with the idea that I would generate a new screencast each week on whatever technology excited me that week. I wanted MetaCasts to be a place where developers could come and learn about topics related to their current needs, as well as technologies they might not have thought to try, or have even heard about.
+During the past year and a half two things happened that have made me question this philosophy, and the overall direction of MetaCasts.
   
 
 
@@ -548,7 +558,8 @@
     <p>
   
   
-    Apologies for the slightly inflammatory title, but I&rsquo;m beginning to get worried about the Ruby community, and sadly my worries are stemming from an area that first made me fall in love with Ruby, testing. By now you are probably familiar with the whole &ldquo;TDD is Dead&rdquo; saga that stemmed from a keynote that DHH recently gave at RailsConf. I&rsquo;m not going to bother recapping that, do a Google search and you&rsquo;ll find out all about it.
+    Apologies for the slightly inflammatory title, but I&rsquo;m beginning to get worried about the Ruby community, and sadly my worries are stemming from an area that first made me fall in love with Ruby, testing.
+By now you are probably familiar with the whole &laquo;TDD is Dead&raquo; saga that stemmed from a keynote that DHH recently gave at RailsConf. I&rsquo;m not going to bother recapping that, do a Google search and you&rsquo;ll find out all about it.
   
 
 
@@ -569,7 +580,7 @@
 
 
 <li  class="disabled" >
-  <a aria-label="First" href="//">
+  <a aria-label="First" href="/">
     <span aria-hidden="true">&laquo;&laquo;</span>
   </a>
 </li>
@@ -581,55 +592,55 @@
 </li>
 
 <li  class="active" >
-  <a href="//">
+  <a href="/">
     1
     </a>
 </li>
 
 <li >
-  <a href="//page/2/">
+  <a href="/page/2/">
     2
     </a>
 </li>
 
 <li >
-  <a href="//page/3/">
+  <a href="/page/3/">
     3
     </a>
 </li>
 
 <li >
-  <a href="//page/4/">
+  <a href="/page/4/">
     4
     </a>
 </li>
 
 <li >
-  <a href="//page/5/">
+  <a href="/page/5/">
     5
     </a>
 </li>
 
 <li >
-  <a href="//page/6/">
+  <a href="/page/6/">
     6
     </a>
 </li>
 
 <li >
-  <a href="//page/7/">
+  <a href="/page/7/">
     7
     </a>
 </li>
 
 
 <li >
-  <a aria-label="Next" href="//page/2/">
+  <a aria-label="Next" href="/page/2/">
     <span aria-hidden="true">&raquo;</span>
     </a>
 </li>
 <li >
-  <a aria-label="Last" href="//page/7/">
+  <a aria-label="Last" href="/page/7/">
     <span aria-hidden="true">&raquo;&raquo;</span>
   </a>
 </li>
@@ -640,70 +651,6 @@
 
 
       </div>
-      
-        <div class="col-sm-3">
-                    <a class="twitter-timeline" href="https://twitter.com/markbates" data-widget-id="274503565609934848">Tweets by @markbates</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-
-<hr>
-
-<div>
-  
-
-    <div class="section">
-      <header><div class="title"><b>Latest Posts</b></div></header>
-      <div class="content">
-        <ul>
-        
-          <li>
-          <a href="/2016/06/09/now-building-with-hugo/">Now Building With Hugo</a>
-          </li>
-        
-          <li>
-          <a href="/2015/10/15/handling-http-request-errors-in-go/">Handling HTTP Request Errors in GO</a>
-          </li>
-        
-          <li>
-          <a href="/2015/06/01/metacaststv-acquired-by-oreilly-media/">MetaCasts.tv Acquired by O&#39;Reilly Media</a>
-          </li>
-        
-          <li>
-          <a href="/2015/05/07/so-long-and-thanks-for-all-the-fish/">So Long, and Thanks For All The Fish</a>
-          </li>
-        
-          <li>
-          <a href="/2015/02/07/what-is-happinessconf-and-why-its-important/">What is HappinessConf and Why is it Important?</a>
-          </li>
-        
-          <li>
-          <a href="/2014/10/15/goth-multi-provider-authentication-for-go/">Goth: Multi Provider Authentication for Go</a>
-          </li>
-        
-          <li>
-          <a href="/2014/10/09/metacaststv-gothamgo-winner/">MetaCasts.tv/GothamGo Winner</a>
-          </li>
-        
-          <li>
-          <a href="/2014/09/01/100th-episode--a-free-ticket-to-gothamgo/">100th Episode | A Free Ticket to GothamGo!</a>
-          </li>
-        
-          <li>
-          <a href="/2014/07/08/metacasts-golang-future/">MetaCasts Golang Future</a>
-          </li>
-        
-          <li>
-          <a href="/2014/05/28/the-war-on-testing/">The War on Testing</a>
-          </li>
-        
-        </ul>
-      </div>
-    </div>
-
-
-</div>
-
-        </div>
       
     </div>
 

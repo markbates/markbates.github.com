@@ -2,14 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cucumber on MetaBates.com</title>
-    <link>/tags/cucumber/</link>
+    <link>/tags/cucumber/index.xml</link>
     <description>Recent content in Cucumber on MetaBates.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
     <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
     <copyright>(c) 2016 Mark Bates.</copyright>
-    <lastBuildDate>Fri, 04 Mar 2011 00:00:00 +0000</lastBuildDate>
     <atom:link href="/tags/cucumber/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -19,13 +18,13 @@
       <author>mark&#43;blog@markbates.com (Mark Bates)</author>
       <guid>/2011/03/04/407-testing-tools-arent-all-the-same-choose-wisely/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;&amp;ldquo;Testing is painful.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&amp;laquo;Testing is painful.&amp;raquo;&lt;/p&gt;
 
-&lt;p&gt;&amp;ldquo;Testing is hard.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&amp;laquo;Testing is hard.&amp;raquo;&lt;/p&gt;
 
-&lt;p&gt;&amp;ldquo;Testing is complicated.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&amp;laquo;Testing is complicated.&amp;raquo;&lt;/p&gt;
 
-&lt;p&gt;&amp;ldquo;Testing is not fun.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&amp;laquo;Testing is not fun.&amp;raquo;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;I hear those sorts of things all the time when I talk to people about testing. I agree that sometimes testing can be all of those things, but if you choose the right tools, the tools that best suite you, testing doesn&amp;rsquo;t have to be. Let me give you an example of what I&amp;rsquo;m talking about, how choosing the right tools can make a huge impact on how you feel about testing.&lt;/p&gt;
@@ -72,9 +71,9 @@
 
 &lt;p&gt;&lt;img style=&#34;float: left; padding-right: 10px&#34; title=&#34;Failure Testing&#34; src=&#34;http://www.commercialventvac.com/finao/failure_testing.jpg&#34; alt=&#34;&#34; width=&#34;400&#34; height=&#34;240&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&amp;ldquo;We don&amp;rsquo;t have any tests because I couldn&amp;rsquo;t convince the company to allocate the time for them.&amp;rdquo; That statement really hung with me. After I got off the phone I started thinking really hard about that statement, and all I could think of was how testing is not an option and people shouldn&amp;rsquo;t need to be convinced to have time allocated to them.&lt;/p&gt;
+&lt;p&gt;&amp;laquo;We don&amp;rsquo;t have any tests because I couldn&amp;rsquo;t convince the company to allocate the time for them.&amp;raquo; That statement really hung with me. After I got off the phone I started thinking really hard about that statement, and all I could think of was how testing is not an option and people shouldn&amp;rsquo;t need to be convinced to have time allocated to them.&lt;/p&gt;
 
-&lt;p&gt;As developers it is our responsibility to insist on testing. Always include testing in your time estimates. Never give the client (or your company) an option that includes a time estimate without testing. If a feature takes 2 days to code and a day to write tests, then your estimate is 3 days, never 2. You should never say, &amp;ldquo;Well, I can get it done in two days if I don&amp;rsquo;t write any tests.&amp;rdquo; That&amp;rsquo;s just an unacceptable thing to say. What you should be saying is, &amp;ldquo;That feature will take three days to code&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;As developers it is our responsibility to insist on testing. Always include testing in your time estimates. Never give the client (or your company) an option that includes a time estimate without testing. If a feature takes 2 days to code and a day to write tests, then your estimate is 3 days, never 2. You should never say, &amp;laquo;Well, I can get it done in two days if I don&amp;rsquo;t write any tests.&amp;raquo; That&amp;rsquo;s just an unacceptable thing to say. What you should be saying is, &amp;laquo;That feature will take three days to code&amp;raquo;.&lt;/p&gt;
 
 &lt;p&gt;I don&amp;rsquo;t feel I should sit here and tell you all the reasons why you should test, you should know them already, and frankly, they&amp;rsquo;re all very obvious! But, if you need a few bullet points to &amp;lsquo;convince&amp;rsquo; your client, here are a few:&lt;/p&gt;
 
@@ -82,7 +81,7 @@
 &lt;li&gt;Less bugs - The more tests you have the less bugs you will have. It&amp;rsquo;s just a fact. You won&amp;rsquo;t have 100% bug free code, that&amp;rsquo;s a nearly impossible goal, but you highly reduce the likely hood that as soon as you get your code into production your users will find all the breaking points of your code.&lt;/li&gt;
 &lt;li&gt;Better maintainability, means faster feature turn around - When you have a large test suite it means adding, updating, or even removing features because a whole lot easier, which means it SAVES time! Why? Simple, you don&amp;rsquo;t have to go through and manually test every aspect of your code to make sure you didn&amp;rsquo;t break something elsewhere by adding that validation, or by refactoring that bit of code, etc&amp;hellip; That translates into real $ savings.&lt;/li&gt;
 &lt;li&gt;Test driven development saves time - this isn&amp;rsquo;t quite the same as my last bullet point. Imagine, if you will, you are writing a four step wizard in your application. If you write a few test scripts using something like Cucumber first before you write your code you can simply keep re-running those to make sure your code is working. If you don&amp;rsquo;t have those test scripts written then you continually have to keep going to a browser and entering all the information in each of the steps so you can test something in step four. Which one do you think takes longer, having a few test scripts you can run, or manually going through the four page wizard each time you make a change?&lt;/li&gt;
-&lt;li&gt;It&amp;rsquo;s an investment - thinking of having test scripts like owning a house. When you don&amp;rsquo;t have tests and you just keep testing in the browser or the command line what you are doing is a kin to &amp;ldquo;renting&amp;rdquo;. There is money being spent, but at the end of the day you have nothing to show for it. You&amp;rsquo;ve spent hours &amp;ldquo;testing&amp;rdquo;, but tomorrow when you come in you have to do it all over again. When you spend those hours writing tests you are actually &amp;ldquo;buying&amp;rdquo; something. You have something to show for that time and money you&amp;rsquo;ve spent. Tomorrow, next week, next month, next year, those scripts will still be there, they&amp;rsquo;ll still be working for you, giving  you a return on your investment.&lt;/li&gt;
+&lt;li&gt;It&amp;rsquo;s an investment - thinking of having test scripts like owning a house. When you don&amp;rsquo;t have tests and you just keep testing in the browser or the command line what you are doing is a kin to &amp;laquo;renting&amp;raquo;. There is money being spent, but at the end of the day you have nothing to show for it. You&amp;rsquo;ve spent hours &amp;laquo;testing&amp;raquo;, but tomorrow when you come in you have to do it all over again. When you spend those hours writing tests you are actually &amp;laquo;buying&amp;raquo; something. You have something to show for that time and money you&amp;rsquo;ve spent. Tomorrow, next week, next month, next year, those scripts will still be there, they&amp;rsquo;ll still be working for you, giving  you a return on your investment.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Well, I hope I have hopefully made a case to you the engineer as to why you should insist on testing. It&amp;rsquo;s the right thing to do, for you, for your application and for you client. If if anyone tries to give you grief about it, send them my way, I&amp;rsquo;ll sort em out!&lt;/p&gt;

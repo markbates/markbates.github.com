@@ -32,7 +32,7 @@
 <link rel="canonical" href="/" />
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
 <link rel="icon" href="/favicon.png">
-<meta name="generator" content="Hugo 0.16" />
+<meta name="generator" content="Hugo 0.20-DEV" />
 
   <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
@@ -131,7 +131,7 @@
   <div class="container">
     
     <div class="row">
-      <div class="col-sm-9">
+      <div class="col-sm-12">
         
         
           <div class="row">
@@ -165,7 +165,9 @@
     <p>
   
   
-    Travis CI and Heroku are two of my favorite tools. Recently I tried to figure out if there was an easy way to have Travis automatically deploy to Heroku once the tests have passed. Turns out it&rsquo;s incredibly easy! All you need to do is add the following as your after_script in your .travis.yml file. after_script: # Install the Heroku gem (or the Heroku toolbelt) - gem install heroku # Add your Heroku git repo: - git remote add heroku git@heroku.com:YOUR_HEROKU_APP.git # Add your Heroku API key: - export HEROKU_API_KEY=YOUR_HEROKU_API_KEY_HERE # Turn off warnings about SSH keys: - echo &quot;Host heroku.com&quot; &gt;&gt; ~/.ssh/config - echo &quot; StrictHostKeyChecking no&quot; &gt;&gt; ~/.ssh/config - echo &quot; CheckHostIP no&quot; &gt;&gt; ~/.ssh/config - echo &quot; UserKnownHostsFile=/dev/null&quot; &gt;&gt; ~/.ssh/config # Clear your current Heroku SSH keys: - heroku keys:clear # Add a new SSH key to Heroku - yes | heroku keys:add # Push to Heroku!
+    Travis CI and Heroku are two of my favorite tools. Recently I tried to figure out if there was an easy way to have Travis automatically deploy to Heroku once the tests have passed. Turns out it&rsquo;s incredibly easy!
+All you need to do is add the following as your after_script in your .travis.yml file.
+after_script: # Install the Heroku gem (or the Heroku toolbelt) - gem install heroku # Add your Heroku git repo: - git remote add heroku git@heroku.
   
 
 
@@ -255,7 +257,9 @@
     <p>
   
   
-    Conferences, user groups, etc&hellip; are about two things as far as I&rsquo;m concerned; education and networking. Those points often coincide with one another and are not mutually exclusive. Recently at conferences, user groups, meet ups, what have you, I have noticed a distrubing trend; developers sitting in the back of the rooms, hallways, and other common areas, hacking away on their laptops. Lot&rsquo;s of time, energy, and money is spent to create an environment at these events where people can come and learn both from the speakers of the event as well as from each during the social events that are scheduled.
+    Conferences, user groups, etc&hellip; are about two things as far as I&rsquo;m concerned; education and networking. Those points often coincide with one another and are not mutually exclusive.
+Recently at conferences, user groups, meet ups, what have you, I have noticed a distrubing trend; developers sitting in the back of the rooms, hallways, and other common areas, hacking away on their laptops.
+Lot&rsquo;s of time, energy, and money is spent to create an environment at these events where people can come and learn both from the speakers of the event as well as from each during the social events that are scheduled.
   
 
 
@@ -300,7 +304,8 @@
     <p>
   
   
-    Beware Your Users: Every developer should already know about, and work to prevent, scripting attacks on their site. Scripting attacks are one of the easiest ways for a hacker to attack your site, they are also one of the easiest attacks to prevent. Whenever you let an end user enter text into a form on your site, and then display that text to other users on your site, you&rsquo;ve opened yourself up to this sort of attack.
+    Beware Your Users: Every developer should already know about, and work to prevent, scripting attacks on their site. Scripting attacks are one of the easiest ways for a hacker to attack your site, they are also one of the easiest attacks to prevent.
+Whenever you let an end user enter text into a form on your site, and then display that text to other users on your site, you&rsquo;ve opened yourself up to this sort of attack.
   
 
 
@@ -347,7 +352,8 @@
     <p>
   
   
-    Lately I&rsquo;ve been doing a lot of work with PhoneGap, now known as Cordova. PhoneGap lets you write &ldquo;native&rdquo; iOS, Android, Blackberry, etc&hellip; applications using standard web technologies, such as HTML, CSS, and JavaScript. They also give you a JavaScript API to access parts of the device, such as the camera, the accelerometer, the compass, etc&hellip; In this article I would like to take a quick look at how to take a new picture, or use an existing library photo, and how to upload it to a webserver somewhere.
+    Lately I&rsquo;ve been doing a lot of work with PhoneGap, now known as Cordova. PhoneGap lets you write &laquo;native&raquo; iOS, Android, Blackberry, etc&hellip; applications using standard web technologies, such as HTML, CSS, and JavaScript. They also give you a JavaScript API to access parts of the device, such as the camera, the accelerometer, the compass, etc&hellip;
+In this article I would like to take a quick look at how to take a new picture, or use an existing library photo, and how to upload it to a webserver somewhere.
   
 
 
@@ -392,7 +398,8 @@
     <p>
   
   
-    Recently I fell upon a way of working that I think is just fantastic. So far I have no complaints about it, and neither do my clients. How I used to work In the past I would write my Rails applications just like everyone else did. I had all my business logic in my models and my controllers were very lightweight. Just enough to have the data I need to render the page.
+    Recently I fell upon a way of working that I think is just fantastic. So far I have no complaints about it, and neither do my clients.
+How I used to work In the past I would write my Rails applications just like everyone else did. I had all my business logic in my models and my controllers were very lightweight. Just enough to have the data I need to render the page.
   
 
 
@@ -433,7 +440,8 @@
     <p>
   
   
-    As you may or may not have noticed there&rsquo;s a new blog in town! That&rsquo;s right, I&rsquo;ve ditched the zero, WordPress, and got with the hero, Jekyll. And I have to say, it sure feels good. WordPress worked well for me for years, but I have to say that I never enjoyed the process of writing a technical blog in a browser. I hated the lack of tools that my editor has at it&rsquo;s disposal.
+    As you may or may not have noticed there&rsquo;s a new blog in town! That&rsquo;s right, I&rsquo;ve ditched the zero, WordPress, and got with the hero, Jekyll. And I have to say, it sure feels good.
+WordPress worked well for me for years, but I have to say that I never enjoyed the process of writing a technical blog in a browser. I hated the lack of tools that my editor has at it&rsquo;s disposal.
   
 
 
@@ -484,7 +492,8 @@
     <p>
   
   
-    Before I start this article, let me apologize for the lack of writing over the last six months. My only excuse is that I&rsquo;ve been working on a new book and that is where all my writing energy has gone. So with apologies out of the way, let&rsquo;s talk pagination. Dealing with pagination in any application is never easy. There are a lot of great libraries out there that help you better handle this awkward, but unavoidable part of application programming.
+    Before I start this article, let me apologize for the lack of writing over the last six months. My only excuse is that I&rsquo;ve been working on a new book and that is where all my writing energy has gone. So with apologies out of the way, let&rsquo;s talk pagination.
+Dealing with pagination in any application is never easy. There are a lot of great libraries out there that help you better handle this awkward, but unavoidable part of application programming.
   
 
 
@@ -586,7 +595,10 @@
     <p>
   
   
-    Last night I had the pleasure of presenting to the Boston Ruby User&rsquo;s Group on CoffeeScript. My talk was geared to helping Rubyists understand, and hopefully love, CoffeeScript. Along the way I tried to debunk a few myths and preconceptions as to what CoffeeScript is and isn&rsquo;t. The reaction was really positive, so hopefully I did my job. Anyway, here are the slides: http://www.slideshare.net/markykang/coffeescript-bostonrb-892011 &nbsp; Enjoy!
+    Last night I had the pleasure of presenting to the Boston Ruby User&rsquo;s Group on CoffeeScript. My talk was geared to helping Rubyists understand, and hopefully love, CoffeeScript. Along the way I tried to debunk a few myths and preconceptions as to what CoffeeScript is and isn&rsquo;t. The reaction was really positive, so hopefully I did my job. Anyway, here are the slides:
+http://www.slideshare.net/markykang/coffeescript-bostonrb-892011
+&nbsp;
+Enjoy!
   
 
 
@@ -607,67 +619,67 @@
 
 
 <li >
-  <a aria-label="First" href="//">
+  <a aria-label="First" href="/">
     <span aria-hidden="true">&laquo;&laquo;</span>
   </a>
 </li>
 
 <li >
-  <a aria-label="Previous" href="//page/2/">
+  <a aria-label="Previous" href="/page/2/">
     <span aria-hidden="true">&laquo;</span>
     </a>
 </li>
 
 <li >
-  <a href="//">
+  <a href="/">
     1
     </a>
 </li>
 
 <li >
-  <a href="//page/2/">
+  <a href="/page/2/">
     2
     </a>
 </li>
 
 <li  class="active" >
-  <a href="//page/3/">
+  <a href="/page/3/">
     3
     </a>
 </li>
 
 <li >
-  <a href="//page/4/">
+  <a href="/page/4/">
     4
     </a>
 </li>
 
 <li >
-  <a href="//page/5/">
+  <a href="/page/5/">
     5
     </a>
 </li>
 
 <li >
-  <a href="//page/6/">
+  <a href="/page/6/">
     6
     </a>
 </li>
 
 <li >
-  <a href="//page/7/">
+  <a href="/page/7/">
     7
     </a>
 </li>
 
 
 <li >
-  <a aria-label="Next" href="//page/4/">
+  <a aria-label="Next" href="/page/4/">
     <span aria-hidden="true">&raquo;</span>
     </a>
 </li>
 <li >
-  <a aria-label="Last" href="//page/7/">
+  <a aria-label="Last" href="/page/7/">
     <span aria-hidden="true">&raquo;&raquo;</span>
   </a>
 </li>
@@ -678,70 +690,6 @@
 
 
       </div>
-      
-        <div class="col-sm-3">
-                    <a class="twitter-timeline" href="https://twitter.com/markbates" data-widget-id="274503565609934848">Tweets by @markbates</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-
-<hr>
-
-<div>
-  
-
-    <div class="section">
-      <header><div class="title"><b>Latest Posts</b></div></header>
-      <div class="content">
-        <ul>
-        
-          <li>
-          <a href="/2016/06/09/now-building-with-hugo/">Now Building With Hugo</a>
-          </li>
-        
-          <li>
-          <a href="/2015/10/15/handling-http-request-errors-in-go/">Handling HTTP Request Errors in GO</a>
-          </li>
-        
-          <li>
-          <a href="/2015/06/01/metacaststv-acquired-by-oreilly-media/">MetaCasts.tv Acquired by O&#39;Reilly Media</a>
-          </li>
-        
-          <li>
-          <a href="/2015/05/07/so-long-and-thanks-for-all-the-fish/">So Long, and Thanks For All The Fish</a>
-          </li>
-        
-          <li>
-          <a href="/2015/02/07/what-is-happinessconf-and-why-its-important/">What is HappinessConf and Why is it Important?</a>
-          </li>
-        
-          <li>
-          <a href="/2014/10/15/goth-multi-provider-authentication-for-go/">Goth: Multi Provider Authentication for Go</a>
-          </li>
-        
-          <li>
-          <a href="/2014/10/09/metacaststv-gothamgo-winner/">MetaCasts.tv/GothamGo Winner</a>
-          </li>
-        
-          <li>
-          <a href="/2014/09/01/100th-episode--a-free-ticket-to-gothamgo/">100th Episode | A Free Ticket to GothamGo!</a>
-          </li>
-        
-          <li>
-          <a href="/2014/07/08/metacasts-golang-future/">MetaCasts Golang Future</a>
-          </li>
-        
-          <li>
-          <a href="/2014/05/28/the-war-on-testing/">The War on Testing</a>
-          </li>
-        
-        </ul>
-      </div>
-    </div>
-
-
-</div>
-
-        </div>
       
     </div>
 

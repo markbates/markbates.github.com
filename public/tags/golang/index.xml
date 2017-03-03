@@ -2,14 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Golang on MetaBates.com</title>
-    <link>/tags/golang/</link>
+    <link>/tags/golang/index.xml</link>
     <description>Recent content in Golang on MetaBates.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
     <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
     <copyright>(c) 2016 Mark Bates.</copyright>
-    <lastBuildDate>Thu, 09 Jun 2016 16:20:56 -0400</lastBuildDate>
     <atom:link href="/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -26,7 +25,7 @@
 
 &lt;p&gt;I spent some time with Steve a few weeks ago, and he told me that the latest version of Hugo had built-in support for importing Jekyll, and that I didn&amp;rsquo;t have to rely on hacking third party scripts to get the job done.&lt;/p&gt;
 
-&lt;p&gt;After running the importer all of my posts were there, and they only needed a wee bit of tweaking to make them look good with Hugo. Then I was off trying to find a good theme for the site, preferably something similar to what I had. That was easy enough, a few tweaks to a &amp;ldquo;bootstrap&amp;rdquo; theme and I was set.&lt;/p&gt;
+&lt;p&gt;After running the importer all of my posts were there, and they only needed a wee bit of tweaking to make them look good with Hugo. Then I was off trying to find a good theme for the site, preferably something similar to what I had. That was easy enough, a few tweaks to a &amp;laquo;bootstrap&amp;raquo; theme and I was set.&lt;/p&gt;
 
 &lt;p&gt;Overall I&amp;rsquo;ve been happy with Hugo, now that I have it set up. I just hit save and Hugo rebuilt my entire site in &lt;code&gt;234ms&lt;/code&gt;. That&amp;rsquo;s pretty darn fast! Especially compared with the speeds I was getting with Jekyll. Oh, and did I mention that it also reloaded the site in my browser for me so I can see it getting updated everytime I hit save? Yeah, pretty nice.&lt;/p&gt;
 
@@ -75,7 +74,7 @@
 &lt;span class=&#34;nx&#34;&gt;fmt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;res.StatusCode: %d\n&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;StatusCode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;That second of code is doing the &amp;ldquo;error&amp;rdquo; checking of the request. If we run this code we&amp;rsquo;ll see the following output:&lt;/p&gt;
+&lt;p&gt;That second of code is doing the &amp;laquo;error&amp;raquo; checking of the request. If we run this code we&amp;rsquo;ll see the following output:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;StatusCode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;500&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -127,7 +126,7 @@
 
 &lt;p&gt;Unfortunately adding Twitter support to gomniauth was not as easy as it would seem. This is as much the fault of Twitter as it is the gomniauth package maintainers. Twitter&amp;rsquo;s auth support is ancient. It supports OAuth 1.1, and not the more modern OAuth2. Gomniauth, however, is pretty much hard coded to only support OAuth2.&lt;/p&gt;
 
-&lt;p&gt;What&amp;rsquo;s a person to do? I really needed Twitter support, as well as the ability to add other non-OAuth2 authentication methods. I also didn&amp;rsquo;t feel like writing a new package, I&amp;rsquo;m not a fan of &amp;ldquo;not invented here&amp;rdquo;, but looking at what it would take to refactor gomniauth, not to mention break every application that uses it, I wasn&amp;rsquo;t really left with a choice.&lt;/p&gt;
+&lt;p&gt;What&amp;rsquo;s a person to do? I really needed Twitter support, as well as the ability to add other non-OAuth2 authentication methods. I also didn&amp;rsquo;t feel like writing a new package, I&amp;rsquo;m not a fan of &amp;laquo;not invented here&amp;raquo;, but looking at what it would take to refactor gomniauth, not to mention break every application that uses it, I wasn&amp;rsquo;t really left with a choice.&lt;/p&gt;
 
 &lt;h2 id=&#34;and-there-s-goth&#34;&gt;And There&amp;rsquo;s Goth&amp;hellip;&lt;/h2&gt;
 

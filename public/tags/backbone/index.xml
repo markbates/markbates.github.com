@@ -2,14 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Backbone on MetaBates.com</title>
-    <link>/tags/backbone/</link>
+    <link>/tags/backbone/index.xml</link>
     <description>Recent content in Backbone on MetaBates.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
     <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
     <copyright>(c) 2016 Mark Bates.</copyright>
-    <lastBuildDate>Tue, 17 Apr 2012 00:00:00 +0000</lastBuildDate>
     <atom:link href="/tags/backbone/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -39,7 +38,7 @@
 &lt;span class=&#34;nx&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;h1&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;html&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;model&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;foo&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;));&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;That code will set the &lt;code&gt;h1&lt;/code&gt; tag on the page to whatever the value of the attribute &lt;code&gt;foo&lt;/code&gt; is, in this case the value &lt;code&gt;&amp;ldquo;Bar&amp;rdquo;&lt;/code&gt;. That&amp;rsquo;s all fine and dandy, but what if we set the value of the &lt;code&gt;foo&lt;/code&gt; attribute to something a bit more malicious:&lt;/p&gt;
+&lt;p&gt;That code will set the &lt;code&gt;h1&lt;/code&gt; tag on the page to whatever the value of the attribute &lt;code&gt;foo&lt;/code&gt; is, in this case the value &lt;code&gt;&amp;laquo;Bar&amp;raquo;&lt;/code&gt;. That&amp;rsquo;s all fine and dandy, but what if we set the value of the &lt;code&gt;foo&lt;/code&gt; attribute to something a bit more malicious:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;model&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Backbone&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Model&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;({&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;foo&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;lt;script&amp;gt;alert(&amp;#39;xss&amp;#39;)&amp;lt;/script&amp;gt;&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;});&lt;/span&gt;
 &lt;span class=&#34;nx&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;h1&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;html&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;model&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;foo&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;));&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -102,7 +101,7 @@
 
 &lt;p&gt;My views on the other hand were big. They contained all of the view logic. There were loops to print things to the screen, helpers to make things easier to do in the view layer, forms, etc&amp;hellip;&lt;/p&gt;
 
-&lt;p&gt;Somewhere near the end of the project my client would inevitably tell me they want me to build an API for them. Of course, this usually happens with only minutes left on the clock. So quickly, and hastily, I throw together a quick API for them. Sure I test the API with my test suite, but the API has never really been &amp;ldquo;tested&amp;rdquo;, in a real world sense.&lt;/p&gt;
+&lt;p&gt;Somewhere near the end of the project my client would inevitably tell me they want me to build an API for them. Of course, this usually happens with only minutes left on the clock. So quickly, and hastily, I throw together a quick API for them. Sure I test the API with my test suite, but the API has never really been &amp;laquo;tested&amp;raquo;, in a real world sense.&lt;/p&gt;
 
 &lt;p&gt;This writing an API in a vacuum seems to be quite a common practice. Everyone knows they need an API, but people don&amp;rsquo;t put much thought into it because they&amp;rsquo;re too busy trying to crank out their great idea as fast as possible. This leads to less than stellar APIs, which can both hurt the business and make it difficult when the time comes to do things like build clients for mobile devices and desktops.&lt;/p&gt;
 

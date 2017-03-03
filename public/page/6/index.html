@@ -32,7 +32,7 @@
 <link rel="canonical" href="/" />
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
 <link rel="icon" href="/favicon.png">
-<meta name="generator" content="Hugo 0.16" />
+<meta name="generator" content="Hugo 0.20-DEV" />
 
   <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
@@ -131,7 +131,7 @@
   <div class="container">
     
     <div class="row">
-      <div class="col-sm-9">
+      <div class="col-sm-12">
         
         
           <div class="row">
@@ -226,7 +226,8 @@
     <p>
   
   
-    So with my book, Distributed Programming with Ruby, finally finished, and a nice long weekend I was able to sit down and work on a little pet project of mine. I decided to work on a little site that I could use to track my rather large Pez collection. (Yes, I know, I collect Pez - so what!) While working on it I got to use some new technologies that I really haven&rsquo;t had a chance to play, so I thought I would talk a bit about some of the ones I liked the most.
+    So with my book, Distributed Programming with Ruby, finally finished, and a nice long weekend I was able to sit down and work on a little pet project of mine. I decided to work on a little site that I could use to track my rather large Pez collection. (Yes, I know, I collect Pez - so what!)
+While working on it I got to use some new technologies that I really haven&rsquo;t had a chance to play, so I thought I would talk a bit about some of the ones I liked the most.
   
 
 
@@ -285,7 +286,11 @@
     <p>
   
   
-    The latest version of Apple Push Notifications on Rails (APN on Rails) has been released. This release brings a few bug fixes, a new migration, and Feedback processing. Installing/upgrading is easy: $ sudo gem install apn_on_rails $ ruby script/generate apn_migrations $ rake db:migrate It&rsquo;s important to always run the migrations generator after each update to get the latest database schema needed for the the gem. To use the new Feedback integration you have to first make sure that you update the new last_registered_at column when your iPhone application calls home.
+    The latest version of Apple Push Notifications on Rails (APN on Rails) has been released. This release brings a few bug fixes, a new migration, and Feedback processing.
+Installing/upgrading is easy:
+$ sudo gem install apn_on_rails $ ruby script/generate apn_migrations $ rake db:migrate 
+It&rsquo;s important to always run the migrations generator after each update to get the latest database schema needed for the the gem.
+To use the new Feedback integration you have to first make sure that you update the new last_registered_at column when your iPhone application calls home.
   
 
 
@@ -395,7 +400,8 @@
     <p>
   
   
-    The other night I submitted a new iPhone application to the Apple Store. The app, which I&rsquo;ll speak about when, and if it gets approved, uses the new Apple Push Notification service available in iPhone OS 3.0. On the server side I have a Rails application that I am using to send the notifications to Apple. The problem I ran into was how. Enter the APN on Rails gem. While searching I found one plugin for Rails that mostly worked for me, Sam Soffes&rsquo; apple_push_notification plugin.
+    The other night I submitted a new iPhone application to the Apple Store. The app, which I&rsquo;ll speak about when, and if it gets approved, uses the new Apple Push Notification service available in iPhone OS 3.0. On the server side I have a Rails application that I am using to send the notifications to Apple. The problem I ran into was how.
+Enter the APN on Rails gem. While searching I found one plugin for Rails that mostly worked for me, Sam Soffes&rsquo; apple_push_notification plugin.
   
 
 
@@ -485,7 +491,7 @@
     <p>
   
   
-    For those of you who have checked out the Rough Cuts version of my book, &ldquo;Distributed Programming with Ruby&rdquo;, I thought you would like to get a peek into how the Table of Contents is going to change shortly. For those of you who haven&rsquo;t seen the old Table of Contents, or are just plain old interested to see what&rsquo;s going to be in the book, or to see how far along with the book I am, here is the current Table of Contents as of tonight: As you can see it has evolved quite a bit from what was posted on Rough Cuts just about a month ago.
+    For those of you who have checked out the Rough Cuts version of my book, &laquo;Distributed Programming with Ruby&raquo;, I thought you would like to get a peek into how the Table of Contents is going to change shortly. For those of you who haven&rsquo;t seen the old Table of Contents, or are just plain old interested to see what&rsquo;s going to be in the book, or to see how far along with the book I am, here is the current Table of Contents as of tonight:
   
 
 
@@ -593,7 +599,7 @@
     <p>
   
   
-    Hey there folks, I know it&rsquo;s been awhile, so I thought I would give you all a very quick update as to how the book is going. It&rsquo;s going really well. I&rsquo;m about 100 pages into it, and it&rsquo;s shaping up very nicely. Addison-Wesley is preparing to put it into their &ldquo;Rough Cuts&rdquo; program so you can all get your dirty little hands on what I&rsquo;ve written so far as early as a few weeks from now, or so I&rsquo;m told.
+    Hey there folks, I know it&rsquo;s been awhile, so I thought I would give you all a very quick update as to how the book is going. It&rsquo;s going really well. I&rsquo;m about 100 pages into it, and it&rsquo;s shaping up very nicely. Addison-Wesley is preparing to put it into their &laquo;Rough Cuts&raquo; program so you can all get your dirty little hands on what I&rsquo;ve written so far as early as a few weeks from now, or so I&rsquo;m told.
   
 
 
@@ -646,7 +652,8 @@
     <p>
   
   
-    Hey there everyone, it certainly has been awhile, a month by my count. I have been diligently working on a book for Addison-Wesley called, &ldquo;Distributed Programming with Ruby&rdquo;, so having the time to blog went from a luxury to almost non-existent. But here&rsquo;s another little post to keep your RSS feeds happy. I&rsquo;ve started working on porting the mack-distributed package to the non-Mack world. This new project, and I use the term new loosely for the time being, is tentatively called Distribunaut.
+    Hey there everyone, it certainly has been awhile, a month by my count. I have been diligently working on a book for Addison-Wesley called, &laquo;Distributed Programming with Ruby&raquo;, so having the time to blog went from a luxury to almost non-existent. But here&rsquo;s another little post to keep your RSS feeds happy.
+I&rsquo;ve started working on porting the mack-distributed package to the non-Mack world. This new project, and I use the term new loosely for the time being, is tentatively called Distribunaut.
   
 
 
@@ -667,67 +674,67 @@
 
 
 <li >
-  <a aria-label="First" href="//">
+  <a aria-label="First" href="/">
     <span aria-hidden="true">&laquo;&laquo;</span>
   </a>
 </li>
 
 <li >
-  <a aria-label="Previous" href="//page/5/">
+  <a aria-label="Previous" href="/page/5/">
     <span aria-hidden="true">&laquo;</span>
     </a>
 </li>
 
 <li >
-  <a href="//">
+  <a href="/">
     1
     </a>
 </li>
 
 <li >
-  <a href="//page/2/">
+  <a href="/page/2/">
     2
     </a>
 </li>
 
 <li >
-  <a href="//page/3/">
+  <a href="/page/3/">
     3
     </a>
 </li>
 
 <li >
-  <a href="//page/4/">
+  <a href="/page/4/">
     4
     </a>
 </li>
 
 <li >
-  <a href="//page/5/">
+  <a href="/page/5/">
     5
     </a>
 </li>
 
 <li  class="active" >
-  <a href="//page/6/">
+  <a href="/page/6/">
     6
     </a>
 </li>
 
 <li >
-  <a href="//page/7/">
+  <a href="/page/7/">
     7
     </a>
 </li>
 
 
 <li >
-  <a aria-label="Next" href="//page/7/">
+  <a aria-label="Next" href="/page/7/">
     <span aria-hidden="true">&raquo;</span>
     </a>
 </li>
 <li >
-  <a aria-label="Last" href="//page/7/">
+  <a aria-label="Last" href="/page/7/">
     <span aria-hidden="true">&raquo;&raquo;</span>
   </a>
 </li>
@@ -738,70 +745,6 @@
 
 
       </div>
-      
-        <div class="col-sm-3">
-                    <a class="twitter-timeline" href="https://twitter.com/markbates" data-widget-id="274503565609934848">Tweets by @markbates</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-
-<hr>
-
-<div>
-  
-
-    <div class="section">
-      <header><div class="title"><b>Latest Posts</b></div></header>
-      <div class="content">
-        <ul>
-        
-          <li>
-          <a href="/2016/06/09/now-building-with-hugo/">Now Building With Hugo</a>
-          </li>
-        
-          <li>
-          <a href="/2015/10/15/handling-http-request-errors-in-go/">Handling HTTP Request Errors in GO</a>
-          </li>
-        
-          <li>
-          <a href="/2015/06/01/metacaststv-acquired-by-oreilly-media/">MetaCasts.tv Acquired by O&#39;Reilly Media</a>
-          </li>
-        
-          <li>
-          <a href="/2015/05/07/so-long-and-thanks-for-all-the-fish/">So Long, and Thanks For All The Fish</a>
-          </li>
-        
-          <li>
-          <a href="/2015/02/07/what-is-happinessconf-and-why-its-important/">What is HappinessConf and Why is it Important?</a>
-          </li>
-        
-          <li>
-          <a href="/2014/10/15/goth-multi-provider-authentication-for-go/">Goth: Multi Provider Authentication for Go</a>
-          </li>
-        
-          <li>
-          <a href="/2014/10/09/metacaststv-gothamgo-winner/">MetaCasts.tv/GothamGo Winner</a>
-          </li>
-        
-          <li>
-          <a href="/2014/09/01/100th-episode--a-free-ticket-to-gothamgo/">100th Episode | A Free Ticket to GothamGo!</a>
-          </li>
-        
-          <li>
-          <a href="/2014/07/08/metacasts-golang-future/">MetaCasts Golang Future</a>
-          </li>
-        
-          <li>
-          <a href="/2014/05/28/the-war-on-testing/">The War on Testing</a>
-          </li>
-        
-        </ul>
-      </div>
-    </div>
-
-
-</div>
-
-        </div>
       
     </div>
 

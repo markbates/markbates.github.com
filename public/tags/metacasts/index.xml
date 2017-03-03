@@ -2,14 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Metacasts on MetaBates.com</title>
-    <link>/tags/metacasts/</link>
+    <link>/tags/metacasts/index.xml</link>
     <description>Recent content in Metacasts on MetaBates.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
     <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
     <copyright>(c) 2016 Mark Bates.</copyright>
-    <lastBuildDate>Mon, 01 Jun 2015 00:00:00 +0000</lastBuildDate>
     <atom:link href="/tags/metacasts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -112,7 +111,7 @@
       <guid>/2014/03/28/metacaststv-episode-stats/</guid>
       <description>
 
-&lt;p&gt;When I first started &lt;a href=&#34;http://www.metacasts.tv&#34;&gt;MetaCasts.tv&lt;/a&gt; in January of 2013 I set out to create a unique screen cast series. I wanted a series that didn&amp;rsquo;t focus on just one topic, just Ruby, just JavaScript, etc&amp;hellip; instead I wanted something that would challenge my subscribers, as well as myself. I wanted to talk about all sorts of technologies. I knew that some weeks the topic at hand might be incredibly relevant to viewers, and that other weeks it wouldn&amp;rsquo;t be. My hope was, and still is, that the weeks were the topic isn&amp;rsquo;t &amp;ldquo;relevant&amp;rdquo; that viewers will learn something new that they wouldn&amp;rsquo;t have otherwise.&lt;/p&gt;
+&lt;p&gt;When I first started &lt;a href=&#34;http://www.metacasts.tv&#34;&gt;MetaCasts.tv&lt;/a&gt; in January of 2013 I set out to create a unique screen cast series. I wanted a series that didn&amp;rsquo;t focus on just one topic, just Ruby, just JavaScript, etc&amp;hellip; instead I wanted something that would challenge my subscribers, as well as myself. I wanted to talk about all sorts of technologies. I knew that some weeks the topic at hand might be incredibly relevant to viewers, and that other weeks it wouldn&amp;rsquo;t be. My hope was, and still is, that the weeks were the topic isn&amp;rsquo;t &amp;laquo;relevant&amp;raquo; that viewers will learn something new that they wouldn&amp;rsquo;t have otherwise.&lt;/p&gt;
 
 &lt;p&gt;I love to grow and learn about topics outside of my daily comfort zone, so I&amp;rsquo;ve made &lt;a href=&#34;http://www.metacasts.tv&#34;&gt;MetaCasts.tv&lt;/a&gt; a venue for that. There are some episodes where I know the topic intimately, and there are others where I sat down, studied the topic, wrote lots of code, and presented my findings. All of it an educational experience as much for me, as my viewers.&lt;/p&gt;
 
@@ -162,7 +161,7 @@
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p&gt;These numbers are determined by the &amp;ldquo;primary language&amp;rdquo; of the video. For example a video about Ember.js would be listed as CoffeeScript, or JavaScript, even though the back-end might have been written using Ruby.&lt;/p&gt;
+&lt;p&gt;These numbers are determined by the &amp;laquo;primary language&amp;raquo; of the video. For example a video about Ember.js would be listed as CoffeeScript, or JavaScript, even though the back-end might have been written using Ruby.&lt;/p&gt;
 
 &lt;h2 id=&#34;most-purchased-video&#34;&gt;Most Purchased Video&lt;/h2&gt;
 

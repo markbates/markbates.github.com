@@ -65,7 +65,7 @@
     },
     "datePublished": "2010-07-01",
     "description": "",
-    "wordCount":  807 
+    "wordCount": 807
   }
 </script>
 
@@ -74,7 +74,7 @@
 <link rel="canonical" href="/2010/07/01/testing-is-not-an-option/" />
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
 <link rel="icon" href="/favicon.png">
-<meta name="generator" content="Hugo 0.16" />
+<meta name="generator" content="Hugo 0.20-DEV" />
 
   <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
@@ -172,7 +172,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-9">
+    <div class="col-sm-12">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
   <div class="text-center">
 
@@ -223,9 +223,9 @@
 
 <p><img style="float: left; padding-right: 10px" title="Failure Testing" src="http://www.commercialventvac.com/finao/failure_testing.jpg" alt="" width="400" height="240" /></p>
 
-<p>&ldquo;We don&rsquo;t have any tests because I couldn&rsquo;t convince the company to allocate the time for them.&rdquo; That statement really hung with me. After I got off the phone I started thinking really hard about that statement, and all I could think of was how testing is not an option and people shouldn&rsquo;t need to be convinced to have time allocated to them.</p>
+<p>&laquo;We don&rsquo;t have any tests because I couldn&rsquo;t convince the company to allocate the time for them.&raquo; That statement really hung with me. After I got off the phone I started thinking really hard about that statement, and all I could think of was how testing is not an option and people shouldn&rsquo;t need to be convinced to have time allocated to them.</p>
 
-<p>As developers it is our responsibility to insist on testing. Always include testing in your time estimates. Never give the client (or your company) an option that includes a time estimate without testing. If a feature takes 2 days to code and a day to write tests, then your estimate is 3 days, never 2. You should never say, &ldquo;Well, I can get it done in two days if I don&rsquo;t write any tests.&rdquo; That&rsquo;s just an unacceptable thing to say. What you should be saying is, &ldquo;That feature will take three days to code&rdquo;.</p>
+<p>As developers it is our responsibility to insist on testing. Always include testing in your time estimates. Never give the client (or your company) an option that includes a time estimate without testing. If a feature takes 2 days to code and a day to write tests, then your estimate is 3 days, never 2. You should never say, &laquo;Well, I can get it done in two days if I don&rsquo;t write any tests.&raquo; That&rsquo;s just an unacceptable thing to say. What you should be saying is, &laquo;That feature will take three days to code&raquo;.</p>
 
 <p>I don&rsquo;t feel I should sit here and tell you all the reasons why you should test, you should know them already, and frankly, they&rsquo;re all very obvious! But, if you need a few bullet points to &lsquo;convince&rsquo; your client, here are a few:</p>
 
@@ -233,7 +233,7 @@
 <li>Less bugs - The more tests you have the less bugs you will have. It&rsquo;s just a fact. You won&rsquo;t have 100% bug free code, that&rsquo;s a nearly impossible goal, but you highly reduce the likely hood that as soon as you get your code into production your users will find all the breaking points of your code.</li>
 <li>Better maintainability, means faster feature turn around - When you have a large test suite it means adding, updating, or even removing features because a whole lot easier, which means it SAVES time! Why? Simple, you don&rsquo;t have to go through and manually test every aspect of your code to make sure you didn&rsquo;t break something elsewhere by adding that validation, or by refactoring that bit of code, etc&hellip; That translates into real $ savings.</li>
 <li>Test driven development saves time - this isn&rsquo;t quite the same as my last bullet point. Imagine, if you will, you are writing a four step wizard in your application. If you write a few test scripts using something like Cucumber first before you write your code you can simply keep re-running those to make sure your code is working. If you don&rsquo;t have those test scripts written then you continually have to keep going to a browser and entering all the information in each of the steps so you can test something in step four. Which one do you think takes longer, having a few test scripts you can run, or manually going through the four page wizard each time you make a change?</li>
-<li>It&rsquo;s an investment - thinking of having test scripts like owning a house. When you don&rsquo;t have tests and you just keep testing in the browser or the command line what you are doing is a kin to &ldquo;renting&rdquo;. There is money being spent, but at the end of the day you have nothing to show for it. You&rsquo;ve spent hours &ldquo;testing&rdquo;, but tomorrow when you come in you have to do it all over again. When you spend those hours writing tests you are actually &ldquo;buying&rdquo; something. You have something to show for that time and money you&rsquo;ve spent. Tomorrow, next week, next month, next year, those scripts will still be there, they&rsquo;ll still be working for you, giving  you a return on your investment.</li>
+<li>It&rsquo;s an investment - thinking of having test scripts like owning a house. When you don&rsquo;t have tests and you just keep testing in the browser or the command line what you are doing is a kin to &laquo;renting&raquo;. There is money being spent, but at the end of the day you have nothing to show for it. You&rsquo;ve spent hours &laquo;testing&raquo;, but tomorrow when you come in you have to do it all over again. When you spend those hours writing tests you are actually &laquo;buying&raquo; something. You have something to show for that time and money you&rsquo;ve spent. Tomorrow, next week, next month, next year, those scripts will still be there, they&rsquo;ll still be working for you, giving  you a return on your investment.</li>
 </ul>
 
 <p>Well, I hope I have hopefully made a case to you the engineer as to why you should insist on testing. It&rsquo;s the right thing to do, for you, for your application and for you client. If if anyone tries to give you grief about it, send them my way, I&rsquo;ll sort em out!</p>
@@ -290,70 +290,6 @@
 </footer>
 
     </div>
-    
-      <div class="col-sm-3">
-                  <a class="twitter-timeline" href="https://twitter.com/markbates" data-widget-id="274503565609934848">Tweets by @markbates</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-
-<hr>
-
-<div>
-  
-
-    <div class="section">
-      <header><div class="title"><b>Latest Posts</b></div></header>
-      <div class="content">
-        <ul>
-        
-          <li>
-          <a href="/2016/06/09/now-building-with-hugo/">Now Building With Hugo</a>
-          </li>
-        
-          <li>
-          <a href="/2015/10/15/handling-http-request-errors-in-go/">Handling HTTP Request Errors in GO</a>
-          </li>
-        
-          <li>
-          <a href="/2015/06/01/metacaststv-acquired-by-oreilly-media/">MetaCasts.tv Acquired by O&#39;Reilly Media</a>
-          </li>
-        
-          <li>
-          <a href="/2015/05/07/so-long-and-thanks-for-all-the-fish/">So Long, and Thanks For All The Fish</a>
-          </li>
-        
-          <li>
-          <a href="/2015/02/07/what-is-happinessconf-and-why-its-important/">What is HappinessConf and Why is it Important?</a>
-          </li>
-        
-          <li>
-          <a href="/2014/10/15/goth-multi-provider-authentication-for-go/">Goth: Multi Provider Authentication for Go</a>
-          </li>
-        
-          <li>
-          <a href="/2014/10/09/metacaststv-gothamgo-winner/">MetaCasts.tv/GothamGo Winner</a>
-          </li>
-        
-          <li>
-          <a href="/2014/09/01/100th-episode--a-free-ticket-to-gothamgo/">100th Episode | A Free Ticket to GothamGo!</a>
-          </li>
-        
-          <li>
-          <a href="/2014/07/08/metacasts-golang-future/">MetaCasts Golang Future</a>
-          </li>
-        
-          <li>
-          <a href="/2014/05/28/the-war-on-testing/">The War on Testing</a>
-          </li>
-        
-        </ul>
-      </div>
-    </div>
-
-
-</div>
-
-      </div>
     
   </div>
 </div>

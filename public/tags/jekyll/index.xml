@@ -2,14 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jekyll on MetaBates.com</title>
-    <link>/tags/jekyll/</link>
+    <link>/tags/jekyll/index.xml</link>
     <description>Recent content in Jekyll on MetaBates.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
     <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
     <copyright>(c) 2016 Mark Bates.</copyright>
-    <lastBuildDate>Thu, 09 Jun 2016 16:20:56 -0400</lastBuildDate>
     <atom:link href="/tags/jekyll/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -26,7 +25,7 @@
 
 &lt;p&gt;I spent some time with Steve a few weeks ago, and he told me that the latest version of Hugo had built-in support for importing Jekyll, and that I didn&amp;rsquo;t have to rely on hacking third party scripts to get the job done.&lt;/p&gt;
 
-&lt;p&gt;After running the importer all of my posts were there, and they only needed a wee bit of tweaking to make them look good with Hugo. Then I was off trying to find a good theme for the site, preferably something similar to what I had. That was easy enough, a few tweaks to a &amp;ldquo;bootstrap&amp;rdquo; theme and I was set.&lt;/p&gt;
+&lt;p&gt;After running the importer all of my posts were there, and they only needed a wee bit of tweaking to make them look good with Hugo. Then I was off trying to find a good theme for the site, preferably something similar to what I had. That was easy enough, a few tweaks to a &amp;laquo;bootstrap&amp;raquo; theme and I was set.&lt;/p&gt;
 
 &lt;p&gt;Overall I&amp;rsquo;ve been happy with Hugo, now that I have it set up. I just hit save and Hugo rebuilt my entire site in &lt;code&gt;234ms&lt;/code&gt;. That&amp;rsquo;s pretty darn fast! Especially compared with the speeds I was getting with Jekyll. Oh, and did I mention that it also reloaded the site in my browser for me so I can see it getting updated everytime I hit save? Yeah, pretty nice.&lt;/p&gt;
 
@@ -42,11 +41,11 @@
       <guid>/2012/04/04/now-blogging-with-jekyll/</guid>
       <description>&lt;p&gt;As you may or may not have noticed there&amp;rsquo;s a new blog in town! That&amp;rsquo;s right, I&amp;rsquo;ve ditched the zero, WordPress, and got with the hero, &lt;a href=&#34;https://github.com/mojombo/jekyll&#34;&gt;Jekyll&lt;/a&gt;. And I have to say, it sure feels good.&lt;/p&gt;
 
-&lt;p&gt;WordPress worked well for me for years, but I have to say that I never enjoyed the process of writing a technical blog in a browser. I hated the lack of tools that my editor has at it&amp;rsquo;s disposal. It was too slow to do previews with. And all together it just always felt a bit &amp;ldquo;hacky&amp;rdquo;, and not in a good way.&lt;/p&gt;
+&lt;p&gt;WordPress worked well for me for years, but I have to say that I never enjoyed the process of writing a technical blog in a browser. I hated the lack of tools that my editor has at it&amp;rsquo;s disposal. It was too slow to do previews with. And all together it just always felt a bit &amp;laquo;hacky&amp;raquo;, and not in a good way.&lt;/p&gt;
 
 &lt;p&gt;Jekyll let&amp;rsquo;s me write my blog entries in my favorite local text editor. I can preview my blog, locally, which is great if you want to make a sweeping change to the whole thing. When I&amp;rsquo;m done writing I can do a &lt;code&gt;git push&lt;/code&gt; and the site now has all the new content.&lt;/p&gt;
 
-&lt;p&gt;I know that I haven&amp;rsquo;t been that great over the last few months at keeping this blog up to date. Part of that was due to writing a new book, &lt;a href=&#34;http://books.markbates.com&#34;&gt;Programming in CoffeeScript&lt;/a&gt;, and the other because I just didn&amp;rsquo;t like writing in WordPress. I&amp;rsquo;m hoping that now that I&amp;rsquo;ve got a bit more of a &amp;ldquo;hacker&amp;rdquo; friendly way of blogging, that I get back into the habit of blogging more often.&lt;/p&gt;
+&lt;p&gt;I know that I haven&amp;rsquo;t been that great over the last few months at keeping this blog up to date. Part of that was due to writing a new book, &lt;a href=&#34;http://books.markbates.com&#34;&gt;Programming in CoffeeScript&lt;/a&gt;, and the other because I just didn&amp;rsquo;t like writing in WordPress. I&amp;rsquo;m hoping that now that I&amp;rsquo;ve got a bit more of a &amp;laquo;hacker&amp;raquo; friendly way of blogging, that I get back into the habit of blogging more often.&lt;/p&gt;
 
 &lt;p&gt;Here&amp;rsquo;s to the hopes of happy blogging!&lt;/p&gt;
 </description>

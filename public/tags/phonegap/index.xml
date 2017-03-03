@@ -2,14 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Phonegap on MetaBates.com</title>
-    <link>/tags/phonegap/</link>
+    <link>/tags/phonegap/index.xml</link>
     <description>Recent content in Phonegap on MetaBates.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
     <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
     <copyright>(c) 2016 Mark Bates.</copyright>
-    <lastBuildDate>Sun, 15 Apr 2012 00:00:00 +0000</lastBuildDate>
     <atom:link href="/tags/phonegap/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -22,7 +21,7 @@
 
 &lt;p&gt;&lt;img src=&#34;/assets/images/2012/04/15/phonegaplogo.png&#34; class=&#39;img-left&#39; style=&#34;width: 120px; height: 120px;&#34;/&gt;&lt;/p&gt;
 
-&lt;p&gt;Lately I&amp;rsquo;ve been doing a lot of work with &lt;a href=&#34;http://docs.phonegap.com&#34;&gt;PhoneGap&lt;/a&gt;, now known as Cordova. PhoneGap lets you write &amp;ldquo;native&amp;rdquo; iOS, Android, Blackberry, etc&amp;hellip; applications using standard web technologies, such as HTML, CSS, and JavaScript. They also give you a JavaScript API to access parts of the device, such as the camera, the accelerometer, the compass, etc&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Lately I&amp;rsquo;ve been doing a lot of work with &lt;a href=&#34;http://docs.phonegap.com&#34;&gt;PhoneGap&lt;/a&gt;, now known as Cordova. PhoneGap lets you write &amp;laquo;native&amp;raquo; iOS, Android, Blackberry, etc&amp;hellip; applications using standard web technologies, such as HTML, CSS, and JavaScript. They also give you a JavaScript API to access parts of the device, such as the camera, the accelerometer, the compass, etc&amp;hellip;&lt;/p&gt;
 
 &lt;p&gt;In this article I would like to take a quick look at how to take a new picture, or use an existing library photo, and how to upload it to a webserver somewhere. This is one of the most common things to do in a mobile application, and as you&amp;rsquo;re about to see, PhoneGap makes this, commonly painful task, pretty simple.&lt;/p&gt;
 

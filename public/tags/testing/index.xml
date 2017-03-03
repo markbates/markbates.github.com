@@ -2,14 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Testing on MetaBates.com</title>
-    <link>/tags/testing/</link>
+    <link>/tags/testing/index.xml</link>
     <description>Recent content in Testing on MetaBates.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>mark&#43;blog@markbates.com (Mark Bates)</managingEditor>
     <webMaster>mark&#43;blog@markbates.com (Mark Bates)</webMaster>
     <copyright>(c) 2016 Mark Bates.</copyright>
-    <lastBuildDate>Wed, 28 May 2014 00:00:00 +0000</lastBuildDate>
     <atom:link href="/tags/testing/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -20,7 +19,7 @@
       <guid>/2014/05/28/the-war-on-testing/</guid>
       <description>&lt;p&gt;Apologies for the slightly inflammatory title, but I&amp;rsquo;m beginning to get worried about the Ruby community, and sadly my worries are stemming from an area that first made me fall in love with Ruby, testing.&lt;/p&gt;
 
-&lt;p&gt;By now you are probably familiar with the whole &amp;ldquo;&lt;a href=&#34;https://www.google.com/#q=ruby+tdd+is+dead&#34;&gt;TDD is Dead&lt;/a&gt;&amp;rdquo; saga that stemmed from a keynote that DHH recently gave at RailsConf. I&amp;rsquo;m not going to bother recapping that, do a Google search and you&amp;rsquo;ll find out all about it. I&amp;rsquo;m not even here to weigh in on the matter.&lt;/p&gt;
+&lt;p&gt;By now you are probably familiar with the whole &amp;laquo;&lt;a href=&#34;https://www.google.com/#q=ruby+tdd+is+dead&#34;&gt;TDD is Dead&lt;/a&gt;&amp;raquo; saga that stemmed from a keynote that DHH recently gave at RailsConf. I&amp;rsquo;m not going to bother recapping that, do a Google search and you&amp;rsquo;ll find out all about it. I&amp;rsquo;m not even here to weigh in on the matter.&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;m here to discuss an even more trouble matter, the removal of a testing framework from the Ruby standard library in 2.2. The ticket that removed test-unit and MiniTest from Ruby 2.2 can be found at &lt;a href=&#34;https://bugs.ruby-lang.org/issues/9711#note-12&#34;&gt;https://bugs.ruby-lang.org/issues/9711#note-12&lt;/a&gt;.&lt;/p&gt;
 
@@ -31,7 +30,7 @@
 &lt;p&gt;&lt;img src=&#39;/assets/images/2014/05/tweet2.png&#39;&gt;
 &lt;img src=&#39;/assets/images/2014/05/tweet3.png&#39;&gt;&lt;/p&gt;
 
-&lt;p&gt;In regards to the later tweet I would encourage the author of the tweet to consult the Rails documentation on how to turn off automatic test generation. These tweets are concerning because they share the same shortsightedness. These tweets are analogous to saying, &amp;ldquo;Well, I use HashWithIndifferenceAccess so I don&amp;rsquo;t care if they remove Hash from the standard library&amp;rdquo;. This idea that because you use Rspec and not test-unit or MiniTest that this change does not somehow affect you is wrong. This affects the entire Ruby community.&lt;/p&gt;
+&lt;p&gt;In regards to the later tweet I would encourage the author of the tweet to consult the Rails documentation on how to turn off automatic test generation. These tweets are concerning because they share the same shortsightedness. These tweets are analogous to saying, &amp;laquo;Well, I use HashWithIndifferenceAccess so I don&amp;rsquo;t care if they remove Hash from the standard library&amp;raquo;. This idea that because you use Rspec and not test-unit or MiniTest that this change does not somehow affect you is wrong. This affects the entire Ruby community.&lt;/p&gt;
 
 &lt;p&gt;When I first got introduced to Ruby back in 2005 I was blown away by how testing was a first class citizen in Ruby, and of course Rails. Testing was, and I hope still is, a core tenant of the Ruby community. By removing a testing framework from the standard library we are telling newcomers, as well as though who wish Ruby ill that we don&amp;rsquo;t value testing.&lt;/p&gt;
 
@@ -78,7 +77,7 @@
 
 &lt;p&gt;Replace with your own Heroku API key and your Heroku git endpoint and Bob&amp;rsquo;s your uncle Travis will do the heavy lifting for you and deploy to Heroku for you if, and only if, your tests pass.&lt;/p&gt;
 
-&lt;p&gt;One quick final note, I would recommend creating a new Heroku account to use as a &amp;ldquo;deployer&amp;rdquo; account because you do have to include your API key in the &lt;code&gt;.travis.yml&lt;/code&gt; file.&lt;/p&gt;
+&lt;p&gt;One quick final note, I would recommend creating a new Heroku account to use as a &amp;laquo;deployer&amp;raquo; account because you do have to include your API key in the &lt;code&gt;.travis.yml&lt;/code&gt; file.&lt;/p&gt;
 
 &lt;p&gt;That&amp;rsquo;s it! Enjoy your continuous integration and continuous deployment all mixed up.&lt;/p&gt;
 </description>
@@ -91,13 +90,13 @@
       <author>mark&#43;blog@markbates.com (Mark Bates)</author>
       <guid>/2011/03/04/407-testing-tools-arent-all-the-same-choose-wisely/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;&amp;ldquo;Testing is painful.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&amp;laquo;Testing is painful.&amp;raquo;&lt;/p&gt;
 
-&lt;p&gt;&amp;ldquo;Testing is hard.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&amp;laquo;Testing is hard.&amp;raquo;&lt;/p&gt;
 
-&lt;p&gt;&amp;ldquo;Testing is complicated.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&amp;laquo;Testing is complicated.&amp;raquo;&lt;/p&gt;
 
-&lt;p&gt;&amp;ldquo;Testing is not fun.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&amp;laquo;Testing is not fun.&amp;raquo;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;I hear those sorts of things all the time when I talk to people about testing. I agree that sometimes testing can be all of those things, but if you choose the right tools, the tools that best suite you, testing doesn&amp;rsquo;t have to be. Let me give you an example of what I&amp;rsquo;m talking about, how choosing the right tools can make a huge impact on how you feel about testing.&lt;/p&gt;
@@ -152,20 +151,20 @@
 
 &lt;p&gt;Let&amp;rsquo;s talk about each of this points for a minute.&lt;/p&gt;
 
-&lt;h3 id=&#34;we-don-t-didn-t-have-the-time&#34;&gt;&amp;ldquo;We don&amp;rsquo;t/didn&amp;rsquo;t have the time.&amp;rdquo;&lt;/h3&gt;
+&lt;h3 id=&#34;we-don-t-didn-t-have-the-time&#34;&gt;&amp;laquo;We don&amp;rsquo;t/didn&amp;rsquo;t have the time.&amp;raquo;&lt;/h3&gt;
 
 &lt;p&gt;I never accept time as an argument against testing. Testing ends up repaying it&amp;rsquo;s time investment, and will ultimately give you more time than if you didn&amp;rsquo;t write code. It&amp;rsquo;s a win-win. Again see my previous post in how to get the time signed off on as part of t he project timeline.&lt;/p&gt;
 
-&lt;h3 id=&#34;we-don-t-know-how&#34;&gt;&amp;ldquo;We don&amp;rsquo;t know how.&amp;rdquo;&lt;/h3&gt;
+&lt;h3 id=&#34;we-don-t-know-how&#34;&gt;&amp;laquo;We don&amp;rsquo;t know how.&amp;raquo;&lt;/h3&gt;
 
 &lt;p&gt;Learn. There&amp;rsquo;s no better time than the present and no better way to learn than being thrown into the deep end. The web is crawling with documentation, screen casts, how to articles and tutorials, and there are plenty of books to get you going. In short the k knowledge is literally at your finger tips, and to be honest it&amp;rsquo;s easier than you think.&lt;/p&gt;
 
-&lt;h3 id=&#34;it-was-is-too-complicated&#34;&gt;&amp;ldquo;It was/is too complicated.&amp;rdquo;&lt;/h3&gt;
+&lt;h3 id=&#34;it-was-is-too-complicated&#34;&gt;&amp;laquo;It was/is too complicated.&amp;raquo;&lt;/h3&gt;
 
 &lt;p&gt;That usually means you&amp;rsquo;re doing i
 t wrong. Take a step back and assess what it is you&amp;rsquo;re trying to do. You&amp;rsquo;re tests should be simple and concise. Don&amp;rsquo;t write tests that are hundreds of lines long. They&amp;rsquo;re tests, not entrance exams to MIT.&lt;/p&gt;
 
-&lt;h3 id=&#34;it-was-is-too-overwhelming&#34;&gt;&amp;ldquo;It was/is too overwhelming.&amp;rdquo;&lt;/h3&gt;
+&lt;h3 id=&#34;it-was-is-too-overwhelming&#34;&gt;&amp;laquo;It was/is too overwhelming.&amp;raquo;&lt;/h3&gt;
 
 &lt;p&gt;Certainly if you didn&amp;rsquo;t write tests as you went along it can get quite overwhelming thinking about all the tests you now need to write for your monolithic app. I&amp;rsquo;ll talk about how you can solve that problem in a minute.&lt;/p&gt;
 
@@ -346,9 +345,9 @@ Enjoy the release candidate, and of course, please let me know if you find any i
 
 &lt;p&gt;&lt;img style=&#34;float: left; padding-right: 10px&#34; title=&#34;Failure Testing&#34; src=&#34;http://www.commercialventvac.com/finao/failure_testing.jpg&#34; alt=&#34;&#34; width=&#34;400&#34; height=&#34;240&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&amp;ldquo;We don&amp;rsquo;t have any tests because I couldn&amp;rsquo;t convince the company to allocate the time for them.&amp;rdquo; That statement really hung with me. After I got off the phone I started thinking really hard about that statement, and all I could think of was how testing is not an option and people shouldn&amp;rsquo;t need to be convinced to have time allocated to them.&lt;/p&gt;
+&lt;p&gt;&amp;laquo;We don&amp;rsquo;t have any tests because I couldn&amp;rsquo;t convince the company to allocate the time for them.&amp;raquo; That statement really hung with me. After I got off the phone I started thinking really hard about that statement, and all I could think of was how testing is not an option and people shouldn&amp;rsquo;t need to be convinced to have time allocated to them.&lt;/p&gt;
 
-&lt;p&gt;As developers it is our responsibility to insist on testing. Always include testing in your time estimates. Never give the client (or your company) an option that includes a time estimate without testing. If a feature takes 2 days to code and a day to write tests, then your estimate is 3 days, never 2. You should never say, &amp;ldquo;Well, I can get it done in two days if I don&amp;rsquo;t write any tests.&amp;rdquo; That&amp;rsquo;s just an unacceptable thing to say. What you should be saying is, &amp;ldquo;That feature will take three days to code&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;As developers it is our responsibility to insist on testing. Always include testing in your time estimates. Never give the client (or your company) an option that includes a time estimate without testing. If a feature takes 2 days to code and a day to write tests, then your estimate is 3 days, never 2. You should never say, &amp;laquo;Well, I can get it done in two days if I don&amp;rsquo;t write any tests.&amp;raquo; That&amp;rsquo;s just an unacceptable thing to say. What you should be saying is, &amp;laquo;That feature will take three days to code&amp;raquo;.&lt;/p&gt;
 
 &lt;p&gt;I don&amp;rsquo;t feel I should sit here and tell you all the reasons why you should test, you should know them already, and frankly, they&amp;rsquo;re all very obvious! But, if you need a few bullet points to &amp;lsquo;convince&amp;rsquo; your client, here are a few:&lt;/p&gt;
 
@@ -356,7 +355,7 @@ Enjoy the release candidate, and of course, please let me know if you find any i
 &lt;li&gt;Less bugs - The more tests you have the less bugs you will have. It&amp;rsquo;s just a fact. You won&amp;rsquo;t have 100% bug free code, that&amp;rsquo;s a nearly impossible goal, but you highly reduce the likely hood that as soon as you get your code into production your users will find all the breaking points of your code.&lt;/li&gt;
 &lt;li&gt;Better maintainability, means faster feature turn around - When you have a large test suite it means adding, updating, or even removing features because a whole lot easier, which means it SAVES time! Why? Simple, you don&amp;rsquo;t have to go through and manually test every aspect of your code to make sure you didn&amp;rsquo;t break something elsewhere by adding that validation, or by refactoring that bit of code, etc&amp;hellip; That translates into real $ savings.&lt;/li&gt;
 &lt;li&gt;Test driven development saves time - this isn&amp;rsquo;t quite the same as my last bullet point. Imagine, if you will, you are writing a four step wizard in your application. If you write a few test scripts using something like Cucumber first before you write your code you can simply keep re-running those to make sure your code is working. If you don&amp;rsquo;t have those test scripts written then you continually have to keep going to a browser and entering all the information in each of the steps so you can test something in step four. Which one do you think takes longer, having a few test scripts you can run, or manually going through the four page wizard each time you make a change?&lt;/li&gt;
-&lt;li&gt;It&amp;rsquo;s an investment - thinking of having test scripts like owning a house. When you don&amp;rsquo;t have tests and you just keep testing in the browser or the command line what you are doing is a kin to &amp;ldquo;renting&amp;rdquo;. There is money being spent, but at the end of the day you have nothing to show for it. You&amp;rsquo;ve spent hours &amp;ldquo;testing&amp;rdquo;, but tomorrow when you come in you have to do it all over again. When you spend those hours writing tests you are actually &amp;ldquo;buying&amp;rdquo; something. You have something to show for that time and money you&amp;rsquo;ve spent. Tomorrow, next week, next month, next year, those scripts will still be there, they&amp;rsquo;ll still be working for you, giving  you a return on your investment.&lt;/li&gt;
+&lt;li&gt;It&amp;rsquo;s an investment - thinking of having test scripts like owning a house. When you don&amp;rsquo;t have tests and you just keep testing in the browser or the command line what you are doing is a kin to &amp;laquo;renting&amp;raquo;. There is money being spent, but at the end of the day you have nothing to show for it. You&amp;rsquo;ve spent hours &amp;laquo;testing&amp;raquo;, but tomorrow when you come in you have to do it all over again. When you spend those hours writing tests you are actually &amp;laquo;buying&amp;raquo; something. You have something to show for that time and money you&amp;rsquo;ve spent. Tomorrow, next week, next month, next year, those scripts will still be there, they&amp;rsquo;ll still be working for you, giving  you a return on your investment.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Well, I hope I have hopefully made a case to you the engineer as to why you should insist on testing. It&amp;rsquo;s the right thing to do, for you, for your application and for you client. If if anyone tries to give you grief about it, send them my way, I&amp;rsquo;ll sort em out!&lt;/p&gt;
