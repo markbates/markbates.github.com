@@ -19,7 +19,7 @@ GEM
     maruku (0.6.1)
       syntax (>= 1.0.0)
     posix-spawn (0.3.6)
-    rake (10.0.2)
+    rake (12.3.3)
     syntax (1.0.0)
 
 PLATFORMS
